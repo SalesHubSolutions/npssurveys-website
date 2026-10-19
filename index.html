@@ -1,0 +1,667 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>NPS Survey CX OS | Customer Experience Operating System for Salesforce</title>
+<meta name="description" content="NPS Survey CX OS by SalesHub: the customer experience operating system for Salesforce. NPS, CSAT and CES surveys that turn every answer into action, 100% native. Industry blueprints, public sector solutions and a free trial on AppExchange.">
+<link rel="canonical" href="https://www.npssurveys.com/">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="icon" type="image/png" sizes="512x512" href="/favicon.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta name="theme-color" content="#1E54E8">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="NPS Survey CX OS">
+<meta property="og:url" content="https://www.npssurveys.com/">
+<meta property="og:title" content="NPS Survey CX OS: the customer experience operating system for Salesforce">
+<meta property="og:description" content="NPS Survey CX OS by SalesHub: the customer experience operating system for Salesforce. NPS, CSAT and CES surveys that turn every answer into action, 100% native. Industry blueprints, public sector solutions and a free trial on AppExchange.">
+<meta property="og:image" content="https://www.npssurveys.com/share.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://www.npssurveys.com/share.png">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"NPS Survey CX OS","applicationCategory":"BusinessApplication","operatingSystem":"Salesforce","url":"https://www.npssurveys.com/","publisher":{"@type":"Organization","name":"SalesHub, LLC"},"offers":{"@type":"Offer","price":"3500","priceCurrency":"USD"}}</script>
+<style>img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
+<style>
+
+/* Layout: a brand-blue hero band with a live product panel, then alternating white and tinted bands, each on a 1160px inner grid */
+:root{
+  --blue:#1E54E8; --blue-deep:#052CA0; --yellow:#FFE443; --navy:#0C184A;
+  --bg:#FFFFFF; --bg-tint:#F4F7FF; --surface:#FFFFFF; --line:#DCE4F7;
+  --fg:#0C184A; --fg-soft:#3B4877; --fg-mute:#5E6B98; --link:#1E54E8;
+  --red:#EB5757; --amber:#E9A52B; --green:#23A96A;
+  --red-tint:#FDEDED; --amber-tint:#FEF6E6; --green-tint:#E9F8F0;
+  --shadow:0 18px 40px rgba(5,20,90,.16);
+  --font:"Inter",system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#070E2B; --bg-tint:#0C1640; --surface:#111D4D; --line:#22306A;
+  --fg:#EEF2FF; --fg-soft:#C3CDF0; --fg-mute:#93A0CF; --link:#8FB0FF;
+  --red-tint:#3A1A27; --amber-tint:#3A2E14; --green-tint:#10342A;
+  --shadow:0 18px 40px rgba(0,0,0,.45); color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#070E2B; --bg-tint:#0C1640; --surface:#111D4D; --line:#22306A;
+  --fg:#EEF2FF; --fg-soft:#C3CDF0; --fg-mute:#93A0CF; --link:#8FB0FF;
+  --red-tint:#3A1A27; --amber-tint:#3A2E14; --green-tint:#10342A;
+  --shadow:0 18px 40px rgba(0,0,0,.45); color-scheme:dark}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
+body{background:var(--bg);color:var(--fg);font-family:var(--font);font-size:16px;line-height:1.55;margin:0}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--blue-deep)}
+a{color:var(--link)} img{max-width:100%}
+h1,h2,h3{text-wrap:balance;margin:0;letter-spacing:-.015em}
+p{margin:0}
+.wrap{max-width:1160px;margin:0 auto;padding-left:max(20px,env(safe-area-inset-left,0px));padding-right:max(20px,env(safe-area-inset-right,0px))}
+.band{padding-block:84px} .band.tint{background:var(--bg-tint)}
+.eyebrow{font-size:.78rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--link)}
+.h2{font-size:clamp(1.8rem,3.4vw,2.6rem);font-weight:800;line-height:1.12;margin-top:10px;max-width:22ch}
+.sub{color:var(--fg-soft);font-size:1.08rem;max-width:62ch;margin-top:14px}
+.btn{display:inline-flex;align-items:center;gap:8px;font-weight:700;border-radius:999px;padding:13px 22px;text-decoration:none;font-size:1rem;transition:transform .15s ease,box-shadow .15s ease;border:2px solid transparent}
+.btn:focus-visible{outline:3px solid var(--yellow);outline-offset:3px}
+.btn.primary{background:var(--yellow);color:var(--navy)} .btn.primary:hover{transform:translateY(-1px);box-shadow:0 8px 20px rgba(255,228,67,.35)}
+.btn.ghost{color:#fff;border-color:rgba(255,255,255,.55)} .btn.ghost:hover{background:rgba(255,255,255,.1)}
+.btn.dark{background:var(--navy);color:#fff}
+:root[data-theme="dark"] .btn.dark{background:var(--yellow);color:var(--navy)}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .btn.dark{background:var(--yellow);color:var(--navy)}}
+
+/* nav */
+.nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:var(--blue-deep);color:#fff}
+.nav .wrap{display:flex;align-items:center;gap:22px;padding-block:12px}
+.logo{display:flex;align-items:center;gap:10px;color:#fff;text-decoration:none;font-weight:800;font-size:1.05rem}
+.logo img{width:34px;height:34px;border-radius:9px}
+.logo small{display:block;font-weight:500;font-size:.72rem;color:#C9D6FF;letter-spacing:.02em}
+.nav ul{display:flex;gap:20px;list-style:none;margin:0 0 0 auto;padding:0}
+.nav ul a{color:#DCE5FF;text-decoration:none;font-weight:500;font-size:.93rem} .nav ul a:hover{color:#fff}
+.nav .btn{padding:9px 16px;font-size:.9rem}
+@media (max-width:860px){.nav ul{display:none}.nav .btn{margin-left:auto}}
+
+/* hero */
+.hero{position:relative;overflow:hidden;color:#fff;background:radial-gradient(110% 120% at 25% 15%,#2B64F2 0%,#1E54E8 38%,#0B3CBC 72%,#052CA0 100%)}
+.hero canvas{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;opacity:.9}
+.hero .wrap{position:relative;display:grid;grid-template-columns:1.05fr .95fr;gap:48px;align-items:center;padding-block:72px 84px}
+.hero .kicker{color:var(--yellow);font-weight:700;letter-spacing:.12em;text-transform:uppercase;font-size:.8rem}
+.hero h1{font-size:clamp(2.3rem,5.2vw,3.9rem);font-weight:800;line-height:1.04;margin-top:16px}
+.hero h1 em{font-style:normal;color:var(--yellow)}
+.hero p.lead{color:#D6E2FF;font-size:1.15rem;max-width:52ch;margin-top:18px}
+.hero .ctas{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px}
+.chip{display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.22);color:#fff;border-radius:999px;padding:6px 12px;font-size:.85rem;font-weight:600}
+.chip svg{flex:none}
+@media (max-width:920px){.hero .wrap{grid-template-columns:1fr;padding-block:48px 64px}}
+
+/* product panel */
+.panel{background:#fff;color:#0C184A;border-radius:20px;box-shadow:0 30px 60px rgba(2,12,60,.4);padding:16px;font-size:.84rem;min-width:0}
+.ph{display:flex;align-items:center;gap:10px;margin-bottom:12px}
+.ph img{width:28px;height:28px;border-radius:7px} .ph b{font-size:.98rem} .ph .scope{margin-left:auto;background:#EEF2FB;border-radius:999px;padding:4px 10px;color:#3B4877;font-size:.76rem;white-space:nowrap}
+.kpis{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.kpi{background:#F4F7FF;border-radius:12px;padding:9px 11px;min-width:0}
+.kpi small{color:#5E6B98;display:block;font-size:.72rem} .kpi b{font-size:1.45rem;display:block;font-variant-numeric:tabular-nums;line-height:1.2} .kpi em{font-style:normal;color:#1E9A5B;font-size:.72rem}
+.trend{margin-top:8px;background:#F4F7FF;border-radius:12px;padding:8px 10px}
+.trend small{color:#5E6B98;font-size:.72rem}
+.feed{margin-top:8px}
+.row{display:grid;grid-template-columns:10px minmax(0,1fr) auto 22px;gap:9px;align-items:center;padding:8px 2px;border-bottom:1px solid #EEF2FB}
+.row:last-child{border-bottom:0}
+.row .d{width:9px;height:9px;border-radius:50%} .row .n{overflow:hidden;text-overflow:ellipsis;white-space:nowrap} .row .a{font-weight:700;white-space:nowrap;font-size:.78rem} .row .s{font-weight:800;text-align:right;font-variant-numeric:tabular-nums}
+.row.new{animation:slidein .5s ease both}
+@keyframes slidein{from{background:#FFF8C7}to{background:transparent}}
+.sample{color:#C9D6FF;font-size:.72rem;text-align:right;margin-top:8px}
+
+/* proof strip */
+.proof{background:var(--navy);color:#fff}
+:root[data-theme="dark"] .proof{background:#0A1238}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .proof{background:#0A1238}}
+.proof .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:16px 28px;padding-block:20px}
+.proof div{display:flex;align-items:center;gap:10px;font-weight:600;font-size:.95rem}
+.proof b{color:var(--yellow);font-size:1.15rem;font-variant-numeric:tabular-nums}
+
+/* steps */
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:40px;counter-reset:s}
+.step{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:22px;position:relative;min-width:0}
+.step .num{width:38px;height:38px;border-radius:50%;background:var(--blue);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:800}
+.step h3{font-size:1.15rem;margin-top:14px} .step p{color:var(--fg-soft);margin-top:6px;font-size:.96rem}
+.step .tag{display:inline-block;margin-top:12px;font-size:.78rem;font-weight:600;color:var(--fg-mute);background:var(--bg-tint);border-radius:6px;padding:3px 8px}
+@media (max-width:920px){.steps{grid-template-columns:repeat(2,1fr)}} @media (max-width:520px){.steps{grid-template-columns:1fr}}
+
+/* loop */
+.loop{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:40px}
+.lc{border-radius:18px;padding:22px;border:1px solid;min-width:0}
+.lc.r{background:var(--red-tint);border-color:color-mix(in srgb,var(--red) 35%,transparent)}
+.lc.a{background:var(--amber-tint);border-color:color-mix(in srgb,var(--amber) 40%,transparent)}
+.lc.g{background:var(--green-tint);border-color:color-mix(in srgb,var(--green) 40%,transparent)}
+.lc .score{font-size:.8rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;display:flex;align-items:center;gap:8px}
+.lc .score i{width:12px;height:12px;border-radius:50%;display:inline-block}
+.lc h3{font-size:1.3rem;margin-top:10px} .lc p{color:var(--fg-soft);margin-top:6px}
+.scale{display:flex;gap:6px;margin-top:14px;flex-wrap:wrap}
+.scale span{width:30px;height:30px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:.85rem;background:var(--surface);border:1px solid var(--line);color:var(--fg-soft)}
+.scale span.on{color:#fff;border-color:transparent}
+@media (max-width:860px){.loop{grid-template-columns:1fr}}
+
+/* features */
+.feat{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:40px}
+.f{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:22px;min-width:0}
+.f .ic{width:44px;height:44px;border-radius:12px;background:color-mix(in srgb,var(--blue) 12%,transparent);color:var(--link);display:flex;align-items:center;justify-content:center}
+.f h3{font-size:1.08rem;margin-top:14px} .f p{color:var(--fg-soft);margin-top:6px;font-size:.95rem}
+@media (max-width:920px){.feat{grid-template-columns:repeat(2,1fr)}} @media (max-width:560px){.feat{grid-template-columns:1fr}}
+.channels{display:flex;flex-wrap:wrap;gap:10px;margin-top:28px}
+.channels span{display:inline-flex;align-items:center;gap:8px;background:var(--surface);border:1px solid var(--line);border-radius:999px;padding:8px 14px;font-weight:600;font-size:.9rem;color:var(--fg)}
+
+/* solutions */
+.tabs{display:flex;flex-wrap:wrap;gap:8px;margin-top:32px}
+.tab{font:inherit;font-weight:600;font-size:.9rem;border:1px solid var(--line);background:var(--surface);color:var(--fg);border-radius:999px;padding:9px 15px;cursor:pointer}
+.tab[aria-selected="true"]{background:var(--blue);color:#fff;border-color:var(--blue)}
+.tab:focus-visible{outline:3px solid var(--yellow);outline-offset:2px}
+.sol{display:grid;grid-template-columns:1.1fr .9fr;gap:28px;margin-top:22px;background:var(--surface);border:1px solid var(--line);border-radius:22px;padding:30px;min-width:0}
+.sol h3{font-size:1.6rem} .sol .who{color:var(--fg-mute);font-weight:600;font-size:.9rem;margin-top:6px}
+.sol p{color:var(--fg-soft);margin-top:12px}
+.sol ul{margin:16px 0 0;padding:0;list-style:none;display:grid;gap:10px}
+.sol li{display:flex;gap:10px;align-items:flex-start;color:var(--fg)} .sol li svg{flex:none;margin-top:3px;color:var(--green)}
+.moment{background:var(--bg-tint);border-radius:16px;padding:18px;display:grid;gap:10px;align-content:start}
+.moment small{font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--fg-mute);font-size:.72rem}
+.mrow{display:flex;gap:10px;align-items:center;background:var(--surface);border-radius:12px;padding:10px 12px;border:1px solid var(--line);font-size:.92rem}
+.mrow i{width:10px;height:10px;border-radius:50%;flex:none}
+.note{color:var(--fg-mute);font-size:.82rem;margin-top:12px}
+@media (max-width:860px){.sol{grid-template-columns:1fr;padding:22px}}
+
+/* pricing */
+.plans{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:40px;align-items:stretch}
+.plan{background:var(--surface);border:1px solid var(--line);border-radius:22px;padding:26px;display:flex;flex-direction:column;gap:14px;min-width:0}
+.plan.pop{border:2px solid var(--blue);box-shadow:var(--shadow)}
+.plan .tagline{font-size:.78rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--link)}
+.plan h3{font-size:1.35rem} .price{font-size:2.3rem;font-weight:800;font-variant-numeric:tabular-nums;line-height:1} .price small{font-size:.95rem;font-weight:600;color:var(--fg-mute)}
+.plan p{color:var(--fg-soft);font-size:.95rem}
+.plan .btn{justify-content:center;margin-top:auto}
+@media (max-width:920px){.plans{grid-template-columns:1fr}}
+
+/* compare */
+.tablewrap{overflow-x:auto;margin-top:36px;border:1px solid var(--line);border-radius:18px;background:var(--surface)}
+table{width:100%;border-collapse:collapse;min-width:620px;font-size:.95rem}
+th,td{text-align:left;padding:14px 18px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-size:.8rem;letter-spacing:.06em;text-transform:uppercase;color:var(--fg-mute)}
+tr:last-child td{border-bottom:0}
+td.us{font-weight:600;color:var(--fg)} td.them{color:var(--fg-soft)}
+th.us{color:var(--link)}
+
+/* trust */
+.trust{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:40px}
+.t{border-left:3px solid var(--blue);padding:4px 0 4px 16px} .t h3{font-size:1.02rem} .t p{color:var(--fg-soft);margin-top:4px;font-size:.93rem}
+@media (max-width:920px){.trust{grid-template-columns:repeat(2,1fr)}} @media (max-width:520px){.trust{grid-template-columns:1fr}}
+
+/* faq */
+.faq{margin-top:32px;display:grid;gap:10px;max-width:820px}
+details{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:16px 20px}
+summary{cursor:pointer;font-weight:700;list-style:none;display:flex;justify-content:space-between;gap:12px}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";font-weight:800;color:var(--link)} details[open] summary::after{content:"–"}
+details p{color:var(--fg-soft);margin-top:10px}
+
+/* final cta */
+.final{background:radial-gradient(120% 140% at 80% 10%,#2B64F2 0%,#1E54E8 40%,#052CA0 100%);color:#fff}
+.final .wrap{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:24px;padding-block:64px}
+.final h2{font-size:clamp(1.8rem,3.4vw,2.6rem);font-weight:800;max-width:20ch} .final p{color:#D6E2FF;margin-top:10px;max-width:56ch}
+
+footer{background:var(--bg);border-top:1px solid var(--line)}
+footer .wrap{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:28px;padding-block:44px;font-size:.92rem}
+footer h4{margin:0 0 10px;font-size:.82rem;letter-spacing:.08em;text-transform:uppercase;color:var(--fg-mute)}
+footer ul{list-style:none;margin:0;padding:0;display:grid;gap:8px} footer a{color:var(--fg);text-decoration:none} footer a:hover{color:var(--link)}
+footer .legal{grid-column:1/-1;color:var(--fg-mute);font-size:.8rem;border-top:1px solid var(--line);padding-top:18px}
+.flogo{display:flex;align-items:center;gap:10px;font-weight:800} .flogo img{width:32px;height:32px;border-radius:8px}
+footer .addr{color:var(--fg-soft);margin-top:10px;user-select:all}
+@media (max-width:860px){footer .wrap{grid-template-columns:1fr 1fr}}
+
+/* hub additions */
+.nav ul a[aria-current="page"]{color:#fff;box-shadow:inset 0 -2px 0 var(--yellow)}
+.nav .acts{display:flex;gap:8px;margin-left:12px}
+.nav .btn.ghost{padding:8px 14px;font-size:.88rem}
+.menu-btn{display:none;margin-left:auto;background:transparent;border:1px solid rgba(255,255,255,.4);color:#fff;border-radius:10px;padding:8px 10px;font:inherit;font-weight:600;cursor:pointer}
+@media (max-width:1020px){.nav ul{display:none}.nav .acts .ghost{display:none}.menu-btn{display:inline-flex}.nav .acts{margin-left:8px}}
+.drawer{background:var(--blue-deep);border-top:1px solid rgba(255,255,255,.12)}
+.drawer .wrap{display:grid;grid-template-columns:repeat(2,1fr);gap:4px;padding-block:12px}
+.drawer a{color:#fff;text-decoration:none;padding:10px 8px;border-radius:8px;font-weight:600} .drawer a:hover{background:rgba(255,255,255,.08)}
+.crumb{font-size:.85rem;color:#C9D6FF;margin-bottom:10px} .crumb a{color:#fff}
+.pagehero{position:relative;overflow:hidden;color:#fff;background:radial-gradient(110% 130% at 20% 10%,#2B64F2 0%,#1E54E8 40%,#052CA0 100%)}
+.pagehero .wrap{padding-block:56px 60px;position:relative}
+.pagehero h1{font-size:clamp(2rem,4.4vw,3.2rem);font-weight:800;line-height:1.06;max-width:22ch}
+.pagehero h1 em{font-style:normal;color:var(--yellow)}
+.pagehero p{color:#D6E2FF;font-size:1.1rem;max-width:60ch;margin-top:14px}
+.pagehero .ctas{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
+.grid2{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+@media (max-width:920px){.grid3,.grid4{grid-template-columns:repeat(2,1fr)}} @media (max-width:560px){.grid2,.grid3,.grid4{grid-template-columns:1fr}}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:22px;min-width:0;text-decoration:none;color:var(--fg);display:flex;flex-direction:column;gap:8px}
+a.card{transition:transform .15s ease,border-color .15s ease} a.card:hover{transform:translateY(-2px);border-color:var(--blue)}
+a.card:focus-visible{outline:3px solid var(--yellow);outline-offset:2px}
+.card h3{font-size:1.1rem} .card p{color:var(--fg-soft);font-size:.95rem}
+.card .meta{margin-top:auto;font-size:.82rem;font-weight:600;color:var(--link)}
+.ibox{width:44px;height:44px;border-radius:12px;background:color-mix(in srgb,var(--blue) 12%,transparent);color:var(--link);display:flex;align-items:center;justify-content:center;flex:none}
+.group-label{font-size:.75rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--fg-mute);margin:32px 0 12px}
+.corestrip{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:26px}
+.core{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.22);border-radius:14px;padding:14px;color:#fff}
+.core b{display:flex;align-items:center;gap:8px} .core b span{width:24px;height:24px;border-radius:50%;background:var(--yellow);color:var(--navy);display:inline-flex;align-items:center;justify-content:center;font-size:.8rem}
+.core p{color:#D6E2FF;font-size:.88rem;margin-top:6px}
+@media (max-width:820px){.corestrip{grid-template-columns:repeat(2,1fr)}}
+.bp{width:100%;border-collapse:collapse;min-width:860px;font-size:.92rem}
+.bp th{background:var(--bg-tint)} .bp td:first-child{font-weight:700}
+.pill{display:inline-block;font-size:.76rem;font-weight:700;border-radius:999px;padding:3px 9px;background:var(--bg-tint);color:var(--fg-soft);white-space:nowrap}
+.pill.r{background:var(--red-tint);color:var(--red)} .pill.a{background:var(--amber-tint);color:var(--amber)} .pill.g{background:var(--green-tint);color:var(--green)}
+.kpis2{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+.track{border-radius:20px;padding:24px;border:1px solid var(--line);background:var(--surface);display:flex;flex-direction:column;gap:12px;min-width:0}
+.track h3{font-size:1.35rem} .track dl{margin:0;display:grid;gap:10px} .track dt{font-size:.75rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--fg-mute)} .track dd{margin:2px 0 0;color:var(--fg-soft)}
+.res{display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:14px;align-items:center;background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:14px 16px}
+.res h4{margin:0;font-size:1rem} .res p{color:var(--fg-soft);font-size:.88rem}
+.res .btn{padding:9px 14px;font-size:.88rem}
+@media (max-width:560px){.res{grid-template-columns:auto minmax(0,1fr)}.res .btn{grid-column:1/-1;justify-content:center}}
+.filters{display:flex;flex-wrap:wrap;gap:8px;margin:24px 0 16px}
+.fbtn{font:inherit;font-weight:600;font-size:.86rem;border:1px solid var(--line);background:var(--surface);color:var(--fg);border-radius:999px;padding:7px 13px;cursor:pointer}
+.fbtn[aria-pressed="true"]{background:var(--navy);color:#fff;border-color:var(--navy)}
+:root[data-theme="dark"] .fbtn[aria-pressed="true"]{background:var(--yellow);color:var(--navy)}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .fbtn[aria-pressed="true"]{background:var(--yellow);color:var(--navy)}}
+.vids{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+@media (max-width:920px){.vids{grid-template-columns:repeat(2,1fr)}} @media (max-width:560px){.vids{grid-template-columns:1fr}}
+.vcard{text-decoration:none;color:var(--fg);display:flex;flex-direction:column;gap:10px;min-width:0}
+.thumb{aspect-ratio:16/9;max-width:100%;border-radius:14px;position:relative;overflow:hidden;background:radial-gradient(120% 140% at 25% 15%,#2B64F2,#052CA0);display:flex;align-items:flex-end;padding:14px;color:#fff}
+.thumb b{font-size:1.05rem;line-height:1.2;max-width:85%;text-wrap:balance} .thumb .play{position:absolute;right:14px;top:14px;width:42px;height:42px;border-radius:50%;background:var(--yellow);display:flex;align-items:center;justify-content:center}
+.thumb .len{position:absolute;left:14px;top:14px;font-size:.72rem;font-weight:700;background:rgba(5,20,80,.55);border-radius:6px;padding:3px 7px}
+.vcard span.v{font-size:.92rem;font-weight:600}
+.shorts{display:grid;grid-template-columns:repeat(2,minmax(0,300px));gap:22px}
+@media (max-width:560px){.shorts{grid-template-columns:1fr}}
+.shorts video{width:100%;max-width:100%;border-radius:18px;background:#000;aspect-ratio:9/16}
+.learn{display:grid;grid-template-columns:240px minmax(0,1fr);gap:36px;align-items:start}
+.toc{position:sticky;top:calc(env(safe-area-inset-top,0px) + 76px);display:grid;gap:4px;font-size:.92rem}
+.toc a{color:var(--fg-soft);text-decoration:none;padding:7px 10px;border-radius:8px} .toc a:hover{background:var(--bg-tint);color:var(--fg)}
+@media (max-width:860px){.learn{grid-template-columns:1fr}.toc{position:static;display:flex;flex-wrap:wrap}}
+.doc h2{font-size:1.7rem;font-weight:800;margin-top:44px;scroll-margin-top:90px} .doc h2:first-child{margin-top:0}
+.doc h3{font-size:1.15rem;margin-top:24px} .doc p,.doc li{color:var(--fg-soft);max-width:68ch}
+.doc p{margin-top:10px} .doc ol,.doc ul{padding-left:20px;margin:10px 0 0;display:grid;gap:8px}
+.doc code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.86em;background:var(--bg-tint);padding:2px 6px;border-radius:6px;color:var(--fg)}
+.callout{border-radius:14px;padding:14px 16px;background:var(--bg-tint);border:1px solid var(--line);margin-top:16px;color:var(--fg-soft);max-width:72ch}
+.callout b{color:var(--fg)}
+.path{display:grid;gap:10px}
+.unit{display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:12px;align-items:center;padding:12px 14px;border:1px solid var(--line);border-radius:14px;background:var(--surface)}
+.unit .n{width:30px;height:30px;border-radius:50%;background:var(--blue);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:.85rem}
+.unit .t{font-size:.8rem;color:var(--fg-mute);font-variant-numeric:tabular-nums;white-space:nowrap}
+.unit input{width:18px;height:18px;accent-color:var(--blue)}
+.progress{height:8px;border-radius:99px;background:var(--bg-tint);overflow:hidden;margin-top:8px} .progress i{display:block;height:100%;background:var(--green);width:0;transition:width .3s}
+.calc{display:grid;grid-template-columns:repeat(3,1fr) 1.2fr;gap:12px;align-items:end;margin-top:16px;max-width:760px}
+.calc label{display:grid;gap:6px;font-size:.82rem;font-weight:700;color:var(--fg-mute)}
+.calc input{font:inherit;font-size:1.05rem;padding:10px 12px;border-radius:10px;border:1px solid var(--line);background:var(--surface);color:var(--fg);width:100%}
+.calc input:focus-visible{outline:3px solid var(--yellow);outline-offset:1px}
+.calc .out{background:var(--navy);color:#fff;border-radius:14px;padding:12px 16px}
+.calc .out b{font-size:2rem;display:block;font-variant-numeric:tabular-nums;color:var(--yellow)}
+@media (max-width:640px){.calc{grid-template-columns:repeat(3,1fr)}.calc .out{grid-column:1/-1}}
+.gloss{display:grid;grid-template-columns:200px minmax(0,1fr);gap:0;border:1px solid var(--line);border-radius:14px;overflow:hidden;margin-top:14px;max-width:820px}
+.gloss dt,.gloss dd{padding:12px 14px;border-bottom:1px solid var(--line);margin:0} .gloss dt{font-weight:700;background:var(--bg-tint)} .gloss dd{color:var(--fg-soft)}
+@media (max-width:560px){.gloss{grid-template-columns:1fr}.gloss dd{border-bottom-width:2px}}
+.rating{display:flex;align-items:center;gap:18px;flex-wrap:wrap}
+.rating .big{font-size:4rem;font-weight:800;line-height:1;font-variant-numeric:tabular-nums}
+.stars{display:flex;gap:4px;color:#F5B400}
+.copy{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.copy code{font-size:1rem;background:var(--bg-tint);padding:8px 12px;border-radius:10px;user-select:all;color:var(--fg)}
+.copy button{font:inherit;font-weight:600;border:1px solid var(--line);background:var(--surface);color:var(--fg);border-radius:10px;padding:8px 12px;cursor:pointer}
+.view{animation:fade .25s ease both} @keyframes fade{from{opacity:.4}to{opacity:1}}
+.stack{display:grid;gap:12px}
+</style>
+</head>
+<body>
+<header class="nav"><div class="wrap">
+  <a class="logo" href="#home"><img src="data:image/png;base64,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" alt=""><span>NPS Survey CX OS<small>by SalesHub</small></span></a>
+  <ul id="navlinks">
+    <li><a href="#platform">Platform</a></li><li><a href="#industries">Industries</a></li><li><a href="#public-sector">Public Sector</a></li>
+    <li><a href="#learn">Learn</a></li><li><a href="#resources">Resources</a></li><li><a href="#reviews">Reviews</a></li><li><a href="#pricing">Pricing</a></li>
+  </ul>
+  <div class="acts"><a class="btn ghost" href="#demo">Book a demo</a><a class="btn primary" href="https://appexchange.salesforce.com/appxListingDetail?listingId=a0N3A00000FtRTKUA3&tab=e&utm_source=npssurveys.com&utm_medium=website&utm_campaign=cxos_site&utm_content=nav" target="_blank" rel="noopener">Free trial</a></div>
+  <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="drawer">Menu</button>
+</div>
+<div class="drawer" id="drawer" hidden><div class="wrap">
+  <a href="#platform">Platform</a><a href="#industries">Industries</a><a href="#public-sector">Public Sector</a><a href="#learn">Learn</a>
+  <a href="#resources">Resources</a><a href="#reviews">Reviews</a><a href="#pricing">Pricing</a><a href="#demo">Book a demo</a>
+</div></div></header>
+
+<main id="app"></main>
+
+<footer><div class="wrap">
+  <div><div class="flogo"><img src="data:image/png;base64,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" alt="">NPS Survey CX OS</div><p class="addr">SalesHub, LLC · 1853 Piedmont Rd, Suite 301, Marietta, GA 30066<br>1 (833) 733-2468 · Sales@saleshub.info</p></div>
+  <div><h4>Product</h4><ul><li><a href="#platform">Platform</a></li><li><a href="#pricing">Pricing</a></li><li><a href="#reviews">Reviews</a></li><li><a href="https://appexchange.salesforce.com/appxListingDetail?listingId=a0N3A00000FtRTKUA3&tab=e&utm_source=npssurveys.com&utm_medium=website&utm_campaign=cxos_site&utm_content=footer" target="_blank" rel="noopener">AppExchange listing</a></li></ul></div>
+  <div><h4>Solutions</h4><ul><li><a href="#industries">All industries</a></li><li><a href="#public-sector">Public sector</a></li><li><a href="#ind-defense">Defense</a></li><li><a href="#ind-healthcare">Healthcare</a></li></ul></div>
+  <div><h4>Learn &amp; connect</h4><ul><li><a href="#learn">Learning Center</a></li><li><a href="#resources">Resources</a></li><li><a href="https://www.youtube.com/@saleshubllc" target="_blank" rel="noopener">YouTube</a></li><li><a href="https://www.linkedin.com/company/12673581" target="_blank" rel="noopener">LinkedIn</a></li><li><a href="https://www.instagram.com/saleshub.info" target="_blank" rel="noopener">Instagram</a></li></ul></div>
+  <p class="legal">© 2026 SalesHub, LLC · UEI Y8JGEMLEF9L3 · CAGE 02S16. Salesforce and AppExchange are trademarks of Salesforce, Inc. No government endorsement implied. Product screens are illustrations with sample data.</p>
+</div></footer>
+
+<script>
+const LIST = "https://appexchange.salesforce.com/appxListingDetail?listingId=a0N3A00000FtRTKUA3&tab=e&utm_source=npssurveys.com&utm_medium=website&utm_campaign=cxos_site";
+const DEMO = "https://calendly.com/rashed-saleshub/30min";
+const IND = [{"id": "commercial", "name": "B2B, SaaS & Technology", "group": "Commercial", "icon": "chart", "line": "Measure every account moment from onboarding to renewal, and act before churn shows up in the pipeline.", "who": "CX, customer success, support and RevOps leaders", "clouds": "Sales Cloud, Service Cloud", "moments": [["Onboarding complete", "Opportunity: Closed Won + 30 days", "NPS", "How likely are you to recommend us to a colleague?", "Email", "P1 case to the CSM", "30-day nurture", "Review request", "Customer success manager", "Onboarding NPS"], ["Support case closed", "Case: Status = Closed", "CSAT", "How satisfied are you with how we resolved your case?", "Email", "Case reopened, P1 to queue lead", "Follow-up task", "Thank-you and review request", "Support manager", "CSAT by queue"], ["Quarterly check-in", "Account: every 90 days", "NPS", "How likely are you to recommend us?", "Email", "Churn-risk case to account owner", "Executive check-in task", "Reference program invite", "Account executive", "Account NPS trend"], ["Deal won or lost", "Opportunity: Closed Won or Closed Lost", "CSAT", "How would you rate your buying experience?", "Email", "Task to sales manager", "Logged for win/loss review", "Case study invite", "Sales manager", "Win/loss reasons captured"]]}, {"id": "financial", "name": "Financial Services & Insurance", "group": "Commercial", "icon": "shield", "line": "Hear clients after every claim, application and advisor meeting, with follow-up owned by the right team.", "who": "Client experience, service and advisor leadership", "clouds": "Financial Services Cloud, Service Cloud", "moments": [["Claim settled", "Case: Claim closed", "CES", "How easy was it to complete your claim?", "Email or SMS", "P1 case to claims lead", "Follow-up call task", "Review request", "Claims manager", "Effort score by claim type"], ["Account or policy opened", "Opportunity: Closed Won", "CSAT", "How satisfied are you with opening your account?", "Email", "Task to branch or team lead", "Welcome follow-up", "Referral invite", "Onboarding team", "Onboarding CSAT"], ["Advisor meeting", "Event: Meeting completed", "NPS", "How likely are you to recommend your advisor?", "Email", "Task to advisor's manager", "Advisor follow-up", "Referral invite", "Advisor", "NPS by advisor"], ["Service request resolved", "Case: Status = Closed", "CSAT", "Did we solve your request?", "SMS", "Case reopened", "Follow-up task", "Thank-you", "Service manager", "First-contact resolution"]]}, {"id": "healthcare", "name": "Healthcare & Health-tech", "group": "Commercial", "icon": "heart", "line": "Collect patient and member feedback after visits and service calls, and route every concern to the right care or service team.", "who": "Patient experience, member services and operations leaders", "clouds": "Health Cloud, Service Cloud", "moments": [["Visit or appointment completed", "Event or custom object: visit completed", "CSAT", "How satisfied were you with your visit?", "SMS or email", "P1 case to practice manager", "Follow-up call task", "Review request", "Practice manager", "Visit CSAT by location"], ["Member service call", "Case: Status = Closed", "CES", "How easy was it to get help today?", "SMS", "Case to member services lead", "Follow-up task", "Thank-you", "Member services lead", "Effort score by reason"], ["Program enrollment", "Custom object: enrollment complete", "NPS", "How likely are you to recommend this program?", "Email", "Task to program coordinator", "Check-in after 30 days", "Testimonial invite", "Program coordinator", "Program NPS"], ["Billing question resolved", "Case: billing closed", "CSAT", "Was your billing question answered?", "Email", "Case reopened", "Follow-up task", "Thank-you", "Billing supervisor", "Billing CSAT"]]}, {"id": "manufacturing", "name": "Manufacturing & Distribution", "group": "Commercial", "icon": "factory", "line": "Get account-level NPS from key customers, dealers and distributors after delivery, service and warranty work.", "who": "Service, dealer network and key-account leaders", "clouds": "Manufacturing Cloud, Sales Cloud, Field Service", "moments": [["Order delivered", "Order: Status = Delivered", "CSAT", "How satisfied are you with this delivery?", "Email", "P1 case to logistics lead", "Follow-up task", "Review request", "Logistics manager", "On-time delivery CSAT"], ["Field service visit", "Work Order: Completed", "CSAT", "How satisfied are you with today's service visit?", "SMS", "Case to service supervisor", "Follow-up call task", "Thank-you", "Service supervisor", "CSAT by technician"], ["Warranty case closed", "Case: warranty closed", "CES", "How easy was it to resolve your warranty claim?", "Email", "P1 case to quality team", "Follow-up task", "Review request", "Quality manager", "Warranty effort score"], ["Annual key-account review", "Account: every 365 days", "NPS", "How likely are you to recommend us?", "Email", "Executive escalation case", "Account plan task", "Reference invite", "Key-account manager", "Key-account NPS"]]}, {"id": "consulting", "name": "Consulting & Professional Services", "group": "Commercial", "icon": "brief", "line": "Check client health at every milestone so renewals and expansions never come as a surprise.", "who": "Delivery, client-partner and practice leaders", "clouds": "Sales Cloud, Service Cloud", "moments": [["Project kickoff", "Opportunity: Closed Won", "CSAT", "How confident are you in the project plan?", "Email", "Task to engagement lead", "Check-in task", "Thank-you", "Engagement lead", "Kickoff CSAT"], ["Milestone delivered", "Project or custom object: milestone complete", "NPS", "How likely are you to recommend our team?", "Email", "P1 case to client partner", "30-day nurture", "Reference invite", "Client partner", "Milestone NPS"], ["Project closed", "Opportunity or project: closed", "NPS", "How likely are you to work with us again?", "Email", "Executive review case", "Follow-up meeting task", "Case study invite", "Practice leader", "Project NPS"], ["Renewal 90 days out", "Contract: end date - 90 days", "NPS", "How likely are you to renew?", "Email", "Churn-risk case", "Account plan task", "Expansion conversation", "Account owner", "Renewal intent"]]}, {"id": "nonprofit", "name": "Nonprofit", "group": "Mission", "icon": "hands", "line": "Hear donors, volunteers and program participants, and turn their feedback into stronger relationships and programs.", "who": "Development, volunteer and program leaders", "clouds": "Nonprofit Cloud, Experience Cloud", "moments": [["Donation received", "Opportunity or gift: Closed Won", "CSAT", "How was your giving experience?", "Email", "Task to development lead", "Stewardship follow-up", "Ambassador invite", "Development manager", "Donor CSAT"], ["Volunteer shift completed", "Custom object: shift complete", "NPS", "How likely are you to recommend volunteering with us?", "Email or SMS", "Task to volunteer coordinator", "Check-in task", "Recruit-a-friend invite", "Volunteer coordinator", "Volunteer NPS"], ["Program completed", "Custom object: program complete", "NPS", "How likely are you to recommend this program?", "Email or QR", "Task to program manager", "30-day check-in", "Story invite", "Program manager", "Program NPS"], ["Event attended", "Campaign Member: attended", "CSAT", "How satisfied were you with the event?", "QR code", "Task to events lead", "Follow-up email", "Ambassador invite", "Events manager", "Event CSAT"]]}, {"id": "education", "name": "Education", "group": "Mission", "icon": "grad", "line": "Collect student, parent and alumni feedback at every key moment, from enrollment to graduation.", "who": "Enrollment, student services and advancement leaders", "clouds": "Education Cloud, Service Cloud, Experience Cloud", "moments": [["Application submitted", "Application or custom object: submitted", "CES", "How easy was it to apply?", "Email", "Task to admissions lead", "Follow-up email", "Ambassador invite", "Admissions manager", "Application effort score"], ["Advising session", "Event: Meeting completed", "CSAT", "How helpful was your advising session?", "Email or SMS", "Task to advising lead", "Follow-up task", "Thank-you", "Advising lead", "Advising CSAT"], ["Student service request", "Case: Status = Closed", "CSAT", "Did we solve your request?", "SMS", "Case reopened", "Follow-up task", "Thank-you", "Student services manager", "Service CSAT"], ["Course or term end", "Custom object: term complete", "NPS", "How likely are you to recommend this program?", "Email or portal", "Task to department chair", "Check-in task", "Alumni ambassador invite", "Department chair", "Program NPS"]]}, {"id": "sled", "name": "State & Local Government", "group": "Public sector", "icon": "gov", "line": "Measure every resident interaction and follow up on every low score, inside the Salesforce org the agency already runs.", "who": "311, licensing, benefits and customer experience offices", "clouds": "Public Sector Solutions, Service Cloud, Experience Cloud", "moments": [["311 request closed", "Case: 311 request closed", "CSAT", "Was your request resolved?", "SMS or email", "Follow-up case to the owning department", "Check-in within 30 days", "Credit the crew", "Department supervisor", "CSAT by service and district"], ["Permit or license issued", "Custom object or case: issued", "CES", "How easy was it to get your permit?", "Email", "Case to licensing lead", "Follow-up task", "Thank-you", "Licensing manager", "Effort score by channel"], ["Benefit case resolved", "Case: benefit determination", "CSAT", "How satisfied are you with how your case was handled?", "Email or SMS", "Case to caseworker supervisor", "Check-in task", "Thank-you", "Caseworker supervisor", "CSAT by program"], ["Counter or kiosk visit", "QR code at counter", "CSAT", "How was your visit today?", "QR code", "Case to office manager", "Follow-up task", "Thank-you", "Office manager", "Visit CSAT by office"]]}, {"id": "federal", "name": "Federal Civilian Agencies", "group": "Public sector", "icon": "flag", "line": "Run post-transaction feedback on the services people use most, with follow-up and trends by office.", "who": "Customer experience, service delivery and program offices", "clouds": "Government Cloud, Service Cloud, Experience Cloud", "moments": [["Application decided", "Case: application closed", "CSAT", "How satisfied are you with the application process?", "Email", "Case to program office lead", "Follow-up task", "Thank-you", "Program office", "Satisfaction by service"], ["Contact center interaction", "Case: Status = Closed", "CES", "How easy was it to get help?", "Email or SMS", "Case reopened", "Follow-up task", "Thank-you", "Contact center lead", "Effort score by channel"], ["Portal transaction", "Experience Cloud: transaction complete", "CSAT", "How satisfied are you with this online service?", "Web", "Task to digital service owner", "Follow-up email", "Thank-you", "Digital service owner", "Digital CSAT"], ["Field office visit", "QR code at office", "CSAT", "How was your visit today?", "QR code", "Case to office manager", "Follow-up task", "Thank-you", "Office manager", "Visit CSAT by office"]]}, {"id": "defense", "name": "Defense", "group": "Public sector", "icon": "home", "line": "Real-time feedback from service members and families between annual surveys, inside your Salesforce environment.", "who": "Installation, personnel, housing and program teams", "clouds": "Government Cloud or Government Cloud Plus Defense (subject to confirmation)", "moments": [["Housing work order closed", "Work Order or case: closed", "CSAT", "Was your repair completed to your satisfaction?", "Email or QR", "Task to housing office, 72-hour due date", "Check-in within 30 days", "Recognize the team", "Housing office", "Satisfaction by work-order type"], ["PCS and in-processing", "Custom object: in-processing complete", "CES", "How easy was your arrival process?", "Email", "Task to in-processing lead", "Follow-up task", "Recognize the team", "In-processing lead", "Arrival effort score"], ["Course or rotation completed", "Custom object: course complete", "CSAT", "How well did this training prepare you?", "Email or portal", "Training task to course manager", "Follow-up task", "Recognize instructors", "Course manager", "Training CSAT"], ["New system in use 30/60/90 days", "Schedule: go-live + 30/60/90", "Pulse", "How well does the new system support your work?", "Email", "Training task to program office", "Check-in task", "Champion invite", "Program office", "Adoption score trend"]]}];
+const I = {"check": "<circle cx=\"12\" cy=\"12\" r=\"9\"/><path d=\"M8 12l3 3 5-6\"/>", "lock": "<rect x=\"5\" y=\"11\" width=\"14\" height=\"10\" rx=\"2\"/><path d=\"M8 11V8a4 4 0 0 1 8 0v3\"/>", "chat": "<path d=\"M4 5h16v11H9l-5 4z\"/><path d=\"M8 9h8M8 12h5\"/>", "brush": "<path d=\"M14 4l6 6-8 8-6-6z\"/><path d=\"M6 12l-2 6 6-2\"/>", "bolt": "<path d=\"M13 3L5 14h6l-1 7 8-11h-6z\"/>", "route": "<circle cx=\"6\" cy=\"18\" r=\"2.5\"/><circle cx=\"18\" cy=\"6\" r=\"2.5\"/><path d=\"M8.5 18H15a3 3 0 0 0 0-6H9a3 3 0 0 1 0-6h6.5\"/>", "chart": "<path d=\"M4 20h16\"/><path d=\"M7 16v-5M12 16V7M17 16v-8\"/>", "form": "<rect x=\"5\" y=\"3\" width=\"14\" height=\"18\" rx=\"2\"/><path d=\"M9 8h6M9 12h6M9 16h3\"/>", "mail": "<rect x=\"3\" y=\"5\" width=\"18\" height=\"14\" rx=\"2\"/><path d=\"M3 7l9 6 9-6\"/>", "sms": "<rect x=\"6\" y=\"2\" width=\"12\" height=\"20\" rx=\"2.5\"/><path d=\"M10 18h4\"/>", "qr": "<rect x=\"3\" y=\"3\" width=\"7\" height=\"7\" rx=\"1\"/><rect x=\"14\" y=\"3\" width=\"7\" height=\"7\" rx=\"1\"/><rect x=\"3\" y=\"14\" width=\"7\" height=\"7\" rx=\"1\"/><path d=\"M14 14h3v3h-3zM20 14v.01M14 20h.01M17 20h4v-3\"/>", "globe": "<circle cx=\"12\" cy=\"12\" r=\"9\"/><path d=\"M3 12h18M12 3c3 3.5 3 14.5 0 18M12 3c-3 3.5-3 14.5 0 18\"/>", "portal": "<rect x=\"3\" y=\"4\" width=\"18\" height=\"14\" rx=\"2\"/><path d=\"M3 8h18M8 21h8\"/>", "shield": "<path d=\"M12 3l8 3v6c0 4.5-3.4 8.3-8 9-4.6-.7-8-4.5-8-9V6z\"/><path d=\"M8.5 12l2.5 2.5 4.5-5\"/>", "heart": "<path d=\"M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z\"/><path d=\"M8 11h2l1-2 2 4 1-2h2\"/>", "factory": "<path d=\"M3 21V10l5 3V10l5 3V7l8 4v10z\"/><path d=\"M7 17h2M12 17h2M17 17h2\"/>", "brief": "<rect x=\"3\" y=\"7\" width=\"18\" height=\"13\" rx=\"2\"/><path d=\"M9 7V5h6v2M3 12h18\"/>", "hands": "<path d=\"M12 20s-6-3.5-8-8a3 3 0 0 1 5-3l3 3 3-3a3 3 0 0 1 5 3c-2 4.5-8 8-8 8z\"/>", "grad": "<path d=\"M2 9l10-5 10 5-10 5z\"/><path d=\"M6 11v5c3 2.5 9 2.5 12 0v-5\"/>", "gov": "<path d=\"M3 21h18M4 10h16M12 3l9 5H3z\"/><path d=\"M6 10v8M10 10v8M14 10v8M18 10v8\"/>", "flag": "<path d=\"M5 21V4M5 4h11l-2 4 2 4H5\"/>", "home": "<path d=\"M3 11l9-7 9 7\"/><path d=\"M5 10v10h14V10\"/><path d=\"M10 20v-6h4v6\"/>", "doc": "<path d=\"M6 3h8l4 4v14H6z\"/><path d=\"M14 3v4h4M9 12h6M9 16h6\"/>", "play": "<circle cx=\"12\" cy=\"12\" r=\"9\"/><path d=\"M10 8.5v7l6-3.5z\"/>", "grid": "<rect x=\"3\" y=\"4\" width=\"18\" height=\"16\" rx=\"2\"/><path d=\"M3 10h18M3 15h18M9 4v16M15 4v16\"/>", "users": "<circle cx=\"9\" cy=\"8\" r=\"3.5\"/><path d=\"M2.5 20c.5-3.5 3.2-6 6.5-6s6 2.5 6.5 6\"/><path d=\"M16 4.6a3.5 3.5 0 0 1 0 6.8M18 14c2 .8 3.3 3 3.5 6\"/>"};
+const ic = (n, s=22) => `<svg width="${s}" height="${s}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${I[n]||I.chart}</svg>`;
+const star = s => `<svg width="${s}" height="${s}" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1-4.4-4.3 6.1-.9z"/></svg>`;
+const trial = (c, label="Start your 7-day free trial →", cls="primary") => `<a class="btn ${cls}" href="${LIST}&utm_content=${c}" target="_blank" rel="noopener">${label}</a>`;
+const demoBtn = (cls="ghost") => `<a class="btn ${cls}" href="#demo">Book a demo</a>`;
+const finalCTA = c => `<section class="final"><div class="wrap"><div><h2>Hear every customer. Act on every score.</h2><p>Install NPS Survey CX OS from Salesforce AppExchange. No credit card needed to install.</p></div><div style="display:flex;flex-wrap:wrap;gap:12px">${trial(c)}${demoBtn()}</div></div></section>`;
+const hero = (crumb, h1, p, extra="") => `<section class="pagehero"><div class="wrap">${crumb?`<div class="crumb">${crumb}</div>`:""}<h1>${h1}</h1><p>${p}</p>${extra}</div></section>`;
+const coreStrip = `<div class="corestrip">${[["Ask","A Salesforce event sends the right survey at the right moment."],["Record","The answer lands on the record it belongs to."],["Act","Detractors, passives and promoters each get an owned follow-up."],["See","Leaders see scores and follow-ups in real time."]].map(([k,v],i)=>`<div class="core"><b><span>${i+1}</span>${k}</b><p>${v}</p></div>`).join("")}</div>`;
+
+const RES = [
+ {t:"Capability statement", d:"One-page summary for government and enterprise buyers: capabilities, differentiators, company data.", f:"SalesHub-Capability-Statement.pdf", type:"Guide", ind:"Public sector", ic:"doc"},
+ {t:"Public sector kit", d:"Capability statement, both POVs and both offering sheets in one 5-page PDF.", f:"SalesHub-NPS-CXOS-Public-Sector-Kit.pdf", type:"Guide", ind:"Public sector", ic:"doc"},
+ {t:"POV: The service request isn't done until the resident says so", d:"For 311, CX, licensing and benefits leaders in state and local government.", f:"NPS-CXOS-POV-State-Local.pdf", type:"Point of view", ind:"Public sector", ic:"gov"},
+ {t:"POV: Readiness is measured once a year. Quality of life happens every day", d:"For installation, personnel and program leaders in defense.", f:"NPS-CXOS-POV-Defense.pdf", type:"Point of view", ind:"Public sector", ic:"home"},
+ {t:"Offering: NPS Survey CX OS for State & Local", d:"Six starter kits, the closed loop, environment and buying options.", f:"NPS-CXOS-Offering-State-Local.pdf", type:"Offering", ind:"Public sector", ic:"gov"},
+ {t:"Offering: NPS Survey CX OS for Defense", d:"Six starter kits for installations, PCS, training and new-system adoption.", f:"NPS-CXOS-Offering-Defense.pdf", type:"Offering", ind:"Public sector", ic:"home"},
+ {t:"Industry blueprints", d:"40 ready-to-configure moments across 10 industries: trigger, survey, question, channel, routing, owner and KPI.", f:"NPS-CXOS-Industry-Blueprints.csv", type:"Spreadsheet", ind:"All industries", ic:"grid"},
+ {t:"Short: A customer scored you 3/10. Now what?", d:"33-second narrated Short for service and CX teams.", f:"NPS-CXOS-Short-3outof10.mp4", type:"Video", ind:"Commercial", ic:"play"},
+ {t:"Short: Mission feedback can't wait a year", d:"35-second narrated Short for government and defense teams.", f:"NPS-CXOS-Short-Government-Defense.mp4", type:"Video", ind:"Public sector", ic:"play"}
+];
+const VIDS = [
+ {id:"kJc8utk2-mU", t:"NPS Survey CX OS: Customer Experience on Salesforce", g:"Start here", len:"Film"},
+ {id:"IYMiJXBxkQU", t:"Full Demo: Design, Send, Analyze and Act on Feedback", g:"Start here", len:"2:30"},
+ {id:"geDjsobcr28", t:"Stop Losing Customers You Already Heard From", g:"Start here", len:"1:06"},
+ {id:"Ri7SSe0cEc8", t:"From Churn to Champions", g:"Start here", len:"1:27"},
+ {id:"-rHzsvTPjb8", t:"NPS Feedback Automated in Salesforce", g:"Use cases", len:"Demo"},
+ {id:"pDW6vcCorrs", t:"Send a CSAT Survey for Every Closed-Lost Opportunity", g:"Use cases", len:"Use case"},
+ {id:"SNr9v-UOm6o", t:"Post-Win Analysis After Closing a Deal", g:"Use cases", len:"Use case"},
+ {id:"HNSLDQcUDMg", t:"Automated Surveys for High Priority Cases", g:"Use cases", len:"Use case"},
+ {id:"jEoJilXL3hU", t:"Automated Feedback for Escalated Cases", g:"Use cases", len:"Use case"},
+ {id:"vYVtYpKusUY", t:"Trigger NPS Surveys with Every New Salesforce Contact", g:"Use cases", len:"Use case"},
+ {id:"7Ek4YjYOyb8", t:"Account Periodic Check-In and Automation", g:"Use cases", len:"Use case"},
+ {id:"NbCuBef0KyM", t:"New Account Post-Onboarding Feedback", g:"Use cases", len:"Use case"},
+ {id:"52xdud2KbxU", t:"Milestone Check After a Demo or Proposal", g:"Use cases", len:"Use case"},
+ {id:"yIAZY9b5d-k", t:"Renewal Feedback After Renewing a Deal", g:"Use cases", len:"Use case"},
+ {id:"Pa5i-A2WnNQ", t:"Introducing NPS Survey 2.0", g:"Product updates", len:"Update"}
+];
+const vcard = v => `<a class="vcard" href="https://www.youtube.com/watch?v=${v.id}" target="_blank" rel="noopener"><div class="thumb"><span class="len">${v.len}</span><span class="play"><svg width="16" height="16" viewBox="0 0 24 24" fill="#0C184A"><path d="M8 5v14l11-7z"/></svg></span><b>${v.t}</b></div><span class="v">${v.t}</span></a>`;
+const resRow = r => `<div class="res"><div class="ibox">${ic(r.ic)}</div><div><h4>${r.t}</h4><p>${r.d}</p></div><a class="btn dark" href="files/${r.f}" target="_blank" rel="noopener">${r.type==="Video"?"Watch":"Open"}</a></div>`;
+
+const V = {};
+V.home = () => `
+<section class="hero"><canvas class="bokeh" aria-hidden="true"></canvas><div class="wrap">
+ <div><div class="kicker">The CX OS for Salesforce</div>
+  <h1>Every survey answer <em>becomes action</em>, inside Salesforce.</h1>
+  <p class="lead">NPS, CSAT and CES surveys that send themselves at the right moment, land on the right record, and give every unhappy customer an owner. Configured for your industry in days.</p>
+  <div class="ctas">${trial("hero")}<a class="btn ghost" href="#demo">Book a 30-minute demo</a></div>
+  <div class="chips"><span class="chip"><span style="color:#FFE443;display:inline-flex">${star(15)}</span>5.0 on Salesforce AppExchange</span><span class="chip">${ic("check",16)}100% Salesforce-native</span><span class="chip">${ic("lock",16)}Data never leaves Salesforce</span></div></div>
+ <div><div class="panel" role="img" aria-label="Product illustration of the CX Command Center with sample data">
+        <div class="ph"><img src="data:image/png;base64,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" alt=""><b>CX Command Center</b><span class="scope">All accounts · this quarter</span></div>
+        <div class="kpis">
+          <div class="kpi"><small>NPS</small><b id="nps">+42</b><em>▲ 9 this quarter</em></div>
+          <div class="kpi"><small>Detractors followed up</small><b>96%</b><em>within 5 days</em></div>
+          <div class="kpi"><small>Responses</small><b id="resp">4,812</b><em>this quarter</em></div>
+        </div>
+        <div class="trend"><svg viewBox="0 0 300 70" width="100%" height="64" preserveAspectRatio="none" aria-hidden="true"><defs><linearGradient id="ga" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#1E54E8" stop-opacity=".25"/><stop offset="1" stop-color="#1E54E8" stop-opacity="0"/></linearGradient></defs><path d="M0 52 L43 46 L86 49 L129 38 L172 41 L215 30 L258 26 L300 18 L300 70 L0 70Z" fill="url(#ga)"/><path d="M0 52 L43 46 L86 49 L129 38 L172 41 L215 30 L258 26 L300 18" fill="none" stroke="#1E54E8" stroke-width="3" stroke-linejoin="round"/><circle cx="300" cy="18" r="4.5" fill="#1E54E8"/></svg><small>Satisfaction, last 8 weeks</small></div>
+        <div class="feed" id="feed">
+          <div class="row"><span class="d" style="background:#EB5757"></span><span class="n">Acme Corp · Case 08812 closed</span><span class="a" style="color:#D64545">P1 case opened</span><span class="s">3</span></div>
+          <div class="row"><span class="d" style="background:#E9A52B"></span><span class="n">Northwind · Renewal won</span><span class="a" style="color:#B9801A">30-day nurture</span><span class="s">7</span></div>
+          <div class="row"><span class="d" style="background:#23A96A"></span><span class="n">Globex · Onboarding complete</span><span class="a" style="color:#1E9A5B">Review request sent</span><span class="s">10</span></div>
+        </div>
+      </div>
+      <div class="sample">Product illustration · sample data</div></div>
+</div></section>
+<section class="proof" aria-label="At a glance"><div class="wrap"><div><b>5.0</b> on AppExchange · 7 reviews</div><div><b>70+</b> survey templates</div><div><b>15+</b> question types</div><div><b>10</b> industry blueprints</div><div><b>0</b> integrations to maintain</div></div></section>
+<section class="band"><div class="wrap">
+ <div class="eyebrow">One platform, configured for your world</div><h2 class="h2">Pick your industry and start from a proven blueprint</h2>
+ <p class="sub">The core is the same everywhere: ask at the moment, record it on the right record, act on every score, see the trend. The moments, triggers and owners change by industry.</p>
+ <div class="grid4" style="margin-top:32px">${IND.map(x=>`<a class="card" href="#ind-${x.id}"><div class="ibox">${ic(x.icon)}</div><h3>${x.name}</h3><p>${x.line}</p><span class="meta">View blueprint →</span></a>`).join("")}<a class="card" href="#public-sector" style="background:var(--navy);color:#fff;border-color:var(--navy)"><div class="ibox" style="background:rgba(255,228,67,.18);color:#FFE443">${ic("flag")}</div><h3 style="color:#fff">Public sector</h3><p style="color:#C9D6FF">SLED, federal civilian and defense tracks, with Carahsoft buying options.</p><span class="meta" style="color:#FFE443">Explore public sector →</span></a><a class="card" href="#learn"><div class="ibox">${ic("grad")}</div><h3>Learning Center</h3><p>Role-based paths, setup guides, best practices and an NPS calculator.</p><span class="meta">Start learning →</span></a></div>
+</div></section>
+<section class="band tint"><div class="wrap">
+ <div class="eyebrow">The closed loop</div><h2 class="h2">A 3 out of 10 should open a case, not sit in a spreadsheet</h2>
+ <div class="loop">
+    <div class="lc r"><div class="score"><i style="background:var(--red)"></i>Detractor · 0 to 6</div><h3>Priority case with an owner</h3><p>A P1 case opens on the account, the owner is notified, and the loop is tracked until it is closed.</p>
+      <div class="scale" aria-hidden="true"><span class="on" style="background:var(--red)">0</span><span>3</span><span>6</span></div></div>
+    <div class="lc a"><div class="score"><i style="background:var(--amber)"></i>Passive · 7 to 8</div><h3>30-day nurture</h3><p>Passives get a structured follow-up so a lukewarm customer does not drift into a churn risk.</p>
+      <div class="scale" aria-hidden="true"><span class="on" style="background:var(--amber)">7</span><span>8</span></div></div>
+    <div class="lc g"><div class="score"><i style="background:var(--green)"></i>Promoter · 9 to 10</div><h3>Review request</h3><p>Your happiest customers are asked for a review while the moment is fresh, turning goodwill into proof.</p>
+      <div class="scale" aria-hidden="true"><span class="on" style="background:var(--green)">9</span><span>10</span></div></div>
+  </div>
+</div></section>
+<section class="band"><div class="wrap">
+ <div class="eyebrow">Watch</div><h2 class="h2">See it in 60 seconds</h2>
+ <div class="shorts" style="margin-top:28px">
+  <figure style="margin:0"><video controls preload="none" poster="files/short1.jpg" src="files/NPS-CXOS-Short-3outof10.mp4"></video><figcaption class="note">For service and CX teams · 33 s, with sound</figcaption></figure>
+  <figure style="margin:0"><video controls preload="none" poster="files/short2.jpg" src="files/NPS-CXOS-Short-Government-Defense.mp4"></video><figcaption class="note">For government and defense teams · 35 s, with sound</figcaption></figure>
+ </div>
+ <div class="vids" style="margin-top:32px">${VIDS.slice(0,3).map(vcard).join("")}</div>
+ <p style="margin-top:18px"><a href="#resources" style="font-weight:700">Browse the full video library and resources →</a></p>
+</div></section>
+${finalCTA("home_final")}`;
+
+V.platform = () => `${hero("", "The customer experience <em>operating system</em> for Salesforce", "Surveys, closed-loop follow-up and leadership dashboards, built on the records your teams already use.", `<div class="ctas">${trial("platform_hero")}${demoBtn()}</div>${coreStrip}`)}
+<section class="band"><div class="wrap"><div class="eyebrow">Features</div><h2 class="h2">Everything you need to run a feedback program</h2><div class="feat">
+    <div class="f"><div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5h16v11H9l-5 4z"/><path d="M8 9h8M8 12h5"/></svg></div><h3>Survey builder</h3><p>15+ question types, required fields and branching logic, plus 70+ ready-made templates for NPS, CSAT, CES and VOC.</p></div>
+    <div class="f"><div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 4l6 6-8 8-6-6z"/><path d="M6 12l-2 6 6-2"/></svg></div><h3>Your brand</h3><p>Colors, fonts, background image, header and footer, a branded thank-you page and a redirect when the survey ends.</p></div>
+    <div class="f"><div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13 3L5 14h6l-1 7 8-11h-6z"/></svg></div><h3>Automatic sends</h3><p>Trigger surveys on Case Closed, Opportunity Won or any milestone, with schedules, recurrence and auto-close.</p></div>
+    <div class="f"><div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="6" cy="18" r="2.5"/><circle cx="18" cy="6" r="2.5"/><path d="M8.5 18H15a3 3 0 0 0 0-6H9a3 3 0 0 1 0-6h6.5"/></svg></div><h3>Closed-loop automation</h3><p>Detractors become P1 cases, passives enter a 30-day nurture and promoters receive a review request.</p></div>
+    <div class="f"><div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20h16"/><path d="M7 16v-5M12 16V7M17 16v-8"/></svg></div><h3>CX Command Center</h3><p>Director and manager views, side-by-side comparisons and trends tied to every account and case.</p></div>
+    <div class="f"><div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="3" width="14" height="18" rx="2"/><path d="M9 8h6M9 12h6M9 16h3"/></svg></div><h3>Capture forms</h3><p>Trade show, prospect, customer and partner forms that land on the right Salesforce record.</p></div>
+  </div>
+  <div class="channels" aria-label="Channels">
+    <span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>Email</span><span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6" y="2" width="12" height="20" rx="2.5"/><path d="M10 18h4"/></svg>SMS</span><span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><path d="M14 14h3v3h-3zM20 14v.01M14 20h.01M17 20h4v-3"/></svg>QR code</span><span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3.5 3 14.5 0 18M12 3c-3 3.5-3 14.5 0 18"/></svg>Web link</span><span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M3 8h18M8 21h8"/></svg>Experience Cloud portal</span><span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>40+ email templates</span>
+  </div></div></section>
+<section class="band tint"><div class="wrap"><div class="eyebrow">Why native matters</div><h2 class="h2">One system of record for every answer</h2><div class="tablewrap"><table>
+    <thead><tr><th></th><th class="us">NPS Survey CX OS</th><th>Typical standalone survey tool</th></tr></thead>
+    <tbody>
+      <tr><td>Where responses live</td><td class="us">On the Salesforce Account, Contact, Case or Opportunity</td><td class="them">In a separate platform, synced or exported</td></tr>
+      <tr><td>Integrations to maintain</td><td class="us">None, it runs inside Salesforce</td><td class="them">Connector or API sync</td></tr>
+      <tr><td>Follow-up on low scores</td><td class="us">P1 case with an owner, created automatically</td><td class="them">Alert or report someone has to act on</td></tr>
+      <tr><td>Data location</td><td class="us">Never leaves your Salesforce org</td><td class="them">Copied to the vendor's servers</td></tr>
+      <tr><td>Pricing</td><td class="us">Per org, from $3,500 a year</td><td class="them">Often per user or per response</td></tr>
+    </tbody>
+  </table></div>
+  <p class="note">The AppExchange listing describes NPS Survey CX OS as 95% less than Qualtrics.</p></div></section>
+<section class="band"><div class="wrap"><div class="eyebrow">Trust</div><h2 class="h2">Inside the platform your security team already approved</h2><div class="trust">
+    <div class="t"><h3>100% Salesforce-native</h3><p>Installed from AppExchange as a managed package in your org.</p></div>
+    <div class="t"><h3>Your data stays put</h3><p>Survey responses are stored in your Salesforce org and never leave it.</p></div>
+    <div class="t"><h3>Your permissions</h3><p>Access follows the Salesforce profiles, roles and sharing rules you already manage.</p></div>
+    <div class="t"><h3>Documentation on request</h3><p>Security and accessibility details for your review team, from Sales@saleshub.info.</p></div>
+  </div></div></section>
+${finalCTA("platform_final")}`;
+
+V.industries = () => `${hero("", "Same core. <em>Your industry's moments.</em>", "Ten ready-to-configure blueprints. Each one maps the moments to measure, the Salesforce trigger, the survey, and who acts on every score.", `<div class="ctas"><a class="btn primary" href="files/NPS-CXOS-Industry-Blueprints.csv" target="_blank" rel="noopener">Get the blueprints (CSV)</a>${demoBtn()}</div>${coreStrip}`)}
+<section class="band"><div class="wrap">${["Commercial","Mission","Public sector"].map(g=>`<div class="group-label">${g==="Mission"?"Nonprofit & education":g}</div><div class="grid3">${IND.filter(x=>x.group===g).map(x=>`<a class="card" href="#ind-${x.id}"><div class="ibox">${ic(x.icon)}</div><h3>${x.name}</h3><p>${x.line}</p><span class="meta">${x.moments.length} moments · View blueprint →</span></a>`).join("")}</div>`).join("")}</div></section>
+${finalCTA("industries_final")}`;
+
+V.industry = id => { const x = IND.find(i=>i.id===id); if(!x) return V.industries(); const pub = x.group==="Public sector";
+ return `${hero(`<a href="#industries">Industries</a> / ${x.name}`, `NPS Survey CX OS for <em>${x.name}</em>`, x.line, `<div class="ctas">${trial("ind_"+x.id)}${demoBtn()}</div>${coreStrip}`)}
+ <section class="band"><div class="wrap">
+  <div class="grid3"><div class="card"><h3>Who it's for</h3><p>${x.who}</p></div><div class="card"><h3>Works with</h3><p>${x.clouds}</p></div><div class="card"><h3>Start with</h3><p>A 90-day pilot on one moment, with response rate, follow-up time and score trend agreed up front.</p></div></div>
+  <div class="eyebrow" style="margin-top:44px">The blueprint</div><h2 class="h2">${x.moments.length} moments to measure, and what happens after each answer</h2>
+  <div class="tablewrap"><table class="bp"><thead><tr><th>Moment</th><th>Salesforce trigger</th><th>Survey</th><th>Key question</th><th>Channel</th><th>After the answer</th><th>Owner</th></tr></thead><tbody>
+  ${x.moments.map(m=>`<tr><td>${m[0]}</td><td>${m[1]}</td><td><span class="pill">${m[2]}</span></td><td>${m[3]}</td><td>${m[4]}</td><td><div class="stack" style="gap:6px"><span class="pill r">Detractor: ${m[5]}</span><span class="pill a">Passive: ${m[6]}</span><span class="pill g">Promoter: ${m[7]}</span></div></td><td>${m[8]}</td></tr>`).join("")}
+  </tbody></table></div>
+  <h3 style="margin-top:28px;font-size:1.15rem">KPIs leaders track</h3><div class="kpis2">${x.moments.map(m=>`<span class="pill">${m[9]}</span>`).join("")}</div>
+  ${pub?`<p class="note">Government buyers: available through Carahsoft. Deployment details are confirmed with your security team. No government endorsement implied.</p>`:""}
+  <div style="display:flex;flex-wrap:wrap;gap:10px;margin-top:26px"><a class="btn dark" href="files/NPS-CXOS-Industry-Blueprints.csv" target="_blank" rel="noopener">Open the blueprints (CSV)</a>${pub?`<a class="btn dark" href="#public-sector">Public sector resources</a>`:""}</div>
+ </div></section>${finalCTA("ind_final_"+x.id)}`; };
+
+V["public-sector"] = () => `${hero("", "Public sector CX, <em>inside Salesforce</em>", "Three tracks with their own buyers, moments and buying paths: state and local government, federal civilian agencies, and defense.", `<div class="ctas"><a class="btn primary" href="${DEMO}" target="_blank" rel="noopener">Request a briefing</a><a class="btn ghost" href="files/SalesHub-NPS-CXOS-Public-Sector-Kit.pdf" target="_blank" rel="noopener">Get the public sector kit</a></div>`)}
+<section class="band"><div class="wrap"><div class="grid3">
+ <div class="track"><div class="ibox">${ic("gov")}</div><h3>State & local (SLED)</h3><dl><dt>Who</dt><dd>311, licensing, benefits and state CX offices; education and public health</dd><dt>Moments</dt><dd>Request closed, permit issued, benefit decided, counter visit</dd><dt>How to buy</dt><dd>AppExchange, or Carahsoft cooperative contracts</dd></dl><a class="btn dark" href="#ind-sled">View SLED blueprint</a></div>
+ <div class="track"><div class="ibox">${ic("flag")}</div><h3>Federal civilian</h3><dl><dt>Who</dt><dd>Customer experience, service delivery and program offices</dd><dt>Moments</dt><dd>Application decided, contact center, portal transaction, office visit</dd><dt>How to buy</dt><dd>Carahsoft federal contract vehicles</dd></dl><a class="btn dark" href="#ind-federal">View federal blueprint</a></div>
+ <div class="track"><div class="ibox">${ic("home")}</div><h3>Defense</h3><dl><dt>Who</dt><dd>Installation, personnel, housing and program teams across the services</dd><dt>Moments</dt><dd>Housing work order, PCS, course completion, new-system adoption</dd><dt>How to buy</dt><dd>Carahsoft, or within a Salesforce partner's task order</dd></dl><a class="btn dark" href="#ind-defense">View defense blueprint</a></div>
+</div>
+<div class="eyebrow" style="margin-top:56px">Downloads</div><h2 class="h2">Everything your evaluation team asks for</h2>
+<div class="stack" style="margin-top:22px">${RES.filter(r=>r.ind==="Public sector").map(resRow).join("")}</div>
+<div class="grid3" style="margin-top:28px"><div class="card"><h3>Company data</h3><p>SalesHub, LLC · Marietta, Georgia · founded 2018</p></div><div class="card"><h3>Registration</h3><p>UEI Y8JGEMLEF9L3 · CAGE 02S16</p></div><div class="card"><h3>NAICS</h3><p>541511 · 541512 · 541611</p></div></div><p class="note">No government endorsement implied. Security and accessibility documentation is available on request from Sales@saleshub.info.</p>
+</div></section>${finalCTA("ps_final")}`;
+
+V.resources = () => `${hero("", "Resources, videos and <em>downloads</em>", "Guides, points of view, offering sheets, the industry blueprints workbook and every video in one place.", "")}
+<section class="band"><div class="wrap">
+ <div class="filters" role="group" aria-label="Filter resources" id="rf">${["All","Guide","Point of view","Offering","Spreadsheet","Video"].map((t,i)=>`<button class="fbtn" aria-pressed="${i===0}" data-f="${t}">${t}</button>`).join("")}</div>
+ <div class="stack" id="rlist">${RES.map(resRow).join("")}</div>
+ <div class="eyebrow" style="margin-top:56px">Video library</div><h2 class="h2">Watch on YouTube</h2>
+ ${["Start here","Use cases","Product updates"].map(g=>`<div class="group-label">${g}</div><div class="vids">${VIDS.filter(v=>v.g===g).map(vcard).join("")}</div>`).join("")}
+ <div class="eyebrow" style="margin-top:56px">Follow</div><h2 class="h2">Join the community</h2>
+ <div class="grid3" style="margin-top:22px">
+  <a class="card" href="https://www.youtube.com/@saleshubllc" target="_blank" rel="noopener"><div class="ibox">${ic("play")}</div><h3>YouTube</h3><p>Daily Shorts, demos and the 60-second feature series.</p><span class="meta">Subscribe →</span></a>
+  <a class="card" href="https://www.linkedin.com/company/12673581" target="_blank" rel="noopener"><div class="ibox">${ic("users")}</div><h3>LinkedIn</h3><p>CX program ideas for Salesforce admins, service and CX leaders.</p><span class="meta">Follow →</span></a>
+  <a class="card" href="https://www.instagram.com/saleshub.info" target="_blank" rel="noopener"><div class="ibox">${ic("chat")}</div><h3>Instagram</h3><p>Quick tips and product moments.</p><span class="meta">Follow →</span></a>
+ </div>
+</div></section>${finalCTA("res_final")}`;
+
+V.reviews = () => `${hero("", "Rated <em>5.0</em> on Salesforce AppExchange", "Seven reviews from Salesforce customers, published on the AppExchange listing.", `<div class="ctas"><a class="btn primary" href="${LIST}&utm_content=reviews&tab=r" target="_blank" rel="noopener">Read the reviews on AppExchange</a>${demoBtn()}</div>`)}
+<section class="band"><div class="wrap">
+ <div class="rating"><span class="big">5.0</span><div><div class="stars">${star(26).repeat(5)}</div><p class="sub" style="margin-top:6px">Average of 7 reviews on Salesforce AppExchange</p></div></div>
+ <div class="grid2" style="margin-top:36px">
+  <div class="card"><h3>Using NPS Survey CX OS?</h3><p>A review on AppExchange helps other Salesforce teams decide. It takes about two minutes.</p><a class="btn dark" style="align-self:flex-start;margin-top:8px" href="${LIST}&utm_content=leave_review&tab=r" target="_blank" rel="noopener">Write a review</a></div>
+  <div class="card"><h3>Customer stories</h3><p>We publish stories only with each customer's written approval. Want to be featured, named or anonymized? Tell us at Sales@saleshub.info.</p></div>
+ </div>
+ <div class="eyebrow" style="margin-top:56px">What a story covers</div><h2 class="h2">How we tell customer stories</h2>
+ <div class="grid4" style="margin-top:22px">${[["The challenge","What wasn't working, in the customer's words."],["The setup","The moment they measured first and how it was configured."],["The results","Three measures: response rate, follow-up time, score trend."],["What's next","Where they are taking the program."]].map(([a,b])=>`<div class="card"><h3>${a}</h3><p>${b}</p></div>`).join("")}</div>
+</div></section>${finalCTA("reviews_final")}`;
+
+V.pricing = () => `${hero("", "Per-org pricing, <em>start free</em>", "Every edition starts with a 7-day free trial on Salesforce AppExchange. No credit card needed to install. Nonprofit discounts are available.", "")}
+<section class="band"><div class="wrap"><div class="plans">
+    <div class="plan"><div class="tagline">Start closing the loop</div><h3>CX Lite</h3><div class="price">$3,500<small> /year</small></div><p>For teams launching NPS and CSAT inside Salesforce with closed-loop follow-up.</p><a class="btn dark" href="https://appexchange.salesforce.com/appxListingDetail?listingId=a0N3A00000FtRTKUA3&tab=e&utm_source=npssurveys.com&utm_medium=website&utm_campaign=cxos_site&utm_content=price_lite" target="_blank" rel="noopener">Try CX Lite free</a></div>
+    <div class="plan pop"><div class="tagline">Most chosen</div><h3>CX Pro</h3><div class="price">$8,500<small> /year</small></div><p>For CX, service and success teams running surveys across channels and departments.</p><a class="btn primary" href="https://appexchange.salesforce.com/appxListingDetail?listingId=a0N3A00000FtRTKUA3&tab=e&utm_source=npssurveys.com&utm_medium=website&utm_campaign=cxos_site&utm_content=price_pro" target="_blank" rel="noopener">Try CX Pro free</a></div>
+    <div class="plan"><div class="tagline">Enterprise insight</div><h3>CX360 Insights</h3><div class="price"><small>from </small>$16,000<small> /year</small></div><p>For organizations that want the full customer experience picture across every team.</p><a class="btn dark" href="https://appexchange.salesforce.com/appxListingDetail?listingId=a0N3A00000FtRTKUA3&tab=e&utm_source=npssurveys.com&utm_medium=website&utm_campaign=cxos_site&utm_content=price_360" target="_blank" rel="noopener">See CX360 on AppExchange</a></div>
+  </div>
+  <p class="note">Edition details and current pricing are on the AppExchange listing. Public-sector buyers can also purchase through Carahsoft.</p></div></section>${finalCTA("pricing_final")}`;
+
+V.demo = () => `${hero("", "Book a <em>30-minute</em> demo", "See your own industry's blueprint running in Salesforce, with time for your questions.", `<div class="ctas"><a class="btn primary" href="${DEMO}" target="_blank" rel="noopener">Pick a time on Calendly</a>${trial("demo_trial","Or start the free trial","ghost")}</div>`)}
+<section class="band"><div class="wrap"><div class="grid3">
+ <div class="card"><h3>What we'll cover</h3><p>Your first moment to measure, the survey, the closed-loop rules and the dashboard your leaders will use.</p></div>
+ <div class="card"><h3>Who should join</h3><p>The person who owns the customer moment, plus your Salesforce admin.</p></div>
+ <div class="card"><h3>Prefer to talk now?</h3><div class="copy"><code id="ph">1 (833) 733-2468</code><button data-copy="ph">Copy</button></div><div class="copy"><code id="em">Sales@saleshub.info</code><button data-copy="em">Copy</button></div></div>
+</div></div></section>`;
+
+V.learn = () => `${hero("", "Learning Center", "Role-based learning paths, setup guides, best practices and reference for running a world-class feedback program on Salesforce.", `<div class="ctas"><a class="btn primary" href="#learn" data-jump="start">Start the setup guide</a><a class="btn ghost" href="#learn" data-jump="paths">Choose a learning path</a></div>`)}
+<section class="band"><div class="wrap learn">
+ <nav class="toc" aria-label="Learning Center sections">${[["paths","Learning paths"],["start","Getting started"],["design","Survey design"],["loop","Closing the loop"],["admin","Admin guide"],["nps","NPS calculator"],["glossary","Glossary"]].map(([a,b])=>`<a href="#learn" data-jump="${a}">${b}</a>`).join("")}</nav>
+ <article class="doc"><h2 id="paths">Learning paths</h2>
+<p>Pick the path for your role. Tick units as you finish them; your progress is saved in this browser.</p>
+<div class="grid2" style="margin-top:18px">
+ <div class="card path"><h3>Salesforce Admin: install and configure</h3><p>From AppExchange install to your first live survey.</p>
+  <div class="progress"><i></i></div><small class="plabel note"></small>
+  <label class="unit" for="a1"><span class="n">1</span><span>Install from AppExchange into a sandbox</span><input type="checkbox" id="a1"></label>
+  <label class="unit" for="a2"><span class="n">2</span><span>Give admins and responders access</span><input type="checkbox" id="a2"></label>
+  <label class="unit" for="a3"><span class="n">3</span><span>Build a survey from a template</span><input type="checkbox" id="a3"></label>
+  <label class="unit" for="a4"><span class="n">4</span><span>Set the trigger, audience and cadence</span><input type="checkbox" id="a4"></label>
+  <label class="unit" for="a5"><span class="n">5</span><span>Map answers to fields and turn on routing</span><input type="checkbox" id="a5"></label>
+ </div>
+ <div class="card path"><h3>CX Leader: design a closed-loop program</h3><p>Choose the moments, measures and owners that matter.</p>
+  <div class="progress"><i></i></div><small class="plabel note"></small>
+  <label class="unit" for="c1"><span class="n">1</span><span>Pick your first moment with the blueprints</span><input type="checkbox" id="c1"></label>
+  <label class="unit" for="c2"><span class="n">2</span><span>Choose NPS, CSAT or CES for each moment</span><input type="checkbox" id="c2"></label>
+  <label class="unit" for="c3"><span class="n">3</span><span>Agree owners and follow-up times</span><input type="checkbox" id="c3"></label>
+  <label class="unit" for="c4"><span class="n">4</span><span>Set pilot targets in the scorecard</span><input type="checkbox" id="c4"></label>
+ </div>
+ <div class="card path"><h3>Service Manager: act on every score</h3><p>Run the daily follow-up so no detractor waits.</p>
+  <div class="progress"><i></i></div><small class="plabel note"></small>
+  <label class="unit" for="s1"><span class="n">1</span><span>Work the detractor P1 case queue</span><input type="checkbox" id="s1"></label>
+  <label class="unit" for="s2"><span class="n">2</span><span>Call back, fix, and close the loop</span><input type="checkbox" id="s2"></label>
+  <label class="unit" for="s3"><span class="n">3</span><span>Coach the team from CSAT trends</span><input type="checkbox" id="s3"></label>
+ </div>
+ <div class="card path"><h3>Executive: read the dashboard</h3><p>Know what moved and where to act.</p>
+  <div class="progress"><i></i></div><small class="plabel note"></small>
+  <label class="unit" for="e1"><span class="n">1</span><span>Read NPS, CSAT and follow-up rate together</span><input type="checkbox" id="e1"></label>
+  <label class="unit" for="e2"><span class="n">2</span><span>Compare teams, regions and services</span><input type="checkbox" id="e2"></label>
+  <label class="unit" for="e3"><span class="n">3</span><span>Set next quarter's improvement targets</span><input type="checkbox" id="e3"></label>
+ </div>
+</div>
+
+<h2 id="start">Getting started guide</h2>
+<p>This guide takes a Salesforce admin from install to a live survey. Start in a sandbox, prove the flow, then repeat in production.</p>
+<h3>1. Install from AppExchange</h3>
+<ol><li>Open the <a href="https://appexchange.salesforce.com/appxListingDetail?listingId=a0N3A00000FtRTKUA3&tab=e&utm_source=npssurveys.com&utm_medium=website&utm_campaign=cxos_site&utm_content=learn_install" target="_blank" rel="noopener">NPS Survey CX OS listing</a> and choose to try or install it.</li><li>Pick the org: a sandbox first is best practice.</li><li>Install for admins only to start, so you control who sees it before go-live.</li></ol>
+<div class="callout"><b>Tip:</b> the free trial runs 7 days, and no credit card is needed to install.</div>
+<h3>2. Give people access</h3>
+<p>Assign the package's permission sets to your admins, and to the people who will act on feedback, such as service managers and account owners. Access follows the Salesforce profiles, roles and sharing rules you already manage.</p>
+<h3>3. Build your first survey</h3>
+<ol><li>Start from one of the 70+ templates (NPS, CSAT, CES or VOC).</li><li>Keep it short: one score question, one open question.</li><li>Apply your branding: colors, fonts, header, footer and thank-you page.</li></ol>
+<h3>4. Set the trigger</h3>
+<p>Choose the Salesforce event that sends the survey, for example <code>Case: Status = Closed</code> or <code>Opportunity: Closed Won</code>. Set the audience, the schedule or recurrence, and when the survey auto-closes.</p>
+<h3>5. Map answers and turn on the loop</h3>
+<ol><li>Map the score to fields on the Account, Contact, Case or Opportunity.</li><li>Turn on routing: detractors open a P1 case, passives enter a 30-day nurture, promoters get a review request.</li><li>Send a test to yourself, check the record, then go live.</li></ol>
+
+<h2 id="design">Survey design best practices</h2>
+<ul><li><b>One moment, one survey.</b> Ask right after the moment you want to measure, while it's fresh.</li><li><b>Pick the right measure.</b> NPS for loyalty to the relationship, CSAT for a single interaction, CES for how easy something was.</li><li><b>Keep it short.</b> One rating question and one "why" question get the most responses.</li><li><b>Avoid survey fatigue.</b> Set cadence rules so the same person isn't asked too often.</li><li><b>Ask in their language and channel.</b> Use email, SMS, QR codes or a portal, whichever the person already uses.</li><li><b>Design for everyone.</b> Plain language, readable contrast and keyboard-friendly surveys.</li></ul>
+
+<h2 id="loop">Closing the loop</h2>
+<p>Collecting feedback is half the job. The value comes from what happens next, and from telling the customer you acted.</p>
+<div class="grid3" style="margin-top:14px">
+ <div class="card"><span class="pill r" style="align-self:flex-start">Detractor · 0 to 6</span><h3>Respond fast</h3><p>A P1 case with an owner. Aim to reach out within a business day, fix the issue, and record what you did.</p></div>
+ <div class="card"><span class="pill a" style="align-self:flex-start">Passive · 7 to 8</span><h3>Nurture</h3><p>A 30-day follow-up to learn what would make it a 9 or 10.</p></div>
+ <div class="card"><span class="pill g" style="align-self:flex-start">Promoter · 9 to 10</span><h3>Amplify</h3><p>Thank them, ask for a review, and invite them to be a reference.</p></div>
+</div>
+
+<h2 id="admin">Admin guide</h2>
+<h3>Where data lives</h3><p>Surveys and responses are stored in your Salesforce org and related to the Account, Contact, Case or Opportunity they came from. Nothing is copied to an outside server.</p>
+<h3>Security and sharing</h3><p>Access follows your profiles, permission sets, roles and sharing rules. Review who can see responses before go-live, especially open-text answers.</p>
+<h3>Sandboxes and releases</h3><p>Build and test in a sandbox, document your triggers and routing, then repeat the setup in production. Re-test after major Salesforce releases.</p>
+<h3>Reporting</h3><p>Use the CX Command Center and director and manager views for day-to-day work, and standard Salesforce reports and dashboards for anything custom.</p>
+<div class="callout"><b>Need help?</b> Email Sales@saleshub.info or book time with our team from the <a href="#demo">demo page</a>.</div>
+
+<h2 id="nps">NPS calculator</h2>
+<p>NPS is the percentage of promoters (9 to 10) minus the percentage of detractors (0 to 6). Passives (7 to 8) count toward the total but not the score. It ranges from −100 to +100.</p>
+<div class="calc" id="calc">
+ <label for="cp">Promoters (9–10)<input id="cp" type="number" min="0" value="62" inputmode="numeric"></label>
+ <label for="ca">Passives (7–8)<input id="ca" type="number" min="0" value="24" inputmode="numeric"></label>
+ <label for="cd">Detractors (0–6)<input id="cd" type="number" min="0" value="14" inputmode="numeric"></label>
+ <div class="out" aria-live="polite"><small>Your NPS</small><b id="cout">+48</b><small id="cdesc"></small></div>
+</div>
+<p class="note">Example values. Replace them with your own response counts.</p>
+
+<h2 id="glossary">Glossary</h2>
+<dl class="gloss">
+ <dt>NPS</dt><dd>Net Promoter Score: how likely someone is to recommend you, on a 0 to 10 scale.</dd>
+ <dt>CSAT</dt><dd>Customer Satisfaction: how satisfied someone is with one interaction.</dd>
+ <dt>CES</dt><dd>Customer Effort Score: how easy it was to get something done.</dd>
+ <dt>VOC</dt><dd>Voice of the Customer: the program that gathers and acts on all feedback.</dd>
+ <dt>Detractor</dt><dd>A 0 to 6 score. Gets a P1 case with an owner.</dd>
+ <dt>Passive</dt><dd>A 7 or 8 score. Gets a 30-day nurture.</dd>
+ <dt>Promoter</dt><dd>A 9 or 10 score. Gets a review request.</dd>
+ <dt>Closed loop</dt><dd>Following up on feedback and telling the person what changed.</dd>
+ <dt>Moment</dt><dd>The event that triggers a survey, such as a case closing.</dd>
+ <dt>Survey fatigue</dt><dd>Lower response rates when people are asked too often.</dd>
+</dl>
+</article>
+</div></section>${finalCTA("learn_final")}`;
+
+const app = document.getElementById("app");
+function route(){
+  const h = (location.hash||"#home").slice(1);
+  let html, key = h;
+  if (h.startsWith("ind-")) { html = V.industry(h.slice(4)); key = "industries"; }
+  else html = (V[h]||V.home)();
+  app.innerHTML = `<div class="view">${html}</div>`;
+  document.querySelectorAll("#navlinks a").forEach(a=>{ if(a.getAttribute("href")!=="#"+key) a.removeAttribute("aria-current"); else a.setAttribute("aria-current","page"); });
+  document.getElementById("drawer").hidden = true; document.getElementById("menuBtn").setAttribute("aria-expanded","false");
+  window.scrollTo({top:0});
+  wire();
+  document.title = h==="home" ? "NPS Survey CX OS" : "NPS Survey CX OS";
+}
+function wire(){
+  app.querySelectorAll("canvas.bokeh").forEach(bokeh);
+  const rf = app.querySelector("#rf");
+  if (rf) rf.addEventListener("click", e=>{ const b=e.target.closest(".fbtn"); if(!b) return; rf.querySelectorAll(".fbtn").forEach(x=>x.setAttribute("aria-pressed", x===b)); const f=b.dataset.f;
+    app.querySelector("#rlist").innerHTML = RES.filter(r=>f==="All"||r.type===f).map(resRow).join(""); });
+  app.querySelectorAll("[data-jump]").forEach(a=>a.addEventListener("click", e=>{ e.preventDefault(); document.getElementById(a.dataset.jump)?.scrollIntoView({behavior:"smooth"}); }));
+  app.querySelectorAll("[data-copy]").forEach(b=>b.addEventListener("click", async ()=>{ const t=document.getElementById(b.dataset.copy).textContent; try{ await navigator.clipboard.writeText(t); b.textContent="Copied"; }catch(e){ const r=document.createRange(); r.selectNodeContents(document.getElementById(b.dataset.copy)); const s=getSelection(); s.removeAllRanges(); s.addRange(r); b.textContent="Selected, press Ctrl+C"; } }));
+  // learning path progress
+  app.querySelectorAll(".unit input").forEach(cb=>{ const k="cxos_unit_"+cb.id; try{ cb.checked = localStorage.getItem(k)==="1"; }catch(e){}
+    cb.addEventListener("change", ()=>{ try{ localStorage.setItem(k, cb.checked?"1":"0"); }catch(e){} prog(); }); });
+  prog();
+  const calc = app.querySelector("#calc");
+  if (calc) { const up=()=>{ const p=+calc.querySelector("#cp").value||0, a=+calc.querySelector("#ca").value||0, d=+calc.querySelector("#cd").value||0, t=p+a+d;
+      const n = t ? Math.round((p-d)/t*100) : 0; calc.querySelector("#cout").textContent = (n>0?"+":"")+n;
+      calc.querySelector("#cdesc").textContent = t ? `${Math.round(p/t*100)}% promoters − ${Math.round(d/t*100)}% detractors, from ${t} responses` : "Enter your response counts"; };
+    calc.addEventListener("input", up); up(); }
+  const feed = app.querySelector("#feed"); if (feed) liveFeed(feed);
+}
+function prog(){ app.querySelectorAll(".path").forEach(p=>{ const all=p.querySelectorAll("input"), done=[...all].filter(x=>x.checked).length; const bar=p.querySelector(".progress i"), lbl=p.querySelector(".plabel"); if(bar) bar.style.width = (all.length? done/all.length*100:0)+"%"; if(lbl) lbl.textContent = `${done} of ${all.length} units complete`; }); }
+const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
+let feedTimer;
+function liveFeed(feed){ clearInterval(feedTimer); if(reduce) return; const resp=app.querySelector("#resp"); let n=4812,k=0;
+  const ev=[["#23A96A","Initech · Case 08830 closed","Review request sent","9","#1E9A5B"],["#EB5757","Umbrella · Case 08834 closed","P1 case opened","4","#D64545"],["#E9A52B","Stark · Check-in sent","30-day nurture","8","#B9801A"],["#23A96A","Wayne · Renewal won","Review request sent","10","#1E9A5B"]];
+  feedTimer=setInterval(()=>{ if(!document.body.contains(feed)) return clearInterval(feedTimer); const e=ev[k++%ev.length]; const r=document.createElement("div"); r.className="row new";
+   r.innerHTML=`<span class="d" style="background:${e[0]}"></span><span class="n">${e[1]}</span><span class="a" style="color:${e[4]}">${e[2]}</span><span class="s">${e[3]}</span>`;
+   feed.insertBefore(r,feed.firstChild); if(feed.children.length>3) feed.lastChild.remove(); n++; if(resp) resp.textContent=n.toLocaleString("en-US"); },3200); }
+function bokeh(c){ const x=c.getContext("2d"); let dots=[]; const r=c.getBoundingClientRect(); c.width=r.width*devicePixelRatio; c.height=r.height*devicePixelRatio;
+  dots=Array.from({length:22},(_,i)=>({x:Math.random()*c.width,y:Math.random()*c.height,r:(10+Math.random()*44)*devicePixelRatio,v:(.08+Math.random()*.18)*devicePixelRatio,h:[[110,160,255],[160,120,230],[120,230,200],[90,150,255]][i%4],a:.12+Math.random()*.22}));
+  (function draw(){ if(!document.body.contains(c)) return; x.clearRect(0,0,c.width,c.height); for(const d of dots){ const g=x.createRadialGradient(d.x,d.y,0,d.x,d.y,d.r); g.addColorStop(0,`rgba(${d.h},${d.a})`); g.addColorStop(1,`rgba(${d.h},0)`); x.fillStyle=g; x.beginPath(); x.arc(d.x,d.y,d.r,0,Math.PI*2); x.fill(); if(!reduce){ d.y-=d.v; if(d.y<-d.r) d.y=c.height+d.r; } } if(!reduce) requestAnimationFrame(draw); })(); }
+document.getElementById("menuBtn").addEventListener("click", e=>{ const d=document.getElementById("drawer"); d.hidden=!d.hidden; e.currentTarget.setAttribute("aria-expanded", String(!d.hidden)); });
+addEventListener("hashchange", route); route();
+</script>
+
+</body></html>
