@@ -189,6 +189,23 @@
 .leadwrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);gap:36px;align-items:start}
 .leadwrap .why li{margin:10px 0;color:var(--fg-soft)}
 @media (max-width:860px){.leadwrap{grid-template-columns:minmax(0,1fr)}.lgrid{grid-template-columns:minmax(0,1fr)}.leadbox{padding:20px}}
+
+/* product tour (real screens) */
+.tour{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,2fr);gap:28px;align-items:start;margin-top:32px}
+.ttabs{display:flex;flex-direction:column;gap:10px}
+.ttab{text-align:left;background:var(--surface);border:1.5px solid var(--line);border-radius:16px;padding:16px 18px;cursor:pointer;font:inherit;color:var(--fg)}
+.ttab b{display:block;font-size:1rem}.ttab span{display:block;color:var(--fg-mute);font-size:.88rem;margin-top:4px}
+.ttab[aria-selected=true]{border-color:var(--blue);box-shadow:0 10px 30px rgba(30,84,232,.15);background:linear-gradient(180deg,var(--surface),var(--bg-tint))}
+.ttab[aria-selected=true] b{color:var(--link)}
+.bframe{border-radius:16px;overflow:hidden;background:#fff;border:1px solid var(--line);box-shadow:0 30px 70px rgba(12,24,74,.18)}
+.bframe .bar{display:flex;align-items:center;gap:7px;padding:11px 14px;background:#EEF2FB;border-bottom:1px solid var(--line)}
+.bframe .bar i{width:11px;height:11px;border-radius:50%;background:#EB5757}.bframe .bar i:nth-child(2){background:#E9A52B}.bframe .bar i:nth-child(3){background:#23A96A}
+.bframe .bar span{margin-left:10px;font-size:.78rem;color:#5E6B98;font-weight:600}
+.bframe .shot{background:#F7F9FD;display:grid;place-items:center;min-height:300px}
+.bframe img{display:block;width:100%;height:auto}
+.bframe img.narrow{width:auto;max-width:100%;max-height:560px;margin:0 auto}
+.tcap{margin-top:12px;color:var(--fg-mute);font-size:.86rem}
+@media (max-width:860px){.tour{grid-template-columns:minmax(0,1fr)}.ttabs{flex-direction:row;overflow-x:auto;padding-bottom:6px}.ttab{min-width:220px}}
 </style>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
@@ -643,6 +660,8 @@ V.home = () => `
 </div>
 <div class="wrap"><div class="howsteps">${[["Ask","A Salesforce event sends the right survey at the right moment."],["Record","The answer lands on the Account, Contact, Case or Opportunity it belongs to."],["Act","Detractors, passives and promoters each get an owned follow-up."],["See","Leaders see scores and follow-ups in CX360 dashboards, in real time."]].map(([k,v],i)=>`<div class="hs"><span>${i+1}</span><h3>${k}</h3><p>${v}</p></div>`).join("")}</div></div></section>
 
+<section class="band"><div class="wrap"><div class="eyebrow">See it inside Salesforce</div><h2 class="h2">The real product, not a mock-up</h2><p class="sub">Branded surveys your customers answer in seconds, and every response on the record your team already works from.</p>${tour("home")}</div></section>
+
 <section class="band film" id="film"><div class="wrap">
  <div class="eyebrow" style="color:#FFE443">Watch</div><h2 class="h2" style="color:#fff">NPS Survey CX OS in 75 seconds</h2>
  <p class="sub" style="color:#C9D6FF">The problem, the fix, and what it looks like inside Salesforce. Sound on.</p>
@@ -764,6 +783,7 @@ V.home = () => `
 <section class="band tint" id="home-form"><div class="wrap leadwrap"><div><div class="eyebrow">Talk to us</div><h2 class="h2">See it in your Salesforce org</h2><ul class="why"><li>A walkthrough built around your industry</li><li>Migration help if you're leaving GetFeedback or Delighted</li><li>Straight answers on pricing and security review</li></ul></div>${leadForm("home","Product demo","Talk to our team","Tell us a little about you. We reply within one business day.")}</div></section>${finalCTA("home_final")}`;
 
 V.platform = () => `${hero("", "The customer experience <em>operating system</em> for Salesforce", "Surveys, closed-loop follow-up and leadership dashboards, built on the records your teams already use.", `<div class="ctas">${trial("platform_hero")}${demoBtn()}</div>${coreStrip}`)}
+<section class="band"><div class="wrap"><div class="eyebrow">Product tour</div><h2 class="h2">What your customers and your team see</h2>${tour("platform")}</div></section>
 <section class="band"><div class="wrap"><div class="eyebrow">Features</div><h2 class="h2">Everything you need to run a feedback program</h2><div class="feat">
     <div class="f"><div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5h16v11H9l-5 4z"/><path d="M8 9h8M8 12h5"/></svg></div><h3>Survey builder</h3><p>15+ question types, required fields and branching logic, plus 70+ ready-made templates for NPS, CSAT, CES and VOC.</p></div>
     <div class="f"><div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 4l6 6-8 8-6-6z"/><path d="M6 12l-2 6 6-2"/></svg></div><h3>Your brand</h3><p>Colors, fonts, background image, header and footer, a branded thank-you page and a redirect when the survey ends.</p></div>
@@ -1196,6 +1216,19 @@ function wireLead(root){ root.querySelectorAll(".lform").forEach(f=>{ if(f._w) r
   f.querySelectorAll("[required]").forEach(i=>i.addEventListener("input",()=>i.closest(".lf").classList.remove("bad")));
  }); }
 
+
+// ---------- Product tour (real product screens from a demo org) ----------
+const TOUR=[["csat-survey","Branded CSAT survey","One question at a time, on your Experience Cloud site.","Customer-facing CSAT survey on an Experience Cloud site","yourcompany.my.site.com/CSATSurvey",""],
+ ["voc-survey","Voice of Customer form","Ready-made enterprise templates you brand in minutes.","Voice of Customer survey template with customer details","yourcompany.my.site.com/VOCSurvey",""],
+ ["response-detail","Every response, on the record","Scores, answers and comments in one view, inside Salesforce.","Survey response detail showing an NPS score of 10 and each answer","NPS Survey CX OS · Survey Response","narrow"],
+ ["response-comparison","Compare responses side by side","Spot patterns across people, teams and time.","Two survey responses compared side by side","NPS Survey CX OS · Response comparison",""]];
+const tour=(id)=>`<div class="tour" data-tour="${id}"><div class="ttabs" role="tablist" aria-label="Product screens">${TOUR.map((t,i)=>`<button class="ttab" role="tab" type="button" aria-selected="${i===0}" data-i="${i}"><b>${t[1]}</b><span>${t[2]}</span></button>`).join("")}</div>
+ <div><div class="bframe"><div class="bar"><i></i><i></i><i></i><span class="turl">${TOUR[0][4]}</span></div><div class="shot"><img class="timg ${TOUR[0][5]}" src="brand/product/${TOUR[0][0]}.webp" alt="${TOUR[0][3]}" loading="lazy"></div></div>
+ <p class="tcap">Real screens from a NPS Survey CX OS demo org. Names and org details are blurred.</p></div></div>`;
+function wireTour(root){ root.querySelectorAll("[data-tour]").forEach(t=>{ if(t._w) return; t._w=1; const img=t.querySelector(".timg"), url=t.querySelector(".turl");
+  t.querySelectorAll(".ttab").forEach(b=>b.addEventListener("click",()=>{ const x=TOUR[+b.dataset.i]; t.querySelectorAll(".ttab").forEach(o=>o.setAttribute("aria-selected",String(o===b)));
+    img.src=`brand/product/${x[0]}.webp`; img.alt=x[3]; img.className="timg "+x[5]; url.textContent=x[4]; })); }); }
+
 function route(){
   const h = (location.hash||"#home").slice(1);
   let html, key = h;
@@ -1228,7 +1261,7 @@ function wire(){
     calc.addEventListener("input", up); up(); }
   const feed = app.querySelector("#feed"); if (feed) liveFeed(feed);
   const roiEl = app.querySelector("#roi"); if (roiEl) roiWire(roiEl);
-  wireLead(app);
+  wireLead(app); wireTour(app);
 }
 function prog(){ app.querySelectorAll(".path").forEach(p=>{ const all=p.querySelectorAll("input"), done=[...all].filter(x=>x.checked).length; const bar=p.querySelector(".progress i"), lbl=p.querySelector(".plabel"); if(bar) bar.style.width = (all.length? done/all.length*100:0)+"%"; if(lbl) lbl.textContent = `${done} of ${all.length} units complete`; }); }
 const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
