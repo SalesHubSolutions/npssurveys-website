@@ -1169,7 +1169,7 @@ let leadN = 0;
 const leadForm = (ctx="general", preset="Product demo", title="Talk to our team", sub="Tell us a little about you. We reply within one business day.") => { const n=++leadN;
  return `<div class="leadbox" data-ctx="${ctx}"><form class="lform" action="${W2L.action}" method="POST" target="w2l_${n}" novalidate>
   <h3>${title}</h3><p class="lsub">${sub}</p>
-  <input type="hidden" name="oid" value="${W2L.oid}"><input type="hidden" name="retURL" value="https://www.npssurveys.com/thanks.html"><input type="hidden" name="lead_source" value="npssurveys.com"><input type="hidden" name="description" value="">
+  <input type="hidden" name="oid" value="${W2L.oid}"><input type="hidden" name="retURL" value="https://www.npssurveys.com/thanks.html"><input type="hidden" name="lead_source" value="Web"><input type="hidden" name="description" value="">
   <div class="lgrid">
    <div class="lf full"><label>What can we help with?</label><div class="pills">${INTERESTS.map((x,i)=>`<input type="radio" id="i${n}_${i}" name="interest" value="${x}"${x===preset?" checked":""}><label for="i${n}_${i}">${x}</label>`).join("")}</div></div>
    <div class="lf"><label for="fn${n}">First name</label><input id="fn${n}" name="first_name" autocomplete="given-name" required><div class="err">Please add your first name.</div></div>
