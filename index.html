@@ -71,6 +71,16 @@
  #printcase{display:block!important}
 }
 #printcase{display:none}
+
+.annc{background:var(--yellow);color:var(--navy);font-weight:700;font-size:.92rem;text-align:center;padding:9px 16px}
+.annc a{color:var(--navy);text-decoration:underline;text-underline-offset:3px}
+.countdown{display:flex;gap:12px;flex-wrap:wrap;margin-top:22px}
+.countdown div{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.3);border-radius:14px;padding:12px 16px;min-width:92px;text-align:center}
+.countdown b{display:block;font-size:2rem;font-weight:800;color:#fff;font-variant-numeric:tabular-nums;line-height:1.1}
+.countdown span{font-size:.78rem;color:#D6E2FF;text-transform:uppercase;letter-spacing:.08em}
+.steps4{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:28px}
+@media (max-width:920px){.steps4{grid-template-columns:1fr 1fr}}
+@media (max-width:520px){.steps4{grid-template-columns:1fr}}
 </style>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
@@ -401,6 +411,7 @@ a.card:focus-visible{outline:3px solid var(--yellow);outline-offset:2px}
 </style>
 </head>
 <body>
+<div class="annc">GetFeedback retires December 31, 2026. <a href="#switch">Move your surveys to native Salesforce →</a></div>
 <header class="nav"><div class="wrap">
   <a class="logo" href="#home"><img src="brand/logo/nps-survey-cx-os-mark.svg" alt=""><span>NPS Survey CX OS<small>by SalesHub</small></span></a>
   <ul id="navlinks">
@@ -412,7 +423,7 @@ a.card:focus-visible{outline:3px solid var(--yellow);outline-offset:2px}
 </div>
 <div class="drawer" id="drawer" hidden><div class="wrap">
   <a href="#platform">Platform</a><a href="#industries">Industries</a><a href="#public-sector">Public Sector</a><a href="#learn">Learn</a>
-  <a href="#resources">Resources</a><a href="#reviews">Reviews</a><a href="#roi">ROI calculator</a><a href="#compare">Compare</a><a href="#pricing">Pricing</a><a href="#demo">Book a demo</a>
+  <a href="#resources">Resources</a><a href="#reviews">Reviews</a><a href="#roi">ROI calculator</a><a href="#compare">Compare</a><a href="#switch">Switch from GetFeedback</a><a href="#pricing">Pricing</a><a href="#demo">Book a demo</a>
 </div></div></header>
 
 <main id="app"></main>
@@ -420,7 +431,7 @@ a.card:focus-visible{outline:3px solid var(--yellow);outline-offset:2px}
 
 <footer><div class="wrap">
   <div><div class="flogo"><img src="brand/logo/nps-survey-cx-os-mark.svg" alt="">NPS Survey CX OS</div><p class="addr">SalesHub, LLC · 1853 Piedmont Rd, Suite 301, Marietta, GA 30066<br>1 (833) 733-2468 · support@saleshub.info</p></div>
-  <div><h4>Product</h4><ul><li><a href="#platform">Platform</a></li><li><a href="#pricing">Pricing</a></li><li><a href="#roi">ROI calculator</a></li><li><a href="#compare">Compare</a></li><li><a href="#reviews">Reviews</a></li><li><a href="https://appexchange.salesforce.com/appxListingDetail?listingId=a0N3A00000FtRTKUA3&tab=e&utm_source=npssurveys.com&utm_medium=website&utm_campaign=cxos_site&utm_content=footer" target="_blank" rel="noopener">AppExchange listing</a></li></ul></div>
+  <div><h4>Product</h4><ul><li><a href="#platform">Platform</a></li><li><a href="#pricing">Pricing</a></li><li><a href="#roi">ROI calculator</a></li><li><a href="#compare">Compare</a></li><li><a href="#switch">Switch from GetFeedback</a></li><li><a href="#reviews">Reviews</a></li><li><a href="https://appexchange.salesforce.com/appxListingDetail?listingId=a0N3A00000FtRTKUA3&tab=e&utm_source=npssurveys.com&utm_medium=website&utm_campaign=cxos_site&utm_content=footer" target="_blank" rel="noopener">AppExchange listing</a></li></ul></div>
   <div><h4>Solutions</h4><ul><li><a href="#industries">All industries</a></li><li><a href="#public-sector">Public sector</a></li><li><a href="#ind-defense">Defense</a></li><li><a href="#ind-healthcare">Healthcare</a></li></ul></div>
   <div><h4>Learn &amp; connect</h4><ul><li><a href="#learn">Learning Center</a></li><li><a href="#resources">Resources</a></li><li><a href="https://www.youtube.com/@saleshubllc" target="_blank" rel="noopener">YouTube</a></li><li><a href="https://www.linkedin.com/company/12673581" target="_blank" rel="noopener">LinkedIn</a></li><li><a href="https://www.instagram.com/saleshub.info" target="_blank" rel="noopener">Instagram</a></li></ul></div>
   <p class="legal">© 2026 SalesHub, LLC · UEI Y8JGEMLEF9L3 · CAGE 02S16. Salesforce and AppExchange are trademarks of Salesforce, Inc. No government endorsement implied. Product screens are illustrations with sample data.</p>
@@ -949,6 +960,30 @@ V.compare = () => `${hero("", "Native to Salesforce, <em>or bolted on?</em>", "H
 </div></section>
 ${finalCTA("compare_final")}`;
 
+
+// ---------- Switching from GetFeedback / Delighted ----------
+const SUNSET = new Date("2026-12-31T23:59:59-05:00");
+V.switch = () => { const d=Math.max(0,Math.ceil((SUNSET-Date.now())/864e5));
+return `${hero("", "GetFeedback retires on <em>December 31, 2026.</em> Keep your surveys in Salesforce.", "Move your NPS, CSAT and CES programs to NPS Survey CX OS: 100% native to Salesforce, per-org pricing, live in days. Coming from Delighted? Same path.", `<div class="ctas">${trial("switch_hero","Start your 7-day free trial →")}<a class="btn ghost" href="${DEMO}" target="_blank" rel="noopener">Book a 30-minute switch call</a></div><div class="countdown" aria-label="Days until GetFeedback Direct sunsets"><div><b>${d}</b><span>days left</span></div><div><b>Dec 31</b><span>sunset date</span></div></div>`)}
+<section class="band"><div class="wrap">
+ <div class="eyebrow">Why teams are moving now</div><h2 class="h2">Don't let your feedback program go dark in January</h2>
+ <div class="grid3" style="margin-top:28px">
+  <div class="card"><div class="ibox">${ic("lock")}</div><h3>Stay native to Salesforce</h3><p>Responses, follow-ups and dashboards live on your Accounts, Contacts, Cases and Opportunities. No new vendor cloud to review.</p></div>
+  <div class="card"><div class="ibox">${ic("route")}</div><h3>Keep closing the loop</h3><p>Low scores still open a case with an owner and a due date. Passives get a nurture, promoters get a review request.</p></div>
+  <div class="card"><div class="ibox">${ic("chart")}</div><h3>One price for the org</h3><p>From $3,500 a year per org, not per user, with a 7-day free trial on AppExchange.</p></div>
+ </div>
+</div></section>
+<section class="band tint"><div class="wrap">
+ <div class="eyebrow">Your switch plan</div><h2 class="h2">Four steps, well before December 31</h2>
+ <div class="steps4">${[["1","Export","Export your survey definitions and response history from your current tool while you still have access."],["2","Install","Install NPS Survey CX OS from AppExchange into a sandbox or production org. The 7-day trial is free."],["3","Rebuild","Start from 70+ ready-made forms and your industry blueprint, then set triggers on the same Salesforce events."],["4","Go live","Turn on closed-loop follow-up, check CX360 dashboards and retire the old tool before its end date."]].map(([n,t,p])=>`<div class="card"><div class="eyebrow">Step ${n}</div><h3>${t}</h3><p>${p}</p></div>`).join("")}</div>
+ <p class="note">GetFeedback Direct's sunset date of December 31, 2026 and Delighted's shutdown on June 30, 2026 are as reported by <a href="https://www.salesforceben.com/getfeedback-and-delighted-to-be-retired-in-2026-what-salesforce-users-need-to-know/" target="_blank" rel="noopener">Salesforce Ben</a> and the <a href="https://help.delighted.com/article/840-delighted-sunset-faq" target="_blank" rel="noopener">Delighted sunset FAQ</a>. Confirm your own contract dates with your vendor. GetFeedback and Delighted are trademarks of their respective owners; SalesHub is not affiliated with them.</p>
+</div></section>
+<section class="band"><div class="wrap roiteaser">
+ <div><div class="eyebrow">Need sign-off?</div><h2 class="h2">Bring a business case to your budget meeting</h2><p class="sub">Put in your accounts, revenue and churn and get a one-page case you can email to finance.</p><div class="ctas" style="margin-top:22px"><a class="btn dark" href="#roi">Build my business case →</a><a class="btn line" href="#compare">Native vs. bolt-on</a></div></div>
+ <div class="mini"><div class="eyebrow">What carries over</div><dl class="kv" style="border:0;margin-top:6px;padding-top:6px"><dt>NPS, CSAT, CES surveys</dt><dd>Yes</dd><dt>Salesforce-triggered sends</dt><dd>Yes</dd><dt>Closed-loop cases and tasks</dt><dd>Yes</dd><dt>Email, QR, Experience Cloud</dt><dd>Yes</dd><dt>Response history</dt><dd>Plan it on your switch call</dd></dl></div>
+</div></section>
+${finalCTA("switch_final")}`; };
+
 function route(){
   const h = (location.hash||"#home").slice(1);
   let html, key = h;
@@ -959,7 +994,7 @@ function route(){
   document.getElementById("drawer").hidden = true; document.getElementById("menuBtn").setAttribute("aria-expanded","false");
   window.scrollTo({top:0});
   wire();
-  const TITLES={home:"NPS Survey CX OS | Customer Experience Operating System for Salesforce",platform:"Platform | NPS Survey CX OS",industries:"Industry blueprints | NPS Survey CX OS","public-sector":"Public sector | NPS Survey CX OS",learn:"Learning Center | NPS Survey CX OS",resources:"Resources | NPS Survey CX OS",reviews:"Reviews | NPS Survey CX OS",pricing:"Pricing | NPS Survey CX OS",demo:"Book a demo | NPS Survey CX OS",roi:"ROI calculator and business case | NPS Survey CX OS",compare:"Native vs. bolt-on survey tools | NPS Survey CX OS"};
+  const TITLES={home:"NPS Survey CX OS | Customer Experience Operating System for Salesforce",platform:"Platform | NPS Survey CX OS",industries:"Industry blueprints | NPS Survey CX OS","public-sector":"Public sector | NPS Survey CX OS",learn:"Learning Center | NPS Survey CX OS",resources:"Resources | NPS Survey CX OS",reviews:"Reviews | NPS Survey CX OS",pricing:"Pricing | NPS Survey CX OS",demo:"Book a demo | NPS Survey CX OS",roi:"ROI calculator and business case | NPS Survey CX OS",compare:"Native vs. bolt-on survey tools | NPS Survey CX OS",switch:"Switching from GetFeedback or Delighted | NPS Survey CX OS"};
   document.title = TITLES[key] || TITLES.home;
 }
 function wire(){
