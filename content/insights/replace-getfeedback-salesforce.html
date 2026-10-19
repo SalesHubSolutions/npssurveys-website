@@ -1,0 +1,63 @@
+<!--META
+{"slug":"replace-getfeedback-salesforce","title":"How to replace GetFeedback before December 31, 2026: a checklist for Salesforce teams","description":"GetFeedback Direct shuts down on December 31, 2026. Here is a week-by-week plan to move your NPS, CSAT and CES surveys without losing history or follow-up.","date":"2026-10-19","author":"SalesHub","tags":["Switching","Salesforce admins"],"read":"7 min","cta":"switch"}
+META-->
+<p><strong>GetFeedback Direct is scheduled to shut down on December 31, 2026.</strong> Its owner is pointing customers to SurveyMonkey Enterprise. If your team sends surveys from Salesforce today, you have about ten weeks to pick a replacement, rebuild your surveys and switch over without a gap in feedback. Delighted, another popular NPS tool, already shut down on June 30, 2026 and deleted customer data after its end date. Don't leave exporting to the last week.</p>
+
+<p>This checklist is written for Salesforce admins and CX leads who own the move. It works whichever tool you choose.</p>
+
+<h2>1. Inventory every survey you run (this week)</h2>
+<p>Before you compare tools, write down what you actually have. For each survey, capture:</p>
+<div class="tw"><table>
+<tr><th>Field</th><th>Example</th></tr>
+<tr><td>Survey name and type</td><td>Support CSAT (CSAT)</td></tr>
+<tr><td>Salesforce trigger</td><td>Case: Status = Closed</td></tr>
+<tr><td>Channel</td><td>Email, one hour after close</td></tr>
+<tr><td>Questions and scales</td><td>"How satisfied are you…" 1–5, plus a comment box</td></tr>
+<tr><td>Where answers are written</td><td>Custom object linked to Case and Contact</td></tr>
+<tr><td>What happens on a low score</td><td>Task to the queue lead</td></tr>
+<tr><td>Reports and dashboards that use it</td><td>"CSAT by queue" dashboard</td></tr>
+<tr><td>Owner</td><td>Support operations manager</td></tr>
+</table></div>
+<p>Most teams find a few surveys nobody uses. Retire those now rather than rebuild them.</p>
+
+<h2>2. Export your data while you still have access</h2>
+<p>Export survey definitions, response history and any contact-level data you're allowed to keep. Check your contract for the exact access end date and export options, and keep the files somewhere your security team approves. Decide now whether old responses must live in Salesforce, so trends continue, or can stay archived as files.</p>
+
+<h2>3. Decide what the replacement must do</h2>
+<p>Use these criteria rather than a feature checklist:</p>
+<ul>
+<li><strong>Where the data lives.</strong> Does each answer land on the Account, Contact, Case or Opportunity, inside your org? Or in another vendor's cloud, synced through a connector?</li>
+<li><strong>Follow-up.</strong> Does a low score automatically create a case or task with an owner and a due date, or does someone have to notice it?</li>
+<li><strong>Security review.</strong> A new external vendor usually means a new data-processing review. A native app that keeps data in Salesforce is usually a shorter conversation.</li>
+<li><strong>Time to first survey.</strong> Can you rebuild your top survey in a sandbox in a day?</li>
+<li><strong>Pricing model.</strong> Per user, per response, or per org? Model next year's cost, not just this one.</li>
+<li><strong>Proof.</strong> Read AppExchange reviews from teams like yours.</li>
+</ul>
+
+<h2>4. Rebuild in a sandbox (weeks 2–5)</h2>
+<ol>
+<li>Install the new tool in a sandbox.</li>
+<li>Rebuild your highest-volume survey first, usually case-close CSAT or relationship NPS.</li>
+<li>Recreate the trigger on the same Salesforce event, and map answers to the same fields so existing reports keep working.</li>
+<li>Set the follow-up rules: detractors (0–6) open a case with an owner, passives (7–8) get a nurture, promoters (9–10) get a review or referral ask.</li>
+<li>Test with internal users, then a small group of real customers.</li>
+</ol>
+
+<h2>5. Run both in parallel, then cut over (weeks 6–9)</h2>
+<p>Go live in production for one survey and watch response rates and follow-up for a week. Then move the rest. Keep the old tool read-only until your final export is done.</p>
+
+<h2>A working timeline to December 31</h2>
+<div class="tw"><table>
+<tr><th>By</th><th>Milestone</th></tr>
+<tr><td>Oct 31</td><td>Survey inventory done; first export taken</td></tr>
+<tr><td>Nov 14</td><td>Replacement chosen; installed in a sandbox</td></tr>
+<tr><td>Nov 26</td><td>Top two surveys rebuilt and tested</td></tr>
+<tr><td>Dec 8</td><td>First survey live in production</td></tr>
+<tr><td>Dec 15</td><td>All surveys live; old tool read-only</td></tr>
+<tr><td>Dec 22</td><td>Final export archived; old tool retired</td></tr>
+</table></div>
+
+<h2>Where NPS Survey CX OS fits</h2>
+<p>NPS Survey CX OS by SalesHub is a Salesforce-native NPS, CSAT and CES app on AppExchange. Surveys are sent from Salesforce events, answers are written to your records, and low scores open an owned case automatically. It has 70+ ready-made forms and industry blueprints to rebuild from, and it's priced per org: CX Lite $3,500, CX Pro $8,500 and CX360 Insights from $16,000 a year. Every edition has a 7-day free trial. Rated 5.0 on AppExchange.</p>
+{{CTA}}
+<p class="src">Sources: <a href="https://www.salesforceben.com/getfeedback-and-delighted-to-be-retired-in-2026-what-salesforce-users-need-to-know/" target="_blank" rel="noopener">Salesforce Ben, "GetFeedback and Delighted to be retired in 2026" (January 30, 2026)</a>; <a href="https://help.delighted.com/article/840-delighted-sunset-faq" target="_blank" rel="noopener">Delighted sunset FAQ</a>. Confirm your own dates with your vendor. GetFeedback, SurveyMonkey and Delighted are trademarks of their respective owners; SalesHub is not affiliated with them.</p>

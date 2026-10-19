@@ -81,6 +81,8 @@
 .steps4{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:28px}
 @media (max-width:920px){.steps4{grid-template-columns:1fr 1fr}}
 @media (max-width:520px){.steps4{grid-template-columns:1fr}}
+.flagline{display:inline-flex;align-items:center;gap:12px;margin-top:18px;padding:8px 14px 8px 8px;border-radius:999px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.28);color:#fff;font-weight:600;font-size:.95rem}
+.flagline img{border-radius:3px;box-shadow:0 1px 3px rgba(0,0,0,.3);display:block}
 </style>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
@@ -416,14 +418,14 @@ a.card:focus-visible{outline:3px solid var(--yellow);outline-offset:2px}
   <a class="logo" href="#home"><img src="brand/logo/nps-survey-cx-os-mark.svg" alt=""><span>NPS Survey CX OS<small>by SalesHub</small></span></a>
   <ul id="navlinks">
     <li><a href="#platform">Platform</a></li><li><a href="#industries">Industries</a></li><li><a href="#public-sector">Public Sector</a></li>
-    <li><a href="#learn">Learn</a></li><li><a href="#resources">Resources</a></li><li><a href="#reviews">Reviews</a></li><li><a href="#roi">ROI</a></li><li><a href="#pricing">Pricing</a></li>
+    <li><a href="#learn">Learn</a></li><li><a href="#resources">Resources</a></li><li><a href="/insights/">Insights</a></li><li><a href="#reviews">Reviews</a></li><li><a href="#roi">ROI</a></li><li><a href="#pricing">Pricing</a></li>
   </ul>
   <div class="acts"><a class="btn ghost" href="#demo">Book a demo</a><a class="btn primary" href="https://appexchange.salesforce.com/appxListingDetail?listingId=a0N3A00000FtRTKUA3&tab=e&utm_source=npssurveys.com&utm_medium=website&utm_campaign=cxos_site&utm_content=nav" target="_blank" rel="noopener">Free trial</a></div>
   <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="drawer">Menu</button>
 </div>
 <div class="drawer" id="drawer" hidden><div class="wrap">
   <a href="#platform">Platform</a><a href="#industries">Industries</a><a href="#public-sector">Public Sector</a><a href="#learn">Learn</a>
-  <a href="#resources">Resources</a><a href="#reviews">Reviews</a><a href="#roi">ROI calculator</a><a href="#compare">Compare</a><a href="#switch">Switch from GetFeedback</a><a href="#pricing">Pricing</a><a href="#demo">Book a demo</a>
+  <a href="#resources">Resources</a><a href="/insights/">Insights</a><a href="#reviews">Reviews</a><a href="#roi">ROI calculator</a><a href="#compare">Compare</a><a href="#switch">Switch from GetFeedback</a><a href="#pricing">Pricing</a><a href="#demo">Book a demo</a>
 </div></div></header>
 
 <main id="app"></main>
@@ -433,7 +435,7 @@ a.card:focus-visible{outline:3px solid var(--yellow);outline-offset:2px}
   <div><div class="flogo"><img src="brand/logo/nps-survey-cx-os-mark.svg" alt="">NPS Survey CX OS</div><p class="addr">SalesHub, LLC · 1853 Piedmont Rd, Suite 301, Marietta, GA 30066<br>1 (833) 733-2468 · support@saleshub.info</p></div>
   <div><h4>Product</h4><ul><li><a href="#platform">Platform</a></li><li><a href="#pricing">Pricing</a></li><li><a href="#roi">ROI calculator</a></li><li><a href="#compare">Compare</a></li><li><a href="#switch">Switch from GetFeedback</a></li><li><a href="#reviews">Reviews</a></li><li><a href="https://appexchange.salesforce.com/appxListingDetail?listingId=a0N3A00000FtRTKUA3&tab=e&utm_source=npssurveys.com&utm_medium=website&utm_campaign=cxos_site&utm_content=footer" target="_blank" rel="noopener">AppExchange listing</a></li></ul></div>
   <div><h4>Solutions</h4><ul><li><a href="#industries">All industries</a></li><li><a href="#public-sector">Public sector</a></li><li><a href="#ind-defense">Defense</a></li><li><a href="#ind-healthcare">Healthcare</a></li></ul></div>
-  <div><h4>Learn &amp; connect</h4><ul><li><a href="#learn">Learning Center</a></li><li><a href="#resources">Resources</a></li><li><a href="https://www.youtube.com/@saleshubllc" target="_blank" rel="noopener">YouTube</a></li><li><a href="https://www.linkedin.com/company/12673581" target="_blank" rel="noopener">LinkedIn</a></li><li><a href="https://www.instagram.com/saleshub.info" target="_blank" rel="noopener">Instagram</a></li></ul></div>
+  <div><h4>Learn &amp; connect</h4><ul><li><a href="#learn">Learning Center</a></li><li><a href="/insights/">Insights blog</a></li><li><a href="#resources">Resources</a></li><li><a href="https://www.youtube.com/@saleshubllc" target="_blank" rel="noopener">YouTube</a></li><li><a href="https://www.linkedin.com/company/12673581" target="_blank" rel="noopener">LinkedIn</a></li><li><a href="https://www.instagram.com/saleshub.info" target="_blank" rel="noopener">Instagram</a></li></ul></div>
   <p class="legal">© 2026 SalesHub, LLC · UEI Y8JGEMLEF9L3 · CAGE 02S16. Salesforce and AppExchange are trademarks of Salesforce, Inc. No government endorsement implied. Product screens are illustrations with sample data.</p>
 </div></footer>
 
@@ -686,7 +688,7 @@ V.industries = () => `${hero("", "Same core. <em>Your industry's moments.</em>",
 ${finalCTA("industries_final")}`;
 
 V.industry = id => { const x = IND.find(i=>i.id===id); if(!x) return V.industries(); const pub = x.group==="Public sector";
- return `${hero(`<a href="#industries">Industries</a> / ${x.name}`, `NPS Survey CX OS for <em>${x.name}</em>`, x.line, `<div class="ctas">${trial("ind_"+x.id)}${demoBtn()}</div>${coreStrip}`)}
+ return `${hero(`<a href="#industries">Industries</a> / ${x.name}`, `NPS Survey CX OS for <em>${x.name}</em>`, x.line, `${x.id==="defense"?`<div class="flagline"><img src="brand/flag/us-flag.svg" alt="Flag of the United States" width="57" height="30"><span>A U.S. company in Marietta, Georgia, serving those who serve</span></div>`:""}<div class="ctas">${trial("ind_"+x.id)}${demoBtn()}</div>${coreStrip}`)}
  <section class="band"><div class="wrap">
   <div class="grid3"><div class="card"><h3>Who it's for</h3><p>${x.who}</p></div><div class="card"><h3>Works with</h3><p>${x.clouds}</p></div><div class="card"><h3>Start with</h3><p>A 90-day pilot on one moment, with response rate, follow-up time and score trend agreed up front.</p></div></div>
   <div class="eyebrow" style="margin-top:44px">The blueprint</div><h2 class="h2">${x.moments.length} moments to measure, and what happens after each answer</h2>

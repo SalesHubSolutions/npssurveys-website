@@ -1,0 +1,41 @@
+<!--META
+{"slug":"america-by-design-service-feedback","title":"America by Design: how agencies can prove better service with feedback in Salesforce","description":"Executive Order 14338 pushes agencies to make digital and physical services more usable. Here is how to measure whether redesigns are working, at the moment of service.","date":"2026-10-19","author":"SalesHub","tags":["Public sector","Federal and state"],"read":"6 min","cta":"public"}
+META-->
+<p><strong>On August 21, 2025, Executive Order 14338, "Improving Our Nation Through Better Design," launched the America by Design initiative.</strong> It created a National Design Studio and a Chief Design Officer to make federal digital and physical services more usable. Agencies are directed to work with the Chief Design Officer, improve their websites and physical interfaces, update the U.S. Web Design System, and comply with the 21st Century IDEA Act.</p>
+
+<p>The White House fact sheet on the order is blunt about the starting point. It estimates there are about 26,000 federal websites, says only 6% are rated "good" for mobile performance, and says fewer than 20% use code from the U.S. Web Design System.</p>
+
+<p>Redesigns are coming. The question every program office will be asked next is simple: <em>did it work for the people we serve?</em></p>
+
+<h2>Design changes need a measurement loop</h2>
+<p>Analytics tell you where people clicked. They don't tell you whether the application, the permit or the benefit decision felt clear, fair and fast. The most direct signal is a short question asked right after the service happens:</p>
+<ul>
+<li><strong>Customer effort (CES):</strong> "How easy was it to complete your application?"</li>
+<li><strong>Satisfaction (CSAT):</strong> "How satisfied are you with this online service?"</li>
+<li><strong>Trust:</strong> "I trust this agency to fulfill its duties," on an agree–disagree scale.</li>
+</ul>
+<p>Ask the same question at the same moment, before and after a redesign, and you have evidence rather than opinion.</p>
+
+<h2>Where to measure: the moments that matter</h2>
+<div class="tw"><table>
+<tr><th>Moment</th><th>Trigger in Salesforce</th><th>Question</th><th>If the score is low</th></tr>
+<tr><td>Application decided</td><td>Case: application closed</td><td>CSAT</td><td>Case to the program office lead</td></tr>
+<tr><td>Contact center interaction</td><td>Case: Status = Closed</td><td>CES</td><td>Case reopened with an owner</td></tr>
+<tr><td>Portal transaction</td><td>Experience Cloud: transaction complete</td><td>CSAT</td><td>Task to the digital service owner</td></tr>
+<tr><td>Field office or counter visit</td><td>QR code at the counter</td><td>CSAT</td><td>Case to the office manager</td></tr>
+</table></div>
+
+<h2>Close the loop, don't just collect</h2>
+<p>A feedback program earns trust when people see something happen. Route every low score to a named owner with a due date. Track how fast follow-up happens. Each month, review the most common reasons for low scores with the team that owns the service. That's the "outer loop," where design fixes come from.</p>
+
+<h2>Practical notes for agencies</h2>
+<ul>
+<li><strong>Paperwork Reduction Act.</strong> Surveys of the public can count as information collections. Check with your agency's information collection officer early; many agencies use a generic clearance for service-delivery feedback.</li>
+<li><strong>Keep data where it already lives.</strong> If your agency runs on Salesforce, a native app writes responses to the same case and contact records your staff already use. You don't stand up a new data store to review.</li>
+<li><strong>Accessibility.</strong> Keep surveys short, mobile-friendly and screen-reader accessible. That's the standard America by Design sets for the services themselves.</li>
+</ul>
+
+<h2>Where NPS Survey CX OS fits</h2>
+<p>NPS Survey CX OS by SalesHub runs CSAT, CES and NPS surveys inside the Salesforce org your agency already uses, with closed-loop follow-up and dashboards by service, office and program. State, local and education buyers can buy through Carahsoft on the CoreTrust cooperative contract (24COR-018GR). Federal and defense buyers can request a quote from the SalesHub team at Carahsoft. No government endorsement is implied.</p>
+{{CTA}}
+<p class="src">Sources: <a href="https://www.whitehouse.gov/fact-sheets/2025/08/fact-sheet-president-donald-j-trump-improves-our-nation-through-better-design" target="_blank" rel="noopener">White House fact sheet, "Improves our Nation Through Better Design" (August 2025)</a>; <a href="https://www.presidency.ucsb.edu/documents/executive-order-14338-improving-our-nation-through-better-design" target="_blank" rel="noopener">Executive Order 14338 text (American Presidency Project)</a>; <a href="https://www.carahsoft.com/saleshub/contracts" target="_blank" rel="noopener">SalesHub contracts at Carahsoft</a>.</p>
