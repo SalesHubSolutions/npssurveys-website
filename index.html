@@ -83,6 +83,41 @@
 @media (max-width:520px){.steps4{grid-template-columns:1fr}}
 .flagline{display:inline-flex;align-items:center;gap:12px;margin-top:18px;padding:8px 14px 8px 8px;border-radius:999px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.28);color:#fff;font-weight:600;font-size:.95rem}
 .flagline img{border-radius:3px;box-shadow:0 1px 3px rgba(0,0,0,.3);display:block}
+
+/* dropdown nav */
+.nav ul{align-items:center}
+.nav .dd{position:relative}
+.ddb{background:none;border:0;color:#DCE5FF;font:inherit;font-weight:500;font-size:.93rem;cursor:pointer;padding:6px 0;display:inline-flex;align-items:center;gap:6px}
+.ddb:after{content:"";width:7px;height:7px;border-right:2px solid currentColor;border-bottom:2px solid currentColor;transform:rotate(45deg) translateY(-2px);opacity:.8}
+.ddb:hover,.dd.cur .ddb,.ddb[aria-expanded=true]{color:#fff}
+.dd.cur .ddb{text-decoration:underline;text-decoration-color:var(--yellow);text-underline-offset:6px}
+.ddm{display:none;position:absolute;top:calc(100% + 12px);left:-18px;min-width:330px;background:var(--surface);color:var(--fg);border:1px solid var(--line);border-radius:16px;box-shadow:0 18px 50px rgba(5,20,80,.25);padding:10px;z-index:40}
+.ddm:before{content:"";position:absolute;left:0;right:0;top:-14px;height:14px}
+.dd:hover .ddm,.dd:focus-within .ddm,.ddb[aria-expanded=true]+.ddm{display:block}
+.ddm.wide{min-width:560px;grid-template-columns:1fr 1fr;gap:8px}
+.dd:hover .ddm.wide,.dd:focus-within .ddm.wide,.ddb[aria-expanded=true]+.ddm.wide{display:grid}
+.ddm a{display:block;color:var(--fg)!important;text-decoration:none;padding:9px 12px;border-radius:10px;font-weight:600;font-size:.92rem}
+.ddm a:hover,.ddm a:focus-visible{background:var(--bg-tint)}
+.ddm a b{display:block;font-weight:700}.ddm a span{display:block;font-weight:500;font-size:.82rem;color:var(--fg-mute);margin-top:2px}
+.ddm h6{margin:6px 12px 4px;font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--link)}
+.ddm a.all{color:var(--link)!important;font-size:.85rem}
+.drawer .wrap{grid-template-columns:repeat(2,1fr);gap:8px 16px}
+.drawer h6{margin:8px 8px 2px;font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--yellow)}
+.drawer .wrap>div{display:flex;flex-direction:column}
+@media (max-width:520px){.drawer .wrap{grid-template-columns:1fr}}
+
+/* trust bar */
+.tbar{display:flex;flex-wrap:wrap;align-items:stretch;justify-content:center;gap:14px 18px;padding:26px 0}
+.tchip{display:flex;align-items:center;gap:14px;background:#fff;border:1px solid var(--line);border-radius:14px;padding:10px 18px;color:#0C184A;font-weight:600;font-size:.9rem;text-decoration:none}
+.tchip img{display:block;height:34px;width:auto}.tchip img.cs{height:24px}
+.tchip span{max-width:24ch;line-height:1.3}.tchip b{color:#0C184A}
+/* partners */
+.tiers{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:28px}
+.tier{background:var(--surface);border:1px solid var(--line);border-radius:20px;padding:24px;display:flex;flex-direction:column;gap:10px}
+.tier.pop{border:2px solid var(--blue)}
+.tier ul{margin:4px 0 0;padding-left:18px;color:var(--fg-soft);font-size:.95rem}.tier li{margin:4px 0}
+.tier .who{font-size:.8rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--link)}
+@media (max-width:920px){.tiers{grid-template-columns:1fr}}
 </style>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
@@ -417,15 +452,19 @@ a.card:focus-visible{outline:3px solid var(--yellow);outline-offset:2px}
 <header class="nav"><div class="wrap">
   <a class="logo" href="#home"><img src="brand/logo/nps-survey-cx-os-mark.svg" alt=""><span>NPS Survey CX OS<small>by SalesHub</small></span></a>
   <ul id="navlinks">
-    <li><a href="#platform">Platform</a></li><li><a href="#industries">Industries</a></li><li><a href="#public-sector">Public Sector</a></li>
-    <li><a href="#learn">Learn</a></li><li><a href="#resources">Resources</a></li><li><a href="/insights/">Insights</a></li><li><a href="#reviews">Reviews</a></li><li><a href="#roi">ROI</a></li><li><a href="#pricing">Pricing</a></li>
+    <li class="dd"><button type="button" class="ddb" aria-expanded="false">Product</button><div class="ddm"><a href="#platform"><b>Platform</b><span>Surveys, closed-loop follow-up, CX360 dashboards</span></a><a href="#compare"><b>Compare</b><span>Native vs. bolt-on survey tools</span></a><a href="#reviews"><b>Reviews</b><span>Rated 5.0 on Salesforce AppExchange</span></a><a href="#switch"><b>Switch from GetFeedback</b><span>Move before December 31, 2026</span></a></div></li>
+    <li class="dd"><button type="button" class="ddb" aria-expanded="false">Solutions</button><div class="ddm wide"><div><h6>Industries</h6><a href="#ind-commercial">B2B, SaaS & Technology</a><a href="#ind-financial">Financial Services & Insurance</a><a href="#ind-healthcare">Healthcare & Health-tech</a><a href="#ind-manufacturing">Manufacturing & Distribution</a><a href="#ind-consulting">Consulting & Professional Services</a><a href="#ind-nonprofit">Nonprofit</a><a href="#ind-education">Education</a><a class="all" href="#industries">All industry blueprints →</a></div><div><h6>Public sector</h6><a href="#public-sector">Public sector overview</a><a href="#ind-sled">State & Local Government</a><a href="#ind-federal">Federal Civilian Agencies</a><a href="#ind-defense">Defense</a></div></div></li>
+    <li class="dd"><button type="button" class="ddb" aria-expanded="false">Resources</button><div class="ddm"><a href="/insights/"><b>Insights blog</b><span>Guides and playbooks, new every week</span></a><a href="#learn"><b>Learning Center</b><span>Setup guides, learning paths, NPS calculator</span></a><a href="#resources"><b>Downloads & videos</b><span>Offering sheets, blueprints, films</span></a><a href="#roi"><b>ROI calculator</b><span>Build your business case in 60 seconds</span></a></div></li>
+    <li><a href="#partners">Partners</a></li><li><a href="#pricing">Pricing</a></li>
   </ul>
   <div class="acts"><a class="btn ghost" href="#demo">Book a demo</a><a class="btn primary" href="https://appexchange.salesforce.com/appxListingDetail?listingId=a0N3A00000FtRTKUA3&tab=e&utm_source=npssurveys.com&utm_medium=website&utm_campaign=cxos_site&utm_content=nav" target="_blank" rel="noopener">Free trial</a></div>
   <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="drawer">Menu</button>
 </div>
 <div class="drawer" id="drawer" hidden><div class="wrap">
-  <a href="#platform">Platform</a><a href="#industries">Industries</a><a href="#public-sector">Public Sector</a><a href="#learn">Learn</a>
-  <a href="#resources">Resources</a><a href="/insights/">Insights</a><a href="#reviews">Reviews</a><a href="#roi">ROI calculator</a><a href="#compare">Compare</a><a href="#switch">Switch from GetFeedback</a><a href="#pricing">Pricing</a><a href="#demo">Book a demo</a>
+  <div><h6>Product</h6><a href="#platform">Platform</a><a href="#compare">Compare</a><a href="#reviews">Reviews</a><a href="#switch">Switch from GetFeedback</a></div>
+  <div><h6>Solutions</h6><a href="#industries">All industries</a><a href="#public-sector">Public sector</a><a href="#ind-defense">Defense</a><a href="#ind-healthcare">Healthcare</a></div>
+  <div><h6>Resources</h6><a href="/insights/">Insights blog</a><a href="#learn">Learning Center</a><a href="#resources">Downloads &amp; videos</a><a href="#roi">ROI calculator</a></div>
+  <div><h6>Company</h6><a href="#partners">Partners</a><a href="#pricing">Pricing</a><a href="#demo">Book a demo</a></div>
 </div></div></header>
 
 <main id="app"></main>
@@ -433,7 +472,7 @@ a.card:focus-visible{outline:3px solid var(--yellow);outline-offset:2px}
 
 <footer><div class="wrap">
   <div><div class="flogo"><img src="brand/logo/nps-survey-cx-os-mark.svg" alt="">NPS Survey CX OS</div><p class="addr">SalesHub, LLC · 1853 Piedmont Rd, Suite 301, Marietta, GA 30066<br>1 (833) 733-2468 · support@saleshub.info</p></div>
-  <div><h4>Product</h4><ul><li><a href="#platform">Platform</a></li><li><a href="#pricing">Pricing</a></li><li><a href="#roi">ROI calculator</a></li><li><a href="#compare">Compare</a></li><li><a href="#switch">Switch from GetFeedback</a></li><li><a href="#reviews">Reviews</a></li><li><a href="https://appexchange.salesforce.com/appxListingDetail?listingId=a0N3A00000FtRTKUA3&tab=e&utm_source=npssurveys.com&utm_medium=website&utm_campaign=cxos_site&utm_content=footer" target="_blank" rel="noopener">AppExchange listing</a></li></ul></div>
+  <div><h4>Product</h4><ul><li><a href="#platform">Platform</a></li><li><a href="#pricing">Pricing</a></li><li><a href="#roi">ROI calculator</a></li><li><a href="#compare">Compare</a></li><li><a href="#switch">Switch from GetFeedback</a></li><li><a href="#partners">Partner program</a></li><li><a href="#reviews">Reviews</a></li><li><a href="https://appexchange.salesforce.com/appxListingDetail?listingId=a0N3A00000FtRTKUA3&tab=e&utm_source=npssurveys.com&utm_medium=website&utm_campaign=cxos_site&utm_content=footer" target="_blank" rel="noopener">AppExchange listing</a></li></ul></div>
   <div><h4>Solutions</h4><ul><li><a href="#industries">All industries</a></li><li><a href="#public-sector">Public sector</a></li><li><a href="#ind-defense">Defense</a></li><li><a href="#ind-healthcare">Healthcare</a></li></ul></div>
   <div><h4>Learn &amp; connect</h4><ul><li><a href="#learn">Learning Center</a></li><li><a href="/insights/">Insights blog</a></li><li><a href="#resources">Resources</a></li><li><a href="https://www.youtube.com/@saleshubllc" target="_blank" rel="noopener">YouTube</a></li><li><a href="https://www.linkedin.com/company/12673581" target="_blank" rel="noopener">LinkedIn</a></li><li><a href="https://www.instagram.com/saleshub.info" target="_blank" rel="noopener">Instagram</a></li></ul></div>
   <p class="legal">© 2026 SalesHub, LLC · UEI Y8JGEMLEF9L3 · CAGE 02S16. Salesforce and AppExchange are trademarks of Salesforce, Inc. No government endorsement implied. Product screens are illustrations with sample data.</p>
@@ -512,6 +551,7 @@ V.home = () => `
       <div class="sample">Product illustration · sample data</div></div>
 </div></section>
 <section class="proof" aria-label="At a glance"><div class="wrap"><div><b>5.0</b> on AppExchange · 7 reviews</div><div><b>70+</b> survey templates</div><div><b>15+</b> question types</div><div><b>10</b> industry blueprints</div><div><b>0</b> integrations to maintain</div></div></section>
+<section class="band tint" style="padding-block:6px"><div class="wrap">${trustBar()}</div></section>
 
 <section class="band"><div class="wrap split">
  <div><div class="eyebrow">The problem</div><h2 class="h2">Most unhappy customers don't complain. They just leave.</h2>
@@ -713,6 +753,7 @@ V["public-sector"] = () => `${hero("", "Public sector CX, <em>inside Salesforce<
  <div class="card"><div class="ibox">${ic("brief")}</div><h3>Federal and defense</h3><p>Request a quote from the SalesHub team at Carahsoft. They'll confirm the best purchasing option for your agency.</p><a class="meta" href="https://www.carahsoft.com/it-procurement-quote" target="_blank" rel="noopener">Request a quote →</a></div>
  <div class="card"><div class="ibox">${ic("chat")}</div><h3>SalesHub team at Carahsoft</h3><p><a href="mailto:SalesHub@carahsoft.com">SalesHub@carahsoft.com</a><br>(833) 478-1740</p><a class="meta" href="https://www.carahsoft.com/saleshub/solutions" target="_blank" rel="noopener">SalesHub on Carahsoft →</a></div>
 </div>
+${trustBar()}
 <p class="note">Commercial buyers and anyone who wants to try it first can install the 7-day free trial from <a href="${LIST}&utm_content=ps_buy" target="_blank" rel="noopener">Salesforce AppExchange</a>.</p>
 <div class="eyebrow" style="margin-top:56px">Downloads</div><h2 class="h2">Everything your evaluation team asks for</h2>
 <div class="stack" style="margin-top:22px">${RES.filter(r=>r.ind==="Public sector").map(resRow).join("")}</div>
@@ -994,6 +1035,42 @@ return `${hero("", "GetFeedback retires on <em>December 31, 2026.</em> Keep your
 </div></section>
 ${finalCTA("switch_final")}`; };
 
+
+// ---------- Trust bar ----------
+const trustBar = () => `<div class="tbar" aria-label="Platform and purchasing partners">
+ <a class="tchip" href="${LIST}&utm_content=trustbar" target="_blank" rel="noopener"><img src="brand/partners/salesforce.svg" alt="Salesforce" width="52" height="36"><span>Built 100% on Salesforce · <b>Available on AppExchange</b></span></a>
+ <a class="tchip" href="https://www.carahsoft.com/saleshub/solutions" target="_blank" rel="noopener"><img class="cs" src="brand/partners/carahsoft.svg" alt="Carahsoft" width="123" height="24"><span>Public sector purchasing <b>through Carahsoft</b></span></a>
+ <a class="tchip" href="${LIST}&utm_content=trustbar_reviews&tab=r" target="_blank" rel="noopener"><span style="color:#E9A52B;display:inline-flex">${star(18)}</span><span><b>5.0 on AppExchange</b> · 7 reviews</span></a>
+</div>`;
+
+// ---------- Partner program ----------
+const PARTNER_MAIL = "mailto:support@saleshub.info?subject=" + encodeURIComponent("Partner application: [Your company]") + "&body=" + encodeURIComponent("Company:\nWebsite:\nYour name and role:\nSalesforce practice size (consultants):\nClouds and industries you focus on:\nClients currently on GetFeedback, Delighted or another survey tool (approx.):\nPartner track you're interested in (Referral / Implementation / Public sector teaming):\n");
+V.partners = () => `${hero("", "Partner with SalesHub. <em>Bring native CX</em> to every Salesforce client.", "For Salesforce consulting partners and SIs: add NPS, CSAT and closed-loop feedback to your projects, keep your services revenue, and earn a revenue share on every subscription you bring.", `<div class="ctas"><a class="btn primary" href="${PARTNER_MAIL}">Apply to partner</a><a class="btn ghost" href="${DEMO}" target="_blank" rel="noopener">Book a partner call</a></div>`)}
+<section class="band"><div class="wrap">
+ <div class="eyebrow">Why partners add NPS Survey CX OS</div><h2 class="h2">A fast, native win inside projects you already run</h2>
+ <div class="grid3" style="margin-top:28px">
+  <div class="card"><div class="ibox">${ic("bolt")}</div><h3>A ready-made project this quarter</h3><p>GetFeedback Direct sunsets on December 31, 2026. Your clients on it need a replacement and someone to move them. That's a scoped migration project for your team.</p></div>
+  <div class="card"><div class="ibox">${ic("lock")}</div><h3>Native, so it fits your practice</h3><p>It's a managed package on AppExchange. Your consultants configure triggers, flows, fields and dashboards with skills they already have. No outside platform to learn or integrate.</p></div>
+  <div class="card"><div class="ibox">${ic("chart")}</div><h3>Easy to bundle and sell</h3><p>One per-org price from $3,500 a year, not per user, with a 7-day free trial. It fits inside a Service Cloud, Sales Cloud or Experience Cloud statement of work.</p></div>
+ </div>
+</div></section>
+<section class="band tint"><div class="wrap">
+ <div class="eyebrow">Partner tracks</div><h2 class="h2">Choose how you want to work with us</h2>
+ <div class="tiers">
+  <div class="tier"><span class="who">Referral partner</span><h3>Introduce, we close</h3><p>For firms that want an easy add-on with no delivery work.</p><ul><li>Register the opportunity with us</li><li>We demo, sell and onboard</li><li>You earn a revenue share on the first-year subscription</li></ul></div>
+  <div class="tier pop"><span class="who">Implementation partner</span><h3>You deliver, we support</h3><p>For Salesforce SIs who own the client relationship and the build.</p><ul><li>Keep 100% of your implementation services revenue</li><li>Earn a revenue share on subscriptions you sell and renew</li><li>Enablement with our team: product training, blueprints and demo materials</li><li>Deal registration protects your opportunity</li></ul></div>
+  <div class="tier"><span class="who">Public sector teaming</span><h3>Team on government work</h3><p>For partners delivering Salesforce for agencies, education and defense.</p><ul><li>Include NPS Survey CX OS in your task orders and proposals</li><li>Purchasing through Carahsoft, including the CoreTrust contract for state, local and education buyers</li><li>SalesHub registration: UEI Y8JGEMLEF9L3 · CAGE 02S16</li></ul></div>
+ </div>
+ <p class="note">Revenue share percentages and terms are set out in the SalesHub partner agreement. Ask for a copy when you apply.</p>
+</div></section>
+<section class="band"><div class="wrap">
+ <div class="eyebrow">How it works</div><h2 class="h2">From application to first registered deal in a week</h2>
+ <div class="steps4">${[["1","Apply","Send a short application: your practice, clouds, industries and clients."],["2","Intro call","30 minutes with our team to agree on the track and the first opportunities."],["3","Sign","Sign the partner agreement and get your enablement materials."],["4","Register deals","Register opportunities with us and start co-selling."]].map(([n,t,p])=>`<div class="card"><div class="eyebrow">Step ${n}</div><h3>${t}</h3><p>${p}</p></div>`).join("")}</div>
+ ${trustBar()}
+ <div class="ctas" style="justify-content:center;display:flex;gap:10px;flex-wrap:wrap"><a class="btn dark" href="${PARTNER_MAIL}">Apply to partner</a><a class="btn line" href="#switch">See the GetFeedback switch plan</a></div>
+</div></section>
+${finalCTA("partners_final")}`;
+
 function route(){
   const h = (location.hash||"#home").slice(1);
   let html, key = h;
@@ -1001,10 +1078,11 @@ function route(){
   else html = (V[h]||V.home)();
   app.innerHTML = `<div class="view">${html}</div>`;
   document.querySelectorAll("#navlinks a").forEach(a=>{ if(a.getAttribute("href")!=="#"+key) a.removeAttribute("aria-current"); else a.setAttribute("aria-current","page"); });
+  document.querySelectorAll("#navlinks .dd").forEach(d=>d.classList.toggle("cur", !!d.querySelector(`a[href="#${h}"],a[href="#${key}"]`))); document.querySelectorAll(".ddb").forEach(x=>x.setAttribute("aria-expanded","false")); document.activeElement && document.activeElement.closest && document.activeElement.closest(".ddm") && document.activeElement.blur();
   document.getElementById("drawer").hidden = true; document.getElementById("menuBtn").setAttribute("aria-expanded","false");
   window.scrollTo({top:0});
   wire();
-  const TITLES={home:"NPS Survey CX OS | Customer Experience Operating System for Salesforce",platform:"Platform | NPS Survey CX OS",industries:"Industry blueprints | NPS Survey CX OS","public-sector":"Public sector | NPS Survey CX OS",learn:"Learning Center | NPS Survey CX OS",resources:"Resources | NPS Survey CX OS",reviews:"Reviews | NPS Survey CX OS",pricing:"Pricing | NPS Survey CX OS",demo:"Book a demo | NPS Survey CX OS",roi:"ROI calculator and business case | NPS Survey CX OS",compare:"Native vs. bolt-on survey tools | NPS Survey CX OS",switch:"Switching from GetFeedback or Delighted | NPS Survey CX OS"};
+  const TITLES={home:"NPS Survey CX OS | Customer Experience Operating System for Salesforce",platform:"Platform | NPS Survey CX OS",industries:"Industry blueprints | NPS Survey CX OS","public-sector":"Public sector | NPS Survey CX OS",learn:"Learning Center | NPS Survey CX OS",resources:"Resources | NPS Survey CX OS",reviews:"Reviews | NPS Survey CX OS",pricing:"Pricing | NPS Survey CX OS",demo:"Book a demo | NPS Survey CX OS",roi:"ROI calculator and business case | NPS Survey CX OS",compare:"Native vs. bolt-on survey tools | NPS Survey CX OS",switch:"Switching from GetFeedback or Delighted | NPS Survey CX OS",partners:"Partner program for Salesforce SIs | NPS Survey CX OS"};
   document.title = TITLES[key] || TITLES.home;
 }
 function wire(){
@@ -1038,6 +1116,10 @@ function bokeh(c){ const x=c.getContext("2d"); let dots=[]; const r=c.getBoundin
   dots=Array.from({length:22},(_,i)=>({x:Math.random()*c.width,y:Math.random()*c.height,r:(10+Math.random()*44)*devicePixelRatio,v:(.08+Math.random()*.18)*devicePixelRatio,h:[[110,160,255],[160,120,230],[120,230,200],[90,150,255]][i%4],a:.12+Math.random()*.22}));
   (function draw(){ if(!document.body.contains(c)) return; x.clearRect(0,0,c.width,c.height); for(const d of dots){ const g=x.createRadialGradient(d.x,d.y,0,d.x,d.y,d.r); g.addColorStop(0,`rgba(${d.h},${d.a})`); g.addColorStop(1,`rgba(${d.h},0)`); x.fillStyle=g; x.beginPath(); x.arc(d.x,d.y,d.r,0,Math.PI*2); x.fill(); if(!reduce){ d.y-=d.v; if(d.y<-d.r) d.y=c.height+d.r; } } if(!reduce) requestAnimationFrame(draw); })(); }
 document.getElementById("menuBtn").addEventListener("click", e=>{ const d=document.getElementById("drawer"); d.hidden=!d.hidden; e.currentTarget.setAttribute("aria-expanded", String(!d.hidden)); });
+
+document.querySelectorAll(".ddb").forEach(b=>b.addEventListener("click",e=>{const open=b.getAttribute("aria-expanded")==="true";document.querySelectorAll(".ddb").forEach(x=>x.setAttribute("aria-expanded","false"));b.setAttribute("aria-expanded",String(!open));e.stopPropagation();}));
+document.addEventListener("click",e=>{ if(!e.target.closest(".dd")) document.querySelectorAll(".ddb").forEach(x=>x.setAttribute("aria-expanded","false")); });
+document.addEventListener("keydown",e=>{ if(e.key==="Escape") document.querySelectorAll(".ddb").forEach(x=>x.setAttribute("aria-expanded","false")); });
 addEventListener("hashchange", route); route();
 </script>
 

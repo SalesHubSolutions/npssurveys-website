@@ -47,7 +47,7 @@ def head(title, desc, url, extra=""):
 <style>{CSS}</style>{extra}</head><body>
 <div class="annc">GetFeedback retires December 31, 2026. <a href="/#switch">Move your surveys to native Salesforce &rarr;</a></div>
 <header><div class="wrap"><a class="logo" href="/"><img src="/brand/logo/nps-survey-cx-os-mark.svg" alt=""><span>NPS Survey CX OS<small>by SalesHub</small></span></a>
-<nav><a href="/insights/">Insights</a><a href="/#platform">Platform</a><a href="/#roi">ROI</a><a href="/#pricing">Pricing</a><a class="btn" href="{LIST}&utm_content=blog_nav" target="_blank" rel="noopener">Free trial</a></nav></div></header>"""
+<nav><a href="/#platform">Product</a><a href="/#industries">Solutions</a><a href="/insights/">Insights</a><a href="/#partners">Partners</a><a href="/#pricing">Pricing</a><a class="btn" href="{LIST}&utm_content=blog_nav" target="_blank" rel="noopener">Free trial</a></nav></div></header>"""
 
 FOOT = """<footer><div class="wrap">&copy; 2026 SalesHub, LLC &middot; 1853 Piedmont Rd, Suite 301, Marietta, GA 30066 &middot; <a href="mailto:support@saleshub.info">support@saleshub.info</a> &middot; 1 (833) 733-2468<br>
 Salesforce and AppExchange are trademarks of Salesforce, Inc. Net Promoter&reg;, NPS&reg; and the NPS-related emoticons are registered trademarks of Bain &amp; Company, Inc., NICE Systems, Inc. and Fred Reichheld.</div></footer></body></html>"""
