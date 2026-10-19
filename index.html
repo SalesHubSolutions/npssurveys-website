@@ -165,6 +165,30 @@
 .pc .be{border-left:4px solid #FFE443;background:#FFFBE0;padding:8px 12px;border-radius:6px;margin:10px 0;font-weight:600}
 .pc ul{margin:4px 0;padding-left:18px}.pc li{margin:2px 0}
 .pc .foot{margin-top:10px;border-top:1px solid #DCE4F7;padding-top:8px;font-size:8.5pt;color:#5E6B98}
+
+/* lead form */
+.leadbox{background:var(--surface);border:1px solid var(--line);border-radius:22px;padding:26px;box-shadow:0 18px 50px rgba(12,24,74,.08)}
+.leadbox h3{margin:0 0 4px;font-size:1.35rem}.leadbox .lsub{color:var(--fg-soft);margin:0 0 18px;font-size:.98rem}
+.lgrid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:12px 14px}
+.lgrid .full{grid-column:1/-1}
+.lf label{display:block;font-weight:700;font-size:.85rem;margin-bottom:6px}
+.lf input,.lf select,.lf textarea{width:100%;padding:12px 14px;border:1.5px solid var(--line);border-radius:12px;font:inherit;background:var(--bg);color:var(--fg)}
+.lf input:focus,.lf select:focus,.lf textarea:focus{outline:none;border-color:var(--blue);box-shadow:0 0 0 4px rgba(30,84,232,.15)}
+.lf textarea{min-height:76px;resize:vertical}
+.pills{display:flex;flex-wrap:wrap;gap:8px;position:relative}
+.pills input{position:absolute;left:0;top:0;width:1px;height:1px;opacity:0;pointer-events:none}
+.pills label{margin:0;padding:9px 14px;border:1.5px solid var(--line);border-radius:999px;font-weight:600;font-size:.88rem;cursor:pointer;background:var(--bg);color:var(--fg-soft)}
+.pills input:checked+label{background:var(--navy);border-color:var(--navy);color:#fff}
+.pills input:focus-visible+label{outline:3px solid var(--yellow);outline-offset:2px}
+.leadbox .fine{font-size:.78rem;color:var(--fg-mute);margin:12px 0 0}
+.leadbox .btn{margin-top:16px;justify-content:center;width:100%}
+.leadbox .err{color:#C03B3B;font-size:.82rem;margin-top:4px;display:none}.lf.bad .err{display:block}.lf.bad input{border-color:#EB5757}
+.leadbox .done{display:none;text-align:center;padding:16px 4px}
+.leadbox.sent form{display:none}.leadbox.sent .done{display:block}
+.leadbox .done .ok{width:64px;height:64px;border-radius:50%;background:#E3F6EC;color:#17804B;display:grid;place-items:center;margin:0 auto 10px;font-size:32px;font-weight:800}
+.leadwrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);gap:36px;align-items:start}
+.leadwrap .why li{margin:10px 0;color:var(--fg-soft)}
+@media (max-width:860px){.leadwrap{grid-template-columns:minmax(0,1fr)}.lgrid{grid-template-columns:minmax(0,1fr)}.leadbox{padding:20px}}
 </style>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
@@ -521,7 +545,7 @@ a.card:focus-visible{outline:3px solid var(--yellow);outline-offset:2px}
   <div><div class="flogo"><img src="brand/logo/nps-survey-cx-os-mark.svg" alt="">NPS Survey CX OS</div><p class="addr">SalesHub, LLC · 1853 Piedmont Rd, Suite 301, Marietta, GA 30066<br>1 (833) 733-2468 · support@saleshub.info</p></div>
   <div><h4>Product</h4><ul><li><a href="#platform">Platform</a></li><li><a href="#pricing">Pricing</a></li><li><a href="#roi">ROI calculator</a></li><li><a href="#compare">Compare</a></li><li><a href="#switch">Switch from GetFeedback</a></li><li><a href="#partners">Partner program</a></li><li><a href="#reviews">Reviews</a></li><li><a href="https://appexchange.salesforce.com/appxListingDetail?listingId=a0N3A00000FtRTKUA3&tab=e&utm_source=npssurveys.com&utm_medium=website&utm_campaign=cxos_site&utm_content=footer" target="_blank" rel="noopener">AppExchange listing</a></li></ul></div>
   <div><h4>Solutions</h4><ul><li><a href="#industries">All industries</a></li><li><a href="#public-sector">Public sector</a></li><li><a href="#ind-defense">Defense</a></li><li><a href="#ind-healthcare">Healthcare</a></li></ul></div>
-  <div><h4>Learn &amp; connect</h4><ul><li><a href="#learn">Learning Center</a></li><li><a href="/insights/">Insights blog</a></li><li><a href="#resources">Resources</a></li><li><a href="https://saleshub.info" target="_blank" rel="noopener">SalesHub company site</a></li><li><a href="https://www.youtube.com/@saleshubllc" target="_blank" rel="noopener">YouTube</a></li><li><a href="https://www.linkedin.com/company/12673581" target="_blank" rel="noopener">LinkedIn</a></li><li><a href="https://www.instagram.com/saleshub.info" target="_blank" rel="noopener">Instagram</a></li></ul></div>
+  <div><h4>Learn &amp; connect</h4><ul><li><a href="#learn">Learning Center</a></li><li><a href="/insights/">Insights blog</a></li><li><a href="#resources">Resources</a></li><li><a href="https://saleshub.info" target="_blank" rel="noopener">SalesHub company site</a></li><li><a href="https://saleshub.info/privacy-policy" target="_blank" rel="noopener">Privacy policy</a></li><li><a href="https://www.youtube.com/@saleshubllc" target="_blank" rel="noopener">YouTube</a></li><li><a href="https://www.linkedin.com/company/12673581" target="_blank" rel="noopener">LinkedIn</a></li><li><a href="https://www.instagram.com/saleshub.info" target="_blank" rel="noopener">Instagram</a></li></ul></div>
   <p class="legal">© 2026 SalesHub, LLC · UEI Y8JGEMLEF9L3 · CAGE 02S16. Salesforce and AppExchange are trademarks of Salesforce, Inc. No government endorsement implied. Product screens are illustrations with sample data.</p>
 </div></footer>
 
@@ -730,14 +754,14 @@ V.home = () => `
  <div class="eyebrow">FAQ</div><h2 class="h2">Questions buyers ask first</h2>
  <div class="faqlist">${[
   ["Does any data leave Salesforce?","No. NPS Survey CX OS is a managed package that runs inside your org. Surveys, responses and follow-ups are Salesforce records, so there is no third-party data transfer."],
-  ["How fast can we go live?","Most teams send their first survey in about 10 minutes from a ready-made template, and launch a full program in a day."],
+  ["How fast can we go live?","You can send your first survey from a ready-made template on the day you install. A full program usually takes days, not months."],
   ["How is it priced?","Per company, per year: CX Lite $3,500, CX Pro $8,500, CX360 Insights from $16,000. Not per user. Nonprofit and multi-year discounts are available."],
   ["Is there a free trial?","Yes. Every edition starts with a 7-day free trial from the AppExchange listing. No credit card is needed to install."],
   ["Which surveys can we run?","NPS, CSAT, CES, voice of the customer and any custom form, with 70+ templates, 15+ question types and branching logic."],
   ["What happens after someone answers?","Detractors open a P1 case with an owner, passives start a 30-day nurture, and promoters get a review request. Leaders see loop closure in CX360 dashboards."]
  ].map(([q,a])=>`<details class="qa"><summary>${q}</summary><p>${a}</p></details>`).join("")}</div>
 </div></section>
-${finalCTA("home_final")}`;
+<section class="band tint" id="home-form"><div class="wrap leadwrap"><div><div class="eyebrow">Talk to us</div><h2 class="h2">See it in your Salesforce org</h2><ul class="why"><li>A walkthrough built around your industry</li><li>Migration help if you're leaving GetFeedback or Delighted</li><li>Straight answers on pricing and security review</li></ul></div>${leadForm("home","Product demo","Talk to our team","Tell us a little about you. We reply within one business day.")}</div></section>${finalCTA("home_final")}`;
 
 V.platform = () => `${hero("", "The customer experience <em>operating system</em> for Salesforce", "Surveys, closed-loop follow-up and leadership dashboards, built on the records your teams already use.", `<div class="ctas">${trial("platform_hero")}${demoBtn()}</div>${coreStrip}`)}
 <section class="band"><div class="wrap"><div class="eyebrow">Features</div><h2 class="h2">Everything you need to run a feedback program</h2><div class="feat">
@@ -840,14 +864,15 @@ V.pricing = () => `${hero("", "Per-org pricing, <em>start free</em>", "Every edi
     <div class="plan pop"><div class="tagline">Recommended for most teams</div><h3>CX Pro</h3><div class="price">$8,500<small> /year</small></div><p>For CX, service and success teams running surveys across channels and departments.</p><a class="btn primary" href="https://appexchange.salesforce.com/appxListingDetail?listingId=a0N3A00000FtRTKUA3&tab=e&utm_source=npssurveys.com&utm_medium=website&utm_campaign=cxos_site&utm_content=price_pro" target="_blank" rel="noopener">Try CX Pro free</a></div>
     <div class="plan"><div class="tagline">Enterprise insight</div><h3>CX360 Insights</h3><div class="price"><small>from </small>$16,000<small> /year</small></div><p>For organizations that want the full customer experience picture across every team.</p><a class="btn dark" href="https://appexchange.salesforce.com/appxListingDetail?listingId=a0N3A00000FtRTKUA3&tab=e&utm_source=npssurveys.com&utm_medium=website&utm_campaign=cxos_site&utm_content=price_360" target="_blank" rel="noopener">See CX360 on AppExchange</a></div>
   </div>
-  <p class="note">Edition details and current pricing are on the AppExchange listing. Public-sector buyers can also purchase through Carahsoft.</p></div></section>${finalCTA("pricing_final")}`;
+  <p class="note">Edition details and current pricing are on the AppExchange listing. Public-sector buyers can also purchase through Carahsoft.</p></div></section><section class="band tint" id="pricing-form"><div class="wrap leadwrap"><div><div class="eyebrow">Questions about editions?</div><h2 class="h2">Get pricing for your organization</h2><ul class="why"><li>Help choosing between CX Lite, CX Pro and CX360 Insights</li><li>Nonprofit discounts and public-sector purchasing through Carahsoft</li><li>Multi-org and enterprise packages</li></ul></div>${leadForm("pricing","Enterprise pricing","Talk to us about pricing","Multi-org, public sector, nonprofit or a partner deal? We'll put together the right package.")}</div></section>${finalCTA("pricing_final")}`;
 
 V.demo = () => `${hero("", "Book a <em>30-minute</em> demo", "See your own industry's blueprint running in Salesforce, with time for your questions.", `<div class="ctas"><a class="btn primary" href="${DEMO}" target="_blank" rel="noopener">Pick a time on Calendly</a>${trial("demo_trial","Or start the free trial","ghost")}</div>`)}
 <section class="band"><div class="wrap"><div class="grid3">
  <div class="card"><h3>What we'll cover</h3><p>Your first moment to measure, the survey, the closed-loop rules and the dashboard your leaders will use.</p></div>
  <div class="card"><h3>Who should join</h3><p>The person who owns the customer moment, plus your Salesforce admin.</p></div>
  <div class="card"><h3>Prefer to talk now?</h3><div class="copy"><code id="ph">1 (833) 733-2468</code><button data-copy="ph">Copy</button></div><div class="copy"><code id="em">support@saleshub.info</code><button data-copy="em">Copy</button></div></div>
-</div></div></section>`;
+</div></div></section>
+<section class="band tint" id="demo-form"><div class="wrap leadwrap"><div><div class="eyebrow">Talk to us</div><h2 class="h2">Prefer we reach out?</h2><ul class="why"><li>A 30-minute session built around your industry blueprint</li><li>Your first moment, survey and follow-up rules, mapped live</li><li>Straight answers on pricing, security review and timeline</li></ul></div>${leadForm("demo","Product demo","Request a demo","Tell us a little about you and we'll set up a session around your Salesforce org.")}</div></section>`;
 
 V.learn = () => `${hero("", "Learning Center", "Role-based learning paths, setup guides, best practices and reference for running a world-class feedback program on Salesforce.", `<div class="ctas"><a class="btn primary" href="#learn" data-jump="start">Start the setup guide</a><a class="btn ghost" href="#learn" data-jump="paths">Choose a learning path</a></div>`)}
 <section class="band"><div class="wrap learn">
@@ -1097,7 +1122,7 @@ return `${hero("", "GetFeedback retires on <em>December 31, 2026.</em> Keep your
  <div><div class="eyebrow">Need sign-off?</div><h2 class="h2">Bring a business case to your budget meeting</h2><p class="sub">Put in your accounts, revenue and churn and get a one-page case you can email to finance.</p><div class="ctas" style="margin-top:22px"><a class="btn dark" href="#roi">Build my business case →</a><a class="btn line" href="#compare">Native vs. bolt-on</a></div></div>
  <div class="mini"><div class="eyebrow">What carries over</div><dl class="kv" style="border:0;margin-top:6px;padding-top:6px"><dt>NPS, CSAT, CES surveys</dt><dd>Yes</dd><dt>Salesforce-triggered sends</dt><dd>Yes</dd><dt>Closed-loop cases and tasks</dt><dd>Yes</dd><dt>Email, QR, Experience Cloud</dt><dd>Yes</dd><dt>Response history</dt><dd>Plan it on your switch call</dd></dl></div>
 </div></section>
-${finalCTA("switch_final")}`; };
+<section class="band"><div class="wrap"><div class="eyebrow">Migration questions</div><h2 class="h2">What buyers ask before they switch</h2><div class="faqlist" style="margin-top:22px"><details class="qa"><summary>Is the migration automatic?</summary><p>No. Survey definitions are rebuilt in NPS Survey CX OS, usually starting from one of 70+ ready-made forms or your industry blueprint. Most teams find this is a chance to drop surveys nobody reads.</p></details><details class="qa"><summary>Can we keep our response history?</summary><p>Export it from your current tool before your access ends. On the switch call we'll plan where history should live in Salesforce so your trends continue.</p></details><details class="qa"><summary>What happens to our Flows and record mappings?</summary><p>Triggers are rebuilt on the same Salesforce events (case closed, opportunity won, renewal dates), and answers map to the fields your reports already use.</p></details><details class="qa"><summary>What does security review look like?</summary><p>NPS Survey CX OS is a managed package on Salesforce AppExchange that runs inside your org, so there's no new vendor cloud holding your survey data.</p></details><details class="qa"><summary>How long does it take?</summary><p>Plan on a few weeks for a typical program: inventory, rebuild in a sandbox, a short parallel run, then cut over. Start now to finish well before December 31.</p></details><details class="qa"><summary>What does it cost?</summary><p>One price per org: CX Lite $3,500, CX Pro $8,500, CX360 Insights from $16,000 a year, with a 7-day free trial. Implementation help is available from SalesHub and our consulting partners.</p></details></div></div></section><section class="band tint" id="switch-form"><div class="wrap leadwrap"><div><div class="eyebrow">Moving from GetFeedback or Delighted?</div><h2 class="h2">Plan your Salesforce-native migration</h2><ul class="why"><li>A 30-minute switch call, free</li><li>Your surveys, triggers and follow-up rules mapped to NPS Survey CX OS</li><li>A dated plan that finishes before December 31</li></ul></div>${leadForm("switch","GetFeedback migration","Plan your switch","Tell us about your current surveys and timeline. We'll map the move with you.")}</div></section>${finalCTA("switch_final")}`; };
 
 
 // ---------- Trust bar ----------
@@ -1109,7 +1134,7 @@ const trustBar = () => `<div class="tbar" aria-label="Platform and purchasing pa
 
 // ---------- Partner program ----------
 const PARTNER_MAIL = "mailto:support@saleshub.info?subject=" + encodeURIComponent("Partner application: [Your company]") + "&body=" + encodeURIComponent("Company:\nWebsite:\nYour name and role:\nSalesforce practice size (consultants):\nClouds and industries you focus on:\nClients currently on GetFeedback, Delighted or another survey tool (approx.):\nPartner track you're interested in (Referral / Implementation / Public sector teaming):\n");
-V.partners = () => `${hero("", "Partner with SalesHub. <em>Bring native CX</em> to every Salesforce client.", "For Salesforce consulting partners and SIs: add NPS, CSAT and closed-loop feedback to your projects, keep your services revenue, and earn up to 25% of first-year subscription revenue on every deal you bring.", `<div class="ctas"><a class="btn primary" href="${PARTNER_MAIL}">Apply to partner</a><a class="btn ghost" href="${DEMO}" target="_blank" rel="noopener">Book a partner call</a></div><div class="sfchip"><img src="brand/partners/salesforce.svg" alt="Salesforce" width="52" height="36">Built on Salesforce · Listed on Salesforce AppExchange</div>`)}
+V.partners = () => `${hero("", "Partner with SalesHub. <em>Bring native CX</em> to every Salesforce client.", "For Salesforce consulting partners and SIs: add NPS, CSAT and closed-loop feedback to your projects, keep your services revenue, and earn up to 25% of first-year subscription revenue on every deal you bring.", `<div class="ctas"><a class="btn primary" href="#partners" data-jump="partner-form">Apply to partner</a><a class="btn ghost" href="${DEMO}" target="_blank" rel="noopener">Book a partner call</a></div><div class="sfchip"><img src="brand/partners/salesforce.svg" alt="Salesforce" width="52" height="36">Built on Salesforce · Listed on Salesforce AppExchange</div>`)}
 <section class="band"><div class="wrap split"><div><div class="eyebrow">For Salesforce consulting partners</div><h2 class="h2">Your consultants, your client, a native app that just works</h2><p class="sub">Add closed-loop feedback to Service Cloud, Sales Cloud and Experience Cloud projects. Your team configures it with Salesforce skills it already has, and the client sees value in weeks, not quarters.</p></div><figure class="ill"><img src="brand/illustrations/partners.svg" alt="Two Salesforce consultants and a client lead plan a rollout of NPS Survey CX OS together" loading="lazy" width="1400" height="820"></figure></div></section>
 <section class="band"><div class="wrap">
  <div class="eyebrow">Why partners add NPS Survey CX OS</div><h2 class="h2">A fast, native win inside projects you already run</h2>
@@ -1132,9 +1157,44 @@ V.partners = () => `${hero("", "Partner with SalesHub. <em>Bring native CX</em> 
  <div class="eyebrow">How it works</div><h2 class="h2">From application to first registered deal in a week</h2>
  <div class="steps4">${[["1","Apply","Send a short application: your practice, clouds, industries and clients."],["2","Intro call","30 minutes with our team to agree on the track and the first opportunities."],["3","Sign","Sign the partner agreement and get your enablement materials."],["4","Register deals","Register opportunities with us and start co-selling."]].map(([n,t,p])=>`<div class="card"><div class="eyebrow">Step ${n}</div><h3>${t}</h3><p>${p}</p></div>`).join("")}</div>
  ${trustBar()}
- <div class="ctas" style="justify-content:center;display:flex;gap:10px;flex-wrap:wrap"><a class="btn dark" href="${PARTNER_MAIL}">Apply to partner</a><a class="btn line" href="#switch">See the GetFeedback switch plan</a></div>
+ <div class="ctas" style="justify-content:center;display:flex;gap:10px;flex-wrap:wrap"><a class="btn dark" href="#partners" data-jump="partner-form">Apply to partner</a><a class="btn line" href="#switch">See the GetFeedback switch plan</a></div>
 </div></section>
-${finalCTA("partners_final")}`;
+<section class="band tint" id="partner-form"><div class="wrap leadwrap"><div><div class="eyebrow">Apply</div><h2 class="h2">Join the partner program</h2><ul class="why"><li>20% of first-year subscription for referrals</li><li>25% of first-year plus 10% of renewals for implementation partners</li><li>Keep 100% of your services revenue</li></ul></div>${leadForm("partners","Partner program","Apply to partner","Tell us about your Salesforce practice. We reply within one business day.")}</div></section>${finalCTA("partners_final")}`;
+
+
+// ---------- Lead capture (Salesforce Web-to-Lead) ----------
+const W2L = { oid: "00D6g000001VQio", action: "https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8" };
+const INTERESTS = ["Product demo","GetFeedback migration","Enterprise pricing","Government deployment","Partner program"];
+let leadN = 0;
+const leadForm = (ctx="general", preset="Product demo", title="Talk to our team", sub="Tell us a little about you. We reply within one business day.") => { const n=++leadN;
+ return `<div class="leadbox" data-ctx="${ctx}"><form class="lform" action="${W2L.action}" method="POST" target="w2l_${n}" novalidate>
+  <h3>${title}</h3><p class="lsub">${sub}</p>
+  <input type="hidden" name="oid" value="${W2L.oid}"><input type="hidden" name="retURL" value="https://www.npssurveys.com/thanks.html"><input type="hidden" name="lead_source" value="npssurveys.com"><input type="hidden" name="description" value="">
+  <div class="lgrid">
+   <div class="lf full"><label>What can we help with?</label><div class="pills">${INTERESTS.map((x,i)=>`<input type="radio" id="i${n}_${i}" name="interest" value="${x}"${x===preset?" checked":""}><label for="i${n}_${i}">${x}</label>`).join("")}</div></div>
+   <div class="lf"><label for="fn${n}">First name</label><input id="fn${n}" name="first_name" autocomplete="given-name" required><div class="err">Please add your first name.</div></div>
+   <div class="lf"><label for="ln${n}">Last name</label><input id="ln${n}" name="last_name" autocomplete="family-name" required><div class="err">Please add your last name.</div></div>
+   <div class="lf"><label for="em${n}">Work email</label><input id="em${n}" name="email" type="email" autocomplete="email" required><div class="err">Please use a valid work email.</div></div>
+   <div class="lf"><label for="co${n}">Company or agency</label><input id="co${n}" name="company" autocomplete="organization" required><div class="err">Please add your company.</div></div>
+   <div class="lf"><label for="ti${n}">Your role</label><select id="ti${n}" name="title"><option value="">Choose one</option><option>CX or Customer Success leader</option><option>Salesforce Admin or Architect</option><option>Service or Support leader</option><option>IT or Business leadership</option><option>Salesforce consulting partner</option><option>Government program or CX office</option><option>Other</option></select></div>
+   <div class="lf"><label for="tool${n}">Current survey tool <span style="font-weight:500;color:var(--fg-mute)">(optional)</span></label><select id="tool${n}" name="tool"><option value="">Choose one</option><option>GetFeedback</option><option>Delighted</option><option>Salesforce Feedback Management</option><option>Qualtrics</option><option>Medallia</option><option>SurveyMonkey</option><option>Other</option><option>None yet</option></select></div>
+   <div class="lf full"><label for="msg${n}">Anything we should know? <span style="font-weight:500;color:var(--fg-mute)">(optional)</span></label><textarea id="msg${n}" name="msg" placeholder="Timeline, number of surveys, Salesforce clouds you use…"></textarea></div>
+  </div>
+  <button class="btn primary" type="submit">Send, and we'll be in touch →</button>
+  <p class="fine">We'll only use this to reply about NPS Survey CX OS. See our <a href="https://saleshub.info/privacy-policy" target="_blank" rel="noopener">privacy policy</a>. Prefer email? <a href="mailto:support@saleshub.info">support@saleshub.info</a></p>
+ </form><iframe name="w2l_${n}" title="" hidden></iframe>
+ <div class="done" role="status"><div class="ok">✓</div><h3>Thanks, we've got it.</h3><p class="lsub">We'll reply within one business day. Want to see it sooner?</p><div class="ctas" style="justify-content:center">${trial("lead_thanks")}<a class="btn line" href="${DEMO}" target="_blank" rel="noopener">Pick a time now</a></div></div></div>`; };
+function wireLead(root){ root.querySelectorAll(".lform").forEach(f=>{ if(f._w) return; f._w=1;
+  f.addEventListener("submit",e=>{ let ok=true;
+   f.querySelectorAll("[required]").forEach(i=>{ const bad=!i.value.trim()||(i.type==="email"&&!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(i.value)); i.closest(".lf").classList.toggle("bad",bad); if(bad) ok=false; });
+   if(!ok){ e.preventDefault(); f.querySelector(".bad input")?.focus(); return; }
+   const g=n=>(f.querySelector(`[name="${n}"]`)?.value||"").trim(), it=(f.querySelector('[name="interest"]:checked')||{}).value||"";
+   const q=new URLSearchParams(location.search);
+   f.querySelector('[name="description"]').value=[`Interest: ${it}`,`Current tool: ${g("tool")||"n/a"}`,`Message: ${g("msg")||"n/a"}`,`Form: ${f.closest(".leadbox").dataset.ctx} on ${location.pathname}${location.hash}`,`UTM: ${["utm_source","utm_medium","utm_campaign","utm_content"].map(k=>q.get(k)).filter(Boolean).join(" / ")||"none"}`,`Referrer: ${document.referrer||"direct"}`,`Submitted: ${new Date().toISOString()}`].join("\n");
+   setTimeout(()=>{ f.closest(".leadbox").classList.add("sent"); f.closest(".leadbox").scrollIntoView({behavior:"smooth",block:"center"}); },400);
+  });
+  f.querySelectorAll("[required]").forEach(i=>i.addEventListener("input",()=>i.closest(".lf").classList.remove("bad")));
+ }); }
 
 function route(){
   const h = (location.hash||"#home").slice(1);
@@ -1168,6 +1228,7 @@ function wire(){
     calc.addEventListener("input", up); up(); }
   const feed = app.querySelector("#feed"); if (feed) liveFeed(feed);
   const roiEl = app.querySelector("#roi"); if (roiEl) roiWire(roiEl);
+  wireLead(app);
 }
 function prog(){ app.querySelectorAll(".path").forEach(p=>{ const all=p.querySelectorAll("input"), done=[...all].filter(x=>x.checked).length; const bar=p.querySelector(".progress i"), lbl=p.querySelector(".plabel"); if(bar) bar.style.width = (all.length? done/all.length*100:0)+"%"; if(lbl) lbl.textContent = `${done} of ${all.length} units complete`; }); }
 const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
