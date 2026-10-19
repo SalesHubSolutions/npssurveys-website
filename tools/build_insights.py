@@ -27,6 +27,7 @@ article table{width:100%;border-collapse:collapse;margin:18px 0;font-size:.95rem
 .tw{overflow-x:auto}
 .cta{background:var(--bg-tint);border:1px solid var(--line);border-radius:18px;padding:24px;margin:36px 0}.cta h3{margin:0 0 6px}
 .b{display:inline-flex;align-items:center;font-weight:700;border-radius:999px;padding:12px 20px;text-decoration:none;margin:10px 10px 0 0}.b.p{background:var(--yellow);color:var(--navy)}.b.d{background:var(--navy);color:#fff}
+figure.fig{margin:28px 0;}figure.fig svg{width:100%;height:auto;display:block;border-radius:18px;box-shadow:0 10px 30px rgba(12,24,74,.08)}@media (max-width:640px){figure.fig{overflow-x:auto}figure.fig svg{min-width:620px}}figure.fig figcaption{font-size:.85rem;color:var(--fg-mute);margin-top:8px;text-align:center}
 .src{font-size:.88rem;color:var(--fg-mute);border-top:1px solid var(--line);margin-top:36px;padding-top:16px}
 .cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:18px;padding:40px 0 60px}
 .card{border:1px solid var(--line);border-radius:18px;padding:22px;text-decoration:none;color:var(--fg);background:var(--surface);display:flex;flex-direction:column;gap:8px}
@@ -72,6 +73,13 @@ def load():
         meta = json.loads(m.group(1)); meta["body"] = m.group(2); posts.append(meta)
     return sorted(posts, key=lambda p: (p["date"], p["slug"]), reverse=True)
 
+def figs(body):
+    def rep(m):
+        name, _, cap = m.group(1).partition("|")
+        svg = open(os.path.join(ROOT, "content/figures", name.strip() + ".svg")).read()
+        return f'<figure class="fig">{svg}<figcaption>{html.escape(cap.strip())}</figcaption></figure>'
+    return re.sub(r"\{\{FIG:([^}]+)\}\}", rep, body)
+
 def fmt(d): return datetime.date.fromisoformat(d).strftime("%B %-d, %Y")
 
 def build():
@@ -80,7 +88,7 @@ def build():
         url = f"{SITE}/insights/{p['slug']}/"
         ld = {"@context": "https://schema.org", "@type": "BlogPosting", "headline": p["title"], "description": p["description"], "datePublished": p["date"],
               "author": {"@type": "Organization", "name": p.get("author", "SalesHub")}, "publisher": {"@type": "Organization", "name": "SalesHub, LLC"}, "mainEntityOfPage": url, "image": f"{SITE}/share.png"}
-        body = p["body"].replace("{{CTA}}", cta_html(p.get("cta", "trial"), p["slug"])).replace("{{TRIAL}}", LIST + "&utm_content=blog_" + p["slug"])
+        body = figs(p["body"]).replace("{{CTA}}", cta_html(p.get("cta", "trial"), p["slug"])).replace("{{TRIAL}}", LIST + "&utm_content=blog_" + p["slug"])
         page = head(p["title"] + " | NPS Survey CX OS", p["description"], url, f'<script type="application/ld+json">{json.dumps(ld)}</script>') + f"""
 <section class="hero"><div class="narrow"><div class="crumb"><a href="/insights/">Insights</a> &middot; {html.escape(" · ".join(p.get("tags", [])))}</div>
 <h1>{html.escape(p["title"])}</h1><p>{html.escape(p["description"])}</p><div class="meta">{html.escape(p.get("author","SalesHub"))} &middot; {fmt(p["date"])} &middot; {p.get("read","")} read</div></div></section>
