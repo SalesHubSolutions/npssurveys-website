@@ -21,7 +21,57 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://www.npssurveys.com/share.png">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"NPS Survey CX OS","applicationCategory":"BusinessApplication","operatingSystem":"Salesforce","url":"https://www.npssurveys.com/","publisher":{"@type":"Organization","name":"SalesHub, LLC"},"offers":{"@type":"Offer","price":"3500","priceCurrency":"USD"}}</script>
-<style>img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style>
+<style>img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}
+/* ROI / business case */
+.roi{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);gap:28px;align-items:start}
+.roi .inputs,.roi .result{background:var(--surface);border:1px solid var(--line);border-radius:22px;padding:26px}
+.roi .result{position:sticky;top:88px}
+.fld{display:grid;gap:6px;margin-bottom:18px}
+.fld label{font-weight:700;font-size:.95rem}
+.fld .hint{color:var(--fg-mute);font-size:.82rem}
+.fld .row2{display:flex;align-items:center;gap:12px}
+.fld input[type=range]{flex:1;accent-color:var(--blue)}
+.fld input[type=number],.fld select{width:150px;padding:10px 12px;border:1px solid var(--line);border-radius:10px;font:inherit;background:var(--bg);color:var(--fg);font-variant-numeric:tabular-nums}
+.fld select{width:100%}
+.seg{display:inline-flex;border:1px solid var(--line);border-radius:999px;padding:3px;gap:3px;margin-bottom:20px}
+.seg button{border:0;background:none;font:inherit;font-weight:700;font-size:.88rem;padding:8px 14px;border-radius:999px;color:var(--fg-soft);cursor:pointer}
+.seg button[aria-pressed=true]{background:var(--navy);color:#fff}
+.big{font-size:clamp(2.2rem,4.6vw,3.2rem);font-weight:800;line-height:1;font-variant-numeric:tabular-nums;color:var(--fg)}
+.big.pos{color:var(--green)}
+.kv{display:grid;grid-template-columns:1fr auto;gap:10px 16px;margin-top:18px;padding-top:18px;border-top:1px solid var(--line);font-size:.95rem}
+.kv dt{color:var(--fg-soft)} .kv dd{margin:0;font-weight:700;text-align:right;font-variant-numeric:tabular-nums}
+.kv .tot{border-top:1px solid var(--line);padding-top:10px;font-weight:800;color:var(--fg)}
+.callout-be{background:var(--bg-tint);border:1px solid var(--line);border-radius:14px;padding:14px 16px;margin-top:18px;font-size:.98rem}
+.callout-be b{color:var(--link)}
+.roi .acts{display:flex;flex-wrap:wrap;gap:10px;margin-top:20px}
+.btn.line{border-color:var(--line);color:var(--fg);background:var(--surface)}
+.roiteaser{display:grid;grid-template-columns:1.2fr 1fr;gap:28px;align-items:center}
+.roiteaser .mini{background:var(--surface);border:1px solid var(--line);border-radius:22px;padding:24px;box-shadow:var(--shadow)}
+.cmp{width:100%;border-collapse:separate;border-spacing:0;margin-top:32px;background:var(--surface);border:1px solid var(--line);border-radius:18px;overflow:hidden;font-size:.95rem}
+.cmp th,.cmp td{padding:14px 16px;text-align:left;vertical-align:top;border-bottom:1px solid var(--line)}
+.cmp thead th{background:var(--bg-tint);font-size:.9rem}
+.cmp thead th.us{background:var(--navy);color:#fff}
+.cmp td.us{background:rgba(30,84,232,.06);font-weight:600}
+.cmp tr:last-child td{border-bottom:0}
+.cmpwrap{overflow-x:auto}
+.mcta{display:none}
+@media (max-width:920px){.roi,.roiteaser{grid-template-columns:1fr}.roi .result{position:static}}
+@media (max-width:720px){
+ .mcta{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:60;gap:8px;padding:10px 12px calc(10px + env(safe-area-inset-bottom));background:rgba(12,24,74,.96);backdrop-filter:blur(8px)}
+ .mcta .btn{flex:1;justify-content:center;padding:12px 10px;font-size:.92rem}
+ body{padding-bottom:72px}
+ .cmp{min-width:640px}
+ header.nav .acts{display:none}
+ .swipe{display:block!important}
+}
+@media print{
+ header.nav,footer,.mcta,.final,.roi .inputs,.roi .acts,.pagehero .ctas{display:none!important}
+ .pagehero{background:none;color:#000}.pagehero p{color:#333}
+ .roi{grid-template-columns:1fr}.roi .result{position:static;border:0}
+ #printcase{display:block!important}
+}
+#printcase{display:none}
+</style>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
 <style>
@@ -355,21 +405,22 @@ a.card:focus-visible{outline:3px solid var(--yellow);outline-offset:2px}
   <a class="logo" href="#home"><img src="brand/logo/nps-survey-cx-os-mark.svg" alt=""><span>NPS Survey CX OS<small>by SalesHub</small></span></a>
   <ul id="navlinks">
     <li><a href="#platform">Platform</a></li><li><a href="#industries">Industries</a></li><li><a href="#public-sector">Public Sector</a></li>
-    <li><a href="#learn">Learn</a></li><li><a href="#resources">Resources</a></li><li><a href="#reviews">Reviews</a></li><li><a href="#pricing">Pricing</a></li>
+    <li><a href="#learn">Learn</a></li><li><a href="#resources">Resources</a></li><li><a href="#reviews">Reviews</a></li><li><a href="#roi">ROI</a></li><li><a href="#pricing">Pricing</a></li>
   </ul>
   <div class="acts"><a class="btn ghost" href="#demo">Book a demo</a><a class="btn primary" href="https://appexchange.salesforce.com/appxListingDetail?listingId=a0N3A00000FtRTKUA3&tab=e&utm_source=npssurveys.com&utm_medium=website&utm_campaign=cxos_site&utm_content=nav" target="_blank" rel="noopener">Free trial</a></div>
   <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="drawer">Menu</button>
 </div>
 <div class="drawer" id="drawer" hidden><div class="wrap">
   <a href="#platform">Platform</a><a href="#industries">Industries</a><a href="#public-sector">Public Sector</a><a href="#learn">Learn</a>
-  <a href="#resources">Resources</a><a href="#reviews">Reviews</a><a href="#pricing">Pricing</a><a href="#demo">Book a demo</a>
+  <a href="#resources">Resources</a><a href="#reviews">Reviews</a><a href="#roi">ROI calculator</a><a href="#compare">Compare</a><a href="#pricing">Pricing</a><a href="#demo">Book a demo</a>
 </div></div></header>
 
 <main id="app"></main>
+<div class="mcta"><a class="btn primary" href="https://appexchange.salesforce.com/appxListingDetail?listingId=a0N3A00000FtRTKUA3&tab=e&utm_source=npssurveys.com&utm_medium=website&utm_campaign=cxos_site&utm_content=mobile_bar" target="_blank" rel="noopener">Free trial</a><a class="btn ghost" href="#roi">ROI calculator</a></div>
 
 <footer><div class="wrap">
-  <div><div class="flogo"><img src="brand/logo/nps-survey-cx-os-mark.svg" alt="">NPS Survey CX OS</div><p class="addr">SalesHub, LLC · 1853 Piedmont Rd, Suite 301, Marietta, GA 30066<br>1 (833) 733-2468 · Sales@saleshub.info</p></div>
-  <div><h4>Product</h4><ul><li><a href="#platform">Platform</a></li><li><a href="#pricing">Pricing</a></li><li><a href="#reviews">Reviews</a></li><li><a href="https://appexchange.salesforce.com/appxListingDetail?listingId=a0N3A00000FtRTKUA3&tab=e&utm_source=npssurveys.com&utm_medium=website&utm_campaign=cxos_site&utm_content=footer" target="_blank" rel="noopener">AppExchange listing</a></li></ul></div>
+  <div><div class="flogo"><img src="brand/logo/nps-survey-cx-os-mark.svg" alt="">NPS Survey CX OS</div><p class="addr">SalesHub, LLC · 1853 Piedmont Rd, Suite 301, Marietta, GA 30066<br>1 (833) 733-2468 · support@saleshub.info</p></div>
+  <div><h4>Product</h4><ul><li><a href="#platform">Platform</a></li><li><a href="#pricing">Pricing</a></li><li><a href="#roi">ROI calculator</a></li><li><a href="#compare">Compare</a></li><li><a href="#reviews">Reviews</a></li><li><a href="https://appexchange.salesforce.com/appxListingDetail?listingId=a0N3A00000FtRTKUA3&tab=e&utm_source=npssurveys.com&utm_medium=website&utm_campaign=cxos_site&utm_content=footer" target="_blank" rel="noopener">AppExchange listing</a></li></ul></div>
   <div><h4>Solutions</h4><ul><li><a href="#industries">All industries</a></li><li><a href="#public-sector">Public sector</a></li><li><a href="#ind-defense">Defense</a></li><li><a href="#ind-healthcare">Healthcare</a></li></ul></div>
   <div><h4>Learn &amp; connect</h4><ul><li><a href="#learn">Learning Center</a></li><li><a href="#resources">Resources</a></li><li><a href="https://www.youtube.com/@saleshubllc" target="_blank" rel="noopener">YouTube</a></li><li><a href="https://www.linkedin.com/company/12673581" target="_blank" rel="noopener">LinkedIn</a></li><li><a href="https://www.instagram.com/saleshub.info" target="_blank" rel="noopener">Instagram</a></li></ul></div>
   <p class="legal">© 2026 SalesHub, LLC · UEI Y8JGEMLEF9L3 · CAGE 02S16. Salesforce and AppExchange are trademarks of Salesforce, Inc. No government endorsement implied. Product screens are illustrations with sample data.</p>
@@ -442,7 +493,7 @@ V.home = () => `
         <div class="feed" id="feed">
           <div class="row"><span class="d" style="background:#EB5757"></span><span class="n">Acme Corp · Case 08812 closed</span><span class="a" style="color:#D64545">P1 case opened</span><span class="s">3</span></div>
           <div class="row"><span class="d" style="background:#E9A52B"></span><span class="n">Northwind · Renewal won</span><span class="a" style="color:#B9801A">30-day nurture</span><span class="s">7</span></div>
-          <div class="row"><span class="d" style="background:#23A96A"></span><span class="n">Globex · Onboarding complete</span><span class="a" style="color:#1E9A5B">Review request sent</span><span class="s">10</span></div>
+          <div class="row"><span class="d" style="background:#23A96A"></span><span class="n">Lakeside Clinics · Onboarding complete</span><span class="a" style="color:#1E9A5B">Review request sent</span><span class="s">10</span></div>
         </div>
       </div>
       <div class="sample">Product illustration · sample data</div></div>
@@ -525,7 +576,7 @@ V.home = () => `
    "QR code at the counter, or permit issued","A short CSAT on the resident's phone","Low scores create a case for the office manager; results roll up by office and service","CSAT by office and service"]
  ].map(([img,tag,t,alt,trig,ask,act,kpi])=>`<article class="story"><img src="brand/illustrations/${img}" alt="${alt}" loading="lazy"><div class="sb"><span class="pill">${tag} · example program</span><h3>${t}</h3>
    <dl><dt>Trigger</dt><dd>${trig}</dd><dt>Ask</dt><dd>${ask}</dd><dt>Act</dt><dd>${act}</dd><dt>Measure</dt><dd>${kpi}</dd></dl></div></article>`).join("")}</div>
- <p class="note" style="margin-top:18px">Named customer stories are published only with each customer's written approval. Want yours featured? <a href="mailto:Sales@saleshub.info">Sales@saleshub.info</a></p>
+ <p class="note" style="margin-top:18px">Named customer stories are published only with each customer's written approval. Want yours featured? <a href="mailto:support@saleshub.info">support@saleshub.info</a></p>
 </div></section>
 
 <section class="band"><div class="wrap">
@@ -535,12 +586,23 @@ V.home = () => `
   <div class="ctas" style="margin-left:auto"><a class="btn dark" href="${LIST}&utm_content=home_reviews&tab=r" target="_blank" rel="noopener">Read the reviews</a></div></div>
 </div></section>
 
+<section class="band"><div class="wrap roiteaser">
+ <div><div class="eyebrow">Business case</div><h2 class="h2">See what one saved account is worth to you</h2>
+  <p class="sub">Enter your accounts, revenue and churn. The calculator shows the revenue at risk today, how many saved accounts pay for your plan, and a one-page business case you can send to your CFO.</p>
+  <div class="ctas" style="margin-top:22px"><a class="btn dark" href="#roi">Build my business case →</a><a class="btn line" href="#compare">Native vs. bolt-on survey tools</a></div></div>
+ <div class="mini" aria-hidden="true">
+  <div class="eyebrow">Example inputs</div>
+  <dl class="kv" style="border:0;margin-top:6px;padding-top:6px"><dt>500 accounts × $12,000</dt><dd>$6,000,000</dd><dt>12% churn today</dt><dd>$720,000 at risk</dd><dt>Prevent 10% of that churn</dt><dd>$72,000</dd><dt class="tot">CX Pro pays for itself at</dt><dd class="tot">1 saved account</dd></dl>
+  <p class="note">Illustrative inputs. Use your own in the calculator.</p>
+ </div>
+</div></section>
+
 <section class="band tint" id="pricing-home"><div class="wrap">
  <div class="eyebrow">Pricing</div><h2 class="h2">One price per org. Every plan starts with a 7-day free trial.</h2>
  <p class="sub">Install from Salesforce AppExchange, no credit card needed to install. Buy on AppExchange when you're ready. Nonprofit and multi-year discounts are available.</p>
  <div class="plans" style="margin-top:30px">
   <div class="plan"><div class="tagline">Start closing the loop</div><h3>CX Lite</h3><div class="price">$3,500<small> /year</small></div><p>For teams launching NPS and CSAT inside Salesforce with closed-loop follow-up.</p>${trial("home_price_lite","Try CX Lite free","dark")}</div>
-  <div class="plan pop"><div class="tagline">Most chosen</div><h3>CX Pro</h3><div class="price">$8,500<small> /year</small></div><p>For CX, service and success teams running surveys across channels and departments.</p>${trial("home_price_pro","Try CX Pro free")}</div>
+  <div class="plan pop"><div class="tagline">Recommended for most teams</div><h3>CX Pro</h3><div class="price">$8,500<small> /year</small></div><p>For CX, service and success teams running surveys across channels and departments.</p>${trial("home_price_pro","Try CX Pro free")}</div>
   <div class="plan"><div class="tagline">Enterprise insight</div><h3>CX360 Insights</h3><div class="price"><small>from </small>$16,000<small> /year</small></div><p>For organizations that want the full customer experience picture across every team.</p>${trial("home_price_360","See CX360 on AppExchange","dark")}</div>
  </div>
  <p class="note">Prices are per company per year, as listed on Salesforce AppExchange. Public-sector buyers can also purchase through Carahsoft.</p>
@@ -604,7 +666,7 @@ V.platform = () => `${hero("", "The customer experience <em>operating system</em
     <div class="t"><h3>100% Salesforce-native</h3><p>Installed from AppExchange as a managed package in your org.</p></div>
     <div class="t"><h3>Your data stays put</h3><p>Survey responses are stored in your Salesforce org and never leave it.</p></div>
     <div class="t"><h3>Your permissions</h3><p>Access follows the Salesforce profiles, roles and sharing rules you already manage.</p></div>
-    <div class="t"><h3>Documentation on request</h3><p>Security and accessibility details for your review team, from Sales@saleshub.info.</p></div>
+    <div class="t"><h3>Documentation on request</h3><p>Security and accessibility details for your review team, from support@saleshub.info.</p></div>
   </div></div></section>
 ${finalCTA("platform_final")}`;
 
@@ -633,7 +695,7 @@ V["public-sector"] = () => `${hero("", "Public sector CX, <em>inside Salesforce<
 </div>
 <div class="eyebrow" style="margin-top:56px">Downloads</div><h2 class="h2">Everything your evaluation team asks for</h2>
 <div class="stack" style="margin-top:22px">${RES.filter(r=>r.ind==="Public sector").map(resRow).join("")}</div>
-<div class="grid3" style="margin-top:28px"><div class="card"><h3>Company data</h3><p>SalesHub, LLC · Marietta, Georgia · founded 2018</p></div><div class="card"><h3>Registration</h3><p>UEI Y8JGEMLEF9L3 · CAGE 02S16</p></div><div class="card"><h3>NAICS</h3><p>541511 · 541512 · 541611</p></div></div><p class="note">No government endorsement implied. Security and accessibility documentation is available on request from Sales@saleshub.info.</p>
+<div class="grid3" style="margin-top:28px"><div class="card"><h3>Company data</h3><p>SalesHub, LLC · Marietta, Georgia · founded 2018</p></div><div class="card"><h3>Registration</h3><p>UEI Y8JGEMLEF9L3 · CAGE 02S16</p></div><div class="card"><h3>NAICS</h3><p>541511 · 541512 · 541611</p></div></div><p class="note">No government endorsement implied. Security and accessibility documentation is available on request from support@saleshub.info.</p>
 </div></section>${finalCTA("ps_final")}`;
 
 V.resources = () => `${hero("", "Resources, videos and <em>downloads</em>", "Guides, points of view, offering sheets, the industry blueprints workbook and every video in one place.", "")}
@@ -655,7 +717,7 @@ V.reviews = () => `${hero("", "Rated <em>5.0</em> on Salesforce AppExchange", "S
  <div class="rating"><span class="big">5.0</span><div><div class="stars">${star(26).repeat(5)}</div><p class="sub" style="margin-top:6px">Average of 7 reviews on Salesforce AppExchange</p></div></div>
  <div class="grid2" style="margin-top:36px">
   <div class="card"><h3>Using NPS Survey CX OS?</h3><p>A review on AppExchange helps other Salesforce teams decide. It takes about two minutes.</p><a class="btn dark" style="align-self:flex-start;margin-top:8px" href="${LIST}&utm_content=leave_review&tab=r" target="_blank" rel="noopener">Write a review</a></div>
-  <div class="card"><h3>Customer stories</h3><p>We publish stories only with each customer's written approval. Want to be featured, named or anonymized? Tell us at Sales@saleshub.info.</p></div>
+  <div class="card"><h3>Customer stories</h3><p>We publish stories only with each customer's written approval. Want to be featured, named or anonymized? Tell us at support@saleshub.info.</p></div>
  </div>
  <div class="eyebrow" style="margin-top:56px">What a story covers</div><h2 class="h2">How we tell customer stories</h2>
  <div class="grid4" style="margin-top:22px">${[["The challenge","What wasn't working, in the customer's words."],["The setup","The moment they measured first and how it was configured."],["The results","Three measures: response rate, follow-up time, score trend."],["What's next","Where they are taking the program."]].map(([a,b])=>`<div class="card"><h3>${a}</h3><p>${b}</p></div>`).join("")}</div>
@@ -664,7 +726,7 @@ V.reviews = () => `${hero("", "Rated <em>5.0</em> on Salesforce AppExchange", "S
 V.pricing = () => `${hero("", "Per-org pricing, <em>start free</em>", "Every edition starts with a 7-day free trial on Salesforce AppExchange. No credit card needed to install. Nonprofit discounts are available.", "")}
 <section class="band"><div class="wrap"><div class="plans">
     <div class="plan"><div class="tagline">Start closing the loop</div><h3>CX Lite</h3><div class="price">$3,500<small> /year</small></div><p>For teams launching NPS and CSAT inside Salesforce with closed-loop follow-up.</p><a class="btn dark" href="https://appexchange.salesforce.com/appxListingDetail?listingId=a0N3A00000FtRTKUA3&tab=e&utm_source=npssurveys.com&utm_medium=website&utm_campaign=cxos_site&utm_content=price_lite" target="_blank" rel="noopener">Try CX Lite free</a></div>
-    <div class="plan pop"><div class="tagline">Most chosen</div><h3>CX Pro</h3><div class="price">$8,500<small> /year</small></div><p>For CX, service and success teams running surveys across channels and departments.</p><a class="btn primary" href="https://appexchange.salesforce.com/appxListingDetail?listingId=a0N3A00000FtRTKUA3&tab=e&utm_source=npssurveys.com&utm_medium=website&utm_campaign=cxos_site&utm_content=price_pro" target="_blank" rel="noopener">Try CX Pro free</a></div>
+    <div class="plan pop"><div class="tagline">Recommended for most teams</div><h3>CX Pro</h3><div class="price">$8,500<small> /year</small></div><p>For CX, service and success teams running surveys across channels and departments.</p><a class="btn primary" href="https://appexchange.salesforce.com/appxListingDetail?listingId=a0N3A00000FtRTKUA3&tab=e&utm_source=npssurveys.com&utm_medium=website&utm_campaign=cxos_site&utm_content=price_pro" target="_blank" rel="noopener">Try CX Pro free</a></div>
     <div class="plan"><div class="tagline">Enterprise insight</div><h3>CX360 Insights</h3><div class="price"><small>from </small>$16,000<small> /year</small></div><p>For organizations that want the full customer experience picture across every team.</p><a class="btn dark" href="https://appexchange.salesforce.com/appxListingDetail?listingId=a0N3A00000FtRTKUA3&tab=e&utm_source=npssurveys.com&utm_medium=website&utm_campaign=cxos_site&utm_content=price_360" target="_blank" rel="noopener">See CX360 on AppExchange</a></div>
   </div>
   <p class="note">Edition details and current pricing are on the AppExchange listing. Public-sector buyers can also purchase through Carahsoft.</p></div></section>${finalCTA("pricing_final")}`;
@@ -673,7 +735,7 @@ V.demo = () => `${hero("", "Book a <em>30-minute</em> demo", "See your own indus
 <section class="band"><div class="wrap"><div class="grid3">
  <div class="card"><h3>What we'll cover</h3><p>Your first moment to measure, the survey, the closed-loop rules and the dashboard your leaders will use.</p></div>
  <div class="card"><h3>Who should join</h3><p>The person who owns the customer moment, plus your Salesforce admin.</p></div>
- <div class="card"><h3>Prefer to talk now?</h3><div class="copy"><code id="ph">1 (833) 733-2468</code><button data-copy="ph">Copy</button></div><div class="copy"><code id="em">Sales@saleshub.info</code><button data-copy="em">Copy</button></div></div>
+ <div class="card"><h3>Prefer to talk now?</h3><div class="copy"><code id="ph">1 (833) 733-2468</code><button data-copy="ph">Copy</button></div><div class="copy"><code id="em">support@saleshub.info</code><button data-copy="em">Copy</button></div></div>
 </div></div></section>`;
 
 V.learn = () => `${hero("", "Learning Center", "Role-based learning paths, setup guides, best practices and reference for running a world-class feedback program on Salesforce.", `<div class="ctas"><a class="btn primary" href="#learn" data-jump="start">Start the setup guide</a><a class="btn ghost" href="#learn" data-jump="paths">Choose a learning path</a></div>`)}
@@ -741,7 +803,7 @@ V.learn = () => `${hero("", "Learning Center", "Role-based learning paths, setup
 <h3>Security and sharing</h3><p>Access follows your profiles, permission sets, roles and sharing rules. Review who can see responses before go-live, especially open-text answers.</p>
 <h3>Sandboxes and releases</h3><p>Build and test in a sandbox, document your triggers and routing, then repeat the setup in production. Re-test after major Salesforce releases.</p>
 <h3>Reporting</h3><p>Use the CX Command Center and director and manager views for day-to-day work, and standard Salesforce reports and dashboards for anything custom.</p>
-<div class="callout"><b>Need help?</b> Email Sales@saleshub.info or book time with our team from the <a href="#demo">demo page</a>.</div>
+<div class="callout"><b>Need help?</b> Email support@saleshub.info or book time with our team from the <a href="#demo">demo page</a>.</div>
 
 <h2 id="nps">NPS calculator</h2>
 <p>NPS is the percentage of promoters (9 to 10) minus the percentage of detractors (0 to 6). Passives (7 to 8) count toward the total but not the score. It ranges from −100 to +100.</p>
@@ -770,6 +832,123 @@ V.learn = () => `${hero("", "Learning Center", "Role-based learning paths, setup
 </div></section>${finalCTA("learn_final")}`;
 
 const app = document.getElementById("app");
+
+// ---------- ROI / business case ----------
+const PLANS = {lite:{name:"CX Lite",price:3500},pro:{name:"CX Pro",price:8500},cx360:{name:"CX360 Insights",price:16000}};
+const ROI_DEF = {mode:"rev",acct:500,arpa:12000,churn:12,save:10,hrs:10,rate:60,tool:0,plan:"pro",
+                 cases:300,reopen:8,hpc:3};
+const money = n => (n<0?"−":"")+"$"+Math.round(Math.abs(n)).toLocaleString("en-US");
+const fld = (id,label,hint,min,max,step,pre="",suf="") => `<div class="fld"><label for="${id}">${label}</label><div class="row2"><input type="range" id="${id}_r" min="${min}" max="${max}" step="${step}" aria-label="${label}"><input type="number" id="${id}" min="0" step="${step}" inputmode="decimal" aria-describedby="${id}_h"></div><span class="hint" id="${id}_h">${pre}${hint}${suf}</span></div>`;
+V.roi = () => `${hero("", "Build your <em>business case</em> in 60 seconds", "Put in your own numbers. See what closing the loop on every low score is worth, how many saved accounts pay for your plan, and how fast it pays back.", `<div class="ctas">${trial("roi_hero")}${demoBtn()}</div>`)}
+<section class="band"><div class="wrap roi" id="roi">
+ <div class="inputs">
+  <div class="seg" role="group" aria-label="Organization type"><button type="button" data-mode="rev" aria-pressed="true">Revenue-driven business</button><button type="button" data-mode="pub" aria-pressed="false">Public sector &amp; nonprofit</button></div>
+  <div data-for="rev">
+   ${fld("acct","Active customer accounts","Accounts you'd survey in a year.",10,5000,10)}
+   ${fld("arpa","Average annual revenue per account ($)","Annual contract value or revenue per account.",500,200000,500)}
+   ${fld("churn","Annual churn today (%)","Share of accounts (or revenue) lost each year.",1,50,1)}
+   ${fld("save","Churn you could prevent with same-day follow-up (%)","Your assumption. Start low: 5–10% of today's churn is a cautious place to begin.",1,50,1)}
+  </div>
+  <div data-for="pub" hidden>
+   ${fld("cases","Complaints or escalations per month","Cases, 311 escalations or complaints that reach leadership.",10,5000,10)}
+   ${fld("reopen","Escalations you could prevent with same-day follow-up (%)","Your assumption. Start low.",1,60,1)}
+   ${fld("hpc","Staff hours per escalation","Research, response, sign-off and follow-up.",1,20,1)}
+  </div>
+  ${fld("hrs","Hours a month spent exporting and reconciling survey data","Across admins, analysts and managers.",0,200,1)}
+  ${fld("rate","Loaded hourly cost of that time ($)","Salary plus benefits and overhead.",20,200,5)}
+  ${fld("tool","Survey tools you'd retire ($ per year)","Leave at 0 if you're not replacing anything.",0,60000,500)}
+  <div class="fld"><label for="plan">Edition</label><select id="plan"><option value="lite">CX Lite · $3,500/yr</option><option value="pro">CX Pro · $8,500/yr</option><option value="cx360">CX360 Insights · from $16,000/yr</option></select><span class="hint">Per-org pricing from the AppExchange listing. Every edition has a 7-day free trial.</span></div>
+ </div>
+ <div class="result" aria-live="polite">
+  <div class="eyebrow">Estimated first-year value</div>
+  <div class="big pos" id="r_val">$0</div>
+  <p class="sub" style="margin-top:8px" id="r_line"></p>
+  <dl class="kv" id="r_kv"></dl>
+  <div class="callout-be" id="r_be"></div>
+  <div class="acts">
+   <a class="btn primary" id="r_trial" target="_blank" rel="noopener">Start the free trial →</a>
+   <button class="btn line" type="button" id="r_copy">Copy business case</button>
+   <button class="btn line" type="button" id="r_print">Save as PDF</button>
+   <a class="btn line" id="r_mail">Email it to my CFO</a>
+  </div>
+  <p class="note">An estimate based only on the numbers you enter, not a guarantee of results. The savings rate is your assumption; test it with the free trial on your own data.</p>
+ </div>
+</div></section>
+<section class="band tint"><div class="wrap">
+ <div class="eyebrow">How the math works</div><h2 class="h2">Every number on this page is yours</h2>
+ <div class="grid3" style="margin-top:28px">
+  <div class="card"><h3>Revenue protected</h3><p>Accounts × revenue per account × churn × the share of churn you prevent by calling back unhappy customers the same day.</p></div>
+  <div class="card"><h3>Time given back</h3><p>Hours a month spent exporting, matching and reporting survey data × 12 × loaded hourly cost. Responses land on the record, so that work goes away.</p></div>
+  <div class="card"><h3>Tools retired</h3><p>Anything you stop paying for when surveys, follow-up and dashboards run inside Salesforce. Per-org pricing means no per-user fees as you grow.</p></div>
+ </div>
+</div></section>
+${finalCTA("roi_final")}`;
+
+function roiWire(root){
+  let st={...ROI_DEF}; try{ Object.assign(st, JSON.parse(localStorage.getItem("cxos_roi")||"{}")); }catch(e){}
+  const $=id=>root.querySelector("#"+id);
+  const keys=["acct","arpa","churn","save","hrs","rate","tool","cases","reopen","hpc"];
+  keys.forEach(k=>{ const n=$(k), r=$(k+"_r"); n.value=st[k]; r.value=st[k];
+    n.addEventListener("input",()=>{ st[k]=+n.value||0; r.value=st[k]; calc(); });
+    r.addEventListener("input",()=>{ st[k]=+r.value; n.value=st[k]; calc(); }); });
+  $("plan").value=st.plan; $("plan").addEventListener("change",e=>{ st.plan=e.target.value; calc(); });
+  root.querySelectorAll("[data-mode]").forEach(b=>b.addEventListener("click",()=>{ st.mode=b.dataset.mode; calc(); }));
+  function calc(){
+    root.querySelectorAll("[data-mode]").forEach(b=>b.setAttribute("aria-pressed", String(b.dataset.mode===st.mode)));
+    root.querySelectorAll("[data-for]").forEach(d=>d.hidden = d.dataset.for!==st.mode);
+    const plan=PLANS[st.plan], time=st.hrs*12*st.rate, tool=st.tool;
+    let main=0, mainLbl, be;
+    if(st.mode==="rev"){
+      const atRisk=st.acct*st.arpa*st.churn/100; main=atRisk*st.save/100; mainLbl="Revenue protected";
+      const need=st.arpa>0? Math.max(1,Math.ceil(Math.max(0,plan.price-time-tool)/st.arpa)) : 0;
+      be = (time+tool)>=plan.price ? `<b>Time and tool savings alone cover ${plan.name}</b>, before a single account is saved.`
+         : `<b>Save ${need} account${need>1?"s":""} a year</b> and ${plan.name} pays for itself. At ${st.churn}% churn you lose about ${Math.round(st.acct*st.churn/100).toLocaleString("en-US")} accounts a year today.`;
+      st._risk=atRisk;
+    } else {
+      const hrs=st.cases*12*st.reopen/100*st.hpc; main=hrs*st.rate; mainLbl="Staff time on escalations avoided";
+      be = `<b>${Math.round(hrs).toLocaleString("en-US")} staff hours a year</b> back from escalations you get ahead of, plus a measurable service score by office and program.`;
+    }
+    const total=main+time+tool, net=total-plan.price, roi=plan.price? total/plan.price:0, pay= total>0? plan.price/(total/12):Infinity;
+    $("r_val").textContent=money(total);
+    $("r_line").textContent = `${roi>=1? roi.toFixed(1)+"× return on":"Covers "+Math.round(roi*100)+"% of"} ${plan.name} (${money(plan.price)} a year)` + (isFinite(pay)? `, paying back in about ${pay<1? Math.max(1,Math.round(pay*30))+" days": pay.toFixed(1)+" months"}.`:".");
+    $("r_kv").innerHTML = (st.mode==="rev"? `<dt>Revenue at risk from churn today</dt><dd>${money(st._risk)}</dd>`:"") +
+      `<dt>${mainLbl}</dt><dd>${money(main)}</dd><dt>Time given back</dt><dd>${money(time)}</dd><dt>Tools retired</dt><dd>${money(tool)}</dd>
+       <dt>${plan.name}, per year</dt><dd>−${money(plan.price)}</dd><dt class="tot">Net first-year value</dt><dd class="tot">${money(net)}</dd>`;
+    $("r_val").classList.toggle("pos", net>0);
+    $("r_be").innerHTML=be;
+    $("r_trial").href=`${LIST}&utm_content=roi_${st.plan}`;
+    const txt = `Business case: NPS Survey CX OS (${plan.name})\n\n`+
+      (st.mode==="rev"? `Accounts: ${st.acct} · Revenue per account: ${money(st.arpa)} · Churn: ${st.churn}% · Churn prevented (assumption): ${st.save}%\nRevenue at risk today: ${money(st._risk)}\n`:
+       `Escalations per month: ${st.cases} · Prevented (assumption): ${st.reopen}% · Hours each: ${st.hpc}\n`)+
+      `${mainLbl}: ${money(main)}\nTime given back: ${money(time)} (${st.hrs} h/month at ${money(st.rate)}/h)\nTools retired: ${money(tool)}\n`+
+      `Total annual value: ${money(total)}\n${plan.name}: ${money(plan.price)} per year (per org, not per user)\nNet first-year value: ${money(net)} · ${roi.toFixed(1)}× return\n\n`+
+      `Runs 100% inside Salesforce; data never leaves the org. 7-day free trial: ${LIST}&utm_content=roi_share\nCalculator: https://www.npssurveys.com/#roi`;
+    $("r_mail").href="mailto:?subject="+encodeURIComponent("Business case: NPS Survey CX OS for our Salesforce org")+"&body="+encodeURIComponent(txt);
+    root._txt=txt;
+    try{ const {_risk,...save}=st; localStorage.setItem("cxos_roi",JSON.stringify(save)); }catch(e){}
+  }
+  $("r_copy").addEventListener("click",async e=>{ try{ await navigator.clipboard.writeText(root._txt); e.target.textContent="Copied"; }catch(_){ e.target.textContent="Copy failed"; } setTimeout(()=>e.target.textContent="Copy business case",1800); });
+  $("r_print").addEventListener("click",()=>window.print());
+  calc();
+}
+
+V.compare = () => `${hero("", "Native to Salesforce, <em>or bolted on?</em>", "How NPS Survey CX OS compares with a standalone survey tool connected to Salesforce, and with building it yourself.", `<div class="ctas">${trial("compare_hero")}<a class="btn ghost" href="#roi">Build your business case</a></div>`)}
+<section class="band"><div class="wrap"><p class="note swipe" style="display:none">Swipe the table to compare →</p><div class="cmpwrap"><table class="cmp">
+ <thead><tr><th scope="col"></th><th scope="col" class="us">NPS Survey CX OS</th><th scope="col">Standalone survey tool + connector</th><th scope="col">Build it yourself in Salesforce</th></tr></thead>
+ <tbody>
+ ${[["Where responses live","On the Account, Contact, Case or Opportunity, in your org","In the vendor's cloud, synced to Salesforce","In your org"],
+    ["Follow-up on a low score","Automatic: P1 case, owner and due date","Usually needs connector rules or manual work","Flows you design, test and maintain"],
+    ["Security review","Data never leaves Salesforce","New vendor, data processing review","Internal only"],
+    ["Time to first survey","Days, from ready-made blueprints","Weeks, including the integration","Weeks to months of admin time"],
+    ["Dashboards","CX360 dashboards on your records","In the vendor's tool","Reports you build"],
+    ["Pricing","Per org, from $3,500 a year","Often per seat or per response","Admin and developer time"],
+    ["Ongoing maintenance","Managed package, upgraded by SalesHub","Connector and field-mapping upkeep","Yours, every release"]]
+  .map(r=>`<tr><th scope="row">${r[0]}</th><td class="us">${r[1]}</td><td>${r[2]}</td><td>${r[3]}</td></tr>`).join("")}
+ </tbody></table></div>
+ <p class="note">General comparison of approaches, not of any named vendor. Check details with each provider.</p>
+</div></section>
+${finalCTA("compare_final")}`;
+
 function route(){
   const h = (location.hash||"#home").slice(1);
   let html, key = h;
@@ -780,7 +959,8 @@ function route(){
   document.getElementById("drawer").hidden = true; document.getElementById("menuBtn").setAttribute("aria-expanded","false");
   window.scrollTo({top:0});
   wire();
-  document.title = h==="home" ? "NPS Survey CX OS" : "NPS Survey CX OS";
+  const TITLES={home:"NPS Survey CX OS | Customer Experience Operating System for Salesforce",platform:"Platform | NPS Survey CX OS",industries:"Industry blueprints | NPS Survey CX OS","public-sector":"Public sector | NPS Survey CX OS",learn:"Learning Center | NPS Survey CX OS",resources:"Resources | NPS Survey CX OS",reviews:"Reviews | NPS Survey CX OS",pricing:"Pricing | NPS Survey CX OS",demo:"Book a demo | NPS Survey CX OS",roi:"ROI calculator and business case | NPS Survey CX OS",compare:"Native vs. bolt-on survey tools | NPS Survey CX OS"};
+  document.title = TITLES[key] || TITLES.home;
 }
 function wire(){
   app.querySelectorAll("canvas.bokeh").forEach(bokeh);
@@ -799,12 +979,13 @@ function wire(){
       calc.querySelector("#cdesc").textContent = t ? `${Math.round(p/t*100)}% promoters − ${Math.round(d/t*100)}% detractors, from ${t} responses` : "Enter your response counts"; };
     calc.addEventListener("input", up); up(); }
   const feed = app.querySelector("#feed"); if (feed) liveFeed(feed);
+  const roiEl = app.querySelector("#roi"); if (roiEl) roiWire(roiEl);
 }
 function prog(){ app.querySelectorAll(".path").forEach(p=>{ const all=p.querySelectorAll("input"), done=[...all].filter(x=>x.checked).length; const bar=p.querySelector(".progress i"), lbl=p.querySelector(".plabel"); if(bar) bar.style.width = (all.length? done/all.length*100:0)+"%"; if(lbl) lbl.textContent = `${done} of ${all.length} units complete`; }); }
 const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
 let feedTimer;
 function liveFeed(feed){ clearInterval(feedTimer); if(reduce) return; const resp=app.querySelector("#resp"); let n=4812,k=0;
-  const ev=[["#23A96A","Initech · Case 08830 closed","Review request sent","9","#1E9A5B"],["#EB5757","Umbrella · Case 08834 closed","P1 case opened","4","#D64545"],["#E9A52B","Stark · Check-in sent","30-day nurture","8","#B9801A"],["#23A96A","Wayne · Renewal won","Review request sent","10","#1E9A5B"]];
+  const ev=[["#23A96A","Harbor Health · Case 08830 closed","Review request sent","9","#1E9A5B"],["#EB5757","Summit Freight · Case 08834 closed","P1 case opened","4","#D64545"],["#E9A52B","Bluebird CU · Check-in sent","30-day nurture","8","#B9801A"],["#23A96A","Pinecrest · Renewal won","Review request sent","10","#1E9A5B"]];
   feedTimer=setInterval(()=>{ if(!document.body.contains(feed)) return clearInterval(feedTimer); const e=ev[k++%ev.length]; const r=document.createElement("div"); r.className="row new";
    r.innerHTML=`<span class="d" style="background:${e[0]}"></span><span class="n">${e[1]}</span><span class="a" style="color:${e[4]}">${e[2]}</span><span class="s">${e[3]}</span>`;
    feed.insertBefore(r,feed.firstChild); if(feed.children.length>3) feed.lastChild.remove(); n++; if(resp) resp.textContent=n.toLocaleString("en-US"); },3200); }
