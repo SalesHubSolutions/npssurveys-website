@@ -65,7 +65,7 @@
  .swipe{display:block!important}
 }
 @media print{
- header.nav,footer,.mcta,.final,.roi .inputs,.roi .acts,.pagehero .ctas{display:none!important}
+ .final{display:none!important}
  .pagehero{background:none;color:#000}.pagehero p{color:#333}
  .roi{grid-template-columns:1fr}.roi .result{position:static;border:0}
  #printcase{display:block!important}
@@ -118,6 +118,53 @@
 .tier ul{margin:4px 0 0;padding-left:18px;color:var(--fg-soft);font-size:.95rem}.tier li{margin:4px 0}
 .tier .who{font-size:.8rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--link)}
 @media (max-width:920px){.tiers{grid-template-columns:1fr}}
+
+.ctas{display:flex;flex-wrap:wrap;gap:12px;align-items:center}
+/* partner hero chip */
+.sfchip{display:inline-flex;align-items:center;gap:12px;background:#fff;color:#0C184A;border-radius:14px;padding:8px 16px 8px 10px;font-weight:700;font-size:.92rem;margin-top:20px}
+.sfchip img{height:36px;width:auto;display:block}
+/* magazine depth: hero watermark + industry journey */
+.pagehero{isolation:isolate}
+.pagehero:after{content:"";position:absolute;right:-60px;bottom:-90px;width:420px;height:420px;background:url(brand/logo/nps-survey-cx-os-mark-white.svg) no-repeat center/contain;opacity:.07;z-index:-1;pointer-events:none}
+.pagehero.wm-ind:after{display:none}
+.wm{position:absolute;right:4%;top:50%;transform:translateY(-50%);width:300px;height:300px;color:#fff;opacity:.10;pointer-events:none;z-index:0}
+.wm svg{width:100%;height:100%;fill:none;stroke:currentColor;stroke-width:1.1;stroke-linecap:round;stroke-linejoin:round}
+@media (max-width:860px){.wm{display:none}}
+.journey{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:30px;position:relative}
+.journey:before{content:"";position:absolute;left:12%;right:12%;top:34px;height:3px;background:repeating-linear-gradient(90deg,var(--blue) 0 10px,transparent 10px 18px);opacity:.5}
+.jstep{position:relative;text-align:center;padding:0 10px}
+.jstep .jn{width:68px;height:68px;border-radius:50%;margin:0 auto;background:var(--navy);color:#fff;display:grid;place-items:center;box-shadow:0 0 0 8px var(--bg-tint)}
+.jstep .jn svg{width:30px;height:30px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.jstep h4{margin:14px 0 4px;font-size:1rem}.jstep p{margin:0;color:var(--fg-mute);font-size:.86rem}
+.jstep .chips{display:flex;justify-content:center;gap:4px;margin-top:8px;flex-wrap:wrap}
+.jstep .chips span{font-size:.72rem;font-weight:700;padding:3px 8px;border-radius:999px}
+@media (max-width:760px){.journey{grid-template-columns:1fr 1fr;gap:24px}.journey:before{display:none}}
+/* printable business case */
+#printcase{display:none}
+@media print{
+ @page{size:letter;margin:12mm}
+ body{background:#fff!important;padding:0!important}
+ .annc,header.nav,footer,.mcta,.view>*:not(#printcase){display:none!important}
+ #printcase{display:block!important;color:#0C184A;font-size:9.5pt;line-height:1.38}
+}
+.pc-head{display:flex;justify-content:space-between;align-items:center;border-bottom:3px solid #1E54E8;padding-bottom:10px}
+.pc-head .l{display:flex;align-items:center;gap:10px;font-weight:800;font-size:15pt}.pc-head img{width:40px;height:40px}
+.pc-head small{display:block;font-weight:600;font-size:9pt;color:#5E6B98}
+.pc-head .r{text-align:right;font-size:9pt;color:#5E6B98}
+.pc-title{font-size:17pt;font-weight:800;margin:12px 0 2px}
+.pc-sub{color:#3B4877;margin:0 0 8px}
+.pc-hero{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:10px 0 14px}
+.pc-hero div{border:1px solid #DCE4F7;border-radius:10px;padding:10px 12px;background:#F4F7FF}
+.pc-hero b{display:block;font-size:17pt;font-weight:800;color:#0C184A}.pc-hero span{font-size:9pt;color:#5E6B98;font-weight:600}
+.pc-hero .g b{color:#1E9A5B}
+.pc-cols{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.pc h3{font-size:9.5pt;margin:10px 0 4px;color:#1E54E8;text-transform:uppercase;letter-spacing:.06em}
+.pc table{width:100%;min-width:0;border-collapse:collapse;font-size:9pt}
+.pc td{padding:3px 6px;border-bottom:1px solid #DCE4F7}.pc td:last-child{text-align:right;font-weight:700;font-variant-numeric:tabular-nums}
+.pc tr.tot td{border-top:2px solid #0C184A;font-weight:800}
+.pc .be{border-left:4px solid #FFE443;background:#FFFBE0;padding:8px 12px;border-radius:6px;margin:10px 0;font-weight:600}
+.pc ul{margin:4px 0;padding-left:18px}.pc li{margin:2px 0}
+.pc .foot{margin-top:10px;border-top:1px solid #DCE4F7;padding-top:8px;font-size:8.5pt;color:#5E6B98}
 </style>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
@@ -474,7 +521,7 @@ a.card:focus-visible{outline:3px solid var(--yellow);outline-offset:2px}
   <div><div class="flogo"><img src="brand/logo/nps-survey-cx-os-mark.svg" alt="">NPS Survey CX OS</div><p class="addr">SalesHub, LLC · 1853 Piedmont Rd, Suite 301, Marietta, GA 30066<br>1 (833) 733-2468 · support@saleshub.info</p></div>
   <div><h4>Product</h4><ul><li><a href="#platform">Platform</a></li><li><a href="#pricing">Pricing</a></li><li><a href="#roi">ROI calculator</a></li><li><a href="#compare">Compare</a></li><li><a href="#switch">Switch from GetFeedback</a></li><li><a href="#partners">Partner program</a></li><li><a href="#reviews">Reviews</a></li><li><a href="https://appexchange.salesforce.com/appxListingDetail?listingId=a0N3A00000FtRTKUA3&tab=e&utm_source=npssurveys.com&utm_medium=website&utm_campaign=cxos_site&utm_content=footer" target="_blank" rel="noopener">AppExchange listing</a></li></ul></div>
   <div><h4>Solutions</h4><ul><li><a href="#industries">All industries</a></li><li><a href="#public-sector">Public sector</a></li><li><a href="#ind-defense">Defense</a></li><li><a href="#ind-healthcare">Healthcare</a></li></ul></div>
-  <div><h4>Learn &amp; connect</h4><ul><li><a href="#learn">Learning Center</a></li><li><a href="/insights/">Insights blog</a></li><li><a href="#resources">Resources</a></li><li><a href="https://www.youtube.com/@saleshubllc" target="_blank" rel="noopener">YouTube</a></li><li><a href="https://www.linkedin.com/company/12673581" target="_blank" rel="noopener">LinkedIn</a></li><li><a href="https://www.instagram.com/saleshub.info" target="_blank" rel="noopener">Instagram</a></li></ul></div>
+  <div><h4>Learn &amp; connect</h4><ul><li><a href="#learn">Learning Center</a></li><li><a href="/insights/">Insights blog</a></li><li><a href="#resources">Resources</a></li><li><a href="https://saleshub.info" target="_blank" rel="noopener">SalesHub company site</a></li><li><a href="https://www.youtube.com/@saleshubllc" target="_blank" rel="noopener">YouTube</a></li><li><a href="https://www.linkedin.com/company/12673581" target="_blank" rel="noopener">LinkedIn</a></li><li><a href="https://www.instagram.com/saleshub.info" target="_blank" rel="noopener">Instagram</a></li></ul></div>
   <p class="legal">© 2026 SalesHub, LLC · UEI Y8JGEMLEF9L3 · CAGE 02S16. Salesforce and AppExchange are trademarks of Salesforce, Inc. No government endorsement implied. Product screens are illustrations with sample data.</p>
 </div></footer>
 
@@ -728,9 +775,11 @@ V.industries = () => `${hero("", "Same core. <em>Your industry's moments.</em>",
 ${finalCTA("industries_final")}`;
 
 V.industry = id => { const x = IND.find(i=>i.id===id); if(!x) return V.industries(); const pub = x.group==="Public sector";
- return `${hero(`<a href="#industries">Industries</a> / ${x.name}`, `NPS Survey CX OS for <em>${x.name}</em>`, x.line, `${x.id==="defense"?`<div class="flagline"><img src="brand/flag/us-flag.svg" alt="Flag of the United States" width="57" height="30"><span>A U.S. company in Marietta, Georgia, serving those who serve</span></div>`:""}<div class="ctas">${trial("ind_"+x.id)}${demoBtn()}</div>${coreStrip}`)}
+ return `${hero(`<a href="#industries">Industries</a> / ${x.name}`, `NPS Survey CX OS for <em>${x.name}</em>`, x.line, `${x.id==="defense"?`<div class="flagline"><img src="brand/flag/us-flag.svg" alt="Flag of the United States" width="57" height="30"><span>A U.S. company in Marietta, Georgia, serving those who serve</span></div>`:""}<div class="ctas">${trial("ind_"+x.id)}${demoBtn()}</div>${coreStrip}`).replace('<section class="pagehero">',`<section class="pagehero wm-ind"><div class="wm" aria-hidden="true"><svg viewBox="0 0 24 24">${I[x.icon]||""}</svg></div>`)}
  <section class="band"><div class="wrap">
   <div class="grid3"><div class="card"><h3>Who it's for</h3><p>${x.who}</p></div><div class="card"><h3>Works with</h3><p>${x.clouds}</p></div><div class="card"><h3>Start with</h3><p>A 90-day pilot on one moment, with response rate, follow-up time and score trend agreed up front.</p></div></div>
+  <div class="eyebrow" style="margin-top:44px">The customer journey</div><h2 class="h2">Four moments where ${x.name.split(" ")[0]==="State"?"residents":x.group==="Public sector"?"the people you serve":"customers"} tell you how you're doing</h2>
+  <div class="journey">${x.moments.map(m=>{const ch=/QR/.test(m[4])?"qr":/SMS/.test(m[4])?"sms":/Web|portal/i.test(m[4])?"portal":"mail";return `<div class="jstep"><div class="jn"><svg viewBox="0 0 24 24">${I[ch]}</svg></div><h4>${m[0]}</h4><p>${m[2]} · ${m[4]}</p><div class="chips"><span style="background:#FDECEC;color:#C03B3B">0–6 case</span><span style="background:#FFF4DB;color:#946112">7–8 nurture</span><span style="background:#E3F6EC;color:#17804B">9–10 thanks</span></div></div>`}).join("")}</div>
   <div class="eyebrow" style="margin-top:44px">The blueprint</div><h2 class="h2">${x.moments.length} moments to measure, and what happens after each answer</h2>
   <div class="tablewrap"><table class="bp"><thead><tr><th>Moment</th><th>Salesforce trigger</th><th>Survey</th><th>Key question</th><th>Channel</th><th>After the answer</th><th>Owner</th></tr></thead><tbody>
   ${x.moments.map(m=>`<tr><td>${m[0]}</td><td>${m[1]}</td><td><span class="pill">${m[2]}</span></td><td>${m[3]}</td><td>${m[4]}</td><td><div class="stack" style="gap:6px"><span class="pill r">Detractor: ${m[5]}</span><span class="pill a">Passive: ${m[6]}</span><span class="pill g">Promoter: ${m[7]}</span></div></td><td>${m[8]}</td></tr>`).join("")}
@@ -901,7 +950,7 @@ const ROI_DEF = {mode:"rev",acct:500,arpa:12000,churn:12,save:10,hrs:10,rate:60,
                  cases:300,reopen:8,hpc:3};
 const money = n => (n<0?"−":"")+"$"+Math.round(Math.abs(n)).toLocaleString("en-US");
 const fld = (id,label,hint,min,max,step,pre="",suf="") => `<div class="fld"><label for="${id}">${label}</label><div class="row2"><input type="range" id="${id}_r" min="${min}" max="${max}" step="${step}" aria-label="${label}"><input type="number" id="${id}" min="0" step="${step}" inputmode="decimal" aria-describedby="${id}_h"></div><span class="hint" id="${id}_h">${pre}${hint}${suf}</span></div>`;
-V.roi = () => `${hero("", "Build your <em>business case</em> in 60 seconds", "Put in your own numbers. See what closing the loop on every low score is worth, how many saved accounts pay for your plan, and how fast it pays back.", `<div class="ctas">${trial("roi_hero")}${demoBtn()}</div>`)}
+V.roi = () => `<div id="printcase" class="pc"></div>${hero("", "Build your <em>business case</em> in 60 seconds", "Put in your own numbers. See what closing the loop on every low score is worth, how many saved accounts pay for your plan, and how fast it pays back.", `<div class="ctas">${trial("roi_hero")}${demoBtn()}</div>`)}
 <section class="band"><div class="wrap roi" id="roi">
  <div class="inputs">
   <div class="seg" role="group" aria-label="Organization type"><button type="button" data-mode="rev" aria-pressed="true">Revenue-driven business</button><button type="button" data-mode="pub" aria-pressed="false">Public sector &amp; nonprofit</button></div>
@@ -987,6 +1036,21 @@ function roiWire(root){
       `Runs 100% inside Salesforce; data never leaves the org. 7-day free trial: ${LIST}&utm_content=roi_share\nCalculator: https://www.npssurveys.com/#roi`;
     $("r_mail").href="mailto:?subject="+encodeURIComponent("Business case: NPS Survey CX OS for our Salesforce org")+"&body="+encodeURIComponent(txt);
     root._txt=txt;
+
+    const pcEl=document.getElementById("printcase");
+    if(pcEl){ const today=new Date().toLocaleDateString("en-US",{year:"numeric",month:"long",day:"numeric"});
+      const rows=(st.mode==="rev"? [["Active customer accounts",st.acct.toLocaleString("en-US")],["Annual revenue per account",money(st.arpa)],["Annual churn today",st.churn+"%"],["Churn prevented with same-day follow-up (assumption)",st.save+"%"]]
+        : [["Complaints or escalations per month",st.cases.toLocaleString("en-US")],["Escalations prevented (assumption)",st.reopen+"%"],["Staff hours per escalation",st.hpc]]).concat([["Hours a month on survey exports and reconciling",st.hrs],["Loaded hourly cost",money(st.rate)],["Survey tools retired, per year",money(tool)],["Edition",plan.name+" ("+money(plan.price)+" per year, per org)"]]);
+      pcEl.innerHTML=`<div class="pc-head"><div class="l"><img src="brand/logo/nps-survey-cx-os-mark.svg" alt=""><div>NPS Survey CX OS<small>by SalesHub · Salesforce AppExchange</small></div></div><div class="r">Business case<br>${today}</div></div>
+      <div class="pc-title">Business case: closing the loop on customer feedback</div>
+      <p class="pc-sub">${st.mode==="rev"?"Revenue protected, time given back and tools retired":"Staff time recovered and tools retired"} by running NPS, CSAT and CES surveys with closed-loop follow-up inside Salesforce.</p>
+      <div class="pc-hero"><div class="g"><span>Estimated first-year value</span><b>${money(total)}</b></div><div><span>Return on ${plan.name}</span><b>${roi.toFixed(1)}×</b></div><div><span>Payback</span><b>${isFinite(pay)?(pay<1?Math.max(1,Math.round(pay*30))+" days":pay.toFixed(1)+" months"):"n/a"}</b></div></div>
+      <div class="pc-cols"><div><h3>Your inputs</h3><table>${rows.map(r=>`<tr><td>${r[0]}</td><td>${r[1]}</td></tr>`).join("")}</table></div>
+      <div><h3>Annual value</h3><table>${st.mode==="rev"?`<tr><td>Revenue at risk from churn today</td><td>${money(st._risk)}</td></tr>`:""}<tr><td>${mainLbl}</td><td>${money(main)}</td></tr><tr><td>Time given back</td><td>${money(time)}</td></tr><tr><td>Tools retired</td><td>${money(tool)}</td></tr><tr><td>${plan.name}, per year</td><td>−${money(plan.price)}</td></tr><tr class="tot"><td>Net first-year value</td><td>${money(net)}</td></tr></table></div></div>
+      <div class="be">${be.replace(/<[^>]+>/g,"")}</div>
+      <div class="pc-cols"><div><h3>What changes</h3><ul><li>Surveys send themselves from Salesforce events (case closed, deal won, renewal coming up).</li><li>Every answer lands on the Account, Contact, Case or Opportunity.</li><li>Detractors open a P1 case with an owner and a due date; passives get a 30-day nurture; promoters get a review request.</li><li>CX360 dashboards show scores and follow-up for every team. Data never leaves Salesforce.</li></ul></div>
+      <div><h3>Next steps</h3><ul><li>Start the 7-day free trial on Salesforce AppExchange.</li><li>Run one survey on one moment for 30 days and measure response rate, follow-up time and saves.</li><li>Confirm the savings assumption with your own results.</li></ul><p style="margin:8px 0 0;font-size:9.5pt">www.npssurveys.com · support@saleshub.info · 1 (833) 733-2468</p></div></div>
+      <div class="foot">Estimate based only on the inputs above; the prevention rate is an assumption, not a guarantee of results. Prices per org from the Salesforce AppExchange listing. Salesforce and AppExchange are trademarks of Salesforce, Inc. Net Promoter®, NPS® and the NPS-related emoticons are registered trademarks of Bain & Company, Inc., NICE Systems, Inc. and Fred Reichheld.</div>`; }
     try{ const {_risk,...save}=st; localStorage.setItem("cxos_roi",JSON.stringify(save)); }catch(e){}
   }
   $("r_copy").addEventListener("click",async e=>{ try{ await navigator.clipboard.writeText(root._txt); e.target.textContent="Copied"; }catch(_){ e.target.textContent="Copy failed"; } setTimeout(()=>e.target.textContent="Copy business case",1800); });
@@ -1045,7 +1109,8 @@ const trustBar = () => `<div class="tbar" aria-label="Platform and purchasing pa
 
 // ---------- Partner program ----------
 const PARTNER_MAIL = "mailto:support@saleshub.info?subject=" + encodeURIComponent("Partner application: [Your company]") + "&body=" + encodeURIComponent("Company:\nWebsite:\nYour name and role:\nSalesforce practice size (consultants):\nClouds and industries you focus on:\nClients currently on GetFeedback, Delighted or another survey tool (approx.):\nPartner track you're interested in (Referral / Implementation / Public sector teaming):\n");
-V.partners = () => `${hero("", "Partner with SalesHub. <em>Bring native CX</em> to every Salesforce client.", "For Salesforce consulting partners and SIs: add NPS, CSAT and closed-loop feedback to your projects, keep your services revenue, and earn a revenue share on every subscription you bring.", `<div class="ctas"><a class="btn primary" href="${PARTNER_MAIL}">Apply to partner</a><a class="btn ghost" href="${DEMO}" target="_blank" rel="noopener">Book a partner call</a></div>`)}
+V.partners = () => `${hero("", "Partner with SalesHub. <em>Bring native CX</em> to every Salesforce client.", "For Salesforce consulting partners and SIs: add NPS, CSAT and closed-loop feedback to your projects, keep your services revenue, and earn a revenue share on every subscription you bring.", `<div class="ctas"><a class="btn primary" href="${PARTNER_MAIL}">Apply to partner</a><a class="btn ghost" href="${DEMO}" target="_blank" rel="noopener">Book a partner call</a></div><div class="sfchip"><img src="brand/partners/salesforce.svg" alt="Salesforce" width="52" height="36">Built on Salesforce · Listed on Salesforce AppExchange</div>`)}
+<section class="band"><div class="wrap split"><div><div class="eyebrow">For Salesforce consulting partners</div><h2 class="h2">Your consultants, your client, a native app that just works</h2><p class="sub">Add closed-loop feedback to Service Cloud, Sales Cloud and Experience Cloud projects. Your team configures it with Salesforce skills it already has, and the client sees value in weeks, not quarters.</p></div><figure class="ill"><img src="brand/illustrations/partners.svg" alt="Two Salesforce consultants and a client lead plan a rollout of NPS Survey CX OS together" loading="lazy" width="1400" height="820"></figure></div></section>
 <section class="band"><div class="wrap">
  <div class="eyebrow">Why partners add NPS Survey CX OS</div><h2 class="h2">A fast, native win inside projects you already run</h2>
  <div class="grid3" style="margin-top:28px">
