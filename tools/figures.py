@@ -7,9 +7,10 @@ RED="#EB5757"; AMB="#E9A52B"; GRN="#23A96A"; YEL="#FFE443"; W="#FFFFFF"
 F='font-family="Inter, Arial, sans-serif"'
 def t(x,y,s,size=16,fill=NAVY,w=600,a="start"): return f'<text x="{x}" y="{y}" font-size="{size}" font-weight="{w}" fill="{fill}" text-anchor="{a}" {F}>{s}</text>'
 def r(x,y,w,h,rx=12,fill=W,stroke=LINE,sw=1.5): return f'<rect x="{x}" y="{y}" width="{w}" height="{h}" rx="{rx}" fill="{fill}" stroke="{stroke}" stroke-width="{sw}"/>'
-def arrow(x1,y1,x2,y2,c=BLUE,dash=False): 
-    return f'<line x1="{x1}" y1="{y1}" x2="{x2}" y2="{y2}" stroke="{c}" stroke-width="3" marker-end="url(#ah)"{" stroke-dasharray=\"7 7\"" if dash else ""}/>'
-DEFS=f'<defs><marker id="ah" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="{BLUE}"/></marker></defs>'
+def arrow(x1,y1,x2,y2,c=BLUE,dash=False,small=False):
+    return f'<line x1="{x1}" y1="{y1}" x2="{x2}" y2="{y2}" stroke="{c}" stroke-width="{2.5 if small else 3}" marker-end="url(#{'ahs' if small else MK.get(c,'ah')})"{" stroke-dasharray=\"7 7\"" if dash else ""}/>'
+DEFS=f'<defs><marker id="ah" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="{BLUE}"/></marker><marker id="ahs" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="4" markerHeight="4" orient="auto"><path d="M0 0L10 5L0 10z" fill="{BLUE}"/></marker><marker id="aha" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="{AMB}"/></marker>'+''.join(f'<marker id="ah{k}" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="{v}"/></marker>' for k,v in (("r",RED),("g",GRN)))+'</defs>'
+MK={AMB:"aha",RED:"ahr",GRN:"ahg"}
 def svg(w,h,body,label): return f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {w} {h}" role="img" aria-label="{label}">{DEFS}<rect width="{w}" height="{h}" rx="18" fill="{TINT}"/>{body}</svg>'
 
 def timeline():
@@ -33,11 +34,11 @@ def architecture():
     for i,s in enumerate(["New vendor security review","Sync errors and duplicates","Low scores noticed late"]): b+=t(74,316+i*24,"✕  "+s,14,SOFT,600)
     # right
     b+=r(510,80,450,310,16,W,BLUE,2.5)+t(534,114,"NATIVE (NPS SURVEY CX OS)",13,BLUE,800)+t(534,138,"Everything on the record",16,NAVY,700)
-    b+=r(530,160,410,120,14,"#EAF1FF",BLUE)+t(546,182,"Inside your Salesforce org",12,BLUE,800)
+    b+=r(524,160,422,120,14,"#EAF1FF",BLUE)+t(540,182,"Inside your Salesforce org",12,BLUE,800)
     steps=[("Event","sends survey"),("Answer","on record"),("Low score","opens case"),("Dashboard","CX360")]
     for i,(a,c) in enumerate(steps):
-        x=546+i*98; b+=r(x,196,86,68,10,W,LINE)+t(x+43,224,a,13,NAVY,800,"middle")+t(x+43,244,c,11,MUTE,600,"middle")
-        if i<3: b+=arrow(x+86,230,x+96,230)
+        x=536+i*108; b+=r(x,196,78,68,10,W,LINE)+t(x+39,224,a,12.5,NAVY,800,"middle")+t(x+39,244,c,11,MUTE,600,"middle")
+        if i<3: b+=arrow(x+82,230,x+104,230,small=True)
     for i,s in enumerate(["Data never leaves Salesforce","No connector to maintain","Every detractor gets an owner"]): b+=t(544,316+i*24,"✓  "+s,14,GRN,700)
     return svg(Wd,H,b,"Comparison: a bolt-on survey tool keeps responses in a vendor cloud synced by a connector; a native app keeps the whole loop inside Salesforce")
 
