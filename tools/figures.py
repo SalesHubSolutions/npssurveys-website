@@ -85,6 +85,37 @@ def dashboard():
         y=292+i*42; b+=f'<line x1="518" y1="{y-24}" x2="942" y2="{y-24}" stroke="{LINE}"/>'+t(518,y,a,14,NAVY,700)+r(690,y-17,30,24,6,RED,RED)+t(705,y,s,13,W,800,"middle")+t(760,y,o,14,SOFT,600)+t(880,y,d,14,c,700)
     return svg(Wd,H,b,"Sample dashboard with NPS, share of detractors contacted, median time to contact, responses, an 8-week NPS trend and open detractor cases with owners and due dates")
 
-FIGS={"switch-timeline":timeline,"native-vs-boltOn":architecture,"service-loop":loop,"score-routing":routing,"closed-loop-dashboard":dashboard}
+def flow(title,sub,steps,label,accent_last=True):
+    Wd,H=1000,330; b=t(40,50,title,22,NAVY,800)+(t(40,78,sub,15,MUTE,500) if sub else "")
+    n=len(steps); gap=40; bw=(920-gap*(n-1))/n
+    for i,(a,c,d) in enumerate(steps):
+        x=40+i*(bw+gap); last=accent_last and i==n-1
+        b+=r(x,110,bw,180,16,"#EAF1FF" if last else W,BLUE if last else LINE,2.5 if last else 1.5)
+        b+=f'<circle cx="{x+30}" cy="{142}" r="16" fill="{BLUE if last else NAVY}"/>'+t(x+30,147,str(i+1),14,W,800,"middle")
+        b+=t(x+20,196,a,18,NAVY,800)
+        for j,line in enumerate(c.split("|")): b+=t(x+20,224+j*21,line,13.5,MUTE,500)
+        if d: b+=t(x+bw-18,147,d,14,BLUE,800,"end")
+        if i<n-1: b+=arrow(x+bw+6,200,x+bw+gap-4,200,small=True)
+    return svg(Wd,H,b,label)
+
+def business_case():
+    return flow("From four numbers to a CFO-ready business case","The free ROI calculator at npssurveys.com/roi",
+        [("Enter 4 inputs","Accounts, revenue per|account, churn rate,|hours of manual work",""),("See the risk","Revenue at risk each|year and hours spent|on manual follow-up",""),("See payback","How many saved|accounts cover the|plan you pick",""),("Send to your CFO","A one-page business|case, ready to print|or save as PDF","~60 seconds")],
+        "Four steps: enter four inputs, see revenue at risk, see payback by plan, send a one-page business case to your CFO")
+
+def partner_tracks():
+    Wd,H=1000,416; b=t(40,50,"SalesHub partner program for Salesforce SIs",22,NAVY,800)
+    rows=[("REFERRAL PARTNER",[("Register","the opportunity"),("We sell","demo, close, onboard"),("You earn","20% of first year")],LINE,1.5),
+          ("IMPLEMENTATION PARTNER",[("Register","deal registration"),("You deliver","keep 100% of services"),("You earn","25% yr 1 + 10% renewals")],BLUE,2.5)]
+    for k,(h,st,sc,sw) in enumerate(rows):
+        y=80+k*150; b+=r(40,y,920,130,16,"#EAF1FF" if k else W,sc,sw)+t(64,y+30,h,13,BLUE if k else MUTE,800)
+        for i,(a,c) in enumerate(st):
+            x=64+i*300; last=i==2
+            b+=r(x,y+46,250,66,12,BLUE if last else W,BLUE if last else LINE)+t(x+18,y+74,a,16,W if last else NAVY,800)+t(x+18,y+97,c,13.5,"#DCE7FF" if last else MUTE,600)
+            if i<2: b+=arrow(x+256,y+79,x+294,y+79,small=True)
+    b+=t(40,392,"Example on CX Pro ($8,500/yr): referral $1,700 · implementation $2,125 in year one + $850 per renewal",14,SOFT,600)
+    return svg(Wd,H,b,"Partner tracks: referral partners register, SalesHub sells, partner earns 20% of first year; implementation partners register, deliver and keep services revenue, and earn 25% of first year plus 10% of renewals")
+
+FIGS={"business-case-flow":business_case,"partner-tracks":partner_tracks,"switch-timeline":timeline,"native-vs-boltOn":architecture,"service-loop":loop,"score-routing":routing,"closed-loop-dashboard":dashboard}
 if __name__=="__main__":
     for k,f in FIGS.items(): open(os.path.join(OUT,k+".svg"),"w").write(f()); print(k)
