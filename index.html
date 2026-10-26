@@ -206,6 +206,66 @@
 .bframe img.narrow{width:auto;max-width:100%;max-height:560px;margin:0 auto}
 .tcap{margin-top:12px;color:var(--fg-mute);font-size:.86rem}
 @media (max-width:860px){.tour{grid-template-columns:minmax(0,1fr)}.ttabs{flex-direction:row;overflow-x:auto;padding-bottom:6px}.ttab{min-width:220px}}
+
+/* ===== NPS Surveys product family: switcher bar, edition chooser (shared look with app.npssurveys.com) ===== */
+.fam{background:#031A6B;color:#C9D6FF;font-size:.82rem;position:relative;z-index:21}
+.fam .wrap{display:flex;align-items:center;gap:4px;padding-block:6px;flex-wrap:wrap}
+.fam .lbl{font-weight:700;letter-spacing:.06em;text-transform:uppercase;font-size:.7rem;margin-right:8px;color:#8FA6E8}
+.fam a{display:inline-flex;align-items:center;gap:7px;padding:4px 12px;border-radius:999px;color:#C9D6FF;text-decoration:none;font-weight:600;line-height:1.4}
+.fam a:hover{background:rgba(255,255,255,.08);color:#fff}
+.fam a[aria-current="true"]{background:#fff;color:var(--blue-deep)}
+.fam a .tag{font-weight:500;opacity:.72}
+.fam a[aria-current="true"] .tag{opacity:.7}
+.fam .dot{width:7px;height:7px;border-radius:50%;background:#23A96A;box-shadow:0 0 0 3px rgba(35,169,106,.25)}
+.fam .help{margin-left:auto}
+@media (max-width:700px){.fam .lbl,.fam a .tag,.fam .help{display:none}.fam .wrap{justify-content:center}}
+.eds{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:36px}
+.ed{position:relative;background:var(--surface);border:1px solid var(--line);border-radius:22px;padding:28px;display:flex;flex-direction:column;gap:14px;min-width:0;overflow:hidden}
+.ed::before{content:"";position:absolute;inset:0 0 auto;height:5px;background:var(--blue)}
+.ed.sa::before{background:linear-gradient(90deg,#1E54E8,#3DA3FE)}
+.ed.rec{border:2px solid var(--blue);box-shadow:var(--shadow)}
+.ed .badge{align-self:flex-start;font-size:.72rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;border-radius:999px;padding:4px 10px;background:var(--bg-tint);color:var(--link)}
+.ed h3{font-size:1.45rem;display:flex;align-items:center;gap:10px}
+.ed h3 img{width:30px;height:30px}
+.ed .who{color:var(--fg-soft)}
+.ed ul{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+.ed li{display:flex;gap:10px;align-items:flex-start;font-size:.96rem}
+.ed li svg{flex:none;color:var(--green);margin-top:2px}
+.ed .acts2{display:flex;flex-wrap:wrap;gap:10px;margin-top:auto;padding-top:8px}
+.ed .fine{font-size:.82rem;color:var(--fg-mute)}
+.btn.blue{background:var(--blue);color:#fff} .btn.blue:hover{transform:translateY(-1px);box-shadow:0 8px 20px rgba(30,84,232,.3)}
+.btn.line{border-color:var(--line);color:var(--fg);background:var(--surface)} .btn.line:hover{border-color:var(--blue);color:var(--link)}
+.picker{margin-top:34px;background:var(--surface);border:1px solid var(--line);border-radius:22px;padding:26px;display:grid;gap:20px}
+.picker fieldset{border:0;margin:0;padding:0;display:grid;gap:10px}
+.picker legend{font-weight:700;margin-bottom:8px}
+.picker .opts{display:flex;flex-wrap:wrap;gap:8px;position:relative}
+.picker input{position:absolute;opacity:0;pointer-events:none}
+.picker label{border:1.5px solid var(--line);border-radius:999px;padding:9px 16px;font-weight:600;cursor:pointer;font-size:.95rem;background:var(--surface)}
+.picker input:checked + label{border-color:var(--blue);background:var(--bg-tint);color:var(--link)}
+.picker input:focus-visible + label{outline:3px solid var(--yellow);outline-offset:2px}
+.pick-out{border-radius:16px;padding:18px 20px;background:var(--bg-tint);border:1px dashed var(--line)}
+.pick-out b{font-size:1.1rem}
+.pick-out .acts2{display:flex;flex-wrap:wrap;gap:10px;margin-top:12px}
+.mock{background:#fff;color:#0C184A;border:1px solid #DCE4F7;border-radius:18px;box-shadow:var(--shadow);padding:16px;font-size:13px;min-width:0}
+.mock .mh{display:flex;align-items:center;gap:8px;font-weight:800;font-size:13.5px;margin-bottom:12px}
+.mock .mh img{width:22px;height:22px} .mock .mh span{margin-left:auto;font-weight:600;color:#5E6B98;font-size:12px}
+.mock .tiles{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.mock .t{border:1px solid #DCE4F7;border-radius:12px;padding:9px 10px;position:relative;overflow:hidden}
+.mock .t::before{content:"";position:absolute;inset:0 auto 0 0;width:3px}
+.mock .t.r::before{background:#E0632E} .mock .t.g::before{background:#1F9D63} .mock .t.u::before{background:#8B95B5}
+.mock .t small{display:block;color:#5E6B98;font-size:10.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase}
+.mock .t b{font-size:19px;font-weight:800}
+.mock .bar{display:flex;gap:2px;height:10px;border-radius:6px;overflow:hidden;margin:12px 0}
+.mock .rows{display:grid;gap:6px}
+.mock .rw{display:flex;align-items:center;gap:8px;border:1px solid #EEF2FB;border-radius:10px;padding:7px 9px}
+.mock .rw b{font-weight:700} .mock .rw em{font-style:normal;margin-left:auto;font-weight:700}
+.mock .chip2{font-size:11px;font-weight:700;border-radius:999px;padding:2px 8px}
+.mock .iris{display:flex;gap:10px;align-items:center;margin-top:12px;background:linear-gradient(135deg,#052CA0,#1E54E8);color:#fff;border-radius:14px;padding:10px 12px}
+.mock .iris img{width:40px;height:40px;flex:none}
+.mock .iris small{display:block;opacity:.8;font-size:11px}
+.sample2{font-size:.78rem;color:var(--fg-mute);margin-top:8px;text-align:right}
+@media (max-width:860px){.eds{grid-template-columns:1fr}}
+@media (max-width:480px){.mock .tiles{grid-template-columns:1fr 1fr}.mock .t:last-child{grid-column:span 2}}
 </style>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
@@ -536,11 +596,12 @@ a.card:focus-visible{outline:3px solid var(--yellow);outline-offset:2px}
 </style>
 </head>
 <body>
+<div class="fam" role="navigation" aria-label="NPS Surveys products"><div class="wrap"><span class="lbl">NPS Surveys products</span><a href="#home" aria-current="true"><span class="dot" aria-hidden="true"></span>For Salesforce <span class="tag">· native on AppExchange</span></a><a href="https://app.npssurveys.com/?utm_source=npssurveys.com&amp;utm_medium=website&amp;utm_campaign=family&amp;utm_content=family_bar">CX360 Standalone <span class="tag">· any CRM or none</span> ↗</a><a class="help" href="#choose">Which is right for me? →</a></div></div>
 <div class="annc">GetFeedback retires December 31, 2026. <a href="#switch">Move your surveys to native Salesforce →</a></div>
 <header class="nav"><div class="wrap">
   <a class="logo" href="#home"><img src="brand/logo/nps-survey-cx-os-mark.svg" alt=""><span>NPS Survey CX OS<small>by SalesHub</small></span></a>
   <ul id="navlinks">
-    <li class="dd"><button type="button" class="ddb" aria-expanded="false">Product</button><div class="ddm"><a href="#platform"><b>Platform</b><span>Surveys, closed-loop follow-up, CX360 dashboards</span></a><a href="#compare"><b>Compare</b><span>Native vs. bolt-on survey tools</span></a><a href="#reviews"><b>Reviews</b><span>Rated 5.0 on Salesforce AppExchange</span></a><a href="#switch"><b>Switch from GetFeedback</b><span>Move before December 31, 2026</span></a></div></li>
+    <li class="dd"><button type="button" class="ddb" aria-expanded="false">Product</button><div class="ddm"><a href="#platform"><b>Platform</b><span>Surveys, closed-loop follow-up, CX360 dashboards</span></a><a href="#compare"><b>Compare</b><span>Native vs. bolt-on survey tools</span></a><a href="#reviews"><b>Reviews</b><span>Rated 5.0 on Salesforce AppExchange</span></a><a href="#switch"><b>Switch from GetFeedback</b><span>Move before December 31, 2026</span></a><a href="#choose"><b>Which edition is right for me?</b><span>Salesforce-native or standalone, compared</span></a><a href="https://app.npssurveys.com/?utm_source=npssurveys.com&amp;utm_medium=website&amp;utm_campaign=family&amp;utm_content=nav_dd"><b>CX360 Standalone ↗</b><span>Not on Salesforce? AI surveys, service desk and AI agent for any CRM</span></a></div></li>
     <li class="dd"><button type="button" class="ddb" aria-expanded="false">Solutions</button><div class="ddm wide"><div><h6>Industries</h6><a href="#ind-commercial">B2B, SaaS & Technology</a><a href="#ind-financial">Financial Services & Insurance</a><a href="#ind-healthcare">Healthcare & Health-tech</a><a href="#ind-manufacturing">Manufacturing & Distribution</a><a href="#ind-consulting">Consulting & Professional Services</a><a href="#ind-nonprofit">Nonprofit</a><a href="#ind-education">Education</a><a class="all" href="#industries">All industry blueprints →</a></div><div><h6>Public sector</h6><a href="#public-sector">Public sector overview</a><a href="#ind-sled">State & Local Government</a><a href="#ind-federal">Federal Civilian Agencies</a><a href="#ind-defense">Defense</a></div></div></li>
     <li class="dd"><button type="button" class="ddb" aria-expanded="false">Resources</button><div class="ddm"><a href="/insights/"><b>Insights blog</b><span>Guides and playbooks, new every week</span></a><a href="#learn"><b>Learning Center</b><span>Setup and how-to guides, glossary, NPS calculator</span></a><a href="#resources"><b>Downloads & videos</b><span>Offering sheets, blueprints, films</span></a><a href="#roi"><b>ROI calculator</b><span>Build your business case in 60 seconds</span></a></div></li>
     <li><a href="#partners">Partners</a></li><li><a href="#pricing">Pricing</a></li>
@@ -549,7 +610,7 @@ a.card:focus-visible{outline:3px solid var(--yellow);outline-offset:2px}
   <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="drawer">Menu</button>
 </div>
 <div class="drawer" id="drawer" hidden><div class="wrap">
-  <div><h6>Product</h6><a href="#platform">Platform</a><a href="#compare">Compare</a><a href="#reviews">Reviews</a><a href="#switch">Switch from GetFeedback</a></div>
+  <div><h6>Product</h6><a href="#platform">Platform</a><a href="#compare">Compare</a><a href="#reviews">Reviews</a><a href="#switch">Switch from GetFeedback</a><a href="#choose">Which edition is right?</a><a href="https://app.npssurveys.com/?utm_source=npssurveys.com&amp;utm_medium=website&amp;utm_campaign=family&amp;utm_content=drawer">CX360 Standalone ↗</a></div>
   <div><h6>Solutions</h6><a href="#industries">All industries</a><a href="#public-sector">Public sector</a><a href="#ind-defense">Defense</a><a href="#ind-healthcare">Healthcare</a></div>
   <div><h6>Resources</h6><a href="/insights/">Insights blog</a><a href="#learn">Learning Center</a><a href="#resources">Downloads &amp; videos</a><a href="#roi">ROI calculator</a></div>
   <div><h6>Company</h6><a href="#partners">Partners</a><a href="#pricing">Pricing</a><a href="#demo">Book a demo</a></div>
@@ -559,8 +620,8 @@ a.card:focus-visible{outline:3px solid var(--yellow);outline-offset:2px}
 <div class="mcta"><a class="btn primary" href="https://appexchange.salesforce.com/appxListingDetail?listingId=a0N3A00000FtRTKUA3&tab=e&utm_source=npssurveys.com&utm_medium=website&utm_campaign=cxos_site&utm_content=mobile_bar" target="_blank" rel="noopener">Free trial</a><a class="btn ghost" href="#roi">ROI calculator</a></div>
 
 <footer><div class="wrap">
-  <div><div class="flogo"><img src="brand/logo/nps-survey-cx-os-mark.svg" alt="">NPS Survey CX OS</div><p class="addr">SalesHub, LLC · 1853 Piedmont Rd, Suite 301, Marietta, GA 30066<br>1 (833) 733-2468 · support@saleshub.info</p></div>
-  <div><h4>Product</h4><ul><li><a href="#platform">Platform</a></li><li><a href="#pricing">Pricing</a></li><li><a href="#roi">ROI calculator</a></li><li><a href="#compare">Compare</a></li><li><a href="#switch">Switch from GetFeedback</a></li><li><a href="#partners">Partner program</a></li><li><a href="#reviews">Reviews</a></li><li><a href="https://appexchange.salesforce.com/appxListingDetail?listingId=a0N3A00000FtRTKUA3&tab=e&utm_source=npssurveys.com&utm_medium=website&utm_campaign=cxos_site&utm_content=footer" target="_blank" rel="noopener">AppExchange listing</a></li></ul></div>
+  <div><div class="flogo"><img src="brand/logo/nps-survey-cx-os-mark.svg" alt="">NPS Survey CX OS</div><p class="addr" style="margin-bottom:8px">Two products, one team: <b>NPS Survey CX OS</b> runs natively in Salesforce; <a href="https://app.npssurveys.com/?utm_source=npssurveys.com&amp;utm_medium=website&amp;utm_campaign=family&amp;utm_content=footer_line">CX360 Standalone</a> works with any CRM.</p><p class="addr">SalesHub, LLC · 1853 Piedmont Rd, Suite 301, Marietta, GA 30066<br>1 (833) 733-2468 · support@saleshub.info</p></div>
+  <div><h4>Product</h4><ul><li><a href="#platform">Platform</a></li><li><a href="#pricing">Pricing</a></li><li><a href="#roi">ROI calculator</a></li><li><a href="#compare">Compare</a></li><li><a href="#switch">Switch from GetFeedback</a></li><li><a href="#partners">Partner program</a></li><li><a href="#reviews">Reviews</a></li><li><a href="#choose">Which edition is right?</a></li><li><a href="https://app.npssurveys.com/?utm_source=npssurveys.com&amp;utm_medium=website&amp;utm_campaign=family&amp;utm_content=footer">CX360 Standalone (any CRM)</a></li><li><a href="https://appexchange.salesforce.com/appxListingDetail?listingId=a0N3A00000FtRTKUA3&tab=e&utm_source=npssurveys.com&utm_medium=website&utm_campaign=cxos_site&utm_content=footer" target="_blank" rel="noopener">AppExchange listing</a></li></ul></div>
   <div><h4>Solutions</h4><ul><li><a href="#industries">All industries</a></li><li><a href="#public-sector">Public sector</a></li><li><a href="#ind-defense">Defense</a></li><li><a href="#ind-healthcare">Healthcare</a></li></ul></div>
   <div><h4>Learn &amp; connect</h4><ul><li><a href="#learn">Learning Center</a></li><li><a href="/insights/">Insights blog</a></li><li><a href="#resources">Resources</a></li><li><a href="https://saleshub.info" target="_blank" rel="noopener">SalesHub company site</a></li><li><a href="https://saleshub.info/privacy-policy" target="_blank" rel="noopener">Privacy policy</a></li><li><a href="https://www.youtube.com/@saleshubllc" target="_blank" rel="noopener">YouTube</a></li><li><a href="https://www.linkedin.com/company/12673581" target="_blank" rel="noopener">LinkedIn</a></li><li><a href="https://www.instagram.com/saleshub.info" target="_blank" rel="noopener">Instagram</a></li></ul></div>
   <p class="legal">© 2026 SalesHub, LLC · UEI Y8JGEMLEF9L3 · CAGE 02S16. Salesforce and AppExchange are trademarks of Salesforce, Inc. No government endorsement implied. Product screens are illustrations with sample data.</p>
@@ -616,6 +677,97 @@ const V = {};
 // {text:"…", name:"Rich G.", role:"Salesforce Admin, Company"}
 const TESTIMONIALS = [];
 
+
+// ===== Product family: edition chooser =====
+const APP = "https://app.npssurveys.com";
+const appUrl = (c, path="/") => `${APP}${path}${path.includes("?")?"&":"?"}utm_source=npssurveys.com&utm_medium=website&utm_campaign=family&utm_content=${c}`;
+const appTrial = (c, label="Start CX360 Standalone free →", cls="blue", plan="") => `<a class="btn ${cls}" href="${appUrl(c, "/login?mode=signup"+(plan?"&plan="+plan:""))}">${label}</a>`;
+const tick = t => `<li>${ic("check",18)}<span>${t}</span></li>`;
+const SA_PLANS = [["Starter",149,"500 responses / month","For small teams leaving Delighted or GetFeedback."],["Growth",499,"2,500 responses / month","The full AI customer-service loop.",true],["Business",1250,"10,000 responses / month","Multi-team and multi-location operations."]];
+const mockStandalone = () => `<figure style="margin:0"><div class="mock" role="img" aria-label="Product illustration of CX360 Standalone Revenue Intelligence with sample data">
+ <div class="mh"><img src="brand/logo/nps-survey-cx-os-mark.svg" alt="">CX360 · Revenue Intelligence<span>All accounts · 180 days</span></div>
+ <div class="tiles"><div class="t r"><small>At risk</small><b>$1.9M</b></div><div class="t g"><small>Safe</small><b>$3.0M</b></div><div class="t u"><small>Unknown</small><b>$913K</b></div></div>
+ <div class="bar" aria-hidden="true"><i style="width:52%;background:#1F9D63"></i><i style="width:33%;background:#E0632E"></i><i style="width:15%;background:#8B95B5"></i></div>
+ <div class="rows">
+  <div class="rw"><b>Cedarline Health</b><span class="chip2" style="background:#FDEBE3;color:#B4471A">Sliding</span><em>$820K</em></div>
+  <div class="rw"><b>Bluepeak Manufacturing</b><span class="chip2" style="background:#E6F6EE;color:#1A8754">Champion</span><em>$950K</em></div>
+  <div class="rw"><b>Redfern Energy</b><span class="chip2" style="background:#EEF1F8;color:#5E6B98">Going silent</span><em>$700K</em></div>
+ </div>
+ <div class="iris"><img src="brand/product/iris-agent.svg" alt=""><div><b>Iris · AI CX agent</b><small>Answers, qualifies leads and opens cases by video, voice or chat</small></div></div>
+</div><figcaption class="sample2">Product illustration · sample data</figcaption></figure>`;
+const sfCard = (c, rec=false) => `<div class="ed sf${rec?" rec":""}">${rec?`<span class="badge">Recommended for you</span>`:`<span class="badge">For Salesforce customers</span>`}
+ <h3><img src="brand/logo/nps-survey-cx-os-mark.svg" alt="">NPS Survey CX OS</h3>
+ <p class="who">A managed package that runs <b>inside your Salesforce org</b>. Surveys send on Salesforce events and every answer lands on the record your team already works from.</p>
+ <ul>${["100% Salesforce-native — data never leaves your org","NPS, CSAT and CES with 70+ templates and 10 industry blueprints","Low scores open P1 cases with an owner, inside Service Cloud","CX360 Insights dashboards for leadership","Passes security review as an AppExchange managed package"].map(tick).join("")}</ul>
+ <div class="acts2">${trial(c+"_sf", "Free 7-day trial on AppExchange →", "primary")}<a class="btn line" href="#platform">Explore the platform</a></div>
+ <p class="fine">CX Lite $3,500 · CX Pro $8,500 · CX360 Insights from $16,000 per org / year</p></div>`;
+const saCard = (c, rec=false) => `<div class="ed sa${rec?" rec":""}">${rec?`<span class="badge">Recommended for you</span>`:`<span class="badge">Any CRM — or none</span>`}
+ <h3><img src="brand/logo/nps-survey-cx-os-mark.svg" alt="">CX360 Standalone</h3>
+ <p class="who">An AI customer-experience and service platform in the cloud. Works on its own, or <b>connects to HubSpot, Salesforce</b> and any tool through APIs and Zapier.</p>
+ <ul>${["Surveys with 55 question types, 87 email templates and journeys","Service desk: cases, SLAs, knowledge base and public help center","Iris, an AI agent customers can video call, talk to or chat with","Revenue Intelligence with account-weighted NPS and save plays","Eight digital workers that triage, follow up and brief leaders"].map(tick).join("")}</ul>
+ <div class="acts2">${appTrial(c+"_sa")}<a class="btn line" href="${appUrl(c+"_sa_tour")}">See the product</a></div>
+ <p class="fine">Starter $149 · Growth $499 · Business $1,250 per month · 14-day free trial, no card</p></div>`;
+const editionBand = c => `<section class="band"><div class="wrap">
+ <div class="eyebrow">Two ways to run customer experience</div><h2 class="h2">Built for Salesforce — or for any CRM</h2>
+ <p class="sub">Same team and the same closed-loop approach, in two products. Pick the one that fits where your customer data lives. <a href="#choose">Compare them side by side →</a></p>
+ <div class="eds">${sfCard(c)}${saCard(c)}</div></div></section>`;
+const standalonePricing = () => `<section class="band tint" id="standalone-pricing"><div class="wrap">
+ <div class="eyebrow">Not on Salesforce?</div><h2 class="h2">CX360 Standalone plans</h2>
+ <p class="sub">Monthly plans for teams on HubSpot, another CRM or no CRM yet. Unlimited seats, 14-day free trial, no credit card. <a href="#choose">Which product is right for me?</a></p>
+ <div class="plans">${SA_PLANS.map(([n,p,r,d,pop])=>`<div class="plan${pop?" pop":""}"><div class="tagline">${pop?"Most popular":"CX360 Standalone"}</div><h3>${n}</h3><div class="price">$${p.toLocaleString("en-US")}<small> /month</small></div><p><b>${r}</b><br>${d}</p>${appTrial("price_sa_"+n.toLowerCase(), `Try ${n} free`, pop?"blue":"dark", n.toLowerCase())}</div>`).join("")}</div></div></section>`;
+
+V.choose = () => `${hero("", "Which <em>NPS Surveys</em> product is right for you?", "Two products from the same team. NPS Survey CX OS runs natively inside Salesforce. CX360 Standalone is a cloud platform for any CRM, with a service desk and an AI agent built in.", `<div class="ctas"><a class="btn primary" href="#choose" onclick="document.getElementById('pick').scrollIntoView({behavior:'smooth'});return false">Help me choose</a><a class="btn ghost" href="#choose" onclick="document.getElementById('cmp2').scrollIntoView({behavior:'smooth'});return false">Compare side by side</a></div>`)}
+<section class="band" id="pick"><div class="wrap">
+ <div class="eyebrow">30-second picker</div><h2 class="h2">Answer three questions</h2>
+ <form class="picker" id="picker" onsubmit="return false">
+  <fieldset><legend>1. Where does your customer data live today?</legend><div class="opts">
+   <input type="radio" name="crm" id="q1a" value="sf"><label for="q1a">Salesforce</label>
+   <input type="radio" name="crm" id="q1b" value="other"><label for="q1b">HubSpot or another CRM</label>
+   <input type="radio" name="crm" id="q1c" value="none"><label for="q1c">Spreadsheets / no CRM yet</label></div></fieldset>
+  <fieldset><legend>2. Must survey data stay inside your Salesforce org (security review, public sector)?</legend><div class="opts">
+   <input type="radio" name="res" id="q2a" value="yes"><label for="q2a">Yes</label>
+   <input type="radio" name="res" id="q2b" value="no"><label for="q2b">No / not sure</label></div></fieldset>
+  <fieldset><legend>3. Do you also want a help desk, knowledge base or an AI agent for customers?</legend><div class="opts">
+   <input type="radio" name="svc" id="q3a" value="yes"><label for="q3a">Yes</label>
+   <input type="radio" name="svc" id="q3b" value="no"><label for="q3b">No — surveys and follow-up are enough</label></div></fieldset>
+  <div class="pick-out" id="pickout" aria-live="polite"><b>Pick an answer above</b><p class="sub" style="margin-top:6px">We'll recommend a product and explain why.</p></div>
+ </form>
+</div></section>
+<section class="band tint"><div class="wrap"><div class="split" style="align-items:center"><div><div class="eyebrow">Meet CX360 Standalone</div><h2 class="h2">See which revenue is safe, at risk or silent</h2><p class="sub">Account NPS weighted by stakeholder role, tied to revenue. Digital workers open save plays, survey silent accounts and surface expansion, and Iris talks with your customers 24/7.</p><div class="ctas" style="margin-top:20px">${appTrial("choose_mock")}</div></div>${mockStandalone()}</div></div></section>
+<section class="band"><div class="wrap"><div class="eds">${sfCard("choose")}${saCard("choose")}</div></div></section>
+<section class="band tint" id="cmp2"><div class="wrap"><div class="eyebrow">Side by side</div><h2 class="h2">How they compare</h2><div class="tablewrap"><table>
+ <thead><tr><th scope="col"></th><th scope="col">NPS Survey CX OS<br><small>for Salesforce</small></th><th scope="col">CX360 Standalone<br><small>any CRM</small></th></tr></thead><tbody>
+ ${[["Where it runs","Inside your Salesforce org (managed package)","NPS Surveys cloud, at app.npssurveys.com"],
+    ["Best for","Teams that run sales and service in Salesforce","Teams on HubSpot, another CRM or no CRM; teams that want a service desk and AI agent included"],
+    ["Customer data","Stays in Salesforce","Stored in CX360 with per-workspace isolation; syncs with HubSpot and Salesforce"],
+    ["Surveys","NPS, CSAT, CES · 70+ templates · 15+ question types","NPS, CSAT, CES · 55 question types · 87 email templates"],
+    ["Close the loop","P1 cases on the Salesforce record","Recovery tasks and cases with owners, SLAs and AI-drafted replies"],
+    ["Service desk & knowledge base","Your Salesforce Service Cloud","Included: cases, board, snippets, knowledge base, public help center"],
+    ["AI","Configured inside your Salesforce org","AI triage, briefs, Ask AI, digital workers and Iris, the AI CX agent"],
+    ["Revenue view","CX360 Insights dashboards","Revenue Intelligence: at-risk, safe and unknown revenue, account trajectories"],
+    ["Industry blueprints","10 blueprints including public sector","Journeys and templates for B2B, service and SaaS"],
+    ["Pricing","Per org, per year: $3,500 / $8,500 / from $16,000","Per month: $149 / $499 / $1,250, unlimited seats"],
+    ["Free trial","7 days via AppExchange","14 days, no credit card"]].map(([k,a,b])=>`<tr><th scope="row">${k}</th><td>${a}</td><td>${b}</td></tr>`).join("")}
+ </tbody></table></div></div></section>
+<section class="band"><div class="wrap"><div class="eyebrow">Questions</div><h2 class="h2">Choosing between them</h2><div class="faqlist" style="margin-top:22px">
+ <details class="qa"><summary>We use Salesforce. Can we still choose CX360 Standalone?</summary><p>Yes. CX360 connects to Salesforce with OAuth, imports accounts, contacts, opportunities and cases, and writes survey responses back to the contact as completed Tasks. Your data is stored in CX360's cloud, so if your security team requires that data never leaves Salesforce, choose NPS Survey CX OS instead.</p></details>
+ <details class="qa"><summary>Why does "CX360" appear in both?</summary><p>CX360 Insights is the top edition of NPS Survey CX OS for Salesforce. CX360 Standalone is our separate cloud product for any CRM. Same team and philosophy, different place to run.</p></details>
+ <details class="qa"><summary>Can we start with one and move to the other?</summary><p>Yes. Both use NPS, CSAT and CES the same way. Export your history as CSV and we'll help you map surveys, triggers and follow-up rules.</p></details>
+ <details class="qa"><summary>We're a government agency or defense organization.</summary><p>Choose NPS Survey CX OS. It runs inside your existing Salesforce environment, and public-sector buyers can purchase through Carahsoft.</p></details>
+ <details class="qa"><summary>Can I talk to someone?</summary><p><a href="#demo">Book a 30-minute call</a>. We'll recommend the right product honestly, even if that's the smaller plan.</p></details>
+</div></div></section>${finalCTA("choose_final")}`;
+
+function wirePicker(root){ const f=root.querySelector("#picker"); if(!f) return; const out=root.querySelector("#pickout");
+ const upd=()=>{ const v=n=>(f.querySelector(`input[name="${n}"]:checked`)||{}).value; const crm=v("crm"), res=v("res"), svc=v("svc");
+  if(!crm){ return; }
+  let rec, why;
+  if(crm!=="sf"){ rec="sa"; why="You're not on Salesforce, so CX360 Standalone gives you surveys, a service desk, account health and an AI agent without needing a CRM."; }
+  else if(res==="yes"){ rec="sf"; why="Your data must stay inside Salesforce. NPS Survey CX OS runs natively in your org and passes security review as an AppExchange managed package."; }
+  else if(svc==="yes"){ rec="both"; why="Both fit. Choose NPS Survey CX OS to keep everything inside Salesforce, or CX360 Standalone if you want a built-in help desk and Iris, the AI agent, synced with Salesforce."; }
+  else { rec="sf"; why="You run Salesforce and want surveys with follow-up on the record. NPS Survey CX OS is the native fit."; }
+  out.innerHTML = `<b>${rec==="sa"?"We recommend CX360 Standalone":rec==="sf"?"We recommend NPS Survey CX OS for Salesforce":"Either product fits you"}</b><p class="sub" style="margin-top:6px">${why}</p><div class="acts2">${rec!=="sa"?trial("picker_sf","Try the Salesforce edition →","primary"):""}${rec!=="sf"?appTrial("picker_sa"):""}<a class="btn line" href="#demo">Talk to us</a></div>`; };
+ f.addEventListener("change", upd); }
+
 V.home = () => `
 <section class="hero"><canvas class="bokeh" aria-hidden="true"></canvas><div class="wrap">
  <div><div class="kicker">The CX OS for Salesforce</div>
@@ -641,6 +793,7 @@ V.home = () => `
 </div></section>
 <section class="proof" aria-label="At a glance"><div class="wrap"><div><b>5.0</b> on AppExchange · 7 reviews</div><div><b>70+</b> survey templates</div><div><b>15+</b> question types</div><div><b>10</b> industry blueprints</div><div><b>0</b> integrations to maintain</div></div></section>
 <section class="band tint" style="padding-block:6px"><div class="wrap">${trustBar()}</div></section>
+${editionBand("home")}
 
 <section class="band"><div class="wrap split">
  <div><div class="eyebrow">The problem</div><h2 class="h2">Most unhappy customers don't complain. They just leave.</h2>
@@ -747,7 +900,7 @@ V.home = () => `
  <div class="plans" style="margin-top:30px">
   <div class="plan"><div class="tagline">Start closing the loop</div><h3>CX Lite</h3><div class="price">$3,500<small> /year</small></div><p>For teams launching NPS and CSAT inside Salesforce with closed-loop follow-up.</p>${trial("home_price_lite","Try CX Lite free","dark")}</div>
   <div class="plan pop"><div class="tagline">Recommended for most teams</div><h3>CX Pro</h3><div class="price">$8,500<small> /year</small></div><p>For CX, service and success teams running surveys across channels and departments.</p>${trial("home_price_pro","Try CX Pro free")}</div>
-  <div class="plan"><div class="tagline">Enterprise insight</div><h3>CX360 Insights</h3><div class="price"><small>from </small>$16,000<small> /year</small></div><p>For organizations that want the full customer experience picture across every team.</p>${trial("home_price_360","See CX360 on AppExchange","dark")}</div>
+  <div class="plan"><div class="tagline">Enterprise insight</div><h3>CX360 Insights <small style="display:block;font-size:.78rem;font-weight:600;color:var(--fg-mute);margin-top:4px">Salesforce edition</small></h3><div class="price"><small>from </small>$16,000<small> /year</small></div><p>For organizations that want the full customer experience picture across every team.</p>${trial("home_price_360","See CX360 on AppExchange","dark")}</div>
  </div>
  <p class="note">Prices are per company per year, as listed on Salesforce AppExchange. Public-sector buyers can also purchase through Carahsoft.</p>
 </div></section>
@@ -885,7 +1038,7 @@ V.pricing = () => `${hero("", "Per-org pricing, <em>start free</em>", "Every edi
     <div class="plan pop"><div class="tagline">Recommended for most teams</div><h3>CX Pro</h3><div class="price">$8,500<small> /year</small></div><p>For CX, service and success teams running surveys across channels and departments.</p><a class="btn primary" href="https://appexchange.salesforce.com/appxListingDetail?listingId=a0N3A00000FtRTKUA3&tab=e&utm_source=npssurveys.com&utm_medium=website&utm_campaign=cxos_site&utm_content=price_pro" target="_blank" rel="noopener">Try CX Pro free</a></div>
     <div class="plan"><div class="tagline">Enterprise insight</div><h3>CX360 Insights</h3><div class="price"><small>from </small>$16,000<small> /year</small></div><p>For organizations that want the full customer experience picture across every team.</p><a class="btn dark" href="https://appexchange.salesforce.com/appxListingDetail?listingId=a0N3A00000FtRTKUA3&tab=e&utm_source=npssurveys.com&utm_medium=website&utm_campaign=cxos_site&utm_content=price_360" target="_blank" rel="noopener">See CX360 on AppExchange</a></div>
   </div>
-  <p class="note">Edition details and current pricing are on the AppExchange listing. Public-sector buyers can also purchase through Carahsoft.</p></div></section><section class="band tint" id="pricing-form"><div class="wrap leadwrap"><div><div class="eyebrow">Questions about editions?</div><h2 class="h2">Get pricing for your organization</h2><ul class="why"><li>Help choosing between CX Lite, CX Pro and CX360 Insights</li><li>Nonprofit discounts and public-sector purchasing through Carahsoft</li><li>Multi-org and enterprise packages</li></ul></div>${leadForm("pricing","Enterprise pricing","Talk to us about pricing","Multi-org, public sector, nonprofit or a partner deal? We'll put together the right package.")}</div></section>${finalCTA("pricing_final")}`;
+  <p class="note">Edition details and current pricing are on the AppExchange listing. Public-sector buyers can also purchase through Carahsoft.</p></div></section>${standalonePricing()}<section class="band tint" id="pricing-form"><div class="wrap leadwrap"><div><div class="eyebrow">Questions about editions?</div><h2 class="h2">Get pricing for your organization</h2><ul class="why"><li>Help choosing between CX Lite, CX Pro and CX360 Insights</li><li>Nonprofit discounts and public-sector purchasing through Carahsoft</li><li>Multi-org and enterprise packages</li></ul></div>${leadForm("pricing","Enterprise pricing","Talk to us about pricing","Multi-org, public sector, nonprofit or a partner deal? We'll put together the right package.")}</div></section>${finalCTA("pricing_final")}`;
 
 V.demo = () => `${hero("", "Book a <em>30-minute</em> demo", "See your own industry's blueprint running in Salesforce, with time for your questions.", `<div class="ctas"><a class="btn primary" href="${DEMO}" target="_blank" rel="noopener">Pick a time on Calendly</a>${trial("demo_trial","Or start the free trial","ghost")}</div>`)}
 <section class="band"><div class="wrap"><div class="grid3">
@@ -1205,7 +1358,7 @@ V.partners = () => `${hero("", "Partner with SalesHub. <em>Bring native CX</em> 
 
 // ---------- Lead capture (Salesforce Web-to-Lead) ----------
 const W2L = { oid: "00D6g000001VQio", action: "https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8" };
-const INTERESTS = ["Product demo","GetFeedback migration","Enterprise pricing","Government deployment","Partner program"];
+const INTERESTS = ["Product demo","GetFeedback migration","Enterprise pricing","Government deployment","Partner program","CX360 Standalone (no Salesforce)"];
 let leadN = 0;
 const leadForm = (ctx="general", preset="Product demo", title="Talk to our team", sub="Tell us a little about you. We reply within one business day.") => { const n=++leadN;
  return `<div class="leadbox" data-ctx="${ctx}"><form class="lform" action="${W2L.action}" method="POST" target="w2l_${n}" novalidate>
@@ -1261,7 +1414,7 @@ function route(){
   document.getElementById("drawer").hidden = true; document.getElementById("menuBtn").setAttribute("aria-expanded","false");
   window.scrollTo({top:0});
   wire();
-  const TITLES={home:"NPS Survey CX OS | Customer Experience Operating System for Salesforce",platform:"Platform | NPS Survey CX OS",industries:"Industry blueprints | NPS Survey CX OS","public-sector":"Public sector | NPS Survey CX OS",learn:"Learning Center | NPS Survey CX OS",resources:"Resources | NPS Survey CX OS",reviews:"Reviews | NPS Survey CX OS",pricing:"Pricing | NPS Survey CX OS",demo:"Book a demo | NPS Survey CX OS",roi:"ROI calculator and business case | NPS Survey CX OS",compare:"Native vs. bolt-on survey tools | NPS Survey CX OS",switch:"Switching from GetFeedback or Delighted | NPS Survey CX OS",partners:"Partner program for Salesforce SIs | NPS Survey CX OS"};
+  const TITLES={home:"NPS Survey CX OS | Customer Experience Operating System for Salesforce",platform:"Platform | NPS Survey CX OS",industries:"Industry blueprints | NPS Survey CX OS","public-sector":"Public sector | NPS Survey CX OS",learn:"Learning Center | NPS Survey CX OS",resources:"Resources | NPS Survey CX OS",reviews:"Reviews | NPS Survey CX OS",pricing:"Pricing | NPS Survey CX OS",demo:"Book a demo | NPS Survey CX OS",roi:"ROI calculator and business case | NPS Survey CX OS",compare:"Native vs. bolt-on survey tools | NPS Survey CX OS",switch:"Switching from GetFeedback or Delighted | NPS Survey CX OS",partners:"Partner program for Salesforce SIs | NPS Survey CX OS",choose:"Salesforce-native or standalone? Choose your NPS Surveys product"};
   document.title = TITLES[key] || TITLES.home;
 }
 function wire(){
@@ -1282,7 +1435,7 @@ function wire(){
     calc.addEventListener("input", up); up(); }
   const feed = app.querySelector("#feed"); if (feed) liveFeed(feed);
   const roiEl = app.querySelector("#roi"); if (roiEl) roiWire(roiEl);
-  wireLead(app); wireTour(app);
+  wireLead(app); wireTour(app); wirePicker(app);
 }
 function prog(){ app.querySelectorAll(".path").forEach(p=>{ const all=p.querySelectorAll("input"), done=[...all].filter(x=>x.checked).length; const bar=p.querySelector(".progress i"), lbl=p.querySelector(".plabel"); if(bar) bar.style.width = (all.length? done/all.length*100:0)+"%"; if(lbl) lbl.textContent = `${done} of ${all.length} units complete`; }); }
 const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
