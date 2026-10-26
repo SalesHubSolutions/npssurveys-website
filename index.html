@@ -542,7 +542,7 @@ a.card:focus-visible{outline:3px solid var(--yellow);outline-offset:2px}
   <ul id="navlinks">
     <li class="dd"><button type="button" class="ddb" aria-expanded="false">Product</button><div class="ddm"><a href="#platform"><b>Platform</b><span>Surveys, closed-loop follow-up, CX360 dashboards</span></a><a href="#compare"><b>Compare</b><span>Native vs. bolt-on survey tools</span></a><a href="#reviews"><b>Reviews</b><span>Rated 5.0 on Salesforce AppExchange</span></a><a href="#switch"><b>Switch from GetFeedback</b><span>Move before December 31, 2026</span></a></div></li>
     <li class="dd"><button type="button" class="ddb" aria-expanded="false">Solutions</button><div class="ddm wide"><div><h6>Industries</h6><a href="#ind-commercial">B2B, SaaS & Technology</a><a href="#ind-financial">Financial Services & Insurance</a><a href="#ind-healthcare">Healthcare & Health-tech</a><a href="#ind-manufacturing">Manufacturing & Distribution</a><a href="#ind-consulting">Consulting & Professional Services</a><a href="#ind-nonprofit">Nonprofit</a><a href="#ind-education">Education</a><a class="all" href="#industries">All industry blueprints →</a></div><div><h6>Public sector</h6><a href="#public-sector">Public sector overview</a><a href="#ind-sled">State & Local Government</a><a href="#ind-federal">Federal Civilian Agencies</a><a href="#ind-defense">Defense</a></div></div></li>
-    <li class="dd"><button type="button" class="ddb" aria-expanded="false">Resources</button><div class="ddm"><a href="/insights/"><b>Insights blog</b><span>Guides and playbooks, new every week</span></a><a href="#learn"><b>Learning Center</b><span>Setup guides, learning paths, NPS calculator</span></a><a href="#resources"><b>Downloads & videos</b><span>Offering sheets, blueprints, films</span></a><a href="#roi"><b>ROI calculator</b><span>Build your business case in 60 seconds</span></a></div></li>
+    <li class="dd"><button type="button" class="ddb" aria-expanded="false">Resources</button><div class="ddm"><a href="/insights/"><b>Insights blog</b><span>Guides and playbooks, new every week</span></a><a href="#learn"><b>Learning Center</b><span>Setup and how-to guides, glossary, NPS calculator</span></a><a href="#resources"><b>Downloads & videos</b><span>Offering sheets, blueprints, films</span></a><a href="#roi"><b>ROI calculator</b><span>Build your business case in 60 seconds</span></a></div></li>
     <li><a href="#partners">Partners</a></li><li><a href="#pricing">Pricing</a></li>
   </ul>
   <div class="acts"><a class="btn ghost" href="#demo">Book a demo</a><a class="btn primary" href="https://appexchange.salesforce.com/appxListingDetail?listingId=a0N3A00000FtRTKUA3&tab=e&utm_source=npssurveys.com&utm_medium=website&utm_campaign=cxos_site&utm_content=nav" target="_blank" rel="noopener">Free trial</a></div>
@@ -806,7 +806,7 @@ V.platform = () => `${hero("", "The customer experience <em>operating system</em
       <tr><td>Pricing</td><td class="us">Per org, from $3,500 a year</td><td class="them">Often per user or per response</td></tr>
     </tbody>
   </table></div>
-  <p class="note">The AppExchange listing describes NPS Survey CX OS as 95% less than Qualtrics.</p></div></section>
+  <p class="note">The AppExchange listing describes it as enterprise Voice of Customer for a fraction of the cost of standalone CX suites.</p></div></section>
 <section class="band"><div class="wrap"><div class="eyebrow">Trust</div><h2 class="h2">Inside the platform your security team already approved</h2><div class="trust">
     <div class="t"><h3>100% Salesforce-native</h3><p>Installed from AppExchange as a managed package in your org.</p></div>
     <div class="t"><h3>Your data stays put</h3><p>Survey responses are stored in your Salesforce org and never leave it.</p></div>
@@ -897,7 +897,7 @@ V.demo = () => `${hero("", "Book a <em>30-minute</em> demo", "See your own indus
 
 V.learn = () => `${hero("", "Learning Center", "Role-based learning paths, setup guides, best practices and reference for running a world-class feedback program on Salesforce.", `<div class="ctas"><a class="btn primary" href="#learn" data-jump="start">Start the setup guide</a><a class="btn ghost" href="#learn" data-jump="paths">Choose a learning path</a></div>`)}
 <section class="band"><div class="wrap learn">
- <nav class="toc" aria-label="Learning Center sections">${[["paths","Learning paths"],["start","Getting started"],["design","Survey design"],["loop","Closing the loop"],["admin","Admin guide"],["nps","NPS calculator"],["glossary","Glossary"]].map(([a,b])=>`<a href="#learn" data-jump="${a}">${b}</a>`).join("")}</nav>
+ <nav class="toc" aria-label="Learning Center sections">${[["paths","Learning paths"],["start","Getting started"],["howto","How-to guides"],["design","Survey design"],["loop","Closing the loop"],["p1","Detractor case guide"],["admin","Admin guide"],["nps","NPS calculator"],["glossary","Glossary"]].map(([a,b])=>`<a href="#learn" data-jump="${a}">${b}</a>`).join("")}</nav>
  <article class="doc"><h2 id="paths">Learning paths</h2>
 <p>Pick the path for your role. Tick units as you finish them; your progress is saved in this browser.</p>
 <div class="grid2" style="margin-top:18px">
@@ -944,6 +944,14 @@ V.learn = () => `${hero("", "Learning Center", "Role-based learning paths, setup
 <h3>5. Map answers and turn on the loop</h3>
 <ol><li>Map the score to fields on the Account, Contact, Case or Opportunity.</li><li>Turn on routing: detractors open a P1 case, passives enter a 30-day nurture, promoters get a review request.</li><li>Send a test to yourself, check the record, then go live.</li></ol>
 
+<h2 id="howto">How-to guides</h2>
+<p>Step-by-step guides for admins and CX teams. New guides are added every week.</p>
+<ul>
+<li><a href="/insights/csat-survey-on-case-close-salesforce/"><b>Send a CSAT survey when a case closes</b></a>: the trigger, who gets it, sending once, where the answer lands, and a go-live checklist.</li>
+<li><a href="/insights/close-the-loop-detractors-salesforce/"><b>Close the loop on detractors</b></a>: a 5-step playbook for routing and following up on low scores.</li>
+<li><a href="/insights/replace-getfeedback-salesforce/"><b>Switch from GetFeedback</b></a>: a week-by-week plan before December 31, 2026.</li>
+</ul>
+
 <h2 id="design">Survey design best practices</h2>
 <ul><li><b>One moment, one survey.</b> Ask right after the moment you want to measure, while it's fresh.</li><li><b>Pick the right measure.</b> NPS for loyalty to the relationship, CSAT for a single interaction, CES for how easy something was.</li><li><b>Keep it short.</b> One rating question and one "why" question get the most responses.</li><li><b>Avoid survey fatigue.</b> Set cadence rules so the same person isn't asked too often.</li><li><b>Ask in their language and channel.</b> Use email, SMS, QR codes or a portal, whichever the person already uses.</li><li><b>Design for everyone.</b> Plain language, readable contrast and keyboard-friendly surveys.</li></ul>
 
@@ -954,6 +962,18 @@ V.learn = () => `${hero("", "Learning Center", "Role-based learning paths, setup
  <div class="card"><span class="pill a" style="align-self:flex-start">Passive · 7 to 8</span><h3>Nurture</h3><p>A 30-day follow-up to learn what would make it a 9 or 10.</p></div>
  <div class="card"><span class="pill g" style="align-self:flex-start">Promoter · 9 to 10</span><h3>Amplify</h3><p>Thank them, ask for a review, and invite them to be a reference.</p></div>
 </div>
+
+<h2 id="p1">Working a detractor (P1) case</h2>
+<p>When someone gives a score of 0 to 6, a P1 case opens with an owner. This is how case owners and service managers work it, from pickup to closed loop.</p>
+<figure style="margin:18px 0;max-width:100%"><img src="/content/figures/detractor-case.svg" alt="Five steps to work a detractor case: pick it up, read the score and comment on the record, reach out within one business day, fix or explain, record what you did and close the case" style="width:100%;max-width:100%;height:auto;display:block"></figure>
+<ol>
+<li><b>Pick it up.</b> Open the case from your queue or list view. Check it daily so none waits.</li>
+<li><b>Read first.</b> Before you contact the customer, read the score, their comment and the history on the record. Know what happened before you call.</li>
+<li><b>Reach out within one business day.</b> Call if you can. Thank them for the honest answer, and listen before you explain.</li>
+<li><b>Fix it, or explain it.</b> Solve what you can now. If the fix takes longer, agree on a next step and a date.</li>
+<li><b>Record and close.</b> Write down what you did and what you learned, then close the case. If something changed because of their feedback, tell them.</li>
+</ol>
+<div class="callout"><b>For managers:</b> track the share of detractor cases contacted on time. It's fully in your team's control, and it often moves before the score does.</div>
 
 <h2 id="admin">Admin guide</h2>
 <h3>Where data lives</h3><p>Surveys and responses are stored in your Salesforce org and related to the Account, Contact, Case or Opportunity they came from. Nothing is copied to an outside server.</p>

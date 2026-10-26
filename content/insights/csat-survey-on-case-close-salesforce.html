@@ -1,0 +1,64 @@
+<!--META
+{"slug":"csat-survey-on-case-close-salesforce","title":"How to send a CSAT survey when a Salesforce case closes","description":"An admin's guide to case-close CSAT: the trigger, who gets the survey, how to send it only once, where the answer lands, and what a low score should do.","date":"2026-10-26","author":"SalesHub","tags":["Knowledge center","Admin how-to"],"read":"6 min","cta":"trial"}
+META-->
+<p><strong>Trigger the survey when a case moves into a closed status, send it once to the case contact, save the answer on the Case and Contact, and give every low score an owner.</strong> That's the whole pattern. The work is in six small decisions you make before you build. This guide walks through each one, then shows a go-live checklist you can run in a sandbox.</p>
+
+<h2>Why case close is the right moment</h2>
+<p>CSAT (customer satisfaction) measures one interaction. The best time to ask about one interaction is right after it ends, while the customer still remembers the details. In a service org, that moment already exists as data: the case status changes to closed. You don't need a calendar, a list export or a manual send. The record change is the trigger.</p>
+<p>Asking at the moment also makes the answer useful. A score tied to a specific case tells you which queue, which product and which agent it was about. A quarterly survey can't do that.</p>
+
+{{FIG:case-close-flow|The case-close CSAT loop: one trigger, one survey per case, the answer on the record, and an owner for every low score.}}
+
+<h2>The six decisions to make first</h2>
+<p>Write these down before you open any setup screen. They become your test plan later.</p>
+<div class="tw"><table>
+<tr><th>Decision</th><th>What to decide</th><th>A sensible default</th></tr>
+<tr><td>1. Trigger</td><td>Which status values mean "closed" in your org</td><td>Every closed status that means the customer was helped</td></tr>
+<tr><td>2. Scope</td><td>Which record types, queues or channels are in</td><td>Start with one queue, then expand</td></tr>
+<tr><td>3. Exclusions</td><td>Cases that should never get a survey</td><td>Spam, duplicates, merged and internal cases</td></tr>
+<tr><td>4. Recipient</td><td>Who gets the survey</td><td>The case contact, if they have an email address</td></tr>
+<tr><td>5. Questions</td><td>What you ask</td><td>One CSAT rating and one optional "why" question</td></tr>
+<tr><td>6. Follow-up</td><td>What a low score does, and how fast</td><td>An owner reaches out within one business day</td></tr>
+</table></div>
+
+<h3>1. Pick every status that means closed</h3>
+<p>Many orgs have more than one closed status, such as "Closed – Resolved" and "Closed – Duplicate." List them all, then decide which ones should send a survey. A duplicate case closing is not a moment to ask the customer anything.</p>
+
+<h3>2 and 3. Set the scope and the exclusions</h3>
+<p>Start small. One queue or one product line is enough to prove the loop works. Exclude cases that were never real customer contacts: spam, auto-replies, merged cases and cases your own team opened for internal work.</p>
+
+<h3>4. Send to the case contact</h3>
+<p>The person who asked for help is the one who can rate it. Make sure the case contact has an email address, and skip the survey when it doesn't. If one customer opens many cases, add a cadence rule so the same person isn't asked again within a set number of days. That one rule does more for your response rate than any wording change.</p>
+
+<h3>5. Keep the survey to two questions</h3>
+<p>Ask one rating question ("How satisfied were you with how we handled your request?") and one open question ("What's the main reason for your score?"). Keep the scale the same across every queue so you can compare them. Short surveys get more answers, and the open text is where the fixes come from.</p>
+
+<h3>6. Agree what a low score does</h3>
+<p>Before go-live, agree who owns a low score and how fast they respond. A common choice is the case owner's manager, within one business day. Write down what "done" means: the customer was contacted, the issue was fixed or explained, and the outcome was recorded on the case.</p>
+
+<h2>Send it once, not on every edit</h2>
+<p>This is the most common mistake. Closed cases still get edited: an agent fixes a typo, a field is updated by automation, a comment is added. If your trigger only checks "status is closed," every one of those edits can send another survey.</p>
+<p>The fix is to fire only when the case changes <em>into</em> a closed status. Salesforce's own Flow training covers the same idea for record-triggered flows: the option "Only when a record is updated to meet the condition requirements" runs the automation once, when the record first meets the conditions, not every time it's edited afterward. Whatever tool sends your surveys, test this before you go live: close a case, edit it, and confirm only one survey went out.</p>
+
+<h2>Where the answer should land</h2>
+<p>The response belongs on the Case it's about, and on the Contact and Account it rolls up to. That way the agent sees the score on the case, the account owner sees it before the next call, and you can report on it with standard Salesforce reports. Map the score and the comment to fields you can filter and group on. If answers live in a separate tool, they don't get read.</p>
+
+<h2>Test it in a sandbox</h2>
+<p>Build the whole thing in a sandbox first. Then run the checklist below with a test contact you control. Every line should pass before you repeat the setup in production.</p>
+
+{{FIG:case-close-checklist|A go-live checklist for case-close CSAT. Each test line should pass in a sandbox before you go live.}}
+
+<h2>What to watch in the first month</h2>
+<ul>
+<li><b>Response rate by queue.</b> A queue with very few answers may have missing contact emails or the wrong exclusions.</li>
+<li><b>Duplicate sends.</b> Any contact who got two surveys for one case means the trigger fires on edits.</li>
+<li><b>Low scores followed up on time.</b> This is fully in your team's control, so it's the best early measure.</li>
+<li><b>Top reasons in the comments.</b> Group low-score comments by theme once a month and give each theme an owner.</li>
+</ul>
+
+<h2>Doing it with NPS Survey CX OS</h2>
+<p>NPS Survey CX OS by SalesHub runs inside Salesforce. Its AppExchange listing describes sending NPS, CSAT and CES surveys automatically on Case close, with no code needed, from 70+ survey templates and 40+ branded email templates. Responses link to the Account, Contact, Case and Opportunity, and the data stays in your org. The listing also says you can send your first survey in about 10 minutes.</p>
+<p>In practice, you pick a CSAT template, set the trigger to the case's closed status, map the score to fields on the Case, and turn on routing so a low score reaches an owner. The <a href="/#learn">Learning Center</a> has the full getting started guide, a glossary and an NPS calculator.</p>
+
+<p class="src">Sources: <a href="https://trailhead.salesforce.com/content/learn/modules/record-triggered-flows/build-a-record-triggered-flow" target="_blank" rel="noopener">Salesforce Trailhead, "Build a Record-Triggered Flow"</a>; <a href="https://appexchange.salesforce.com/appxListingDetail?listingId=a0N3A00000FtRTKUA3&amp;tab=e&amp;utm_source=npssurveys.com&amp;utm_medium=website&amp;utm_campaign=cxos_blog&amp;utm_content=csat_case_close_source" target="_blank" rel="noopener">NPS Survey by SalesHub on Salesforce AppExchange</a> (accessed October 26, 2026).</p>
+{{CTA}}

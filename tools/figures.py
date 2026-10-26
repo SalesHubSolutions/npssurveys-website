@@ -116,6 +116,28 @@ def partner_tracks():
     b+=t(40,392,"Example on CX Pro ($8,500/yr): referral $1,700 · implementation $2,125 in year one + $850 per renewal",14,SOFT,600)
     return svg(Wd,H,b,"Partner tracks: referral partners register, SalesHub sells, partner earns 20% of first year; implementation partners register, deliver and keep services revenue, and earn 25% of first year plus 10% of renewals")
 
-FIGS={"business-case-flow":business_case,"partner-tracks":partner_tracks,"switch-timeline":timeline,"native-vs-boltOn":architecture,"service-loop":loop,"score-routing":routing,"closed-loop-dashboard":dashboard}
+
+def case_close_flow():
+    return flow("CSAT on case close: the whole loop in Salesforce","One trigger, one survey per case, every answer on the record",
+        [("Case closes","Status moves to a|closed value you|chose",""),("Survey sends","Once, to the case|contact, after a|short delay",""),("They rate it","One CSAT question|and one optional|\"why\" question",""),("Answer saved","On the Case and|Contact, ready for|reports",""),("Owner acts","A low score goes|to an owner who|follows up","")],
+        "Five steps: a case closes, the survey sends once to the case contact, the customer rates the interaction, the answer is saved on the Case and Contact, and a low score goes to an owner for follow-up")
+
+def case_close_checklist():
+    Wd,H=1000,470; b=t(40,50,"Go-live checklist: CSAT on case close",22,NAVY,800)+t(40,78,"Run it in a sandbox first, then repeat in production",15,MUTE,500)
+    cols=[("BEFORE YOU BUILD",["List every status that means closed","Pick the record types and queues in scope","Exclude spam, duplicates and internal cases","Agree who owns a low score, and how fast"]),
+          ("TEST IN A SANDBOX",["Close a test case: one survey arrives","Edit the closed case: no second survey","Answer it: the score shows on the Case","Give a low score: the owner is notified"])]
+    for k,(h,items) in enumerate(cols):
+        x=40+k*470; b+=r(x,104,450,330,16,"#EAF1FF" if k else W,BLUE if k else LINE,2.5 if k else 1.5)+t(x+24,140,h,13,BLUE if k else MUTE,800)
+        for i,it in enumerate(items):
+            y=176+i*64; b+=r(x+24,y,30,30,7,W,BLUE,2.5)+f'<path d="M{x+31} {y+15} l7 7 l12 -14" fill="none" stroke="{GRN}" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>'+t(x+70,y+21,it,15.5,NAVY,600)
+    return svg(Wd,H,b,"Go-live checklist. Before you build: list closed statuses, pick record types and queues, exclude spam and internal cases, agree who owns a low score. Test in a sandbox: one survey per closed case, no second survey on edit, score shows on the Case, low score notifies the owner")
+
+
+def detractor_case():
+    return flow("Working a detractor (P1) case","The daily routine for service managers and case owners",
+        [("Pick it up","Open the P1 case|from your queue|or list view",""),("Read first","Score, comment|and history on|the record",""),("Reach out","Call or email|within one|business day",""),("Fix it","Solve or explain,|and agree the|next step",""),("Close loop","Record what you|did, then close|the case","")],
+        "Five steps to work a detractor case: pick it up, read the score and comment on the record, reach out within one business day, fix or explain, record what you did and close the case")
+
+FIGS={"detractor-case":detractor_case,"case-close-flow":case_close_flow,"case-close-checklist":case_close_checklist,"business-case-flow":business_case,"partner-tracks":partner_tracks,"switch-timeline":timeline,"native-vs-boltOn":architecture,"service-loop":loop,"score-routing":routing,"closed-loop-dashboard":dashboard}
 if __name__=="__main__":
     for k,f in FIGS.items(): open(os.path.join(OUT,k+".svg"),"w").write(f()); print(k)
