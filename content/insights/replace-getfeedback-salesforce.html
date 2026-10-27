@@ -13,7 +13,7 @@ META-->
 <tr><td>Survey name and type</td><td>Support CSAT (CSAT)</td></tr>
 <tr><td>Salesforce trigger</td><td>Case: Status = Closed</td></tr>
 <tr><td>Channel</td><td>Email, one hour after close</td></tr>
-<tr><td>Questions and scales</td><td>"How satisfied are you…" 1–5, plus a comment box</td></tr>
+<tr><td>Questions and scales</td><td>"How satisfied are you…" 1-5, plus a comment box</td></tr>
 <tr><td>Where answers are written</td><td>Custom object linked to Case and Contact</td></tr>
 <tr><td>What happens on a low score</td><td>Task to the queue lead</td></tr>
 <tr><td>Reports and dashboards that use it</td><td>"CSAT by queue" dashboard</td></tr>
@@ -36,16 +36,16 @@ META-->
 </ul>
 {{FIG:native-vs-boltOn|Where the data lives decides most of the work: a connector to maintain, or a loop that stays inside Salesforce.}}
 
-<h2>4. Rebuild in a sandbox (weeks 2–5)</h2>
+<h2>4. Rebuild in a sandbox (weeks 2-5)</h2>
 <ol>
 <li>Install the new tool in a sandbox.</li>
 <li>Rebuild your highest-volume survey first, usually case-close CSAT or relationship NPS.</li>
 <li>Recreate the trigger on the same Salesforce event, and map answers to the same fields so existing reports keep working.</li>
-<li>Set the follow-up rules: detractors (0–6) open a case with an owner, passives (7–8) get a nurture, promoters (9–10) get a review or referral ask.</li>
+<li>Set the follow-up rules: detractors (0-6) open a case with an owner, passives (7-8) get a nurture, promoters (9-10) get a review or referral ask.</li>
 <li>Test with internal users, then a small group of real customers.</li>
 </ol>
 
-<h2>5. Run both in parallel, then cut over (weeks 6–9)</h2>
+<h2>5. Run both in parallel, then cut over (weeks 6-9)</h2>
 <p>Go live in production for one survey and watch response rates and follow-up for a week. Then move the rest. Keep the old tool read-only until your final export is done.</p>
 
 <h2>A working timeline to December 31</h2>
