@@ -439,7 +439,7 @@ th.us{color:var(--link)}
 details{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:16px 20px}
 summary{cursor:pointer;font-weight:700;list-style:none;display:flex;justify-content:space-between;gap:12px}
 summary::-webkit-details-marker{display:none}
-summary::after{content:"+";font-weight:800;color:var(--link)} details[open] summary::after{content:"–"}
+summary::after{content:"+";font-weight:800;color:var(--link)} details[open] summary::after{content:"-"}
 details p{color:var(--fg-soft);margin-top:10px}
 
 /* final cta */
@@ -698,17 +698,17 @@ const mockStandalone = () => `<figure style="margin:0"><div class="mock" role="i
 const sfCard = (c, rec=false) => `<div class="ed sf${rec?" rec":""}">${rec?`<span class="badge">Recommended for you</span>`:`<span class="badge">For Salesforce customers</span>`}
  <h3><img src="brand/logo/nps-survey-cx-os-mark.svg" alt="">NPS Survey CX OS</h3>
  <p class="who">A managed package that runs <b>inside your Salesforce org</b>. Surveys send on Salesforce events and every answer lands on the record your team already works from.</p>
- <ul>${["100% Salesforce-native — data never leaves your org","NPS, CSAT and CES with 70+ templates and 10 industry blueprints","Low scores open P1 cases with an owner, inside Service Cloud","CX OS Insights dashboards for leadership","Passes security review as an AppExchange managed package"].map(tick).join("")}</ul>
+ <ul>${["100% Salesforce-native: data never leaves your org","NPS, CSAT and CES with 70+ templates and 10 industry blueprints","Low scores open P1 cases with an owner, inside Service Cloud","CX OS Insights dashboards for leadership","Passes security review as an AppExchange managed package"].map(tick).join("")}</ul>
  <div class="acts2">${trial(c+"_sf", "Free 7-day trial on AppExchange →", "primary")}<a class="btn line" href="#platform">Explore the platform</a></div>
  <p class="fine">CX Lite $3,500 · CX Pro $8,500 · CX OS Insights from $16,000 per org / year</p></div>`;
-const saCard = (c, rec=false) => `<div class="ed sa${rec?" rec":""}">${rec?`<span class="badge">Recommended for you</span>`:`<span class="badge">Any CRM — or none</span>`}
+const saCard = (c, rec=false) => `<div class="ed sa${rec?" rec":""}">${rec?`<span class="badge">Recommended for you</span>`:`<span class="badge">Any CRM, or none</span>`}
  <h3><img src="brand/logo/nps-survey-cx-os-mark.svg" alt="">CX360 Standalone</h3>
  <p class="who">An AI customer-experience and service platform in the cloud. Works on its own, or <b>connects to HubSpot, Salesforce</b> and any tool through APIs and Zapier.</p>
  <ul>${["Surveys with 55 question types, 87 email templates and journeys","Service desk: cases, SLAs, knowledge base and public help center","Iris, an AI agent customers can video call, talk to or chat with","Revenue Intelligence with account-weighted NPS and save plays","Eight digital workers that triage, follow up and brief leaders"].map(tick).join("")}</ul>
  <div class="acts2">${appTrial(c+"_sa")}<a class="btn line" href="${appUrl(c+"_sa_tour")}">See the product</a></div>
  <p class="fine">Starter $149 · Growth $499 · Business $1,250 per month · 14-day free trial, no card</p></div>`;
 const editionBand = c => `<section class="band"><div class="wrap">
- <div class="eyebrow">Two ways to run customer experience</div><h2 class="h2">Built for Salesforce — or for any CRM</h2>
+ <div class="eyebrow">Two ways to run customer experience</div><h2 class="h2">Built for Salesforce, or for any CRM</h2>
  <p class="sub">Same team and the same closed-loop approach, in two products. Pick the one that fits where your customer data lives. <a href="#choose">Compare them side by side →</a></p>
  <div class="eds">${sfCard(c)}${saCard(c)}</div></div></section>`;
 const standalonePricing = () => `<section class="band tint" id="standalone-pricing"><div class="wrap">
@@ -729,7 +729,7 @@ V.choose = () => `${hero("", "Which <em>NPS Surveys</em> product is right for yo
    <input type="radio" name="res" id="q2b" value="no"><label for="q2b">No / not sure</label></div></fieldset>
   <fieldset><legend>3. Do you also want a help desk, knowledge base or an AI agent for customers?</legend><div class="opts">
    <input type="radio" name="svc" id="q3a" value="yes"><label for="q3a">Yes</label>
-   <input type="radio" name="svc" id="q3b" value="no"><label for="q3b">No — surveys and follow-up are enough</label></div></fieldset>
+   <input type="radio" name="svc" id="q3b" value="no"><label for="q3b">No, surveys and follow-up are enough</label></div></fieldset>
   <div class="pick-out" id="pickout" aria-live="polite"><b>Pick an answer above</b><p class="sub" style="margin-top:6px">We'll recommend a product and explain why.</p></div>
  </form>
 </div></section>
@@ -977,7 +977,7 @@ V.industry = id => { const x = IND.find(i=>i.id===id); if(!x) return V.industrie
  <section class="band"><div class="wrap">
   <div class="grid3"><div class="card"><h3>Who it's for</h3><p>${x.who}</p></div><div class="card"><h3>Works with</h3><p>${x.clouds}</p></div><div class="card"><h3>Start with</h3><p>A 90-day pilot on one moment, with response rate, follow-up time and score trend agreed up front.</p></div></div>
   <div class="eyebrow" style="margin-top:44px">The customer journey</div><h2 class="h2">Four moments where ${x.name.split(" ")[0]==="State"?"residents":x.group==="Public sector"?"the people you serve":"customers"} tell you how you're doing</h2>
-  <div class="journey">${x.moments.map(m=>{const ch=/QR/.test(m[4])?"qr":/SMS/.test(m[4])?"sms":/Web|portal/i.test(m[4])?"portal":"mail";return `<div class="jstep"><div class="jn"><svg viewBox="0 0 24 24">${I[ch]}</svg></div><h4>${m[0]}</h4><p>${m[2]} · ${m[4]}</p><div class="chips"><span style="background:#FDECEC;color:#C03B3B">0–6 case</span><span style="background:#FFF4DB;color:#946112">7–8 nurture</span><span style="background:#E3F6EC;color:#17804B">9–10 thanks</span></div></div>`}).join("")}</div>
+  <div class="journey">${x.moments.map(m=>{const ch=/QR/.test(m[4])?"qr":/SMS/.test(m[4])?"sms":/Web|portal/i.test(m[4])?"portal":"mail";return `<div class="jstep"><div class="jn"><svg viewBox="0 0 24 24">${I[ch]}</svg></div><h4>${m[0]}</h4><p>${m[2]} · ${m[4]}</p><div class="chips"><span style="background:#FDECEC;color:#C03B3B">0-6 case</span><span style="background:#FFF4DB;color:#946112">7-8 nurture</span><span style="background:#E3F6EC;color:#17804B">9-10 thanks</span></div></div>`}).join("")}</div>
   <div class="eyebrow" style="margin-top:44px">The blueprint</div><h2 class="h2">${x.moments.length} moments to measure, and what happens after each answer</h2>
   <div class="tablewrap"><table class="bp"><thead><tr><th>Moment</th><th>Salesforce trigger</th><th>Survey</th><th>Key question</th><th>Channel</th><th>After the answer</th><th>Owner</th></tr></thead><tbody>
   ${x.moments.map(m=>`<tr><td>${m[0]}</td><td>${m[1]}</td><td><span class="pill">${m[2]}</span></td><td>${m[3]}</td><td>${m[4]}</td><td><div class="stack" style="gap:6px"><span class="pill r">Detractor: ${m[5]}</span><span class="pill a">Passive: ${m[6]}</span><span class="pill g">Promoter: ${m[7]}</span></div></td><td>${m[8]}</td></tr>`).join("")}
@@ -1138,9 +1138,9 @@ V.learn = () => `${hero("", "Learning Center", "Role-based learning paths, setup
 <h2 id="nps">NPS calculator</h2>
 <p>NPS is the percentage of promoters (9 to 10) minus the percentage of detractors (0 to 6). Passives (7 to 8) count toward the total but not the score. It ranges from −100 to +100.</p>
 <div class="calc" id="calc">
- <label for="cp">Promoters (9–10)<input id="cp" type="number" min="0" value="62" inputmode="numeric"></label>
- <label for="ca">Passives (7–8)<input id="ca" type="number" min="0" value="24" inputmode="numeric"></label>
- <label for="cd">Detractors (0–6)<input id="cd" type="number" min="0" value="14" inputmode="numeric"></label>
+ <label for="cp">Promoters (9-10)<input id="cp" type="number" min="0" value="62" inputmode="numeric"></label>
+ <label for="ca">Passives (7-8)<input id="ca" type="number" min="0" value="24" inputmode="numeric"></label>
+ <label for="cd">Detractors (0-6)<input id="cd" type="number" min="0" value="14" inputmode="numeric"></label>
  <div class="out" aria-live="polite"><small>Your NPS</small><b id="cout">+48</b><small id="cdesc"></small></div>
 </div>
 <p class="note">Example values. Replace them with your own response counts.</p>
@@ -1177,7 +1177,7 @@ V.roi = () => `<div id="printcase" class="pc"></div>${hero("", "Build your <em>b
    ${fld("acct","Active customer accounts","Accounts you'd survey in a year.",10,5000,10)}
    ${fld("arpa","Average annual revenue per account ($)","Annual contract value or revenue per account.",500,200000,500)}
    ${fld("churn","Annual churn today (%)","Share of accounts (or revenue) lost each year.",1,50,1)}
-   ${fld("save","Churn you could prevent with same-day follow-up (%)","Your assumption. Start low: 5–10% of today's churn is a cautious place to begin.",1,50,1)}
+   ${fld("save","Churn you could prevent with same-day follow-up (%)","Your assumption. Start low: 5-10% of today's churn is a cautious place to begin.",1,50,1)}
   </div>
   <div data-for="pub" hidden>
    ${fld("cases","Complaints or escalations per month","Cases, 311 escalations or complaints that reach leadership.",10,5000,10)}
