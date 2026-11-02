@@ -1050,7 +1050,7 @@ V.demo = () => `${hero("", "Book a <em>30-minute</em> demo", "See your own indus
 
 V.learn = () => `${hero("", "Learning Center", "Role-based learning paths, setup guides, best practices and reference for running a world-class feedback program on Salesforce.", `<div class="ctas"><a class="btn primary" href="#learn" data-jump="start">Start the setup guide</a><a class="btn ghost" href="#learn" data-jump="paths">Choose a learning path</a></div>`)}
 <section class="band"><div class="wrap learn">
- <nav class="toc" aria-label="Learning Center sections">${[["paths","Learning paths"],["start","Getting started"],["howto","How-to guides"],["design","Survey design"],["loop","Closing the loop"],["p1","Detractor case guide"],["admin","Admin guide"],["nps","NPS calculator"],["glossary","Glossary"]].map(([a,b])=>`<a href="#learn" data-jump="${a}">${b}</a>`).join("")}</nav>
+ <nav class="toc" aria-label="Learning Center sections">${[["paths","Learning paths"],["start","Getting started"],["howto","How-to guides"],["design","Survey design"],["loop","Closing the loop"],["p1","Detractor case guide"],["admin","Admin guide"],["nps","NPS calculator"],["faq","FAQ"],["glossary","Glossary"]].map(([a,b])=>`<a href="#learn" data-jump="${a}">${b}</a>`).join("")}</nav>
  <article class="doc"><h2 id="paths">Learning paths</h2>
 <p>Pick the path for your role. Tick units as you finish them; your progress is saved in this browser.</p>
 <div class="grid2" style="margin-top:18px">
@@ -1100,6 +1100,7 @@ V.learn = () => `${hero("", "Learning Center", "Role-based learning paths, setup
 <h2 id="howto">How-to guides</h2>
 <p>Step-by-step guides for admins and CX teams. New guides are added every week.</p>
 <ul>
+<li><a href="/insights/nps-vs-csat-vs-ces-salesforce/"><b>Choose NPS, CSAT or CES for each moment</b></a>: what each measure asks, how it's scored, and which Salesforce event should send it.</li>
 <li><a href="/insights/csat-survey-on-case-close-salesforce/"><b>Send a CSAT survey when a case closes</b></a>: the trigger, who gets it, sending once, where the answer lands, and a go-live checklist.</li>
 <li><a href="/insights/close-the-loop-detractors-salesforce/"><b>Close the loop on detractors</b></a>: a 5-step playbook for routing and following up on low scores.</li>
 <li><a href="/insights/replace-getfeedback-salesforce/"><b>Switch from GetFeedback</b></a>: a week-by-week plan before December 31, 2026.</li>
@@ -1145,6 +1146,21 @@ V.learn = () => `${hero("", "Learning Center", "Role-based learning paths, setup
 </div>
 <p class="note">Example values. Replace them with your own response counts.</p>
 
+<h2 id="faq">Frequently asked questions</h2>
+<dl class="gloss">
+ <dt>Where is survey data stored?</dt><dd>In your own Salesforce org. Surveys and responses are Salesforce records, so the data never leaves Salesforce and follows your existing security and sharing settings.</dd>
+ <dt>Which surveys can I send?</dt><dd>NPS, CSAT and CES surveys, plus other voice-of-the-customer surveys, built from 70+ templates with 15+ question types and conditional logic. Not sure which to use? Read <a href="/insights/nps-vs-csat-vs-ces-salesforce/">NPS vs. CSAT vs. CES</a>.</dd>
+ <dt>What can send a survey?</dt><dd>A Salesforce event, such as a Case closing, an Opportunity being won or lost, onboarding finishing, or another record change you choose.</dd>
+ <dt>Which records do responses link to?</dt><dd>The Account, Contact, Case and Opportunity the survey came from, so the score shows where your team already works.</dd>
+ <dt>Can I use standard Salesforce reports?</dt><dd>Yes. Responses are reportable with standard Salesforce reports and dashboards, alongside the built-in CX360 dashboards.</dd>
+ <dt>What happens after a low score?</dt><dd>Detractors (0 to 6) open a priority case with an owner, passives (7 to 8) enter a nurture flow, and promoters (9 to 10) get a review request. See the <a href="#learn" data-jump="p1">detractor case guide</a>.</dd>
+ <dt>How long does setup take?</dt><dd>The AppExchange listing says you can send your first survey in about 10 minutes. Plan extra time to agree triggers, owners and follow-up rules, and test in a sandbox first.</dd>
+ <dt>Is there a free trial?</dt><dd>Yes. The free trial runs 7 days, and no credit card is needed to install. <a href="${LIST}&utm_content=learn_faq" target="_blank" rel="noopener">Start it on AppExchange</a>.</dd>
+ <dt>How is it priced?</dt><dd>One price per Salesforce org per year, from $3,500. See <a href="#pricing">pricing</a> for each edition. Discounts are available for nonprofits.</dd>
+ <dt>Does it help with GDPR and CCPA?</dt><dd>Because data stays in Salesforce, it supports GDPR and CCPA programs through the Salesforce security controls you already manage. Your own policies and legal review still apply.</dd>
+ <dt>Where do I get help?</dt><dd>Email support@saleshub.info, or book time with our team from the <a href="#demo">demo page</a>.</dd>
+</dl>
+
 <h2 id="glossary">Glossary</h2>
 <dl class="gloss">
  <dt>NPS</dt><dd>Net Promoter Score: how likely someone is to recommend you, on a 0 to 10 scale.</dd>
@@ -1157,6 +1173,10 @@ V.learn = () => `${hero("", "Learning Center", "Role-based learning paths, setup
  <dt>Closed loop</dt><dd>Following up on feedback and telling the person what changed.</dd>
  <dt>Moment</dt><dd>The event that triggers a survey, such as a case closing.</dd>
  <dt>Survey fatigue</dt><dd>Lower response rates when people are asked too often.</dd>
+ <dt>Cadence rule</dt><dd>A limit on how often the same person can be surveyed, such as once every 30 days.</dd>
+ <dt>Response rate</dt><dd>The share of people who answered out of everyone who got the survey.</dd>
+ <dt>P1 case</dt><dd>The priority case that opens for a detractor, with an owner and a due date.</dd>
+ <dt>Follow-up rate</dt><dd>The share of low scores that got a response on time. Fully in your team's control.</dd>
 </dl>
 </article>
 </div></section>${finalCTA("learn_final")}`;

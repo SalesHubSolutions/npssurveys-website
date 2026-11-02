@@ -1,0 +1,61 @@
+<!--META
+{"slug":"nps-vs-csat-vs-ces-salesforce","title":"NPS vs. CSAT vs. CES: which survey to send at each moment in Salesforce","description":"NPS measures the relationship, CSAT measures one interaction and CES measures effort. How each is asked and scored, when to use it, and how to map each one to a Salesforce event.","date":"2026-11-02","author":"SalesHub","tags":["CX playbook","Knowledge center"],"read":"6 min","cta":"trial"}
+META-->
+<p><strong>Use NPS to measure the relationship, CSAT to measure one interaction, and CES to measure how easy a task was. Send each one at the moment it describes, and let a Salesforce event send it.</strong> Most programs don't fail because they picked the "wrong" metric. They fail because they ask one question at every moment, or ask the right question at the wrong time. This guide shows how each measure works and how to map it to the moments you already track in Salesforce.</p>
+
+<h2>Three questions, three jobs</h2>
+<p>Each measure answers a different question about the customer. Here is what each one asks and how it's scored.</p>
+
+{{FIG:metric-compare|NPS, CSAT and CES compared: the question, the scale, the score, what each one measures and the best moment to send it.}}
+
+<h3>NPS: the relationship</h3>
+<p>Net Promoter Score asks one question: "How likely are you to recommend us to a friend or colleague?" People answer on a 0 to 10 scale. Bain &amp; Company, which created the measure, groups the answers into promoters (9 to 10), passives (7 to 8) and detractors (0 to 6). The score is the percentage of promoters minus the percentage of detractors. Passives count in the total but aren't subtracted, so the score runs from -100 to +100.</p>
+<p>NPS is about the whole relationship, not one call or one ticket. That makes it a poor fit for "how did this case go?" and a good fit for a periodic check on each account. If you want to try the math, use the <a href="/#learn">NPS calculator in the Learning Center</a>.</p>
+
+<h3>CSAT: one interaction</h3>
+<p>Customer Satisfaction asks how satisfied someone is with a specific product, service or interaction. Salesforce describes it as commonly measured on a 1 to 5 scale, with 5 as the highest. The score is the share of satisfied answers: divide the number of satisfied responses by all responses and show it as a percentage. Most teams count 4 and 5 as satisfied. Write your rule down and keep it the same everywhere.</p>
+<p>CSAT works best right after the moment it describes. A score tied to one case tells you which queue, product and agent it was about. Our <a href="/insights/csat-survey-on-case-close-salesforce/">case-close CSAT guide</a> shows how to set that up step by step.</p>
+
+<h3>CES: effort</h3>
+<p>Customer Effort Score asks how easy it was to get something done. The idea comes from research by the Customer Contact Council, featured in the <em>Harvard Business Review</em> in 2010. The study covered more than 75,000 customers. It found that reducing effort did more for loyalty than delighting customers, and that effort predicted loyalty better than satisfaction did. In that study, customers rated their effort from 1 (low) to 5 (high).</p>
+<p>Scales differ between programs, so pick one and keep it. We suggest asking about ease, such as "How easy was it to get what you needed today?", so a high number always means good news, just like your NPS and CSAT.</p>
+
+<h2>Match the measure to the moment</h2>
+<p>The simplest rule: ask about the thing that just happened. If a case just closed, ask about the case. If a customer just finished a form or an onboarding step, ask how easy it was. If nothing special happened, but it has been six months, ask about the relationship.</p>
+<div class="tw"><table>
+<tr><th>Moment in Salesforce</th><th>Measure</th><th>What to ask</th></tr>
+<tr><td>Opportunity is Closed Won or Closed Lost</td><td>CSAT</td><td>How satisfied were you with the buying process?</td></tr>
+<tr><td>Onboarding is complete</td><td>CES</td><td>How easy was it to get set up?</td></tr>
+<tr><td>Case moves to a closed status</td><td>CSAT</td><td>How satisfied are you with how we handled your request?</td></tr>
+<tr><td>A form or request is submitted in a portal</td><td>CES</td><td>How easy was it to get what you needed today?</td></tr>
+<tr><td>Twice a year, or before a renewal</td><td>NPS</td><td>How likely are you to recommend us to a friend or colleague?</td></tr>
+</table></div>
+<p>Here is the same idea as one customer's journey. Each step is a Salesforce event, and each answer lands on the record that sent it.</p>
+
+{{FIG:moment-map|Five moments in one customer journey, each with the measure that fits it. Every survey is sent by a Salesforce event.}}
+
+<h2>Three mistakes to avoid</h2>
+<ul>
+<li><b>Sending NPS after every case.</b> A customer who had one bad call may still love your product, and one who had a great call may be about to leave. Use CSAT for the case and keep NPS for the relationship.</li>
+<li><b>Asking all three at once.</b> Three rating questions in one survey makes it longer and blurs what you learn. Pick one rating question per moment, plus one "why" question.</li>
+<li><b>Asking too often.</b> If one contact opens many cases, a survey after each one wears them out. Set a cadence rule so the same person isn't asked again within a set number of days.</li>
+</ul>
+
+<h2>Every measure needs a next step</h2>
+<p>A score with no owner is just a number. Agree what each low score does before you go live:</p>
+<ul>
+<li><b>Low NPS (0 to 6):</b> a case opens for the account owner, with a due date.</li>
+<li><b>Low CSAT (1 or 2):</b> the case owner's manager follows up within one business day.</li>
+<li><b>Hard CES answer:</b> the process owner reviews it each month and fixes the step that caused the effort.</li>
+</ul>
+<p>The <a href="/insights/close-the-loop-detractors-salesforce/">closed-loop playbook</a> covers routing and follow-up in detail.</p>
+
+<h2>Reading the three together</h2>
+<p>Don't roll the three measures into one number. They move for different reasons. Look at them side by side for the same account, team or region. A healthy CSAT with a falling NPS often points to a product or pricing issue, not a service one. A poor CES on one form points to that form. Pair each score with the follow-up rate: the share of low scores that got a response on time. That number is fully in your team's control.</p>
+
+<h2>Doing it with NPS Survey CX OS</h2>
+<p>NPS Survey CX OS by SalesHub runs inside Salesforce. Its AppExchange listing describes sending NPS, CSAT and CES surveys automatically when a Case closes, an Opportunity is won or lost, onboarding finishes, or any Salesforce record changes. Responses link to the Account, Contact, Case and Opportunity. Detractors open a priority case, passives enter a nurture flow and promoters get a review request. CX360 dashboards show NPS, CSAT, response rate and loop-closure trends by rep, team and region, and the data never leaves Salesforce.</p>
+<p>New to these terms? The <a href="/#learn">Learning Center</a> has a glossary, an FAQ and a getting started guide.</p>
+
+<p class="src">Sources: <a href="https://nps.bain.com/about/measuring-your-net-promoter-score/" target="_blank" rel="noopener">Bain &amp; Company, "Measuring Your Net Promoter Score"</a>; <a href="https://salesforce.com/blog/customer-satisfaction-score/" target="_blank" rel="noopener">Salesforce, "What Is a Customer Satisfaction Score (CSAT)?" (Katie Muse, July 19, 2024)</a>; <a href="https://www.smartcompany.com.au/marketing/20100816-why-you-should-stop-trying-to-delight-your-customers/" target="_blank" rel="noopener">SmartCompany, "Why you should stop trying to delight your customers" (August 15, 2010), on the Customer Contact Council research featured in Harvard Business Review</a>; <a href="https://appexchange.salesforce.com/appxListingDetail?listingId=a0N3A00000FtRTKUA3&amp;tab=e&amp;utm_source=npssurveys.com&amp;utm_medium=website&amp;utm_campaign=cxos_blog&amp;utm_content=nps_csat_ces_source" target="_blank" rel="noopener">NPS Survey by SalesHub on Salesforce AppExchange</a> (accessed November 2, 2026).</p>
+{{CTA}}

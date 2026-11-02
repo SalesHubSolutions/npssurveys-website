@@ -44,7 +44,7 @@ def architecture():
 
 def loop():
     Wd,H=1000,520; b=t(40,50,"The service measurement loop",22,NAVY,800)+t(40,78,"Measure every redesign at the moment of service, then fix what the scores show.",15,MUTE,500)
-    cx,cy,R=500,295,170; nodes=[("1","Service happens","application, call, visit"),("2","Short survey","CSAT or effort, 1–3 questions"),("3","Answer on record","case and contact in Salesforce"),("4","Low score routed","owner and due date"),("5","Monthly review","theme comments by cause"),("6","Redesign","then measure again")]
+    cx,cy,R=500,295,170; nodes=[("1","Service happens","application, call, visit"),("2","Short survey","CSAT or effort, 1-3 questions"),("3","Answer on record","case and contact in Salesforce"),("4","Low score routed","owner and due date"),("5","Monthly review","theme comments by cause"),("6","Redesign","then measure again")]
     b+=f'<circle cx="{cx}" cy="{cy}" r="{R}" fill="none" stroke="{SKY}" stroke-width="12"/>'
     for i in range(6):
         a=math.radians(-90+i*60+30); a2=math.radians(-90+(i+1)*60-8)
@@ -61,7 +61,7 @@ def routing():
     x0,y0,cw=80,90,76
     for n in range(11):
         c=RED if n<=6 else AMB if n<=8 else GRN; b+=r(x0+n*cw,y0,cw-8,56,10,c,c)+t(x0+n*cw+(cw-8)/2,y0+36,str(n),20,W,800,"middle")
-    groups=[(0,6,RED,"Detractor (0–6)","P1 case opens","Owner + due date, same-day call"),(7,8,AMB,"Passive (7–8)","30-day nurture","Check-in task or helpful email"),(9,10,GRN,"Promoter (9–10)","Thank-you + ask","Review, referral or case study")]
+    groups=[(0,6,RED,"Detractor (0-6)","P1 case opens","Owner + due date, same-day call"),(7,8,AMB,"Passive (7-8)","30-day nurture","Check-in task or helpful email"),(9,10,GRN,"Promoter (9-10)","Thank-you + ask","Review, referral or case study")]
     for i,(a,z,c,h,act,d) in enumerate(groups):
         mid=x0+((a+z+1)/2)*cw-4; bx=60+i*300; by=220
         b+=arrow(mid,y0+62,bx+130,by-6,c)
@@ -138,6 +138,29 @@ def detractor_case():
         [("Pick it up","Open the P1 case|from your queue|or list view",""),("Read first","Score, comment|and history on|the record",""),("Reach out","Call or email|within one|business day",""),("Fix it","Solve or explain,|and agree the|next step",""),("Close loop","Record what you|did, then close|the case","")],
         "Five steps to work a detractor case: pick it up, read the score and comment on the record, reach out within one business day, fix or explain, record what you did and close the case")
 
-FIGS={"detractor-case":detractor_case,"case-close-flow":case_close_flow,"case-close-checklist":case_close_checklist,"business-case-flow":business_case,"partner-tracks":partner_tracks,"switch-timeline":timeline,"native-vs-boltOn":architecture,"service-loop":loop,"score-routing":routing,"closed-loop-dashboard":dashboard}
+def metric_compare():
+    Wd,H=1000,580; b=t(40,50,"NPS, CSAT and CES side by side",22,NAVY,800)+t(40,78,"Three questions, three jobs. Pick the one that matches the moment.",15,MUTE,500)
+    cols=[("NPS","Relationship",'"How likely are you to|recommend us to a friend|or colleague?"',"0 to 10","% promoters (9-10)|minus % detractors (0-6)","Loyalty to the whole|relationship","Every 6-12 months, or|after a big milestone"),
+          ("CSAT","One interaction",'"How satisfied are you|with how we handled|your request?"',"Often 1 to 5","Satisfied answers (4-5)|÷ all answers, as a %","How one interaction|went","Right after the moment:|a case closes, a deal ends"),
+          ("CES","Effort",'"How easy was it to|get what you needed|today?"',"Often 1 to 5 or 1 to 7","Average score, or the|share of easy answers","How much work the|customer had to do","After a task: a form,|a portal step, onboarding")]
+    rows=["Question","Scale","Score","Measures","Best moment"]
+    for i,(h,sub,q,sc,calc,meas,when) in enumerate(cols):
+        x=40+i*312; hi=i==0
+        b+=r(x,100,296,450,16,W,BLUE if hi else LINE,2 if hi else 1.5)+r(x,100,296,62,16,NAVY if not hi else BLUE,NAVY if not hi else BLUE)+f'<rect x="{x}" y="140" width="296" height="22" fill="{BLUE if hi else NAVY}"/>'
+        b+=t(x+20,140,h,24,W,800)+t(x+276,138,sub.upper(),12,YEL,800,"end")
+        y=186
+        for lab,val in zip(rows,[q,sc,calc,meas,when]):
+            b+=t(x+20,y,lab.upper(),11,BLUE,800)
+            ls=val.split("|")
+            for j,l in enumerate(ls): b+=t(x+20,y+20+j*18,l,13.5,NAVY if lab!="Question" else SOFT,600)
+            y+=20+len(ls)*18+14
+    return svg(Wd,H,b,"Comparison of NPS, CSAT and CES: the question each asks, the scale, how the score is calculated, what it measures and the best moment to send it")
+
+def moment_map():
+    return flow("One customer, five moments, the right measure for each","Each survey is sent by a Salesforce event and lands on that record",
+        [("Deal won","Opportunity is|Closed Won: ask|about buying","CSAT"),("Onboarded","Onboarding is|done: ask how|easy setup was","CES"),("Case closed","Case moves to|closed: ask about|that one request","CSAT"),("Portal task","Form or request|submitted: ask how|easy it was","CES"),("Twice a year","Relationship|check on the|Account","NPS")],
+        "Five moments in one customer journey and the measure for each: deal won uses CSAT, onboarding complete uses CES, case closed uses CSAT, a portal task uses CES, and a relationship check twice a year uses NPS")
+
+FIGS={"metric-compare":metric_compare,"moment-map":moment_map,"detractor-case":detractor_case,"case-close-flow":case_close_flow,"case-close-checklist":case_close_checklist,"business-case-flow":business_case,"partner-tracks":partner_tracks,"switch-timeline":timeline,"native-vs-boltOn":architecture,"service-loop":loop,"score-routing":routing,"closed-loop-dashboard":dashboard}
 if __name__=="__main__":
     for k,f in FIGS.items(): open(os.path.join(OUT,k+".svg"),"w").write(f()); print(k)
