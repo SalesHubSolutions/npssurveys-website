@@ -1,0 +1,68 @@
+<!--META
+{"slug":"311-request-feedback-salesforce","title":"311 feedback in Salesforce: how cities can ask residents if their request was really resolved","description":"A practical blueprint for state and local teams: survey residents when a 311 request closes, save the answer on the case, and send every unresolved request back to the department that owns it.","date":"2026-11-09","author":"SalesHub","tags":["Public sector","Knowledge center"],"read":"6 min","cta":"public"}
+META-->
+<p><strong>Send one short survey when a 311 request closes, ask the resident whether it was actually resolved, save the answer on the case, and route every "no" back to the department that owns the work.</strong> A closed case tells you staff finished a task. Only the resident can tell you the problem went away. This guide shows how to set up that loop inside the Salesforce org your city or county already runs, step by step.</p>
+
+<h2>Why "closed" is not the same as "resolved"</h2>
+<p>Most 311 reporting counts what the city did: requests received, requests closed, days to close. Those numbers matter, but they all come from the city's side of the counter. A pothole ticket can close because a crew visited, while the resident still drives over the same hole. A missed-pickup request can close on the day the truck came back, even if it missed the house a second time.</p>
+<p>Asking the resident one question at the moment of closure fills that gap. It turns a count of finished tasks into a measure of outcomes, by service type, department and district. It also catches the requests that need a second visit while there is still time to fix them.</p>
+
+{{FIG:resident-311-flow|The 311 feedback loop: one survey per closed request, the answer on the case, and a follow-up case for every unresolved request.}}
+
+<h2>Step 1. Pick the moment and the trigger</h2>
+<p>If your 311 requests are Salesforce cases, the trigger already exists: the case moves into a closed status. List every status that means "closed" in your org, then choose which ones should send a survey. A request closed as a duplicate, or transferred to another agency, is not a moment to ask the resident about service.</p>
+<p>Fire the survey only when the case changes <em>into</em> a closed status, not every time a closed case is edited. Crews and supervisors often update closed cases with notes or photos. Test this in a sandbox: close a case, edit it, and confirm only one survey went out.</p>
+
+<h2>Step 2. Decide who gets the survey</h2>
+<p>Send it to the resident who made the request, and only when you have a way to reach them. Many 311 requests are anonymous or come in with no contact details. Skip those, and don't treat their absence as a problem with the data. Your answers will come from residents who chose to share contact details, so report that clearly when you share results.</p>
+<p>Add a cadence rule. Some residents report many issues, and they should not get a survey for every one. A limit of one survey per person in a set number of days protects your response rate and your residents' patience.</p>
+
+<h2>Step 3. Ask two questions, in plain language</h2>
+<p>Keep it to one rating question and one open question. For 311, the clearest rating question is about the outcome:</p>
+<div class="tw"><table>
+<tr><th>Request type</th><th>Rating question</th><th>Measure</th></tr>
+<tr><td>Street and sanitation (potholes, streetlights, missed pickup)</td><td>"Was your request resolved?" (Yes / Partly / No)</td><td>Resolution, reported as a share of yes answers</td></tr>
+<tr><td>Code and noise complaints</td><td>"How satisfied are you with how we handled your report?"</td><td>CSAT</td></tr>
+<tr><td>Online request or service portal</td><td>"How easy was it to make your request?"</td><td>CES</td></tr>
+</table></div>
+<p>Follow the rating with "What's the main reason for your answer?" Use short sentences, everyday words and a mobile-friendly layout. Offer the survey in the languages your 311 center already serves.</p>
+
+<h2>Step 4. Save the answer on the case</h2>
+<p>The answer belongs on the same case record as the request. That way the department supervisor sees it next to the work order, and you can report on it with the service type, department and district fields you already keep. If responses live in a separate survey tool, someone has to export and match them later, and usually nobody does.</p>
+<p>Map three things to fields you can filter and group on: the rating, the open comment, and the date of the answer. Those three fields are enough to build every view in the dashboard below.</p>
+
+<h2>Step 5. Route every "no" to an owner</h2>
+<p>A "No" or a low score should create a follow-up case for the department that owns the service, with a due date. Agree the rules before go-live:</p>
+<ul>
+<li><b>Who owns it.</b> Usually the supervisor for that service type and district, not the 311 agent who took the call.</li>
+<li><b>How fast.</b> A common target is contact within one or two business days.</li>
+<li><b>What "done" means.</b> The resident was contacted, the work was redone or the reason was explained, and the outcome is recorded on the case.</li>
+<li><b>When to reopen.</b> If the original problem is still there, reopen or relink the original request so your days-to-close numbers stay honest.</li>
+</ul>
+
+<h2>Step 6. Give leaders one view</h2>
+<p>Department heads and the city manager's office need the same few numbers every week: the share of residents who say their request was resolved, the share of unresolved requests followed up on time, and the open follow-up cases by district. The follow-up rate is fully in your team's control, so it often moves before the resolution rate does.</p>
+
+{{FIG:city-311-dashboard|A sample 311 feedback dashboard. All numbers are sample data, for illustration only.}}
+
+<h2>Start with a 30-day pilot</h2>
+<ol>
+<li><b>Week 1.</b> Pick one or two high-volume service types, such as streetlights and missed pickup. Build the survey and routing in a sandbox.</li>
+<li><b>Week 2.</b> Test with staff as residents. Check one survey per request, the answer on the case, and a follow-up case for every "No."</li>
+<li><b>Weeks 3 and 4.</b> Go live for the pilot service types. Review answers and open follow-ups with supervisors each week.</li>
+<li><b>After 30 days.</b> Share the results, fix what the comments point to, and add the next service types.</li>
+</ol>
+
+<h2>Practical notes for public sector teams</h2>
+<ul>
+<li><b>Records and retention.</b> Survey answers saved on a case may become part of the public record. Ask your records officer how long to keep them and how to handle open-text comments.</li>
+<li><b>Privacy.</b> Only survey residents who gave contact details, and only about the request they made.</li>
+<li><b>Accessibility.</b> Keep surveys short, readable on a phone and usable with a screen reader.</li>
+</ul>
+
+<h2>Doing it with NPS Survey CX OS</h2>
+<p>NPS Survey CX OS by SalesHub runs CSAT, CES and NPS surveys inside the Salesforce org your agency already uses. A record change such as a case closing sends the survey, the answer is saved on the case, and a low score routes to an owner. Surveys can go out by branded email, by QR code at a counter, or on your Experience Cloud site, and your data never leaves Salesforce. The <a href="/#public-sector">public sector page</a> has blueprints for 311, permits, benefits and field offices, and the <a href="/#learn">Learning Center</a> has the full setup guide.</p>
+<p>State, local and education buyers can buy through Carahsoft on the CoreTrust cooperative contract (24COR-018GR). Federal and defense buyers can request a quote through Carahsoft. No government endorsement is implied.</p>
+
+<p class="src">Sources: <a href="https://www.npssurveys.com/#public-sector">NPS Survey CX OS public sector blueprints</a>; <a href="https://www.carahsoft.com/saleshub/contracts" target="_blank" rel="noopener">SalesHub contracts at Carahsoft</a>; <a href="/insights/csat-survey-on-case-close-salesforce/">How to send a CSAT survey when a Salesforce case closes</a>. Dashboard figures are sample data.</p>
+{{CTA}}

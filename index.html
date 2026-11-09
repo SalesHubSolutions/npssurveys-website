@@ -517,7 +517,7 @@ a.card:focus-visible{outline:3px solid var(--yellow);outline-offset:2px}
 .learn{display:grid;grid-template-columns:240px minmax(0,1fr);gap:36px;align-items:start}
 .toc{position:sticky;top:calc(env(safe-area-inset-top,0px) + 76px);display:grid;gap:4px;font-size:.92rem}
 .toc a{color:var(--fg-soft);text-decoration:none;padding:7px 10px;border-radius:8px} .toc a:hover{background:var(--bg-tint);color:var(--fg)}
-@media (max-width:860px){.learn{grid-template-columns:1fr}.toc{position:static;display:flex;flex-wrap:wrap}}
+@media (max-width:860px){.learn{grid-template-columns:minmax(0,1fr)}.toc{position:static;display:flex;flex-wrap:wrap}}
 .doc h2{font-size:1.7rem;font-weight:800;margin-top:44px;scroll-margin-top:90px} .doc h2:first-child{margin-top:0}
 .doc h3{font-size:1.15rem;margin-top:24px} .doc p,.doc li{color:var(--fg-soft);max-width:68ch}
 .doc p{margin-top:10px} .doc ol,.doc ul{padding-left:20px;margin:10px 0 0;display:grid;gap:8px}
@@ -1050,7 +1050,7 @@ V.demo = () => `${hero("", "Book a <em>30-minute</em> demo", "See your own indus
 
 V.learn = () => `${hero("", "Learning Center", "Role-based learning paths, setup guides, best practices and reference for running a world-class feedback program on Salesforce.", `<div class="ctas"><a class="btn primary" href="#learn" data-jump="start">Start the setup guide</a><a class="btn ghost" href="#learn" data-jump="paths">Choose a learning path</a></div>`)}
 <section class="band"><div class="wrap learn">
- <nav class="toc" aria-label="Learning Center sections">${[["paths","Learning paths"],["start","Getting started"],["howto","How-to guides"],["design","Survey design"],["loop","Closing the loop"],["p1","Detractor case guide"],["admin","Admin guide"],["nps","NPS calculator"],["faq","FAQ"],["glossary","Glossary"]].map(([a,b])=>`<a href="#learn" data-jump="${a}">${b}</a>`).join("")}</nav>
+ <nav class="toc" aria-label="Learning Center sections">${[["paths","Learning paths"],["start","Getting started"],["howto","How-to guides"],["channels","Survey channels"],["design","Survey design"],["loop","Closing the loop"],["p1","Detractor case guide"],["admin","Admin guide"],["nps","NPS calculator"],["faq","FAQ"],["glossary","Glossary"]].map(([a,b])=>`<a href="#learn" data-jump="${a}">${b}</a>`).join("")}</nav>
  <article class="doc"><h2 id="paths">Learning paths</h2>
 <p>Pick the path for your role. Tick units as you finish them; your progress is saved in this browser.</p>
 <div class="grid2" style="margin-top:18px">
@@ -1100,11 +1100,22 @@ V.learn = () => `${hero("", "Learning Center", "Role-based learning paths, setup
 <h2 id="howto">How-to guides</h2>
 <p>Step-by-step guides for admins and CX teams. New guides are added every week.</p>
 <ul>
+<li><a href="/insights/311-request-feedback-salesforce/"><b>Survey residents when a 311 request closes</b></a>: the trigger, who gets it, two plain-language questions, and routing every unresolved request to its department.</li>
 <li><a href="/insights/nps-vs-csat-vs-ces-salesforce/"><b>Choose NPS, CSAT or CES for each moment</b></a>: what each measure asks, how it's scored, and which Salesforce event should send it.</li>
 <li><a href="/insights/csat-survey-on-case-close-salesforce/"><b>Send a CSAT survey when a case closes</b></a>: the trigger, who gets it, sending once, where the answer lands, and a go-live checklist.</li>
 <li><a href="/insights/close-the-loop-detractors-salesforce/"><b>Close the loop on detractors</b></a>: a 5-step playbook for routing and following up on low scores.</li>
 <li><a href="/insights/replace-getfeedback-salesforce/"><b>Switch from GetFeedback</b></a>: a week-by-week plan before December 31, 2026.</li>
 </ul>
+
+<h2 id="channels">Choose a survey channel</h2>
+<p>Send the survey where the person already is, right after the moment you want to measure. Every channel saves the answer to the same Salesforce record, so reports work the same way whichever you pick.</p>
+<div class="tablewrap" style="margin-top:16px"><table>
+<tr><th>Channel</th><th>Best for</th><th>How it's sent</th><th>Tip</th></tr>
+<tr><td><b>Branded email</b></td><td>Case close, deal won or lost, onboarding, relationship NPS</td><td>Automatically, by a Salesforce trigger, from 40+ email templates</td><td>Skip records with no email address, and add a cadence rule so no one is asked too often</td></tr>
+<tr><td><b>QR code</b></td><td>Counters, front desks, field offices, events</td><td>A printed or on-screen code that opens the survey on the person's phone</td><td>Put the code where people wait or finish, and use one code per location so you can compare them</td></tr>
+<tr><td><b>Experience Cloud site</b></td><td>Portal tasks, self-service requests, member and resident portals</td><td>On your own Experience Cloud site, right after the task</td><td>Ask about effort (CES) right after a form or request is submitted</td></tr>
+</table></div>
+<div class="callout"><b>Not sure which to use?</b> Start with email on one trigger, such as case close. Add QR codes for in-person moments once the follow-up routine works. See <a href="/insights/nps-vs-csat-vs-ces-salesforce/">NPS vs. CSAT vs. CES</a> to pick the measure for each moment.</div>
 
 <h2 id="design">Survey design best practices</h2>
 <ul><li><b>One moment, one survey.</b> Ask right after the moment you want to measure, while it's fresh.</li><li><b>Pick the right measure.</b> NPS for loyalty to the relationship, CSAT for a single interaction, CES for how easy something was.</li><li><b>Keep it short.</b> One rating question and one "why" question get the most responses.</li><li><b>Avoid survey fatigue.</b> Set cadence rules so the same person isn't asked too often.</li><li><b>Ask in their language and channel.</b> Use email, SMS, QR codes or a portal, whichever the person already uses.</li><li><b>Design for everyone.</b> Plain language, readable contrast and keyboard-friendly surveys.</li></ul>

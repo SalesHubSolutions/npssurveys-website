@@ -161,6 +161,28 @@ def moment_map():
         [("Deal won","Opportunity is|Closed Won: ask|about buying","CSAT"),("Onboarded","Onboarding is|done: ask how|easy setup was","CES"),("Case closed","Case moves to|closed: ask about|that one request","CSAT"),("Portal task","Form or request|submitted: ask how|easy it was","CES"),("Twice a year","Relationship|check on the|Account","NPS")],
         "Five moments in one customer journey and the measure for each: deal won uses CSAT, onboarding complete uses CES, case closed uses CSAT, a portal task uses CES, and a relationship check twice a year uses NPS")
 
-FIGS={"metric-compare":metric_compare,"moment-map":moment_map,"detractor-case":detractor_case,"case-close-flow":case_close_flow,"case-close-checklist":case_close_checklist,"business-case-flow":business_case,"partner-tracks":partner_tracks,"switch-timeline":timeline,"native-vs-boltOn":architecture,"service-loop":loop,"score-routing":routing,"closed-loop-dashboard":dashboard}
+def resident_311_flow():
+    return flow("311 feedback: from closed request to closed loop","One trigger per request, every answer on the case, every low score to the department",
+        [("Case closes","The 311 case|moves to a closed|status you chose",""),("Survey sends","Once, to the|resident who|asked for help",""),("They answer","\"Was your request|resolved?\" plus one|\"why\" question",""),("Saved","On the case, by|service type and|district",""),("Follow-up","A \"no\" or low|score opens a|follow-up case","")],
+        "Five steps: a 311 request closes, the survey sends once to the resident, the resident says whether it was resolved and why, the answer is saved on the case by service type and district, and a no or low score opens a follow-up case for the owning department")
+
+def city_311_dashboard():
+    Wd,H=1000,520; b=t(40,50,"What a 311 feedback dashboard should show",22,NAVY,800)+t(960,50,"SAMPLE DATA",12,MUTE,800,"end")
+    kp=[("Residents who say resolved","81%","of all answers",GRN),("Followed up on time","93%","target 95%",BLUE),("Median days to follow up","1.2","target 2 days",NAVY),("Responses","2,140","this quarter",NAVY)]
+    for i,(a,v,c,col) in enumerate(kp):
+        x=40+i*232; b+=r(x,80,216,104,14,W)+t(x+18,108,a,12.5,MUTE,700)+t(x+18,148,v,30,col,800)+t(x+18,172,c,12,MUTE,500)
+    b+=r(40,200,440,290,14,W)+t(58,228,"Resolved, by service type",14,NAVY,800)
+    bars=[("Streetlight out",88),("Missed pickup",84),("Graffiti",80),("Pothole",72),("Noise complaint",58)]
+    for i,(lab,v) in enumerate(bars):
+        y=258+i*44; c=GRN if v>=80 else (AMB if v>=65 else RED)
+        b+=t(58,y+17,lab,13.5,SOFT,600)+r(190,y+2,220,20,6,TINT,TINT)+r(190,y+2,round(220*v/100),20,6,c,c)+t(460,y+18,f"{v}%",13,NAVY,800,"end")
+    b+=r(500,200,460,290,14,W)+t(518,228,"Open follow-up cases",14,NAVY,800)
+    rows=[("Pothole","District 3","Public Works","Today",RED),("Noise complaint","District 1","Code Enforcement","Today",RED),("Missed pickup","District 5","Sanitation","Tomorrow",AMB),("Pothole","District 2","Public Works","In 2 days",NAVY)]
+    b+=t(518,258,"Service",12,MUTE,700)+t(660,258,"District",12,MUTE,700)+t(752,258,"Department",12,MUTE,700)+t(942,258,"Due",12,MUTE,700,"end")
+    for i,(a,d,o,due,c) in enumerate(rows):
+        y=294+i*46; b+=f'<line x1="518" y1="{y-26}" x2="942" y2="{y-26}" stroke="{LINE}"/>'+t(518,y,a,13.5,NAVY,700)+t(660,y,d,13.5,SOFT,600)+t(752,y,o,13.5,SOFT,600)+t(942,y,due,13.5,c,700,"end")
+    return svg(Wd,H,b,"Sample 311 dashboard: share of residents who say their request was resolved, low scores followed up on time, median days to follow up, responses, resolved rate by service type, and open follow-up cases by district and department with due dates")
+
+FIGS={"resident-311-flow":resident_311_flow,"city-311-dashboard":city_311_dashboard,"metric-compare":metric_compare,"moment-map":moment_map,"detractor-case":detractor_case,"case-close-flow":case_close_flow,"case-close-checklist":case_close_checklist,"business-case-flow":business_case,"partner-tracks":partner_tracks,"switch-timeline":timeline,"native-vs-boltOn":architecture,"service-loop":loop,"score-routing":routing,"closed-loop-dashboard":dashboard}
 if __name__=="__main__":
     for k,f in FIGS.items(): open(os.path.join(OUT,k+".svg"),"w").write(f()); print(k)
