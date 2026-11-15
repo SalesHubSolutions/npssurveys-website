@@ -9,7 +9,7 @@
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 <link rel="icon" type="image/png" sizes="512x512" href="/favicon.png">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-<meta name="theme-color" content="#1E54E8">
+<meta name="theme-color" content="#002FA7">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="NPS Survey CX OS">
 <meta property="og:url" content="https://www.npssurveys.com/">
@@ -593,13 +593,30 @@ a.card:focus-visible{outline:3px solid var(--yellow);outline-offset:2px}
 .qa p{margin:10px 0 0;color:var(--fg-soft);line-height:1.6}
 @media (max-width:980px){.split,.split.rev{grid-template-columns:1fr;gap:28px}.split.rev .ill{order:2}.caps{grid-template-columns:repeat(2,minmax(0,1fr))}.stories{grid-template-columns:1fr}}
 @media (max-width:560px){.caps{grid-template-columns:1fr}.rating{flex-wrap:wrap}.rating .ctas{margin-left:0!important}}
+
+/* Brand switch (Nov 2026): one flat Klein Blue, the Loop mark, white on blue and blue on white. Other colours only carry meaning. */
+:root{--blue:#002FA7;--blue-deep:#002FA7;--yellow:#FFFFFF;--link:#002FA7}
+@media (prefers-color-scheme:dark){:root:not([data-theme=light]){--link:#9DB4FF}}
+:root[data-theme=dark]{--link:#9DB4FF}
+.hero,.pagehero,.final{background:#002FA7}
+.annc{background:#EDF1FB;color:#002FA7;font-weight:600}.annc a{color:#002FA7}
+.btn.primary{background:#002FA7;color:#fff}.btn.primary:hover{box-shadow:0 8px 20px rgba(0,47,167,.25)}
+.hero .btn.primary,.pagehero .btn.primary,.final .btn.primary,.nav .btn.primary,.drawer .btn.primary,.nav a.btn,.nav .btn{background:#fff;color:#002FA7}
+.btn:focus-visible,a.card:focus-visible,.tab:focus-visible,.pills input:focus-visible+label,.picker input:focus-visible + label{outline-color:#002FA7}
+.hero .btn:focus-visible,.pagehero .btn:focus-visible,.final .btn:focus-visible,.nav a:focus-visible{outline-color:#fff}
+.hero .kicker{color:#C9D5F2}.hero h1 em,.pagehero h1 em{color:#fff}
+.core b span{background:#002FA7;color:#fff}
+.pc .be{border-left-color:#002FA7;background:#EDF1FB}
+.ed.sa::before{background:#002FA7}.mock .iris{background:#002FA7}
+canvas.bokeh{display:none}
+
 </style>
 </head>
 <body>
 <div class="fam" role="navigation" aria-label="NPS Surveys products"><div class="wrap"><span class="lbl">NPS Surveys products</span><a href="#home" aria-current="true"><span class="dot" aria-hidden="true"></span>For Salesforce <span class="tag">· native on AppExchange</span></a><a href="https://app.npssurveys.com/?utm_source=npssurveys.com&amp;utm_medium=website&amp;utm_campaign=family&amp;utm_content=family_bar">CX360 Standalone <span class="tag">· any CRM or none</span> ↗</a><a class="help" href="#choose">Which is right for me? →</a></div></div>
 <div class="annc">GetFeedback retires December 31, 2026. <a href="#switch">Move your surveys to native Salesforce →</a></div>
 <header class="nav"><div class="wrap">
-  <a class="logo" href="#home"><img src="brand/logo/nps-survey-cx-os-mark.svg" alt=""><span>NPS Survey CX OS<small>by SalesHub</small></span></a>
+  <a class="logo" href="#home"><img src="brand/logo/nps-survey-cx-os-mark-white.svg" alt=""><span>NPS Survey<small>CX OS by SalesHub</small></span></a>
   <ul id="navlinks">
     <li class="dd"><button type="button" class="ddb" aria-expanded="false">Product</button><div class="ddm"><a href="#platform"><b>Platform</b><span>Surveys, closed-loop follow-up, CX OS dashboards</span></a><a href="#compare"><b>Compare</b><span>Native vs. bolt-on survey tools</span></a><a href="#reviews"><b>Reviews</b><span>Rated 5.0 on Salesforce AppExchange</span></a><a href="#switch"><b>Switch from GetFeedback</b><span>Move before December 31, 2026</span></a><a href="#choose"><b>Which edition is right for me?</b><span>Salesforce-native or standalone, compared</span></a><a href="https://app.npssurveys.com/?utm_source=npssurveys.com&amp;utm_medium=website&amp;utm_campaign=family&amp;utm_content=nav_dd"><b>CX360 Standalone ↗</b><span>Not on Salesforce? AI surveys, service desk and AI agent for any CRM</span></a></div></li>
     <li class="dd"><button type="button" class="ddb" aria-expanded="false">Solutions</button><div class="ddm wide"><div><h6>Industries</h6><a href="#ind-commercial">B2B, SaaS & Technology</a><a href="#ind-financial">Financial Services & Insurance</a><a href="#ind-healthcare">Healthcare & Health-tech</a><a href="#ind-manufacturing">Manufacturing & Distribution</a><a href="#ind-consulting">Consulting & Professional Services</a><a href="#ind-nonprofit">Nonprofit</a><a href="#ind-education">Education</a><a class="all" href="#industries">All industry blueprints →</a></div><div><h6>Public sector</h6><a href="#public-sector">Public sector overview</a><a href="#ind-sled">State & Local Government</a><a href="#ind-federal">Federal Civilian Agencies</a><a href="#ind-defense">Defense</a></div></div></li>
@@ -620,7 +637,7 @@ a.card:focus-visible{outline:3px solid var(--yellow);outline-offset:2px}
 <div class="mcta"><a class="btn primary" href="https://appexchange.salesforce.com/appxListingDetail?listingId=a0N3A00000FtRTKUA3&tab=e&utm_source=npssurveys.com&utm_medium=website&utm_campaign=cxos_site&utm_content=mobile_bar" target="_blank" rel="noopener">Free trial</a><a class="btn ghost" href="#roi">ROI calculator</a></div>
 
 <footer><div class="wrap">
-  <div><div class="flogo"><img src="brand/logo/nps-survey-cx-os-mark.svg" alt="">NPS Survey CX OS</div><p class="addr" style="margin-bottom:8px">Two products, one team: <b>NPS Survey CX OS</b> runs natively in Salesforce; <a href="https://app.npssurveys.com/?utm_source=npssurveys.com&amp;utm_medium=website&amp;utm_campaign=family&amp;utm_content=footer_line">CX360 Standalone</a> works with any CRM.</p><p class="addr">SalesHub, LLC · 1853 Piedmont Rd, Suite 301, Marietta, GA 30066<br>1 (833) 733-2468 · support@saleshub.info</p></div>
+  <div><div class="flogo"><img src="brand/logo/nps-survey-cx-os-mark.svg" alt="">NPS Survey <span style="font-weight:500;opacity:.7">CX OS by SalesHub</span></div><p class="addr" style="margin-bottom:8px">Two products, one team: <b>NPS Survey CX OS</b> runs natively in Salesforce; <a href="https://app.npssurveys.com/?utm_source=npssurveys.com&amp;utm_medium=website&amp;utm_campaign=family&amp;utm_content=footer_line">CX360 Standalone</a> works with any CRM.</p><p class="addr">SalesHub, LLC · 1853 Piedmont Rd, Suite 301, Marietta, GA 30066<br>1 (833) 733-2468 · support@saleshub.info</p></div>
   <div><h4>Product</h4><ul><li><a href="#platform">Platform</a></li><li><a href="#pricing">Pricing</a></li><li><a href="#roi">ROI calculator</a></li><li><a href="#compare">Compare</a></li><li><a href="#switch">Switch from GetFeedback</a></li><li><a href="#partners">Partner program</a></li><li><a href="#reviews">Reviews</a></li><li><a href="#choose">Which edition is right?</a></li><li><a href="https://app.npssurveys.com/?utm_source=npssurveys.com&amp;utm_medium=website&amp;utm_campaign=family&amp;utm_content=footer">CX360 Standalone (any CRM)</a></li><li><a href="https://appexchange.salesforce.com/appxListingDetail?listingId=a0N3A00000FtRTKUA3&tab=e&utm_source=npssurveys.com&utm_medium=website&utm_campaign=cxos_site&utm_content=footer" target="_blank" rel="noopener">AppExchange listing</a></li></ul></div>
   <div><h4>Solutions</h4><ul><li><a href="#industries">All industries</a></li><li><a href="#public-sector">Public sector</a></li><li><a href="#ind-defense">Defense</a></li><li><a href="#ind-healthcare">Healthcare</a></li></ul></div>
   <div><h4>Learn &amp; connect</h4><ul><li><a href="#learn">Learning Center</a></li><li><a href="/insights/">Insights blog</a></li><li><a href="#resources">Resources</a></li><li><a href="https://saleshub.info" target="_blank" rel="noopener">SalesHub company site</a></li><li><a href="https://saleshub.info/privacy-policy" target="_blank" rel="noopener">Privacy policy</a></li><li><a href="https://www.youtube.com/@saleshubllc" target="_blank" rel="noopener">YouTube</a></li><li><a href="https://www.linkedin.com/company/12673581" target="_blank" rel="noopener">LinkedIn</a></li><li><a href="https://www.instagram.com/saleshub.info" target="_blank" rel="noopener">Instagram</a></li></ul></div>
@@ -1291,7 +1308,7 @@ function roiWire(root){
     if(pcEl){ const today=new Date().toLocaleDateString("en-US",{year:"numeric",month:"long",day:"numeric"});
       const rows=(st.mode==="rev"? [["Active customer accounts",st.acct.toLocaleString("en-US")],["Annual revenue per account",money(st.arpa)],["Annual churn today",st.churn+"%"],["Churn prevented with same-day follow-up (assumption)",st.save+"%"]]
         : [["Complaints or escalations per month",st.cases.toLocaleString("en-US")],["Escalations prevented (assumption)",st.reopen+"%"],["Staff hours per escalation",st.hpc]]).concat([["Hours a month on survey exports and reconciling",st.hrs],["Loaded hourly cost",money(st.rate)],["Survey tools retired, per year",money(tool)],["Edition",plan.name+" ("+money(plan.price)+" per year, per org)"]]);
-      pcEl.innerHTML=`<div class="pc-head"><div class="l"><img src="brand/logo/nps-survey-cx-os-mark.svg" alt=""><div>NPS Survey CX OS<small>by SalesHub · Salesforce AppExchange</small></div></div><div class="r">Business case<br>${today}</div></div>
+      pcEl.innerHTML=`<div class="pc-head"><div class="l"><img src="brand/logo/nps-survey-cx-os-mark.svg" alt=""><div>NPS Survey<small>CX OS by SalesHub · Salesforce AppExchange</small></div></div><div class="r">Business case<br>${today}</div></div>
       <div class="pc-title">Business case: closing the loop on customer feedback</div>
       <p class="pc-sub">${st.mode==="rev"?"Revenue protected, time given back and tools retired":"Staff time recovered and tools retired"} by running NPS, CSAT and CES surveys with closed-loop follow-up inside Salesforce.</p>
       <div class="pc-hero"><div class="g"><span>Estimated first-year value</span><b>${money(total)}</b></div><div><span>Return on ${plan.name}</span><b>${roi.toFixed(1)}×</b></div><div><span>Payback</span><b>${isFinite(pay)?(pay<1?Math.max(1,Math.round(pay*30))+" days":pay.toFixed(1)+" months"):"n/a"}</b></div></div>

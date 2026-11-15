@@ -8,17 +8,17 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 LIST = "https://appexchange.salesforce.com/appxListingDetail?listingId=a0N3A00000FtRTKUA3&tab=e&utm_source=npssurveys.com&utm_medium=blog&utm_campaign=cxos_insights"
 SITE = "https://www.npssurveys.com"
 
-CSS = """:root{--blue:#1E54E8;--blue-deep:#052CA0;--yellow:#FFE443;--navy:#0C184A;--bg:#fff;--bg-tint:#F4F7FF;--surface:#fff;--line:#DCE4F7;--fg:#0C184A;--fg-soft:#3B4877;--fg-mute:#5E6B98;--link:#1E54E8;--font:Inter,system-ui,-apple-system,Segoe UI,Roboto,sans-serif}
+CSS = """:root{--blue:#002FA7;--blue-deep:#002FA7;--yellow:#FFFFFF;--navy:#0C184A;--bg:#fff;--bg-tint:#F4F7FF;--surface:#fff;--line:#DCE4F7;--fg:#0C184A;--fg-soft:#3B4877;--fg-mute:#5E6B98;--link:#002FA7;--font:Inter,system-ui,-apple-system,Segoe UI,Roboto,sans-serif}
 @media (prefers-color-scheme:dark){:root:not([data-theme=light]){--bg:#0A1230;--bg-tint:#111C45;--surface:#111C45;--line:#24326A;--fg:#EEF2FF;--fg-soft:#C5D0F2;--fg-mute:#97A5D6;--link:#8FB0FF}}
 *{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--font);font-size:17px;line-height:1.65}
 a{color:var(--link)}img{max-width:100%}
 .wrap{max-width:1120px;margin:0 auto;padding:0 20px}.narrow{max-width:760px;margin:0 auto;padding:0 20px}
-.annc{background:var(--yellow);color:var(--navy);font-weight:700;font-size:.9rem;text-align:center;padding:9px 16px}.annc a{color:var(--navy)}
+.annc{background:#EDF1FB;color:#002FA7;font-weight:600;font-size:.9rem;text-align:center;padding:9px 16px}.annc a{color:#002FA7}
 header{background:var(--blue-deep);color:#fff}header .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-block:14px}
 .logo{display:flex;align-items:center;gap:10px;color:#fff;text-decoration:none;font-weight:800}.logo img{width:36px;height:36px}.logo small{display:block;font-weight:600;font-size:.72rem;opacity:.8}
-nav a{color:#fff;text-decoration:none;font-weight:600;margin-left:18px;font-size:.95rem}nav a.btn{background:var(--yellow);color:var(--navy);padding:9px 16px;border-radius:999px}
+nav a{color:#fff;text-decoration:none;font-weight:600;margin-left:18px;font-size:.95rem}nav a.btn{background:#fff;color:#002FA7;padding:9px 16px;border-radius:999px}
 @media (max-width:720px){nav a:not(.btn){display:none}}
-.hero{background:radial-gradient(110% 130% at 20% 10%,#2B64F2 0%,#1E54E8 40%,#052CA0 100%);color:#fff;padding:52px 0 56px}
+.hero{background:#002FA7;color:#fff;padding:52px 0 56px}
 .hero h1{font-size:clamp(1.9rem,4.2vw,2.9rem);line-height:1.1;margin:10px 0 12px;font-weight:800}.hero p{color:#D6E2FF;font-size:1.1rem;margin:0}
 .crumb{font-size:.88rem;color:#D6E2FF}.crumb a{color:#fff}.meta{margin-top:16px;font-size:.88rem;color:#D6E2FF}
 article{padding:44px 0 20px}article h2{font-size:1.6rem;line-height:1.2;margin:40px 0 10px}article h3{font-size:1.2rem;margin:28px 0 8px}
@@ -26,7 +26,7 @@ article p,article li{color:var(--fg-soft)}article strong{color:var(--fg)}
 article table{width:100%;border-collapse:collapse;margin:18px 0;font-size:.95rem}article th,article td{border:1px solid var(--line);padding:10px 12px;text-align:left;vertical-align:top}article th{background:var(--bg-tint)}
 .tw{overflow-x:auto}
 .cta{background:var(--bg-tint);border:1px solid var(--line);border-radius:18px;padding:24px;margin:36px 0}.cta h3{margin:0 0 6px}
-.b{display:inline-flex;align-items:center;font-weight:700;border-radius:999px;padding:12px 20px;text-decoration:none;margin:10px 10px 0 0}.b.p{background:var(--yellow);color:var(--navy)}.b.d{background:var(--navy);color:#fff}
+.b{display:inline-flex;align-items:center;font-weight:700;border-radius:999px;padding:12px 20px;text-decoration:none;margin:10px 10px 0 0}.b.p{background:#002FA7;color:#fff}.b.d{background:#fff;color:#002FA7;border:2px solid #002FA7}
 figure.fig{margin:28px 0;}figure.fig svg{width:100%;height:auto;display:block;border-radius:18px;box-shadow:0 10px 30px rgba(12,24,74,.08)}@media (max-width:640px){figure.fig{overflow-x:auto}figure.fig svg{min-width:620px}}figure.fig figcaption{font-size:.85rem;color:var(--fg-mute);margin-top:8px;text-align:center}
 .src{font-size:.88rem;color:var(--fg-mute);border-top:1px solid var(--line);margin-top:36px;padding-top:16px}
 .cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:18px;padding:40px 0 60px}
@@ -39,7 +39,7 @@ footer{border-top:1px solid var(--line);padding:28px 0;font-size:.85rem;color:va
 def head(title, desc, url, extra=""):
     return f"""<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{html.escape(title)}</title><meta name="description" content="{html.escape(desc)}"><link rel="canonical" href="{url}">
-<link rel="icon" type="image/svg+xml" href="/favicon.svg"><meta name="theme-color" content="#1E54E8">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><meta name="theme-color" content="#002FA7">
 <meta property="og:type" content="article"><meta property="og:site_name" content="NPS Survey CX OS"><meta property="og:url" content="{url}">
 <meta property="og:title" content="{html.escape(title)}"><meta property="og:description" content="{html.escape(desc)}">
 <meta property="og:image" content="{SITE}/share.png"><meta name="twitter:card" content="summary_large_image">
@@ -47,7 +47,7 @@ def head(title, desc, url, extra=""):
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap">
 <style>{CSS}</style>{extra}</head><body>
 <div class="annc">GetFeedback retires December 31, 2026. <a href="/#switch">Move your surveys to native Salesforce &rarr;</a></div>
-<header><div class="wrap"><a class="logo" href="/"><img src="/brand/logo/nps-survey-cx-os-mark.svg" alt=""><span>NPS Survey CX OS<small>by SalesHub</small></span></a>
+<header><div class="wrap"><a class="logo" href="/"><img src="/brand/logo/nps-survey-cx-os-mark-white.svg" alt=""><span>NPS Survey<small>CX OS by SalesHub</small></span></a>
 <nav><a href="/#platform">Product</a><a href="/#industries">Solutions</a><a href="/insights/">Insights</a><a href="/#partners">Partners</a><a href="/#pricing">Pricing</a><a class="btn" href="{LIST}&utm_content=blog_nav" target="_blank" rel="noopener">Free trial</a></nav></div></header>"""
 
 FOOT = """<footer><div class="wrap">&copy; 2026 SalesHub, LLC &middot; 1853 Piedmont Rd, Suite 301, Marietta, GA 30066 &middot; <a href="mailto:support@saleshub.info">support@saleshub.info</a> &middot; 1 (833) 733-2468<br>
