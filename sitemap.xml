@@ -2,7 +2,10 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url><loc>https://www.npssurveys.com/</loc><lastmod>2026-10-19</lastmod><changefreq>weekly</changefreq><priority>1.0</priority></url>
 
-  <url><loc>https://www.npssurveys.com/insights/</loc><lastmod>2026-11-09</lastmod></url>
+  <url><loc>https://www.npssurveys.com/insights/</loc><lastmod>2026-11-15</lastmod></url>
+  <url><loc>https://www.npssurveys.com/insights/survey-translations-salesforce/</loc><lastmod>2026-11-15</lastmod></url>
+  <url><loc>https://www.npssurveys.com/insights/renewals-at-risk-customer-feedback/</loc><lastmod>2026-11-15</lastmod></url>
+  <url><loc>https://www.npssurveys.com/insights/event-registration-check-in-salesforce/</loc><lastmod>2026-11-15</lastmod></url>
   <url><loc>https://www.npssurveys.com/insights/311-request-feedback-salesforce/</loc><lastmod>2026-11-09</lastmod></url>
   <url><loc>https://www.npssurveys.com/insights/nps-vs-csat-vs-ces-salesforce/</loc><lastmod>2026-11-02</lastmod></url>
   <url><loc>https://www.npssurveys.com/insights/csat-survey-on-case-close-salesforce/</loc><lastmod>2026-10-26</lastmod></url>

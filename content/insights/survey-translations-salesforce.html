@@ -1,0 +1,41 @@
+<!--META
+{"slug":"survey-translations-salesforce","title":"Send every customer the survey in their language, inside Salesforce","description":"How to run one NPS or CSAT survey in many languages: pick the languages, let AI draft the translations, review them, and let each contact's language decide which version they get.","date":"2026-11-15","author":"SalesHub","tags":["CX playbook","Global teams"],"read":"5 min","cta":"trial"}
+META-->
+<p><strong>People answer surveys in their own language. Ask in the wrong one and the response rate drops, the comments get shorter, and whole regions go quiet in your data.</strong> The fix is not ten copies of the same survey. It's one survey, many languages, and a simple rule for who gets which.</p>
+
+<h2>Why one survey beats ten copies</h2>
+<p>Copying a survey per language looks easy on day one. By month three, the copies drift: a question gets reworded in English but not in Spanish, a new answer option exists in one version only, and nobody can compare scores across regions because they're no longer the same survey.</p>
+<p>Keep one survey with one set of questions. Every language is a translation of that one survey, so every answer lands in the same place and every score is comparable.</p>
+
+<h2>Step 1. Choose the languages you actually need</h2>
+<p>Start from your customers, not from a list of every language. Look at the language or country already on your Contact records and pick the languages that cover most of them. Three or four languages often cover nearly everyone. You can add more later without rebuilding anything.</p>
+
+<h2>Step 2. Let AI draft, then have a person review</h2>
+<p>AI translation is fast and good enough to start from, but a survey is a small piece of writing with a tone. Have someone who speaks the language read each draft once. They're checking three things:</p>
+<ul>
+<li><strong>The question means the same thing.</strong> "How likely are you to recommend us?" should not turn into "Do you like us?"</li>
+<li><strong>The scale labels read naturally.</strong> "Not at all likely" and "Extremely likely" need local phrasing, not word-for-word swaps.</li>
+<li><strong>The email around the survey matches.</strong> The subject line and greeting matter as much as the questions, because they decide whether the survey gets opened.</li>
+</ul>
+
+<h2>Step 3. Let the contact decide which version they get</h2>
+<p>This is the step most teams miss. When you send, nobody should have to pick a language per person. Use a language field on the Contact. If the contact has a language you've translated, they get that version of the email and the survey page. If not, they get your default language. The same rule works for a share link: the page opens in the visitor's preferred language and offers the others.</p>
+<div class="tw"><table>
+<tr><th>Contact language</th><th>Translations on the survey</th><th>What they receive</th></tr>
+<tr><td>Spanish</td><td>English, Spanish, French</td><td>The Spanish email and survey page</td></tr>
+<tr><td>German</td><td>English, Spanish, French</td><td>The English (default) version</td></tr>
+<tr><td>Not set</td><td>English, Spanish, French</td><td>The English (default) version</td></tr>
+</table></div>
+
+<h2>Step 4. Read results across languages, then by language</h2>
+<p>Because it's one survey, your NPS or CSAT is one number across every region. Then filter by language to spot a gap: if Spanish-speaking customers score ten points lower, that's a real finding, not a reporting artifact. Comments in other languages can be read in your own language too, so a manager in Atlanta can act on a comment written in Portuguese.</p>
+
+<h2>What to watch in the first month</h2>
+<ul>
+<li>Response rate by language: a translated version should climb toward your default language's rate</li>
+<li>Contacts with no language set: fill the field from country or past emails so fewer people fall back to the default</li>
+<li>Low scores by language: make sure each one still opens a follow-up with an owner who can respond in that language</li>
+</ul>
+
+<h2>Doing it with NPS Survey CX OS</h2>
+<p>In NPS Survey CX OS, you pick the languages on the survey, AI drafts each translation for you to review, and the survey email and page go out in each contact's language automatically, with your default as the fallback. Share links and QR codes open in the visitor's language. Every answer lands on the same record in Salesforce, and every low score still gets an owner.</p>
