@@ -716,6 +716,19 @@ a.cap{display:block;color:inherit;text-decoration:none}
 .nx-qg{break-inside:avoid;margin:0 0 14px;background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:16px;transition:border-color .2s,box-shadow .2s}.nx-qg:hover{border-color:#002FA7;box-shadow:0 12px 30px rgba(0,47,167,.12)}
 .nx-qgh{display:flex;align-items:center;gap:10px}.nx-qgh b{font-size:16px}.nx-qgh em{margin-left:auto;font-style:normal;font-weight:800;color:#002FA7;background:#EDF1FB;border-radius:999px;padding:2px 10px;font-size:13px}
 .nx-qgl{margin-top:12px;display:flex;flex-wrap:wrap;gap:6px}.nx-qgl span{font-size:12.5px;background:var(--bg-tint);border-radius:8px;padding:5px 8px}
+.nx-phones{margin-top:32px;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px}
+.nx-ph h3{margin:16px 2px 4px;font-size:17px}.nx-ph>p{margin:0 2px;color:var(--fg-soft);font-size:14px;line-height:1.5}
+.nx-phs{border:8px solid #0F1A3D;border-radius:30px;background:#fff;color:#0F1A3D;padding:20px 16px;min-height:330px;display:flex;flex-direction:column;gap:10px;box-shadow:0 20px 50px rgba(12,24,74,.16);transition:transform .2s}.nx-ph:hover .nx-phs{transform:translateY(-4px)}
+.nx-phs b{font-size:18px;line-height:1.25}.nx-phs p{margin:0;font-size:13.5px;color:#5C6784;line-height:1.5}.nx-phs ol{margin:0;padding-left:18px;font-size:13.5px;color:#3A4466;display:grid;gap:6px}
+.nx-tag{align-self:flex-start;font-size:11.5px;font-weight:700;border-radius:999px;padding:3px 9px}.nx-tag.g{background:#DCFAE6;color:#067647}.nx-tag.r{background:#FEE4E2;color:#B42318}.nx-tag.b{background:#EDF1FB;color:#002FA7}
+.nx-pbtn{margin-top:auto;text-align:center;background:#002FA7;color:#fff;border-radius:12px;padding:10px;font-weight:700;font-size:13.5px}.nx-pbtn+.nx-pbtn{margin-top:0}.nx-pbtn.o{background:#fff;color:#002FA7;border:1.5px solid #002FA7}
+.nx-slots{display:grid;grid-template-columns:1fr 1fr;gap:6px}.nx-slots span{border:1.5px solid #DCE3F2;border-radius:10px;padding:7px;text-align:center;font-size:12.5px;font-weight:600}.nx-slots span.on{border-color:#002FA7;background:#EDF1FB;color:#002FA7}
+.nx-code2{border:2px dashed #002FA7;border-radius:12px;text-align:center;padding:12px;font-weight:800;letter-spacing:.12em;color:#002FA7;font-size:17px;background:#F5F7FC}
+.nx-mlbox{background:#fff;border:1px solid #E3E8F3;border-radius:24px;padding:20px;box-shadow:0 24px 60px rgba(12,24,74,.1);display:grid;gap:8px;color:#0F1A3D}
+.nx-mlq{display:flex;align-items:center;gap:12px;border:1px solid #EEF1F8;border-radius:12px;padding:10px 12px;font-size:15px}.nx-fl2{width:34px;height:26px;border-radius:7px;background:#002FA7;color:#fff;font-size:12px;font-weight:800;display:grid;place-items:center;flex:none}
+.nx-brands{margin-top:6px;display:flex;gap:8px;flex-wrap:wrap}.nx-brands span{color:#fff;border-radius:10px;padding:8px 12px;font-weight:700;font-size:13px}
+@media (max-width:1000px){.nx-phones{grid-template-columns:1fr 1fr}}
+@media (max-width:520px){.nx-phones{grid-template-columns:1fr}}
 /* 2026-11 homepage: Apple clarity + Salesforce team demo */
 .nx-hero{background:#002FA7;color:#fff;text-align:center;padding:88px 0 0;overflow:hidden}
 .nx-kick{margin:0;font-size:19px;font-weight:600;color:#C9D5F2}
@@ -1049,6 +1062,31 @@ ${editionBand("home")}
  <p class="sub">Enter your website and NPS Survey CX OS reads your logo, colours, fonts, pictures and social and review links into a Brand Kit. Every survey, email, reminder and thank-you page uses it from then on.</p>
  <ul class="nx-ticks"><li>Several brand kits, one per business unit or client</li><li>Fonts, title style, button shape, corners and spacing</li><li>Card styles: elevated, flat, outline or glass, on light or dark pages</li><li>Live preview of the email and survey page on desktop and phone</li><li>A built-in check warns you when a colour is hard to read</li><li>97 ready-made emails, all wearing your kit</li></ul>
  <div class="nx-tcta">${trial("brand_kit","Build your Brand Kit free","nx-k")}</div></div>
+</div></section>
+<section class="band nx-ty"><div class="wrap">
+ <div class="eyebrow">Thank-you pages</div><h2 class="h2">The answer is not the end. It is the next step.</h2>
+ <p class="sub">Out of the box, the page after the survey reacts to the score: happy customers are asked for a review, unhappy ones can book a call on the spot, and anyone can get an offer or go straight to your own page.</p>
+ <div class="nx-phones">
+  <div class="nx-ph"><div class="nx-phs"><span class="nx-tag g">Score 9 to 10</span><b>Thank you, Alex!</b><p>Would you share that on Google? It takes a minute and helps others find us.</p><div class="nx-pbtn">Leave a Google review</div><div class="nx-pbtn o">Review us on G2</div></div><h3>Ask for a review</h3><p>Promoters go straight to your review pages.</p></div>
+  <div class="nx-ph"><div class="nx-phs"><span class="nx-tag r">Score 0 to 6</span><b>We want to make this right.</b><p>Pick a time and your account manager will call you.</p><div class="nx-slots"><span>Today 3:30</span><span class="on">Today 4:00</span><span>Tue 9:00</span><span>Tue 11:30</span></div><div class="nx-pbtn">Book my call</div></div><h3>Book a call now</h3><p>Open slots from the owner's calendar, with reminders.</p></div>
+  <div class="nx-ph"><div class="nx-phs"><span class="nx-tag b">Any score</span><b>Thanks for your feedback.</b><p>Here is 15% off your next order, as a thank you.</p><div class="nx-code2">THANKYOU15</div><div class="nx-pbtn">Use my discount</div></div><h3>Thank you with an offer</h3><p>A discount or gift, shown or emailed after the answer.</p></div>
+  <div class="nx-ph"><div class="nx-phs"><span class="nx-tag b">Any score</span><b>What happens next</b><ol><li>Your answer goes to our team today</li><li>We share what we changed</li><li>You hear from us within 2 days</li></ol><div class="nx-pbtn o">Back to our website ›</div></div><h3>What's next, or redirect</h3><p>Explain next steps, or send people to any page you choose.</p></div>
+ </div>
+ <div class="nx-tcta">${trial("thankyou","Try smart thank-you pages free","nx-k")}</div>
+</div></section>
+<section class="band tint nx-ml"><div class="wrap nx-split">
+ <div><div class="eyebrow">Translations · multi-brand</div><h2 class="h2">Every language. Every brand. One app.</h2>
+ <p class="sub">Customers see the survey, emails and thank-you page in their own language, set from their record or detected from what they write. Run a separate look and feel for each brand, business unit or client from one Salesforce org.</p>
+ <ul class="nx-ticks"><li>Survey, email and thank-you page translations</li><li>Language picked from the record or detected from the comment</li><li>A Brand Kit per brand, with its own logo, colours, fonts and sender</li><li>One brand set as the default, others picked per survey</li></ul>
+ <div class="nx-tcta">${trial("translations","Try it in your languages free","nx-k")}</div></div>
+ <div class="nx-mlbox" role="img" aria-label="The same survey question in five languages, under three different brands">
+  <div class="nx-mlq"><span class="nx-fl2">EN</span>How likely are you to recommend us?</div>
+  <div class="nx-mlq" lang="es"><span class="nx-fl2">ES</span>¿Qué tan probable es que nos recomiende?</div>
+  <div class="nx-mlq" lang="fr"><span class="nx-fl2">FR</span>Recommanderiez-vous notre entreprise ?</div>
+  <div class="nx-mlq" lang="de"><span class="nx-fl2">DE</span>Würden Sie uns weiterempfehlen?</div>
+  <div class="nx-mlq" lang="pt"><span class="nx-fl2">PT</span>Você nos recomendaria?</div>
+  <div class="nx-brands"><span style="background:#0B6E4F">Northwind Health</span><span style="background:#1A1712;color:#E9C46A">Maison</span><span style="background:#002FA7">Contoso Homes</span></div>
+ </div>
 </div></section>
 <section class="band nx-prog"><div class="wrap nx-split">
  <div><div class="eyebrow">Programs · new</div><h2 class="h2">From single surveys to company-wide programs.</h2>
