@@ -1166,6 +1166,13 @@ a.nx-ste{display:block;text-decoration:none;color:inherit}a.nx-ste:focus-visible
 .nx-ppbars span{opacity:1}.nx-ppq2{display:flex;gap:8px;margin-top:3px}.nx-ppq2 span{flex:1;text-align:center;font-size:8.5px;color:#8A93AD}
 .nx-ppq{border-left-color:#002FA7}
 .nx-ppf em{background:#002FA7}
+/* dashboard: lighter bottom cards, show the capability not the data */
+.nx-dtbl th:nth-child(2),.nx-dtbl td:nth-child(2),.nx-dtbl th:nth-child(5),.nx-dtbl td:nth-child(5){display:none}
+.nx-dtbl tbody tr:nth-child(n+4){display:none}
+.nx-dtbl td{padding:9px 8px}
+.nx-dfeed .nx-tx:nth-of-type(n+4){display:none}
+.nx-dfeed .nx-tx p{display:-webkit-box;-webkit-line-clamp:1;-webkit-box-orient:vertical;overflow:hidden}
+.nx-dmonth{height:130px}
 /* 2026-11 homepage: Apple clarity + Salesforce team demo */
 .nx-hero{background:#002FA7;color:#fff;text-align:center;padding:88px 0 0;overflow:hidden}
 .nx-kick{margin:0;font-size:19px;font-weight:600;color:#C9D5F2}
