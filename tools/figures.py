@@ -183,6 +183,26 @@ def city_311_dashboard():
         y=294+i*46; b+=f'<line x1="518" y1="{y-26}" x2="942" y2="{y-26}" stroke="{LINE}"/>'+t(518,y,a,13.5,NAVY,700)+t(660,y,d,13.5,SOFT,600)+t(752,y,o,13.5,SOFT,600)+t(942,y,due,13.5,c,700,"end")
     return svg(Wd,H,b,"Sample 311 dashboard: share of residents who say their request was resolved, low scores followed up on time, median days to follow up, responses, resolved rate by service type, and open follow-up cases by district and department with due dates")
 
-FIGS={"resident-311-flow":resident_311_flow,"city-311-dashboard":city_311_dashboard,"metric-compare":metric_compare,"moment-map":moment_map,"detractor-case":detractor_case,"case-close-flow":case_close_flow,"case-close-checklist":case_close_checklist,"business-case-flow":business_case,"partner-tracks":partner_tracks,"switch-timeline":timeline,"native-vs-boltOn":architecture,"service-loop":loop,"score-routing":routing,"closed-loop-dashboard":dashboard}
+
+def migration_phases():
+    return flow("A survey migration project in five phases","What a Salesforce partner delivers, from inventory to a live loop",
+        [("Discover","Inventory every|survey, trigger,|owner and report",""),("Export","Survey definitions|and response|history, archived",""),("Rebuild","Surveys, triggers|and field mapping|in a sandbox",""),("Cut over","One survey live,|then the rest;|old tool read-only",""),("Hand over","Owners, follow-up|rules, dashboards|and admin training","")],
+        "Five phases of a survey migration project: discover and inventory surveys, export definitions and history, rebuild surveys, triggers and field mapping in a sandbox, cut over one survey then the rest, and hand over owners, follow-up rules, dashboards and admin training")
+
+def sow_scope():
+    Wd,H=1000,470; b=t(40,50,"What to write into the statement of work",22,NAVY,800)+t(40,78,"Agree these lines before kickoff so the project has a clear finish",15,MUTE,500)
+    cols=[("IN SCOPE",["Inventory of surveys in use","Rebuild of the agreed surveys","Triggers on agreed objects","Field mapping and reports","Low-score follow-up rules"],BLUE,"#EAF1FF",2.5),
+          ("CLIENT PROVIDES",["Export from the old tool","A sandbox and admin access","Owner for each survey","Sign-off on each test","Security review contact"],LINE,W,1.5),
+          ("OUT OF SCOPE",["Surveys nobody uses","New surveys not on the list","Custom code beyond config","Admin work after handover","Changes after sign-off"],LINE,W,1.5)]
+    for k,(h,items,sc,fill,sw) in enumerate(cols):
+        x=40+k*313; b+=r(x,104,294,330,16,fill,sc,sw)+t(x+22,140,h,13,BLUE if k==0 else MUTE,800)
+        for i,it in enumerate(items):
+            y=170+i*52
+            if k==2: b+=f'<circle cx="{x+36}" cy="{y+14}" r="12" fill="{W}" stroke="{MUTE}" stroke-width="2"/><path d="M{x+31} {y+9} l10 10 M{x+41} {y+9} l-10 10" stroke="{MUTE}" stroke-width="2.5" stroke-linecap="round"/>'
+            else: b+=r(x+22,y,28,28,7,W,BLUE,2.5)+f'<path d="M{x+29} {y+14} l6 7 l11 -13" fill="none" stroke="{GRN if k==0 else BLUE}" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>'
+            b+=t(x+62,y+20,it,15,NAVY,600)
+    return svg(Wd,H,b,"Statement of work scope. In scope: survey inventory, rebuild of agreed surveys, triggers on agreed objects, field mapping and reports, low-score follow-up rules. Client provides: export from the old tool, a sandbox and admin access, an owner per survey, sign-off on each test, a security review contact. Out of scope: unused surveys, new surveys not on the list, custom code, ongoing admin after handover, changes after sign-off")
+
+FIGS={"migration-phases":migration_phases,"sow-scope":sow_scope,"resident-311-flow":resident_311_flow,"city-311-dashboard":city_311_dashboard,"metric-compare":metric_compare,"moment-map":moment_map,"detractor-case":detractor_case,"case-close-flow":case_close_flow,"case-close-checklist":case_close_checklist,"business-case-flow":business_case,"partner-tracks":partner_tracks,"switch-timeline":timeline,"native-vs-boltOn":architecture,"service-loop":loop,"score-routing":routing,"closed-loop-dashboard":dashboard}
 if __name__=="__main__":
     for k,f in FIGS.items(): open(os.path.join(OUT,k+".svg"),"w").write(f()); print(k)

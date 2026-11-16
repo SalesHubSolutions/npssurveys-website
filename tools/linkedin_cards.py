@@ -76,7 +76,19 @@ CARDS = {
 <div class="li"><div class="row" style="gap:20px"><div class="ic">E</div><div><div class="n">CES</div><div class="m">How easy a task was</div></div></div><span class="chip">After a task is done</span></div>""",590,"npssurveys.com/insights","Which survey to send at each moment in Salesforce."),
 "switch": page("GetFeedback retires December 31","Move your surveys into native Salesforce. Keep every answer.","""
 <div class="lab">Switch checklist</div>
-"""+"".join(f'<div class="row" style="gap:18px;margin-top:22px"><div class="ck">{CHECK}</div><div><div class="n" style="font-size:25px">{a}</div><div class="m">{b}</div></div></div>' for a,b in [("Export your surveys and history","Questions, answers and dates"),("Import into Salesforce","Matched to Contacts and Accounts by email"),("Rebuild triggers natively","Case close, onboarding, renewal"),("Turn on follow-up","Every low score gets an owner")]),560,"npssurveys.com/insights","A checklist for Salesforce teams. 7-day free trial on AppExchange.")
+"""+"".join(f'<div class="row" style="gap:18px;margin-top:22px"><div class="ck">{CHECK}</div><div><div class="n" style="font-size:25px">{a}</div><div class="m">{b}</div></div></div>' for a,b in [("Export your surveys and history","Questions, answers and dates"),("Import into Salesforce","Matched to Contacts and Accounts by email"),("Rebuild triggers natively","Case close, onboarding, renewal"),("Turn on follow-up","Every low score gets an owner")]),560,"npssurveys.com/insights","A checklist for Salesforce teams. 7-day free trial on AppExchange."),
+"partner-migration": page("For Salesforce partners","Your clients need a survey migration by December 31.","""
+<div class="row" style="justify-content:space-between"><span class="lab">Migration project · fixed scope</span><span class="chip">5 phases</span></div>
+"""+"".join(f'<div class="row" style="gap:18px;margin-top:20px"><div class="ic">{i+1}</div><div><div class="n" style="font-size:25px">{a}</div><div class="m">{b}</div></div></div>' for i,(a,b) in enumerate([("Discover","Inventory every survey, trigger and owner"),("Export","Definitions and response history"),("Rebuild in a sandbox","Same Salesforce events, same fields"),("Cut over","One survey live, then the rest"),("Hand over","Owners, follow-up rules, admin training")]))+"""
+<div class="hr"></div><div class="row" style="justify-content:space-between"><span class="n" style="font-size:23px">Keep 100% of services</span><span class="chip on">25% yr 1 + 10% renewals</span></div>""",470,"npssurveys.com/insights","Implementation partner terms. Full terms in the SalesHub partner agreement."),
+"csat-case-close": page("Admin how-to","Ask about the case while it's fresh. Once.","""
+<div class="row" style="justify-content:space-between"><span class="lab">Case 00012874 · Billing question</span><span class="chip grn">Closed</span></div>
+<div class="hr"></div><div class="lab">CSAT survey · sent once, to the case contact</div>
+<div class="q">How satisfied were you with how we handled your request?</div>
+<div class="row" style="gap:10px;margin-top:20px">"""+"".join(f'<span class="btn{" p" if i==2 else ""}" style="flex:1;text-align:center;font-size:24px">{i}</span>' for i in range(1,6))+"""</div>
+<div class="row" style="justify-content:space-between;margin-top:10px"><span class="sub">Very unsatisfied</span><span class="sub">Very satisfied</span></div>
+<div class="hr"></div>
+<div class="row" style="gap:18px"><div class="ic">!</div><div><div class="n" style="font-size:24px">Low score: owner notified</div><div class="m">Saved on the Case and Contact · follow up today</div></div></div>""",520,"npssurveys.com/insights","Trigger, audience, send once, save on the record, route low scores.")
 }
 async def main():
     async with async_playwright() as p:

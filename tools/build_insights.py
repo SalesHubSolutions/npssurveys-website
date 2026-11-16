@@ -57,6 +57,7 @@ CTAS = {
  "switch": ("Moving off GetFeedback or Delighted?", "Keep your surveys, follow-up and dashboards inside Salesforce. Start the 7-day free trial, or book a 30-minute switch call.", [("Start the free trial", "p", "trial"), ("See the switch plan", "d", "/#switch")]),
  "roi": ("Build the business case in 60 seconds", "Put in your accounts, revenue and churn and get a one-page case you can send to finance.", [("Open the ROI calculator", "d", "/#roi"), ("Start the free trial", "p", "trial")]),
  "public": ("Measure service where it happens", "NPS Survey CX OS runs inside the Salesforce org your agency already uses. Buy through Carahsoft or start on AppExchange.", [("Public sector solutions", "d", "/#public-sector"), ("Start the free trial", "p", "trial")]),
+ "partner": ("Deliver the migration, keep the services", "Implementation partners keep 100% of their services revenue and earn 25% of the first-year subscription plus 10% of every renewal.", [("See the partner program", "p", "/#partners"), ("See the switch plan", "d", "/#switch")]),
  "trial": ("Close the loop on every score", "NPS, CSAT and CES surveys that send themselves, land on the record and give every unhappy customer an owner, 100% inside Salesforce.", [("Start the free trial", "p", "trial"), ("Book a demo", "d", "/#demo")]),
 }
 

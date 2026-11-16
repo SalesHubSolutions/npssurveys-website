@@ -1068,7 +1068,7 @@ V.demo = () => `${hero("", "Book a <em>30-minute</em> demo", "See your own indus
 
 V.learn = () => `${hero("", "Learning Center", "Role-based learning paths, setup guides, best practices and reference for running a world-class feedback program on Salesforce.", `<div class="ctas"><a class="btn primary" href="#learn" data-jump="start">Start the setup guide</a><a class="btn ghost" href="#learn" data-jump="paths">Choose a learning path</a></div>`)}
 <section class="band"><div class="wrap learn">
- <nav class="toc" aria-label="Learning Center sections">${[["paths","Learning paths"],["start","Getting started"],["howto","How-to guides"],["channels","Survey channels"],["design","Survey design"],["loop","Closing the loop"],["p1","Detractor case guide"],["admin","Admin guide"],["nps","NPS calculator"],["faq","FAQ"],["glossary","Glossary"]].map(([a,b])=>`<a href="#learn" data-jump="${a}">${b}</a>`).join("")}</nav>
+ <nav class="toc" aria-label="Learning Center sections">${[["paths","Learning paths"],["start","Getting started"],["howto","How-to guides"],["channels","Survey channels"],["design","Survey design"],["loop","Closing the loop"],["p1","Detractor case guide"],["migrate","Migration projects"],["admin","Admin guide"],["nps","NPS calculator"],["faq","FAQ"],["glossary","Glossary"]].map(([a,b])=>`<a href="#learn" data-jump="${a}">${b}</a>`).join("")}</nav>
  <article class="doc"><h2 id="paths">Learning paths</h2>
 <p>Pick the path for your role. Tick units as you finish them; your progress is saved in this browser.</p>
 <div class="grid2" style="margin-top:18px">
@@ -1157,6 +1157,12 @@ V.learn = () => `${hero("", "Learning Center", "Role-based learning paths, setup
 <li><b>Record and close.</b> Write down what you did and what you learned, then close the case. If something changed because of their feedback, tell them.</li>
 </ol>
 <div class="callout"><b>For managers:</b> track the share of detractor cases contacted on time. It's fully in your team's control, and it often moves before the score does.</div>
+
+<h2 id="migrate">Migration projects: moving surveys into Salesforce</h2>
+<p>Moving off GetFeedback, Delighted or another survey tool? Run it as a small project in five phases. It works whether your own admin team does the work or a Salesforce partner does it for you.</p>
+<figure style="margin:18px 0;max-width:100%"><img src="/content/figures/migration-phases.svg" alt="Five phases of a survey migration: discover, export, rebuild in a sandbox, cut over, hand over" style="width:100%;height:auto;border-radius:14px"></figure>
+<ol><li><b>Discover.</b> List every survey in use: its trigger, channel, questions, where answers are written, what a low score does, and who owns it. Retire the ones nobody reads.</li><li><b>Export.</b> Take survey definitions and response history while you still have access. Decide whether old responses must be imported into Salesforce or archived as files.</li><li><b>Rebuild.</b> In a sandbox, rebuild your highest-volume survey first on the same Salesforce event, and map answers to the same fields so reports keep working.</li><li><b>Cut over.</b> Put one survey live, check it for a week, then move the rest. Keep the old tool read-only until the final export is archived.</li><li><b>Hand over.</b> Write down each survey's trigger, owner, follow-up rule and dashboard, and train the admin who owns it.</li></ol>
+<div class="callout"><b>Go deeper:</b> the <a href="#switch">switch plan</a> has a week-by-week timeline, and partners can read <a href="/insights/survey-migration-project-salesforce-partners/">how to scope and deliver a migration project</a>.</div>
 
 <h2 id="admin">Admin guide</h2>
 <h3>Where data lives</h3><p>Surveys and responses are stored in your Salesforce org and related to the Account, Contact, Case or Opportunity they came from. Nothing is copied to an outside server.</p>

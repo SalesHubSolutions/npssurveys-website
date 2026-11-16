@@ -1,0 +1,58 @@
+<!--META
+{"slug":"survey-migration-project-salesforce-partners","title":"Survey migration projects for Salesforce partners: how to scope, price and deliver one before December 31","description":"GetFeedback Direct sunsets on December 31, 2026. A guide for Salesforce consulting firms: the five project phases, what to write into the statement of work, the questions that size the job, and how the SalesHub partner program pays.","date":"2026-11-16","author":"SalesHub","tags":["Partners","Switching","Knowledge center"],"read":"7 min","cta":"partner"}
+META-->
+<p><strong>A survey migration is a small, fixed-scope Salesforce project: inventory the surveys a client runs today, export their history, rebuild them natively in a sandbox, cut over one survey at a time, and hand over clear owners for every low score.</strong> With GetFeedback Direct scheduled to sunset on December 31, 2026, many Salesforce clients need exactly this project now. This guide is for Salesforce consulting partners who want to scope it well, price it fairly and finish on time.</p>
+
+<h2>Why this project exists right now</h2>
+<p>GetFeedback Direct is scheduled to sunset on December 31, 2026, and its owner is pointing customers to SurveyMonkey Enterprise. Delighted, another NPS tool many Salesforce teams used, already shut down on June 30, 2026. Clients that send surveys from Salesforce have to pick a replacement and move before the end date, or they lose their feedback flow.</p>
+<p>That creates a clear piece of work with a deadline, a defined start state and a defined finish. It is also a good way into a broader conversation about how the client uses Service Cloud, Sales Cloud or Experience Cloud.</p>
+
+<h2>The five phases of the project</h2>
+{{FIG:migration-phases|Five phases, each with a clear deliverable. The hand-over phase is what turns a rebuild into a working feedback loop.}}
+<h3>1. Discover</h3>
+<p>List every survey in use. For each one, record the survey type (NPS, CSAT or CES), the Salesforce event that sends it, the channel, the questions and scales, where answers are written, what happens on a low score, the reports that use it, and the business owner. Most clients find a few surveys nobody reads. Agree to retire those in writing. It shortens the project.</p>
+<h3>2. Export</h3>
+<p>The client exports survey definitions and response history while they still have access. Decide early whether old responses must be imported into Salesforce so trends continue, or can be archived as files. That one decision changes the size of the job more than anything else.</p>
+<h3>3. Rebuild in a sandbox</h3>
+<p>Rebuild the highest-volume survey first, usually case-close CSAT or relationship NPS. Recreate the trigger on the same Salesforce event and map answers to the same fields, so existing reports and dashboards keep working. Then set the follow-up rules: who owns a low score, and how fast they must act.</p>
+<h3>4. Cut over</h3>
+<p>Put one survey live in production and watch it for a week: are surveys sending once, are answers landing on the right record, are low scores reaching an owner? Then move the rest. Keep the old tool read-only until the final export is archived.</p>
+<h3>5. Hand over</h3>
+<p>The project is done when the client's team runs the loop without you. Hand over a short runbook: each survey, its trigger, its owner, its follow-up rule and its dashboard. Train the admin who will own it. This is the phase clients remember, and the one most often cut when time runs short.</p>
+
+<h2>What to write into the statement of work</h2>
+<p>Migration projects run late for the same reasons: the survey list grows during the project, the export arrives late, or nobody owns sign-off. Write those risks into the SOW before kickoff.</p>
+{{FIG:sow-scope|Three lists to agree before kickoff: what you deliver, what the client provides, and what is out of scope.}}
+<p>Two lines matter most. First, name the surveys in scope by name, so "while you're in there" requests become a change order instead of free work. Second, make the client's export a dated dependency. If the export is late, the timeline moves, not your margin.</p>
+
+<h2>Questions that size the job</h2>
+<p>Ask these in the first call. The answers tell you whether this is a small project or a larger one.</p>
+<div class="tw"><table>
+<tr><th>Question</th><th>Why it matters</th></tr>
+<tr><td>How many surveys are live, and how many are read?</td><td>Each survey in scope is a rebuild, a trigger and a test.</td></tr>
+<tr><td>Which objects send surveys today?</td><td>Case, Opportunity, Account and custom objects each need their own trigger and test.</td></tr>
+<tr><td>Must response history live in Salesforce?</td><td>Importing history adds data mapping and matching to Contacts and Accounts.</td></tr>
+<tr><td>Which reports and dashboards use survey fields?</td><td>Keeping field names stable keeps those working without rework.</td></tr>
+<tr><td>What happens on a low score today?</td><td>If the answer is "nothing", follow-up rules are new design work, not a rebuild.</td></tr>
+<tr><td>Who signs off, and is there a security review?</td><td>A missing approver is the most common reason for a late cutover.</td></tr>
+<tr><td>Are there surveys in more than one language, or on an Experience Cloud site?</td><td>Each language and each site adds testing.</td></tr>
+</table></div>
+
+<h2>Why a native app makes the project smaller</h2>
+<p>When the replacement is a managed package that runs inside the client's Salesforce org, there is no connector to build, no sync to monitor and no second data store for the security team to review. Your consultants configure triggers, flows, fields and dashboards with skills they already have. That keeps the project inside the scope you quoted.</p>
+<p>NPS Survey CX OS by SalesHub is a Salesforce-native NPS, CSAT and CES app on AppExchange. Surveys are sent from Salesforce events, answers are written to the Account, Contact, Case or Opportunity, and low scores open an owned case. Clients can rebuild from 70+ templates. It is priced per org, not per user: CX Lite $3,500, CX Pro $8,500 and CX OS Insights from $16,000 a year, with a 7-day free trial. The per-org price fits cleanly into a Service Cloud, Sales Cloud or Experience Cloud SOW.</p>
+
+<h2>How the SalesHub partner program pays</h2>
+<p>There are two tracks. Referral partners register the opportunity, SalesHub demos, sells and onboards, and the partner earns 20% of the first-year subscription. Implementation partners deliver the project, keep 100% of their services revenue, and earn 25% of the first-year subscription plus 10% of every renewal. Deal registration protects the opportunity.</p>
+<p>On a CX Pro deal at $8,500 a year, a referral partner earns $1,700. An implementation partner earns $2,125 in year one and $850 on each renewal, on top of the services fee for the migration. Full terms are in the SalesHub partner agreement.</p>
+
+<h2>A simple plan for the next six weeks</h2>
+<ol>
+<li><strong>This week:</strong> list clients that send surveys from Salesforce and ask what tool they use.</li>
+<li><strong>Next week:</strong> run the sizing questions above with the first two, and send a fixed-scope SOW.</li>
+<li><strong>Weeks 3 to 5:</strong> rebuild and test in a sandbox; take the client's final export.</li>
+<li><strong>Week 6:</strong> cut over, hand over the runbook, and book a 30-day check-in.</li>
+</ol>
+<p>Clients who start late can still move their most important survey first and the rest in January, as long as their export is taken before the old tool's end date.</p>
+{{CTA}}
+<p class="src">Sources: <a href="https://www.salesforceben.com/getfeedback-and-delighted-to-be-retired-in-2026-what-salesforce-users-need-to-know/" target="_blank" rel="noopener">Salesforce Ben, "GetFeedback and Delighted to be retired in 2026: what Salesforce users need to know"</a>. Partner program terms: SalesHub partner agreement. Confirm end dates with your client's vendor. GetFeedback, SurveyMonkey and Delighted are trademarks of their respective owners; SalesHub is not affiliated with them.</p>
