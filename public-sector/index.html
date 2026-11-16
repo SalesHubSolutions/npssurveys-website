@@ -616,6 +616,24 @@ canvas.bokeh{display:none}
 .nx-mini{display:inline-grid;place-items:center;width:22px;height:22px;border-radius:7px;background:#002FA7;color:#fff;box-shadow:0 0 14px 3px rgba(64,110,255,.6)}.nx-mini svg{width:13px;height:13px}
 @keyframes nxg{50%{box-shadow:0 0 0 1px rgba(142,168,255,.5),0 0 56px 14px rgba(64,110,255,.7),0 0 140px 44px rgba(0,47,167,.55)}}
 @media (prefers-reduced-motion:reduce){.nx-glow{animation:none}}
+.cap{transition:background .2s,border-color .2s,transform .2s,box-shadow .2s;cursor:default}
+.cap:hover,.cap:focus-visible{background:#002FA7;border-color:#002FA7;transform:translateY(-3px);box-shadow:0 18px 40px rgba(0,47,167,.28);outline:none}
+.cap:hover h3,.cap:focus-visible h3{color:#fff}.cap:hover p,.cap:focus-visible p{color:#DCE4F7}
+.cap:hover .ibox,.cap:focus-visible .ibox{background:rgba(255,255,255,.16);color:#fff}
+.cap .g{height:104px;border-radius:14px;background:#F5F7FC;border:1px solid #E3E8F3;margin-bottom:16px;padding:14px;display:flex;flex-direction:column;justify-content:center;gap:8px;color:#002FA7;font-size:12.5px;overflow:hidden;transition:background .2s,border-color .2s}
+.cap:hover .g,.cap:focus-visible .g{background:#fff;border-color:#fff}
+.g-flow{display:flex;align-items:center;gap:5px;flex-wrap:nowrap;color:#5C6784}.g-flow b{color:#002FA7}.g-pill{white-space:nowrap;font-size:11.5px;padding:4px 8px;border-radius:999px;background:#fff;border:1px solid #DCE3F2;color:#0F1A3D;font-weight:600}.g-pill.g-on{background:#002FA7;border-color:#002FA7;color:#fff}
+.g-form{background:#fff;border-radius:10px;padding:10px;border:1px solid #E3E8F3;display:grid;gap:8px}.g-form i{display:block;height:7px;width:70%;border-radius:4px;background:#DCE3F2}.g-form i.g-s{width:45%}
+.g-sc{display:grid;grid-template-columns:repeat(8,1fr);gap:3px}.g-sc span{height:12px;border-radius:3px;background:#EDF1FB}.g-sc span.g-hit{background:#002FA7}
+.g-ch{display:flex;gap:8px}.g-ch span{flex:1;display:flex;flex-direction:column;align-items:center;gap:4px;background:#fff;border:1px solid #E3E8F3;border-radius:10px;padding:10px 4px;font-weight:600;color:#0F1A3D}.g-ch svg{color:#002FA7}
+.g-rec{background:#fff;border-radius:10px;border:1px solid #E3E8F3;overflow:hidden}.g-rh{display:flex;justify-content:space-between;align-items:center;background:#002FA7;color:#fff;padding:8px 10px}.g-nps{background:rgba(255,255,255,.2);padding:2px 8px;border-radius:999px;font-weight:700}
+.g-line{height:7px;margin:9px 10px 0;border-radius:4px;background:#DCE3F2}.g-line.g-short{width:50%;margin-bottom:10px}
+.g-rt{display:grid;gap:6px}.g-rt div{display:flex;align-items:center;gap:8px;background:#fff;border:1px solid #E3E8F3;border-radius:8px;padding:4px 8px;color:#0F1A3D;font-weight:600}.g-rt em{margin-left:auto;font-style:normal;color:#5C6784;font-weight:500}
+.g-d{width:9px;height:9px;border-radius:50%}.g-d.g-r{background:#D92D20}.g-d.g-a{background:#DC6803}.g-d.g-g{background:#079455}
+.g-chart{width:100%;height:64px}
+.g-sec{display:flex;align-items:center;gap:10px;background:#fff;border:1px solid #E3E8F3;border-radius:10px;padding:12px}.g-shield{width:40px;height:40px;border-radius:10px;background:#EDF1FB;display:grid;place-items:center}.g-sec b{display:block;color:#0F1A3D;font-size:13.5px}.g-sec small{color:#5C6784}
+.g-price{text-align:center}.g-price b{display:block;font-size:30px;letter-spacing:-.02em;color:#002FA7}.g-price span{color:#5C6784}
+@media (prefers-reduced-motion:reduce){.cap{transition:none}.cap:hover{transform:none}}
 /* 2026-11 homepage: Apple clarity + Salesforce team demo */
 .nx-hero{background:#002FA7;color:#fff;text-align:center;padding:88px 0 0;overflow:hidden}
 .nx-kick{margin:0;font-size:19px;font-weight:600;color:#C9D5F2}
@@ -900,7 +918,7 @@ ${editionBand("home")}
   ["chart","CX OS dashboards","NPS trend, response rate and loop closure by rep, team and region, in real time."],
   ["lock","Built for security review","Permission sets, audit logs and GDPR/CCPA controls. Data never leaves Salesforce."],
   ["brief","Priced per org","One annual price per company, not per user, with nonprofit discounts."]
- ].map(([i,t,d])=>`<div class="cap"><div class="ibox">${ic(i)}</div><h3>${t}</h3><p>${d}</p></div>`).join("")}</div>
+ ].map(([i,t,d])=>`<div class="cap" tabindex="0"><div class="g">${({"bolt":`<div class="g-flow"><span class="g-pill">Case closed</span><b>→</b><span class="g-pill g-on">Survey sent</span></div><div class="g-flow"><span class="g-pill">Deal won</span><b>→</b><span class="g-pill g-on">Survey sent</span></div>`,"form":`<div class="g-form"><i></i><div class="g-sc"><span></span><span></span><span></span><span class="g-hit"></span><span></span><span></span><span></span><span></span></div><i class="g-s"></i></div>`,"mail":`<div class="g-ch"><span>${ic("mail",18)}Email</span><span>${ic("qr",18)}QR</span><span>${ic("portal",18)}Web</span></div>`,"grid":`<div class="g-rec"><div class="g-rh"><b>Acme Corp</b><span class="g-nps">NPS +18</span></div><div class="g-line"></div><div class="g-line g-short"></div></div>`,"route":`<div class="g-rt"><div><span class="g-d g-r"></span>0–6<em>P1 case</em></div><div><span class="g-d g-a"></span>7–8<em>Nurture</em></div><div><span class="g-d g-g"></span>9–10<em>Review ask</em></div></div>`,"chart":`<svg class="g-chart" viewBox="0 0 200 70" preserveAspectRatio="none" aria-hidden="true"><path d="M0 58 L30 50 L60 54 L90 38 L120 42 L150 26 L200 14" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><circle cx="200" cy="14" r="5" fill="currentColor"/></svg>`,"lock":`<div class="g-sec"><span class="g-shield">${ic("shield",22)}</span><div><b>Stays in Salesforce</b><small>Permission sets · audit log</small></div></div>`,"brief":`<div class="g-price"><b>1 price</b><span>per org, every user</span></div>`})[i]||""}</div><div class="ibox">${ic(i)}</div><h3>${t}</h3><p>${d}</p></div>`).join("")}</div>
 </div></section>
 
 <section class="band nx-teams"><div class="wrap">
