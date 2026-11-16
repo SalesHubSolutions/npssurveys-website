@@ -1139,6 +1139,12 @@ a.nx-ste{display:block;text-decoration:none;color:inherit}a.nx-ste:focus-visible
 @media (max-width:860px){.nx-op{grid-template-columns:1fr}}
 @media (max-width:960px){.nx-acw2{grid-template-columns:1fr}.nx-acrec{display:none}}
 @media (max-width:480px){.nx-cxk{flex-direction:column;align-items:flex-start}.nx-cxg{grid-template-columns:1fr 1fr}}
+/* suite page heroes with team photos */
+.nx-ph2w{display:grid;grid-template-columns:1.05fr .95fr;gap:48px;align-items:center}
+.nx-ph2f{margin:0;position:relative}.nx-ph2f img{display:block;width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:24px;box-shadow:0 30px 70px rgba(0,10,60,.35);background:#1D4ED8}
+.nx-ph2f figcaption{position:absolute;left:-22px;bottom:26px;display:flex;align-items:center;gap:10px;background:#fff;color:#0F1A3D;border-radius:16px;padding:12px 16px;box-shadow:0 18px 40px rgba(0,10,60,.25)}
+.nx-ph2f figcaption>span{width:30px;height:30px;border-radius:9px;background:#002FA7;color:#fff;display:grid;place-items:center}.nx-ph2f figcaption b{display:block;font-size:14px}.nx-ph2f figcaption small{font-size:12px;color:#5C6784}
+@media (max-width:900px){.nx-ph2w{grid-template-columns:1fr}.nx-ph2f figcaption{left:12px}}
 /* 2026-11 homepage: Apple clarity + Salesforce team demo */
 .nx-hero{background:#002FA7;color:#fff;text-align:center;padding:88px 0 0;overflow:hidden}
 .nx-kick{margin:0;font-size:19px;font-weight:600;color:#C9D5F2}
@@ -1367,9 +1373,10 @@ function wirePicker(root){ const f=root.querySelector("#picker"); if(!f) return;
   out.innerHTML = `<b>${rec==="sa"?"We recommend CX360 Standalone":rec==="sf"?"We recommend NPS Survey CX OS for Salesforce":"Either product fits you"}</b><p class="sub" style="margin-top:6px">${why}</p><div class="acts2">${rec!=="sa"?trial("picker_sf","Try the Salesforce edition →","primary"):""}${rec!=="sf"?appTrial("picker_sa"):""}<a class="btn line" href="#demo">Talk to us</a></div>`; };
  f.addEventListener("change", upd); }
 
+const heroP=(crumb,h1,p,extra,id,ct,cs)=>`<section class="pagehero nx-ph2"><div class="wrap nx-ph2w"><div>${crumb?`<div class="crumb">${crumb}</div>`:""}<h1>${h1}</h1><p>${p}</p>${extra}</div><figure class="nx-ph2f"><img src="https://images.pexels.com/photos/${id}/pexels-photo-${id}.jpeg?auto=compress&cs=tinysrgb&w=1100" alt="" loading="eager" width="1100" height="733"><figcaption><span>${ic("check",16)}</span><div><b>${ct}</b><small>${cs}</small></div></figcaption></figure></div></section>`;
 const SUITES=[["survey-studio", "Survey Studio", "form"], ["service", "Service", "users"], ["journeys", "Customer Journey", "route"], ["revenue", "Sales", "chart"], ["intelligence", "CX Intelligence", "bolt"], ["brand-kit", "Brand Kit & Marketing", "brief"]];
 const suiteNav=(cur)=>`<section class="band tint"><div class="wrap"><div class="eyebrow">All six suites, one price per org</div><h2 class="h2">Explore the rest of the platform</h2><div class="nx-snav">${SUITES.filter(x=>x[0].replace("-","_")!==cur).map(([k,t,i])=>`<a href="#${k}"><span>${ic(i,20)}</span><b>${t}</b><em>→</em></a>`).join("")}</div></div></section>`;
-V["service"] = () => `${hero("Service suite", "Every unhappy customer, owned and won back", "Close the Loop turns low scores into follow-ups with an owner, a due time and the steps to fix it. The Service Desk triages, replies first and solves, in any language.", `<div class="ctas">${trial("service_hero")}${demoBtn()}</div>`)}
+V["service"] = () => `${heroP("Service suite", "Every unhappy customer, owned and won back", "Close the Loop turns low scores into follow-ups with an owner, a due time and the steps to fix it. The Service Desk triages, replies first and solves, in any language.", `<div class="ctas">${trial("service_hero")}${demoBtn()}</div>`, "3861958", "Close the Loop", "CL-0020 closed in 4 minutes")}
 <section class="band nx-clb"><div class="wrap">
  <div class="eyebrow">Close the Loop</div><h2 class="h2">Every unhappy answer becomes a follow-up someone owns.</h2>
  <p class="sub">Low scores open a follow-up automatically, with an owner, a due time and the steps to win the customer back. Move it from open to in progress to closed, and the outreach email to the customer is written, sent and logged right inside the workflow.</p>
@@ -1414,7 +1421,7 @@ V["service"] = () => `${hero("Service suite", "Every unhappy customer, owned and
 ${suiteNav("service")}
 ${finalCTA("service_final")}
 `;
-V["journeys"] = () => `${hero("Customer Journey suite", "18 journeys that run themselves", "From detractor recovery to promoter referrals, journeys run surveys, emails, approvals, cases and alerts the moment conditions match. Programs tie them to company goals.", `<div class="ctas">${trial("journeys_hero")}${demoBtn()}</div>`)}
+V["journeys"] = () => `${heroP("Customer Journey suite", "18 journeys that run themselves", "From detractor recovery to promoter referrals, journeys run surveys, emails, approvals, cases and alerts the moment conditions match. Programs tie them to company goals.", `<div class="ctas">${trial("journeys_hero")}${demoBtn()}</div>`, "8062306", "Journeys", "Detractor recovery · 7 enrolled")}
 <section class="band nx-jrn"><div class="wrap">
  <div class="eyebrow">Journeys</div><h2 class="h2">18 ready-made journeys. Switch one on and it runs.</h2>
  <p class="sub">When something happens and the conditions match, a journey runs its steps: surveys, emails, waits, cases, follow-ups, approvals and alerts. Start from detractor recovery, high-effort rescue, low CSAT follow-up or promoter thank-you and referral, change any step to fit your process, and run due steps on demand whenever you want.</p>
@@ -1476,7 +1483,7 @@ V["journeys"] = () => `${hero("Customer Journey suite", "18 journeys that run th
 ${suiteNav("journeys")}
 ${finalCTA("journeys_final")}
 `;
-V["revenue"] = () => `${hero("Sales suite", "Protect the revenue at risk. Grow the revenue that is happy.", "Revenue CX scores every account, ranks it by the money at stake and gives one clear next step, with AI workers on Autopilot.", `<div class="ctas">${trial("revenue_hero")}${demoBtn()}</div>`)}
+V["revenue"] = () => `${heroP("Sales suite", "Protect the revenue at risk. Grow the revenue that is happy.", "Revenue CX scores every account, ranks it by the money at stake and gives one clear next step, with AI workers on Autopilot.", `<div class="ctas">${trial("revenue_hero")}${demoBtn()}</div>`, "1367269", "Revenue CX", "$785K renewing · 5 accounts need you")}
 <section class="band nx-rev"><div class="wrap">
  <div class="eyebrow">Revenue CX</div><h2 class="h2">Protect the revenue at risk. Grow the revenue that is happy.</h2>
  <p class="sub">Every account gets a health score from NPS weighted by each person's role, churn signals, open follow-ups and sentiment. Revenue CX ranks them by the money at stake and how soon they renew, then gives one clear next step. Turn on Autopilot and AI digital workers take that step for you, inside your policies, and every action can be undone.</p>
@@ -1507,7 +1514,7 @@ V["revenue"] = () => `${hero("Sales suite", "Protect the revenue at risk. Grow t
 ${suiteNav("revenue")}
 ${finalCTA("revenue_final")}
 `;
-V["intelligence"] = () => `${hero("CX Intelligence suite", "AI that reads every answer and works around the clock", "Command Center, Insights & XM and nine AI digital workers, all inside your Salesforce org, every action logged and reversible.", `<div class="ctas">${trial("intelligence_hero")}${demoBtn()}</div>`)}
+V["intelligence"] = () => `${heroP("CX Intelligence suite", "AI that reads every answer and works around the clock", "Command Center, Insights & XM and nine AI digital workers, all inside your Salesforce org, every action logged and reversible.", `<div class="ctas">${trial("intelligence_hero")}${demoBtn()}</div>`, "3183126", "AI digital workers", "724 actions in 30 days")}
 <section class="band nx-cmd"><div class="wrap nx-split">
  <div><div class="eyebrow">CX Command Center</div><h2 class="h2">Every experience in one view.</h2>
  <p class="sub">Customer, Service, Sales, Marketing and Employee experience side by side, with the one number that matters for each, and the follow-ups, revenue at risk and sentiment behind it. Each person sees their own home, menu and day.</p>
@@ -1562,7 +1569,7 @@ V["intelligence"] = () => `${hero("CX Intelligence suite", "AI that reads every 
 ${suiteNav("intelligence")}
 ${finalCTA("intelligence_final")}
 `;
-V["survey-studio"] = () => `${hero("Survey Studio", "Any survey or form you can imagine", "131 templates, 67 question types, AI drafting, smart thank-you pages, translations and multi-brand, plus a wizard to bring your history from any tool.", `<div class="ctas">${trial("survey_studio_hero")}${demoBtn()}</div>`)}
+V["survey-studio"] = () => `${heroP("Survey Studio", "Any survey or form you can imagine", "131 templates, 67 question types, AI drafting, smart thank-you pages, translations and multi-brand, plus a wizard to bring your history from any tool.", `<div class="ctas">${trial("survey_studio_hero")}${demoBtn()}</div>`, "3182772", "Survey Studio", "131 templates · 67 question types")}
 <section class="band nx-tpl"><div class="wrap">
  <div class="eyebrow">Survey Studio</div><h2 class="h2">131 templates. 67 question types. Any form you can imagine.</h2>
  <p class="sub">Describe what you want to learn and AI drafts the survey, or start from a ready-made template in 18 categories: NPS, CSAT and CES, but also intake forms, assessments, quizzes, event registration and web pages. Logic, translations, quotas and one-click answers from the email itself.</p>
@@ -1612,7 +1619,7 @@ V["survey-studio"] = () => `${hero("Survey Studio", "Any survey or form you can 
 ${suiteNav("survey_studio")}
 ${finalCTA("survey_studio_final")}
 `;
-V["brand-kit"] = () => `${hero("Brand Kit and Marketing suite", "Your brand on every customer touch", "Build a Brand Kit from your website, send 97 ready-made emails, control every team alert and share results in Slack or Teams.", `<div class="ctas">${trial("brand_kit_hero")}${demoBtn()}</div>`)}
+V["brand-kit"] = () => `${heroP("Brand Kit and Marketing suite", "Your brand on every customer touch", "Build a Brand Kit from your website, send 97 ready-made emails, control every team alert and share results in Slack or Teams.", `<div class="ctas">${trial("brand_kit_hero")}${demoBtn()}</div>`, "6476260", "Brand Kit", "Built from your website in seconds")}
 <section class="band nx-kitsec"><div class="wrap">
  <div class="eyebrow">Brand Kit · Theme Studio</div><h2 class="h2">Type your website. Get your brand.</h2>
  <p class="sub">AI reads your logo, colours, fonts, pictures and social and review links into a Brand Kit in seconds. Every survey, email, reminder and thank-you page wears it from then on. Run several kits, one per business unit or client, and fine-tune any of them in Theme Studio.</p>
