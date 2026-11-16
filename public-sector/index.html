@@ -611,6 +611,7 @@ a.card:focus-visible{outline:3px solid var(--yellow);outline-offset:2px}
 canvas.bokeh{display:none}
 
 </style>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-BF2FDR6KMM"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date());gtag("config","G-BF2FDR6KMM",{linker:{domains:["saleshub.info","npssurveys.com"]}});</script>
 </head>
 <body>
 <div class="fam" role="navigation" aria-label="NPS Surveys products"><div class="wrap"><span class="lbl">NPS Surveys products</span><a href="#home" aria-current="true"><span class="dot" aria-hidden="true"></span>For Salesforce <span class="tag">· native on AppExchange</span></a><a href="https://app.npssurveys.com/?utm_source=npssurveys.com&amp;utm_medium=website&amp;utm_campaign=family&amp;utm_content=family_bar">CX360 Standalone <span class="tag">· any CRM or none</span> ↗</a><a class="help" href="#choose">Which is right for me? →</a></div></div>
@@ -1433,6 +1434,7 @@ function wireLead(root){ root.querySelectorAll(".lform").forEach(f=>{ if(f._w) r
    const g=n=>(f.querySelector(`[name="${n}"]`)?.value||"").trim(), it=(f.querySelector('[name="interest"]:checked')||{}).value||"";
    const q=new URLSearchParams(location.search);
    f.querySelector('[name="description"]').value=[`Interest: ${it}`,`Current tool: ${g("tool")||"n/a"}`,`Message: ${g("msg")||"n/a"}`,`Form: ${f.closest(".leadbox").dataset.ctx} on ${location.pathname}${location.hash}`,`UTM: ${["utm_source","utm_medium","utm_campaign","utm_content"].map(k=>q.get(k)).filter(Boolean).join(" / ")||"none"}`,`Referrer: ${document.referrer||"direct"}`,`Submitted: ${new Date().toISOString()}`].join("\n");
+   try{gtag("event","generate_lead",{form:f.closest(".leadbox").dataset.ctx,interest:it})}catch(_){}
    setTimeout(()=>{ f.closest(".leadbox").classList.add("sent"); f.closest(".leadbox").scrollIntoView({behavior:"smooth",block:"center"}); },400);
   });
   f.querySelectorAll("[required]").forEach(i=>i.addEventListener("input",()=>i.closest(".lf").classList.remove("bad")));
