@@ -1156,6 +1156,16 @@ a.nx-ste{display:block;text-decoration:none;color:inherit}a.nx-ste:focus-visible
 .nx-sv3 .go{background:#002FA7;color:#fff}
 .nx-sv7 .ksk span{background:#fff;border-color:#D6E0FF}.nx-sv7 .qrc{background:#fff;border:1px solid #D6E0FF}
 .nx-sv8 .nx-svf{background-image:none;background:#F7F9FF;border:1px solid #D6E0FF;border-top:4px solid #002FA7}
+/* exec one-pager: straight, brand blue, AI glow */
+.nx-paper{transform:none;border-radius:10px;box-shadow:0 30px 70px rgba(0,47,167,.18),0 0 0 1px #D6E0FF;border-top:6px solid #002FA7;gap:9px}
+.nx-pph{border-bottom:1px solid #D6E0FF}.nx-ppl i{background:#002FA7}.nx-pph small{font-size:9.5px}
+.nx-ppt{display:flex;align-items:center;justify-content:space-between}.nx-ppt em{font-style:normal;font-size:9.5px;font-weight:800;color:#D92D20;background:#FEE4E2;border-radius:99px;padding:2px 8px}
+.nx-ppk div{background:#F3F6FF;border:1px solid #E1E9FF}.nx-ppk b{color:#002FA7}
+.nx-ppai{display:flex;gap:8px;align-items:flex-start;background:linear-gradient(135deg,#EEF3FF,#F7F9FF);border:1px solid #C9D5F2;border-radius:8px;padding:8px;box-shadow:0 0 18px rgba(64,110,255,.18)}
+.nx-ppai .nx-spk{width:18px;height:18px;border-radius:6px;margin:0}.nx-ppai .nx-spk svg{width:11px;height:11px}.nx-ppai b{font-size:10px;color:#002FA7}.nx-ppai p{margin:1px 0 0;font-size:10.5px;line-height:1.4;color:#344054}
+.nx-ppbars span{opacity:1}.nx-ppq2{display:flex;gap:8px;margin-top:3px}.nx-ppq2 span{flex:1;text-align:center;font-size:8.5px;color:#8A93AD}
+.nx-ppq{border-left-color:#002FA7}
+.nx-ppf em{background:#002FA7}
 /* 2026-11 homepage: Apple clarity + Salesforce team demo */
 .nx-hero{background:#002FA7;color:#fff;text-align:center;padding:88px 0 0;overflow:hidden}
 .nx-kick{margin:0;font-size:19px;font-weight:600;color:#C9D5F2}
@@ -1781,12 +1791,14 @@ V.home = () => `
 </div>
  <div class="nx-op"><div class="nx-opt"><div class="eyebrow">Account one-pager</div><h3>Print-ready for the executive QBR.</h3><p>One click turns the panel into a branded, one-page PDF in your Brand Kit: health, weighted NPS trend, revenue and renewal, what stakeholders said, and the plan. Client-ready, no slides to build.</p>
   <ul class="nx-ticks"><li>Your logo, colours and fonts</li><li>Health, NPS trend and renewal at a glance</li><li>Stakeholder quotes and the action plan</li><li>Letter or A4, ready to print or email</li></ul></div>
-  <div class="nx-paper" role="img" aria-label="A branded one-page PDF account review"><div class="nx-pph"><span class="nx-ppl"><i></i>Contoso Homes</span><small>Account review · Q4</small></div>
-   <h4>Northwind Traders</h4><div class="nx-ppk"><div><small>Health</small><b>42</b></div><div><small>Weighted NPS</small><b>−12</b></div><div><small>ARR</small><b>$480K</b></div><div><small>Renewal</small><b>Mar 31</b></div></div>
-   <div class="nx-ppc"><small>NPS, last 4 quarters</small><div class="nx-ppbars"><span style="height:34px"></span><span style="height:26px"></span><span style="height:16px"></span><span style="height:24px"></span></div></div>
+  <div class="nx-paper" role="img" aria-label="A branded one-page PDF account review for an executive QBR"><div class="nx-pph"><span class="nx-ppl"><i></i>Contoso Homes</span><small>Executive account review · Q4 2026</small></div>
+   <div class="nx-ppt"><h4>Northwind Traders</h4><em>At risk</em></div>
+   <div class="nx-ppk"><div><small>Health</small><b>42</b></div><div><small>Weighted NPS</small><b>−12</b></div><div><small>ARR</small><b>$480K</b></div><div><small>Renewal</small><b>Mar 31</b></div></div>
+   <div class="nx-ppai"><span class="nx-spk" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2.5l2.2 6.3 6.3 2.2-6.3 2.2L12 19.5l-2.2-6.3L3.5 11l6.3-2.2z" fill="currentColor"/><path d="M19 15.5l.8 2 2 .8-2 .8-.8 2-.8-2-2-.8 2-.8z" fill="currentColor" opacity=".8"/></svg></span><div><b>AI summary</b><p>Billing errors drove the drop. Fixing billing and one personal call can protect the renewal.</p></div></div>
+   <div class="nx-ppc"><small>NPS, last 4 quarters</small><div class="nx-ppbars"><span style="height:34px;background:#002FA7"></span><span style="height:26px;background:#1F4FCC"></span><span style="height:16px;background:#7C9BEC"></span><span style="height:24px;background:#3B6CF6"></span></div><div class="nx-ppq2"><span>Q1</span><span>Q2</span><span>Q3</span><span>Q4</span></div></div>
    <div class="nx-ppq">“Charged twice this month, nobody called back.”<small>Maya Chen, Head of Operations</small></div>
    <div class="nx-ppp"><small>The plan</small><ol><li>Correct billing and credit the account</li><li>Call Maya this week</li><li>Re-survey after the fix</li></ol></div>
-   <div class="nx-ppf"><span>Prepared for the executive business review</span><em>PDF</em></div></div>
+   <div class="nx-ppf"><span>Prepared for the executive business review · Confidential</span><em>PDF</em></div></div>
  </div>
  <div class="nx-tcta">${trial("account_panel","See it on your Accounts free","nx-k")}</div>
 </div></section>
