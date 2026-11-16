@@ -1560,12 +1560,12 @@ function wireLead(root){ root.querySelectorAll(".lform").forEach(f=>{ if(f._w) r
 
 // ---------- Product tour (real product screens from a demo org) ----------
 const TOUR=[["csat-survey","Branded CSAT survey","One question at a time, on your Experience Cloud site.","Customer-facing CSAT survey on an Experience Cloud site","yourcompany.my.site.com/CSATSurvey",""],
- ["voc-survey","Voice of Customer form","Ready-made enterprise templates you brand in minutes.","Voice of Customer survey template with customer details","yourcompany.my.site.com/VOCSurvey",""],
+ ["voc-survey","Voice of Customer form","Ready-made enterprise templates you brand in minutes.","A Voice of Customer survey in a customer's own brand, with NPS, choices, stars and a comment","yourcompany.my.site.com/VOCSurvey",""],
  ["response-detail","Every response, on the record","Scores, answers and comments in one view, inside Salesforce.","Survey response detail showing an NPS score of 10 and each answer","NPS Survey CX OS · Survey Response","narrow"],
- ["response-comparison","Compare responses side by side","Spot patterns across people, teams and time.","Two survey responses compared side by side","NPS Survey CX OS · Response comparison",""]];
+ ["response-comparison","Compare responses side by side","Spot patterns across people, teams and time.","NPS by team over four quarters, and two answers from the same account compared side by side","NPS Survey CX OS · Response comparison",""]];
 const tour=(id)=>`<div class="tour" data-tour="${id}"><div class="ttabs" role="tablist" aria-label="Product screens">${TOUR.map((t,i)=>`<button class="ttab" role="tab" type="button" aria-selected="${i===0}" data-i="${i}"><b>${t[1]}</b><span>${t[2]}</span></button>`).join("")}</div>
  <div><div class="bframe"><div class="bar"><i></i><i></i><i></i><span class="turl">${TOUR[0][4]}</span></div><div class="shot"><img class="timg ${TOUR[0][5]}" src="brand/product/${TOUR[0][0]}.webp" alt="${TOUR[0][3]}" loading="lazy"></div></div>
- <p class="tcap">Real screens from a NPS Survey CX OS demo org. Names and org details are blurred.</p></div></div>`;
+ <p class="tcap">NPS Survey CX OS screens. Company and people names are examples.</p></div></div>`;
 function wireTour(root){ root.querySelectorAll("[data-tour]").forEach(t=>{ if(t._w) return; t._w=1; const img=t.querySelector(".timg"), url=t.querySelector(".turl");
   t.querySelectorAll(".ttab").forEach(b=>b.addEventListener("click",()=>{ const x=TOUR[+b.dataset.i]; t.querySelectorAll(".ttab").forEach(o=>o.setAttribute("aria-selected",String(o===b)));
     img.src=`brand/product/${x[0]}.webp`; img.alt=x[3]; img.className="timg "+x[5]; url.textContent=x[4]; })); }); }
