@@ -831,6 +831,106 @@ a.cap{display:block;color:inherit;text-decoration:none}
 .nx-dkbtn{display:flex;gap:8px;justify-content:flex-end}.nx-dkbtn span{background:#002FA7;color:#fff;border-radius:99px;padding:8px 16px;font-weight:700;font-size:13px}.nx-dkbtn span.o{background:#fff;color:#002FA7;border:1.5px solid #C9D5F2}
 @media (max-width:1060px){.nx-clw{grid-template-columns:1fr}.nx-dks{grid-template-columns:repeat(3,1fr)}}
 @media (max-width:720px){.nx-clk,.nx-dkb{grid-template-columns:1fr}.nx-dkq{border-right:0;border-bottom:1px solid #EEF1F8}.nx-dks{grid-template-columns:repeat(2,1fr)}.nx-dkflow{grid-template-columns:1fr 1fr}.nx-dkflow div{clip-path:none!important;border-radius:10px}}
+/* journeys */
+.nx-jw{margin-top:32px;display:grid;grid-template-columns:1.5fr 1fr;gap:20px;align-items:start;color:#0F1A3D}
+.nx-jl,.nx-jrun{min-width:0;background:#fff;border:1px solid #E3E8F3;border-radius:22px;box-shadow:0 24px 60px rgba(12,24,74,.08);overflow:hidden}
+.nx-jlh{padding:16px 18px;display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between;align-items:center;border-bottom:1px solid #EEF1F8}
+.nx-jk{display:flex;gap:22px}.nx-jk b{display:block;font-size:20px;font-weight:800}.nx-jk small{color:#5C6784;font-size:12px}
+.nx-jbtn{display:flex;gap:6px;flex-wrap:wrap}.nx-jbtn span{font-size:12.5px;font-weight:700;border:1.5px solid #C9D5F2;border-radius:99px;padding:6px 12px;color:#002FA7}.nx-jbtn span.o{background:#002FA7;color:#fff;border-color:#002FA7}
+.nx-jf{display:flex;flex-wrap:wrap;gap:6px;padding:12px 18px}.nx-jf span{font-size:12.5px;border:1px solid #E3E8F3;border-radius:99px;padding:5px 11px;color:#344054}.nx-jf span.on{border-color:#002FA7;color:#002FA7;font-weight:700;background:#EEF3FF}
+.nx-jr{display:grid;grid-template-columns:1fr 120px 44px;gap:14px;align-items:center;padding:14px 18px;border-top:1px solid #EEF1F8}.nx-jr:hover{background:#F7F9FF}
+.nx-jri b{display:block;font-size:14.5px}.nx-jri small{color:#5C6784;font-size:12.5px}.nx-jch{display:flex;flex-wrap:wrap;gap:5px;margin-top:7px}.nx-jch span{font-size:11.5px;font-weight:600;color:#002FA7;background:#EEF3FF;border-radius:6px;padding:3px 8px}
+.nx-jrr small{font-size:12px;color:#5C6784}.nx-jrr i{display:block;height:5px;background:#EEF1F8;border-radius:3px;margin-top:5px;overflow:hidden}.nx-jrr em{display:block;height:100%;background:#002FA7}
+.nx-jrh{background:#002FA7;color:#fff;padding:16px 18px}.nx-jrh b{display:block;font-size:16px}.nx-jrh small{opacity:.85;font-size:12.5px}
+.nx-jst{list-style:none;margin:0;padding:14px 18px 6px}.nx-jst li{display:grid;grid-template-columns:22px 1fr auto;gap:10px;align-items:start;padding:0 0 14px;position:relative}
+.nx-jst li:not(:last-child)::after{content:"";position:absolute;left:10px;top:22px;bottom:2px;width:2px;background:#E3E8F3}.nx-jst li.d:not(:last-child)::after{background:#12B76A}
+.nx-jst i{width:22px;height:22px;border-radius:50%;border:2px solid #C9D5F2;background:#fff;box-sizing:border-box}.nx-jst li.d i{background:#12B76A;border-color:#12B76A;box-shadow:inset 0 0 0 4px #12B76A}.nx-jst li.n i{border-color:#002FA7;box-shadow:inset 0 0 0 5px #fff;background:#002FA7}
+.nx-jst b{display:block;font-size:13.5px}.nx-jst small{color:#5C6784;font-size:12px}.nx-jst em{font-style:normal;font-size:11px;font-weight:700;color:#067647;background:#DCFAE6;border-radius:99px;padding:3px 8px}.nx-jst em.pdf{color:#B42318;background:#FEE4E2}
+.nx-jedit{display:flex;gap:8px;align-items:center;margin:0 18px 18px;padding:10px 12px;border:1.5px dashed #C9D5F2;border-radius:12px;font-size:12.5px;color:#002FA7;font-weight:600}
+@media (max-width:1060px){.nx-jw{grid-template-columns:1fr}}
+@media (max-width:620px){.nx-jr{grid-template-columns:1fr 44px}.nx-jrr{display:none}.nx-jk{gap:14px}}
+/* workers v2 + automation */
+.nx-wkbar{margin-top:30px;background:linear-gradient(120deg,#002FA7,#1D4ED8);color:#fff;border-radius:20px;padding:16px 20px;display:flex;flex-wrap:wrap;gap:16px 28px;align-items:center;justify-content:space-between}
+.nx-wkrun{display:flex;gap:8px;align-items:center;font-size:14px;background:rgba(255,255,255,.12);border-radius:99px;padding:7px 14px}.nx-wkrun i{width:9px;height:9px;border-radius:50%;background:#32D583;box-shadow:0 0 0 4px rgba(50,213,131,.25)}.nx-wkrun span{opacity:.8}
+.nx-wkstat{display:flex;gap:26px;flex-wrap:wrap}.nx-wkstat b{display:block;font-size:24px;font-weight:800}.nx-wkstat small{font-size:12px;opacity:.85}
+.nx-wkbtn{display:flex;gap:8px}.nx-wkbtn span{font-size:13px;font-weight:700;border:1.5px solid rgba(255,255,255,.5);border-radius:99px;padding:7px 14px}.nx-wkbtn span.o{background:#fff;color:#002FA7;border-color:#fff}
+.nx-workers .nx-wks{margin-top:16px}
+.nx-wkh{position:relative}.nx-wkh .nx-sw,.nx-wkh .nx-wkalw{margin-left:auto}
+.nx-wkalw{font-size:11.5px;font-weight:700;color:#6941C6;background:#F4F0FF;border-radius:99px;padding:4px 9px;white-space:nowrap}
+.nx-sw{display:inline-block;flex:none;width:44px;height:26px;border-radius:99px;background:#002FA7;position:relative;transition:background .2s}.nx-sw i{position:absolute;right:3px;top:3px;width:20px;height:20px;border-radius:50%;background:#fff;transition:right .2s}
+.nx-sw.off{background:#D0D5DD}.nx-sw.off i{right:21px}
+.nx-wkm{display:flex;flex-wrap:wrap;gap:6px}.nx-wkm span{font-size:12px;font-weight:700;background:#EEF3FF;color:#002FA7;border-radius:99px;padding:4px 10px}.nx-wkm span.v{background:#DCFAE6;color:#067647}.nx-wkm span.o{background:#FEF0C7;color:#B54708}
+.nx-wkshow{margin-top:12px;font-size:13px;font-weight:700;color:#002FA7}
+.nx-wkx{margin-top:16px;display:grid;grid-template-columns:1fr 1.4fr;gap:16px;color:#0F1A3D}
+.nx-iris,.nx-log{min-width:0;background:#fff;border:1px solid #E3E8F3;border-radius:20px;padding:18px;box-shadow:0 16px 40px rgba(12,24,74,.07)}
+.nx-irh{display:flex;gap:10px;align-items:center;margin-bottom:12px}.nx-irh b{display:block}.nx-irh small{color:#5C6784;font-size:12.5px}.nx-irh em{margin-left:auto;font-style:normal;font-size:11.5px;font-weight:700;color:#067647;background:#DCFAE6;border-radius:99px;padding:3px 9px}
+.nx-irm{font-size:13.5px;line-height:1.5;border-radius:14px;padding:10px 13px;margin-bottom:8px;max-width:90%}.nx-irm.u{background:#002FA7;color:#fff;margin-left:auto}.nx-irm.a{background:#F4F0FF;border:1px solid #E4DBFF}
+.nx-irq{display:flex;flex-wrap:wrap;gap:6px;margin:4px 0 10px}.nx-irq span{font-size:12.5px;font-weight:700;border:1.5px solid #C9BBFF;color:#6941C6;border-radius:99px;padding:6px 12px}
+.nx-irf{font-size:12.5px;color:#5C6784}
+.nx-logh{margin-bottom:6px}.nx-logh b{display:block}.nx-logh small{color:#5C6784;font-size:12.5px}
+.nx-lg{display:grid;grid-template-columns:30px 1fr auto auto;gap:10px;align-items:center;padding:10px 0;border-top:1px solid #EEF1F8}.nx-lg .nx-av{width:30px;height:30px;border-radius:9px;font-size:13px}.nx-lg p{margin:0;font-size:13px;line-height:1.45}
+.nx-lg em{font-style:normal;font-size:12px;font-weight:700;color:#067647;background:#DCFAE6;border-radius:99px;padding:3px 9px;white-space:nowrap}.nx-lg em.n{color:#002FA7;background:#EEF3FF}.nx-lg time{font-size:12px;color:#8A93AD;white-space:nowrap}
+.nx-lgf{display:flex;gap:16px;padding-top:10px;border-top:1px solid #EEF1F8;font-size:13px;font-weight:700;color:#002FA7}
+.nx-acw{margin-top:32px;display:grid;grid-template-columns:1.3fr 1fr;gap:16px;color:#0F1A3D}
+.nx-acc{min-width:0;background:#fff;border:1px solid #E3E8F3;border-radius:22px;box-shadow:0 24px 60px rgba(12,24,74,.08);overflow:hidden}
+.nx-ach{padding:16px 18px;border-bottom:1px solid #EEF1F8;display:flex;flex-wrap:wrap;gap:10px;justify-content:space-between;align-items:center}.nx-ach>b{font-size:16px}
+.nx-ack{display:flex;gap:6px;flex-wrap:wrap}.nx-ack span{font-size:12px;background:#F2F4F7;border-radius:99px;padding:4px 10px;color:#344054}.nx-ack span.g{background:#DCFAE6;color:#067647}.nx-ack span.r{background:#FEE4E2;color:#B42318}
+.nx-atbl{width:100%;border-collapse:collapse;font-size:13px}.nx-atbl th{text-align:left;font-size:12px;font-weight:600;color:#5C6784;padding:10px 18px;background:#F7F9FF}.nx-atbl td{padding:11px 18px;border-top:1px solid #EEF1F8}.nx-atbl tr:hover td{background:#F7F9FF}.nx-atbl td b{display:block}.nx-atbl td small{color:#8A93AD;font-size:11.5px}.nx-atbl td.r{color:#B42318;font-weight:600}
+.nx-atbl em{font-style:normal;font-size:11.5px;font-weight:700;border-radius:99px;padding:3px 9px;background:#F2F4F7;color:#475467}.nx-atbl em.g{background:#DCFAE6;color:#067647}.nx-atbl em.r{background:#FEE4E2;color:#B42318}
+.nx-tcp{padding:6px 18px 16px}.nx-tcpb{display:flex;gap:8px;padding:8px 0}.nx-tcpb span{font-size:12.5px;font-weight:700;border:1.5px solid #C9D5F2;border-radius:99px;padding:6px 12px;color:#002FA7}
+.nx-tr{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:11px 0;border-top:1px solid #EEF1F8}.nx-tr b{display:block;font-size:14px}.nx-tr small{color:#5C6784;font-size:12.5px}
+.nx-tcpn{font-size:12.5px;color:#5C6784;margin:10px 0 0}
+@media (max-width:1000px){.nx-wkx,.nx-acw{grid-template-columns:1fr}}
+@media (max-width:620px){.nx-lg{grid-template-columns:30px 1fr}.nx-lg em,.nx-lg time{grid-column:2;justify-self:start}.nx-acc{overflow-x:auto}.nx-atbl{min-width:480px}}
+.nx-kurl{display:flex;gap:6px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.18);border-radius:12px;padding:5px;margin-bottom:10px}.nx-kurlin{flex:1;font-size:13px;color:#fff;padding:7px 10px;opacity:.9}.nx-kurlb{background:#fff;color:#002FA7;font-weight:700;font-size:12.5px;border-radius:9px;padding:7px 12px;white-space:nowrap}
+.nx-kswat{display:flex;gap:6px;align-items:center;margin-bottom:14px;flex-wrap:wrap}.nx-kswat i{width:22px;height:22px;border-radius:7px;border:1px solid rgba(255,255,255,.3)}.nx-kswat span{font-size:12px;color:rgba(255,255,255,.8);margin-left:4px}
+.nx-ksoc{display:flex;gap:8px;justify-content:center;margin-top:14px}.nx-ksoc span{width:28px;height:28px;border-radius:50%;display:grid;place-items:center;font-size:12px;font-weight:800;background:rgba(200,162,122,.18);color:#C8A27A;border:1px solid rgba(200,162,122,.45)}
+.nx-ksocl{display:block;text-align:center;font-size:11.5px;color:rgba(255,255,255,.6);margin-top:6px}
+/* team emails */
+.nx-tew{margin-top:32px;display:grid;grid-template-columns:.9fr 1.2fr;gap:18px;color:#0F1A3D;align-items:start}
+.nx-tel,.nx-tep{min-width:0;background:#fff;border:1px solid #E3E8F3;border-radius:22px;box-shadow:0 24px 60px rgba(12,24,74,.08);overflow:hidden}
+.nx-telh{padding:14px 18px;background:#F7F9FF;border-bottom:1px solid #EEF1F8}.nx-telh b{display:block}.nx-telh small{color:#5C6784;font-size:12.5px}
+.nx-ter{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:10px 18px;border-top:1px solid #EEF1F8}.nx-ter:first-of-type{border-top:0}.nx-ter.on{background:#EEF3FF;box-shadow:inset 3px 0 0 #002FA7}
+.nx-ter b{display:block;font-size:14px}.nx-ter small{color:#5C6784;font-size:12px}.nx-ter em{font-style:normal;font-size:11.5px;font-weight:700;color:#067647;background:#DCFAE6;border-radius:99px;padding:4px 9px;white-space:nowrap}
+.nx-teph{display:flex;justify-content:space-between;align-items:center;padding:12px 18px;border-bottom:1px solid #EEF1F8;font-weight:700}.nx-teph div{display:flex;gap:4px}.nx-teph i{font-style:normal;font-size:12px;border:1px solid #E3E8F3;border-radius:99px;padding:4px 10px;font-weight:600}.nx-teph i.on{background:#0F1A3D;color:#fff;border-color:#0F1A3D}
+.nx-tem{margin:16px;border:1px solid #E3E8F3;border-radius:14px;padding:18px 20px;border-top:4px solid #0E7090}
+.nx-tesub{display:block;color:#8A93AD;font-size:12px;margin-bottom:12px}.nx-tebrand{display:flex;gap:8px;align-items:center;font-weight:800;padding-bottom:12px;border-bottom:2px solid #0E7090}.nx-tebrand span{width:22px;height:22px;border-radius:6px;background:linear-gradient(135deg,#0E7090,#12B76A)}
+.nx-tetag{margin-top:14px;font-size:11.5px;font-weight:700;color:#0E7090}.nx-tem h4{margin:4px 0 6px;font-size:22px}.nx-tem p{margin:0 0 12px;font-size:13.5px;line-height:1.5;color:#344054}
+.nx-tesc{display:flex;gap:12px;align-items:center}.nx-tesc>b{width:42px;height:42px;border-radius:10px;background:#FEE4E2;color:#D92D20;display:grid;place-items:center;font-size:20px}.nx-tesc strong{display:block;font-size:13.5px}.nx-tesc small{color:#5C6784;font-size:12px}
+.nx-tem blockquote{margin:12px 0;padding:10px 14px;border-left:3px solid #0E7090;background:#F5F7FC;font-style:italic;font-size:13.5px}
+.nx-tekv{display:grid;grid-template-columns:90px 1fr;gap:6px 10px;font-size:13px}.nx-tekv span{color:#5C6784}
+.nx-tebtn{display:flex;gap:8px;margin-top:14px;flex-wrap:wrap}.nx-tebtn span{background:#0E7090;color:#fff;border-radius:8px;padding:9px 14px;font-weight:700;font-size:13px}.nx-tebtn span.o{background:#fff;color:#0E7090;border:1.5px solid #0E7090}
+.nx-tefoot{display:flex;justify-content:flex-end;gap:8px;padding:0 16px 16px}.nx-tefoot span{font-size:13px;font-weight:700;border:1.5px solid #C9D5F2;border-radius:99px;padding:7px 14px;color:#002FA7}.nx-tefoot span.o{background:#002FA7;color:#fff;border-color:#002FA7}
+@media (max-width:1000px){.nx-tew{grid-template-columns:1fr}}
+/* email library */
+.nx-elw{margin-top:30px;background:#fff;border:1px solid #E3E8F3;border-radius:22px;padding:18px;box-shadow:0 24px 60px rgba(12,24,74,.08);color:#0F1A3D}
+.nx-els{display:flex;gap:10px;align-items:center;border:1.5px solid #C9D5F2;border-radius:14px;padding:12px 14px;color:#8A93AD;font-size:14.5px}.nx-els span{color:#002FA7;display:flex}
+.nx-elt{display:flex;flex-wrap:wrap;gap:6px;margin:12px 0 14px}.nx-elt span{font-size:12.5px;border:1px solid #E3E8F3;border-radius:99px;padding:5px 11px;color:#344054}
+.nx-elg{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}
+.nx-elc{border:1px solid #E3E8F3;border-radius:14px;padding:14px;background:#F9FAFD;transition:border-color .2s,background .2s}.nx-elc:hover{border-color:#002FA7;background:#EEF3FF}
+.nx-elc span{font-size:11px;font-weight:700;color:#002FA7;background:#EEF3FF;border-radius:6px;padding:2px 7px}.nx-elc b{display:block;margin:8px 0 3px;font-size:14px}.nx-elc small{color:#5C6784;font-size:12.5px}
+@media (max-width:900px){.nx-elg{grid-template-columns:1fr 1fr}}@media (max-width:480px){.nx-elg{grid-template-columns:1fr}}
+/* import */
+.nx-imw{margin-top:30px;background:#fff;border:1px solid #E3E8F3;border-radius:24px;box-shadow:0 24px 60px rgba(12,24,74,.08);overflow:hidden;color:#0F1A3D}
+.nx-imst{list-style:none;margin:0;padding:14px 20px;display:flex;flex-wrap:wrap;gap:8px 22px;background:#F7F9FF;border-bottom:1px solid #EEF1F8}.nx-imst li{display:flex;gap:8px;align-items:center;font-size:13.5px;font-weight:600;color:#8A93AD}
+.nx-imst i{font-style:normal;width:24px;height:24px;border-radius:50%;display:grid;place-items:center;font-size:12px;border:1.5px solid #C9D5F2}.nx-imst li.d{color:#0F1A3D}.nx-imst li.d i{background:#12B76A;border-color:#12B76A;color:#fff}.nx-imst li.n{color:#002FA7}.nx-imst li.n i{background:#002FA7;border-color:#002FA7;color:#fff}
+.nx-imb{display:grid;grid-template-columns:1fr 1.2fr}.nx-ims,.nx-imm{padding:20px;min-width:0}.nx-ims{border-right:1px solid #EEF1F8}.nx-ims>b,.nx-imm>b{display:block;font-size:15px}.nx-imm>small{color:#5C6784;font-size:12.5px}
+.nx-imt{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:12px 0}.nx-imt span{border:1.5px solid #E3E8F3;border-radius:12px;padding:12px;font-weight:700;font-size:13.5px;text-align:center}.nx-imt span.on{border-color:#002FA7;background:#EEF3FF;color:#002FA7}
+.nx-imf{display:flex;gap:10px;align-items:center;border:1.5px dashed #C9D5F2;border-radius:12px;padding:12px}.nx-imf>span{color:#002FA7;display:flex}.nx-imf b{display:block;font-size:13.5px}.nx-imf small{color:#5C6784;font-size:12px}.nx-imf em{margin-left:auto;font-style:normal;font-size:11.5px;font-weight:700;color:#067647;background:#DCFAE6;border-radius:99px;padding:3px 9px}
+.nx-imr{display:grid;grid-template-columns:1fr 18px 1.2fr auto;gap:8px;align-items:center;padding:10px 0;border-top:1px solid #EEF1F8;font-size:13px}.nx-imr:first-of-type{margin-top:10px}.nx-imr span{color:#344054}.nx-imr i{font-style:normal;color:#8A93AD}.nx-imr em{font-style:normal;font-size:11.5px;font-weight:700;border-radius:99px;padding:3px 9px}.nx-imr em.g{background:#DCFAE6;color:#067647}.nx-imr em.a{background:#FEF0C7;color:#B54708}
+.nx-imok{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px}.nx-imok span{font-size:12px;font-weight:600;background:#F2F4F7;border-radius:99px;padding:4px 10px}
+.nx-imbtn{display:flex;justify-content:flex-end;gap:8px;margin-top:14px}.nx-imbtn span{background:#002FA7;color:#fff;border-radius:99px;padding:8px 16px;font-weight:700;font-size:13px}.nx-imbtn span.o{background:#fff;color:#002FA7;border:1.5px solid #C9D5F2}
+@media (max-width:860px){.nx-imb{grid-template-columns:1fr}.nx-ims{border-right:0;border-bottom:1px solid #EEF1F8}}
+@media (max-width:480px){.nx-imr{grid-template-columns:1fr auto}.nx-imr i{display:none}.nx-imr b{grid-column:1}}
+/* suites */
+.nx-stg{margin-top:30px;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;color:#0F1A3D}
+.nx-ste{border:1px solid #E3E8F3;border-radius:20px;padding:20px;background:#fff;transition:border-color .2s,box-shadow .2s}.nx-ste:hover{border-color:#002FA7;box-shadow:0 18px 40px rgba(0,47,167,.12)}
+.nx-ste>span{width:42px;height:42px;border-radius:12px;background:#002FA7;color:#fff;display:grid;place-items:center}.nx-ste b{display:block;font-size:18px;margin:14px 0 6px}.nx-ste p{margin:0 0 12px;font-size:14px;line-height:1.5;color:#475467}
+.nx-ste ul{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:6px}.nx-ste li{font-size:12px;font-weight:600;color:#002FA7;background:#EEF3FF;border-radius:99px;padding:4px 10px}
+.nx-agent{margin-top:16px;border-radius:22px;padding:26px 28px;background:radial-gradient(120% 140% at 0% 0%,#1D4ED8 0%,#002FA7 45%,#071A5C 100%);color:#fff;display:grid;grid-template-columns:1.3fr 1fr;gap:24px;align-items:center}
+.nx-agent>div>b{font-size:22px}.nx-agent p{margin:8px 0 0;font-size:15px;line-height:1.55;opacity:.9}
+.nx-agk{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}.nx-agk div{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.18);border-radius:14px;padding:14px}.nx-agk b{display:block;font-size:24px}.nx-agk small{font-size:12px;opacity:.85}
+@media (max-width:900px){.nx-stg{grid-template-columns:1fr 1fr}.nx-agent{grid-template-columns:1fr}}@media (max-width:560px){.nx-stg,.nx-agk{grid-template-columns:1fr}}
 /* 2026-11 homepage: Apple clarity + Salesforce team demo */
 .nx-hero{background:#002FA7;color:#fff;text-align:center;padding:88px 0 0;overflow:hidden}
 .nx-kick{margin:0;font-size:19px;font-weight:600;color:#C9D5F2}
@@ -1078,7 +1178,15 @@ V.home = () => `
 </div></section>
 <section class="proof" aria-label="At a glance"><div class="wrap"><div><b>5.0</b> on AppExchange · 7 reviews</div><div><b>131</b> survey templates</div><div><b>67</b> question types</div><div><b>10</b> industry blueprints</div><div><b>0</b> integrations to maintain</div></div></section>
 <section class="band tint" style="padding-block:6px"><div class="wrap">${trustBar()}</div></section>
-<section class="band nx-flow"><div class="wrap">
+<section class="band nx-suites"><div class="wrap">
+ <div class="eyebrow">One platform</div><h2 class="h2">Six suites. One platform. One price per org, per year.</h2>
+ <p class="sub">Brand Kit, Marketing, Service, Sales, Customer Journey and CX Intelligence, all native to Salesforce and all included. No add-ons, no per-seat surprises.</p>
+ <div class="nx-stg"><div class="nx-ste"><span>${ic("brief",20)}</span><b>Brand Kit</b><p>Your logo, colours, fonts and social links on every survey, email, form and thank-you page.</p><ul><li>Brand Kit from your website</li><li>Theme Studio</li><li>Multi-brand</li></ul></div><div class="nx-ste"><span>${ic("mail",20)}</span><b>Marketing</b><p>Win advocates and referrals from the customers who already love you.</p><ul><li>97 ready-made emails</li><li>Review and referral asks</li><li>Event feedback</li></ul></div><div class="nx-ste"><span>${ic("users",20)}</span><b>Service</b><p>Triage, first reply and solve, then close the loop on every unhappy answer.</p><ul><li>Service Desk</li><li>Close the Loop</li><li>Feedback Inbox</li></ul></div><div class="nx-ste"><span>${ic("chart",20)}</span><b>Sales</b><p>Protect revenue at risk and grow the revenue that is happy.</p><ul><li>Revenue CX</li><li>Win and loss surveys</li><li>Deal feedback</li></ul></div><div class="nx-ste"><span>${ic("route",20)}</span><b>Customer Journey</b><p>18 ready-made journeys from first purchase to renewal and advocacy.</p><ul><li>Journeys</li><li>Approvals and hand-offs</li><li>Programs</li></ul></div><div class="nx-ste"><span>${ic("bolt",20)}</span><b>CX Intelligence</b><p>AI reads every answer and conversation, and shows leaders what to fix first.</p><ul><li>Executive NPS dashboard</li><li>Insights & XM</li><li>9 AI digital workers</li></ul></div></div>
+ <div class="nx-agent"><div><b>Ready for the agentic enterprise.</b><p>People and AI digital workers on one team. Workers do the routine work around the clock, your people handle the moments that need a human, and every action is logged, explained and reversible.</p></div>
+  <div class="nx-agk"><div><b>9</b><small>AI digital workers</small></div><div><b>24/7</b><small>Running every hour</small></div><div><b>100%</b><small>Inside your Salesforce org</small></div></div></div>
+ <div class="nx-tcta">${trial("suites","Start free with all six suites","nx-k")}<a class="nx-tl" href="${LIST}&utm_content=suites_listing">See it on AppExchange</a></div>
+</div></section>
+<section class="band tint nx-flow"><div class="wrap">
  <div class="eyebrow">The first 60 seconds</div><h2 class="h2">One low score. Four things happen at once.</h2>
  <p class="sub">No one has to notice the score. NPS Survey CX OS acts on it inside Salesforce the moment it arrives.</p>
  <div class="nx-fl">
@@ -1093,7 +1201,7 @@ V.home = () => `
  </div>
  <div class="nx-tcta">${trial("flow_60s","Set up your first loop free","nx-k")}<a class="nx-tl" href="${DEMO}" target="_blank" rel="noopener">See it in a demo ›</a></div>
 </div></section>
-<section class="band tint nx-inbox"><div class="wrap">
+<section class="band nx-inbox"><div class="wrap">
  <div class="eyebrow">Feedback Inbox</div><h2 class="h2">AI sorts every answer. Seven steps win the customer back.</h2>
  <p class="sub">Every survey answer and AI agent conversation lands in one inbox, triaged by AI: churn risk first, then unhappy customers without an owner. Open one and the app walks you through closing the loop, with a reply already drafted for you.</p>
  <div class="nx-ib">
@@ -1107,7 +1215,7 @@ V.home = () => `
  </div>
  <div class="nx-tcta">${trial("inbox","Try the Feedback Inbox free","nx-k")}</div>
 </div></section>
-<section class="band nx-clb"><div class="wrap">
+<section class="band tint nx-clb"><div class="wrap">
  <div class="eyebrow">Close the Loop</div><h2 class="h2">Every unhappy answer becomes a follow-up someone owns.</h2>
  <p class="sub">Low scores open a follow-up automatically, with an owner, a due time and the steps to win the customer back. Move it from open to in progress to closed, and the outreach email to the customer is written, sent and logged right inside the workflow.</p>
  <div class="nx-clw">
@@ -1126,6 +1234,30 @@ V.home = () => `
   </div>
  </div>
  <div class="nx-tcta">${trial("close_loop","Try Close the Loop free","nx-k")}</div>
+</div></section>
+<section class="band nx-jrn"><div class="wrap">
+ <div class="eyebrow">Journeys</div><h2 class="h2">18 ready-made journeys. Switch one on and it runs.</h2>
+ <p class="sub">When something happens and the conditions match, a journey runs its steps: surveys, emails, waits, cases, follow-ups, approvals and alerts. Start from detractor recovery, high-effort rescue, low CSAT follow-up or promoter thank-you and referral, change any step to fit your process, and run due steps on demand whenever you want.</p>
+ <div class="nx-jw">
+  <div class="nx-jl">
+   <div class="nx-jlh"><div class="nx-jk"><div><b>4 of 18</b><small>Switched on</small></div><div><b>10</b><small>Enrolled</small></div><div><b>3</b><small>In progress</small></div><div><b>7</b><small>Finished</small></div></div>
+    <div class="nx-jbtn"><span>Run due steps now</span><span>Templates</span><span class="o">New journey</span></div></div>
+   <div class="nx-jf"><span class="on">All 18</span><span>Survey answers 11</span><span>Cases 2</span><span>Deals 2</span><span>Leads and contacts 2</span><span>Renewals 1</span></div>
+   <div class="nx-jr"><div class="nx-jri"><b>Detractor recovery</b><small>When a survey answer arrives · NPS answer of 6 or less</small><div class="nx-jch"><span>Case (high)</span><span>Alert</span><span>Email: Detractor recovery</span><span>Mark detractor</span></div></div><div class="nx-jrr"><small>7 enrolled</small><i><em style="width:100%"></em></i></div><span class="nx-sw" aria-hidden="true"><i></i></span></div><div class="nx-jr"><div class="nx-jri"><b>High-effort rescue</b><small>When a survey answer arrives · CES answer of 3 or less</small><div class="nx-jch"><span>Case (medium)</span><span>Email: High-effort follow-up</span></div></div><div class="nx-jrr"><small>running</small><i><em style="width:60%"></em></i></div><span class="nx-sw" aria-hidden="true"><i></i></span></div><div class="nx-jr"><div class="nx-jri"><b>Low CSAT follow-up</b><small>When a survey answer arrives · CSAT answer of 2 or less</small><div class="nx-jch"><span>Follow-up</span><span>Email: Low CSAT follow-up</span></div></div><div class="nx-jrr"><small>running</small><i><em style="width:45%"></em></i></div><span class="nx-sw" aria-hidden="true"><i></i></span></div><div class="nx-jr"><div class="nx-jri"><b>Promoter thank-you & referral</b><small>When a survey answer arrives · NPS answer of 9 or 10</small><div class="nx-jch"><span>Mark advocate</span><span>Email: Promoter thank-you</span><span>Wait 7 days</span><span>Email: Referral request</span></div></div><div class="nx-jrr"><small>3 in progress</small><i><em style="width:70%"></em></i></div><span class="nx-sw" aria-hidden="true"><i></i></span></div>
+  </div>
+  <div class="nx-jrun"><div class="nx-jrh"><b>Detractor recovery</b><small>Run for Jordan Lee · NPS 4</small></div>
+   <ol class="nx-jst">
+    <li class="d"><i></i><div><b>Survey answer arrives</b><small>NPS 4 · 90-day survey</small></div></li>
+    <li class="d"><i></i><div><b>Open a high-priority case</b><small>Case 00001042 · owner Dana Brooks</small></div></li>
+    <li class="d"><i></i><div><b>Manager approval</b><small>Credit of $250 approved by Lena Ortiz</small></div><em>Approved</em></li>
+    <li class="d"><i></i><div><b>Secure hand-off</b><small>Record shared with the field team as a PDF, access logged</small></div><em class="pdf">PDF</em></li>
+    <li class="n"><i></i><div><b>Email: Detractor recovery</b><small>Sends today at 2:00 PM</small></div></li>
+    <li><i></i><div><b>Wait 7 days, then re-survey</b><small>Closes the loop when the score improves</small></div></li>
+   </ol>
+   <div class="nx-jedit">${ic("bolt",16)}<span>Add a step: survey, email, wait, case, follow-up, approval, Slack or Teams alert</span></div>
+  </div>
+ </div>
+ <div class="nx-tcta">${trial("journeys","Switch on your first journey free","nx-k")}</div>
 </div></section>
 <section class="band tint nx-desk"><div class="wrap">
  <div class="eyebrow">Service Desk</div><h2 class="h2">Triage, first reply, solved. Faster, in any language.</h2>
@@ -1149,7 +1281,7 @@ V.home = () => `
  <div class="nx-tcta">${trial("service_desk","Try the Service Desk free","nx-k")}</div>
 </div></section>
 
-<section class="band tint nx-cmd"><div class="wrap nx-split">
+<section class="band nx-cmd"><div class="wrap nx-split">
  <div><div class="eyebrow">CX Command Center</div><h2 class="h2">Every experience in one view.</h2>
  <p class="sub">Customer, Service, Sales, Marketing and Employee experience side by side, with the one number that matters for each, and the follow-ups, revenue at risk and sentiment behind it. Each person sees their own home, menu and day.</p>
  <div class="nx-tcta">${trial("command_center","Open your Command Center free","nx-k")}</div></div>
@@ -1227,11 +1359,51 @@ ${editionBand("home")}
  <div class="nx-tcta">${trial("nps_dashboard","See the NPS dashboard free","nx-k")}</div>
 </div></section>
 <section class="band nx-workers"><div class="wrap">
- <div class="eyebrow">AI digital workers</div><h2 class="h2">Nine AI workers that never miss a customer.</h2>
- <p class="sub">They run every hour inside your Salesforce org, follow your policies, show what each action was worth, and every action can be undone.</p>
- <div class="nx-wks nine"><div class="nx-wk"><div class="nx-wkh"><span class="nx-av" style="background:#002FA7">A</span><div><b>Aria</b><small>Survey Dispatcher</small></div></div><p>Sends the right survey to the right customer at the right moment.</p><div class="nx-wkact"><i style="background:#079455"></i>On · runs every hour</div></div><div class="nx-wk"><div class="nx-wkh"><span class="nx-av" style="background:#D92D20">N</span><div><b>Nova</b><small>Loop Closure Worker</small></div></div><p>Turns every unhappy customer into an owned case before anyone opens a dashboard.</p><div class="nx-wkact"><i style="background:#079455"></i>On · runs every hour</div></div><div class="nx-wk"><div class="nx-wkh"><span class="nx-av" style="background:#6941C6">I</span><div><b>Iris</b><small>AI CX Agent</small></div></div><p>Answers customers instantly and hands off to a person with full context.</p><div class="nx-wkact"><i style="background:#079455"></i>On · runs every hour</div></div><div class="nx-wk"><div class="nx-wkh"><span class="nx-av" style="background:#0E7090">E</span><div><b>Echo</b><small>Email Sequencer</small></div></div><p>Runs multi-step emails: recovery, nurture, onboarding and advocacy.</p><div class="nx-wkact"><i style="background:#079455"></i>On · runs every hour</div></div><div class="nx-wk"><div class="nx-wkh"><span class="nx-av" style="background:#5C6784">S</span><div><b>Scout</b><small>Non-Response Tracker</small></div></div><p>Notices who has not answered and sends one polite reminder.</p><div class="nx-wkact"><i style="background:#079455"></i>On · runs every hour</div></div><div class="nx-wk"><div class="nx-wkh"><span class="nx-av" style="background:#002FA7">S</span><div><b>Sage</b><small>CX Digest Builder</small></div></div><p>Every Monday, briefs leaders in plain English, by email and in Slack or Teams.</p><div class="nx-wkact"><i style="background:#079455"></i>On · runs every hour</div></div><div class="nx-wk"><div class="nx-wkh"><span class="nx-av" style="background:#D92D20">A</span><div><b>Atlas</b><small>Revenue Guardian</small></div></div><p>Watches every account and opens a save play the moment it turns at risk.</p><div class="nx-wkact"><i style="background:#079455"></i>On · runs every hour</div></div><div class="nx-wk"><div class="nx-wkh"><span class="nx-av" style="background:#DC6803">L</span><div><b>Lumen</b><small>Silent Account Finder</small></div></div><p>Finds revenue you have not heard from and surveys the right people.</p><div class="nx-wkact"><i style="background:#079455"></i>On · runs every hour</div></div><div class="nx-wk"><div class="nx-wkh"><span class="nx-av" style="background:#079455">V</span><div><b>Vega</b><small>Promoter Activator</small></div></div><p>Turns happy accounts into expansion, referrals and advocates.</p><div class="nx-wkact"><i style="background:#079455"></i>On · runs every hour</div></div></div>
+ <div class="eyebrow">AI digital workers</div><h2 class="h2">Nine AI workers, on around the clock.</h2>
+ <p class="sub">Aria, Nova, Iris, Echo, Scout, Sage, Atlas, Lumen and Vega run every hour inside your Salesforce org and follow your policies. Switch any worker on or off with one click. Each one shows what it did in the last 30 days, what that was worth, and every action can be undone.</p>
+ <div class="nx-wkbar"><div class="nx-wkrun"><i></i><b>Running every hour</b><span>next run 2:07 PM</span></div>
+  <div class="nx-wkstat"><div><b>724</b><small>Actions, 30 days</small></div><div><b>$3.8M</b><small>Revenue flagged, saved, expanded or reached</small></div><div><b>69 h</b><small>Work saved</small></div></div>
+  <div class="nx-wkbtn"><span>Stop hourly schedule</span><span class="o">Run now</span></div></div>
+ <div class="nx-wks nine"><div class="nx-wk"><div class="nx-wkh"><span class="nx-av" style="background:#002FA7">A</span><div><b>Aria</b><small>Survey Dispatcher</small></div><span class="nx-sw" role="img" aria-label="On"><i></i></span></div><p>Sends the right survey to the right customer at the right moment.</p><div class="nx-wkm"><span>178 actions</span></div><span class="nx-wkshow">Show what it did</span></div><div class="nx-wk"><div class="nx-wkh"><span class="nx-av" style="background:#D92D20">N</span><div><b>Nova</b><small>Loop Closure Worker</small></div><span class="nx-sw" role="img" aria-label="On"><i></i></span></div><p>Turns every unhappy customer into an owned case before anyone opens a dashboard.</p><div class="nx-wkm"><span>113 actions</span><span class="v">$1.1M</span></div><span class="nx-wkshow">Show what it did</span></div><div class="nx-wk"><div class="nx-wkh"><span class="nx-av" style="background:#6941C6">I</span><div><b>Iris</b><small>AI CX Agent</small></div><span class="nx-wkalw">Always on</span></div><p>Answers customers instantly and hands off to a person with full context.</p><div class="nx-wkm"><span>Live chat, 24/7</span></div><span class="nx-wkshow">Show what it did</span></div><div class="nx-wk"><div class="nx-wkh"><span class="nx-av" style="background:#0E7090">E</span><div><b>Echo</b><small>Email Sequencer</small></div><span class="nx-sw" role="img" aria-label="On"><i></i></span></div><p>Runs multi-step emails: recovery, nurture, onboarding and advocacy.</p><div class="nx-wkm"><span>219 actions</span></div><span class="nx-wkshow">Show what it did</span></div><div class="nx-wk"><div class="nx-wkh"><span class="nx-av" style="background:#5C6784">S</span><div><b>Scout</b><small>Non-Response Tracker</small></div><span class="nx-sw" role="img" aria-label="On"><i></i></span></div><p>Notices who has not answered and sends one polite reminder.</p><div class="nx-wkm"><span>50 actions</span></div><span class="nx-wkshow">Show what it did</span></div><div class="nx-wk"><div class="nx-wkh"><span class="nx-av" style="background:#002FA7">S</span><div><b>Sage</b><small>CX Digest Builder</small></div><span class="nx-sw" role="img" aria-label="On"><i></i></span></div><p>Every Monday, briefs leaders in plain English, by email and in Slack or Teams.</p><div class="nx-wkm"><span>7 actions</span></div><span class="nx-wkshow">Show what it did</span></div><div class="nx-wk"><div class="nx-wkh"><span class="nx-av" style="background:#B42318">A</span><div><b>Atlas</b><small>Revenue Guardian</small></div><span class="nx-sw" role="img" aria-label="On"><i></i></span></div><p>Watches every account's revenue and opens a save play the moment it turns at risk.</p><div class="nx-wkm"><span>15 actions</span><span class="v">$2.2M</span></div><span class="nx-wkshow">Show what it did</span></div><div class="nx-wk"><div class="nx-wkh"><span class="nx-av" style="background:#DC6803">L</span><div><b>Lumen</b><small>Silent Account Finder</small></div><span class="nx-sw off" role="img" aria-label="Paused"><i></i></span></div><p>Finds revenue you have not heard from and gets the right stakeholders talking.</p><div class="nx-wkm"><span>5 actions</span><span class="v">$350K</span><span class="o">Paused</span></div><span class="nx-wkshow">Show what it did</span></div><div class="nx-wk"><div class="nx-wkh"><span class="nx-av" style="background:#079455">V</span><div><b>Vega</b><small>Promoter Activator</small></div><span class="nx-sw" role="img" aria-label="On"><i></i></span></div><p>Turns happy accounts into expansion, referrals and advocates.</p><div class="nx-wkm"><span>136 actions</span><span class="v">$182K</span></div><span class="nx-wkshow">Show what it did</span></div></div>
+ <div class="nx-wkx">
+  <div class="nx-iris"><div class="nx-irh"><span class="nx-av" style="background:#6941C6">I</span><div><b>Talk to Iris</b><small>AI CX agent on your site, portal and email</small></div><em>Online</em></div>
+   <div class="nx-irm u">My invoice shows two charges for October.</div>
+   <div class="nx-irm a">I can see both charges on your account. I have flagged the duplicate for a refund and opened a case with our billing team. Would you like a call back today?</div>
+   <div class="nx-irq"><span>Yes, call me today</span><span>Talk to someone now</span></div>
+   <div class="nx-irf">Hands off to a person with the full conversation, sentiment and account history.</div></div>
+  <div class="nx-log"><div class="nx-logh"><b>What the workers did</b><small>Every action, its reason and its value, in one log</small></div>
+   <div class="nx-lg"><span class="nx-av" style="background:#B42318">A</span><p><b>Atlas</b> opened a save play for Northwind Traders. Reason: NPS fell from 8 to 3 and renewal is in 39 days.</p><em>$480K</em><time>1:25 PM</time></div>
+   <div class="nx-lg"><span class="nx-av" style="background:#D92D20">N</span><p><b>Nova</b> created follow-up CL-0024 for a score of 2 and assigned it to the account owner.</p><em class="n">case</em><time>1:25 PM</time></div>
+   <div class="nx-lg"><span class="nx-av" style="background:#5C6784">S</span><p><b>Scout</b> sent one reminder to 12 people who had not answered the onboarding survey.</p><em class="n">12 sent</em><time>12:25 PM</time></div>
+   <div class="nx-lg"><span class="nx-av" style="background:#079455">V</span><p><b>Vega</b> asked 4 promoters at Litware for a review and flagged an expansion fit.</p><em>$182K</em><time>11:25 AM</time></div>
+   <div class="nx-lgf"><span>Undo any action</span><span>Export the log</span></div></div>
+ </div>
  <div class="nx-tcta">${trial("workers","Put the workers to work, free","nx-k")}</div>
 </div></section>
+<section class="band tint nx-auto2"><div class="wrap">
+ <div class="eyebrow">Automation Command Center</div><h2 class="h2">See every automation. Switch any of it off in one click.</h2>
+ <p class="sub">The Automation Center maps each Salesforce event, like a case closing or a business review held, to the survey it sends, with reminder limits and status at a glance, and flags broken rules before they cost you answers. The Trigger Control Panel turns any automation on or off without a deployment.</p>
+ <div class="nx-acw">
+  <div class="nx-acc"><div class="nx-ach"><b>Automation Center</b><div class="nx-ack"><span><b>7</b> rules</span><span class="g"><b>3</b> active</span><span class="r"><b>1</b> needs a fix</span></div></div>
+   <table class="nx-atbl"><thead><tr><th>When</th><th>Send</th><th>Reminders</th><th>Status</th></tr></thead><tbody>
+    <tr><td><b>Case closed</b><small>Case</small></td><td>Support CSAT survey</td><td>3 days</td><td><em class="g">Active</em></td></tr>
+    <tr><td><b>High-priority case resolved</b><small>Case</small></td><td>Support CSAT survey</td><td>2 days</td><td><em class="g">Active</em></td></tr>
+    <tr><td><b>Business review held</b><small>Event</small></td><td>QBR feedback</td><td>4 days</td><td><em class="g">Active</em></td></tr>
+    <tr><td><b>Onboarding kickoff done</b><small>Event</small></td><td>Onboarding check-in</td><td>7 days</td><td><em>Off</em></td></tr>
+    <tr><td><b>Install complete</b><small>Work order</small></td><td class="r">No survey chosen</td><td>None</td><td><em class="r">Fix it</em></td></tr>
+   </tbody></table></div>
+  <div class="nx-acc"><div class="nx-ach"><b>Trigger Control Panel</b><div class="nx-ack"><span><b>28</b> triggers</span><span class="g"><b>27</b> on</span><span><b>1</b> off</span></div></div>
+   <div class="nx-tcp"><div class="nx-tcpb"><span>Turn all on</span><span>Turn all off</span></div>
+    <div class="nx-tr"><div><b>Survey answers</b><small>Scores, follow-ups and alerts</small></div><span class="nx-sw"><i></i></span></div>
+    <div class="nx-tr"><div><b>Close the loop</b><small>Owners, due times and steps</small></div><span class="nx-sw"><i></i></span></div>
+    <div class="nx-tr"><div><b>Survey delivery</b><small>Email, SMS and WhatsApp sends</small></div><span class="nx-sw"><i></i></span></div>
+    <div class="nx-tr"><div><b>Account health snapshots</b><small>Nightly re-scoring</small></div><span class="nx-sw"><i></i></span></div>
+    <div class="nx-tr"><div><b>Message tracking</b><small>Opens and clicks</small></div><span class="nx-sw off"><i></i></span></div>
+    <p class="nx-tcpn">Switched-off triggers skip all processing right away. No code, no deployment, every change logged.</p></div></div>
+ </div>
+ <div class="nx-tcta">${trial("automation","See the Automation Command Center free","nx-k")}</div>
+</div></section>
+
 <section class="band nx-rev"><div class="wrap">
  <div class="eyebrow">Revenue CX</div><h2 class="h2">Protect the revenue at risk. Grow the revenue that is happy.</h2>
  <p class="sub">Every account gets a health score from NPS weighted by each person's role, churn signals, open follow-ups and sentiment. Revenue CX ranks them by the money at stake and how soon they renew, then gives one clear next step. Turn on Autopilot and AI digital workers take that step for you, inside your policies, and every action can be undone.</p>
@@ -1259,7 +1431,7 @@ ${editionBand("home")}
  </div>
  <div class="nx-tcta">${trial("revenue","See Revenue CX free","nx-k")}</div>
 </div></section>
-<section class="band nx-tpl"><div class="wrap">
+<section class="band tint nx-tpl"><div class="wrap">
  <div class="eyebrow">Survey Studio</div><h2 class="h2">131 templates. 67 question types. Any form you can imagine.</h2>
  <p class="sub">Describe what you want to learn and AI drafts the survey, or start from a ready-made template in 18 categories: NPS, CSAT and CES, but also intake forms, assessments, quizzes, event registration and web pages. Logic, translations, quotas and one-click answers from the email itself.</p>
  <div class="nx-ai-ask"><span class="nx-mini2"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5l2.2 6.3 6.3 2.2-6.3 2.2L12 19.5l-2.2-6.3L3.5 11l6.3-2.2z" fill="currentColor"/></svg></span><span class="nx-askt">Find out why customers leave after onboarding</span><span class="nx-askb">Design survey</span></div>
@@ -1268,18 +1440,42 @@ ${editionBand("home")}
  <p class="nx-imp">Moving over? Bring surveys and answers from SurveyMonkey, Qualtrics, Typeform, Delighted or any spreadsheet, history included.</p>
  <div class="nx-tcta">${trial("templates","Browse the 131 templates free","nx-k")}</div>
 </div></section>
-<section class="band tint nx-kitsec"><div class="wrap nx-split">
+<section class="band nx-kitsec"><div class="wrap nx-split">
  <div class="nx-kitprev" role="img" aria-label="A survey page built from a brand kit: custom fonts, rounded buttons and the brand's colours">
-  <div class="nx-kp-top"><span class="nx-kp-logo">Maison</span><span class="nx-kp-pill">Survey page · Phone</span></div>
-  <div class="nx-kp-card"><b>How was your consultation?</b><div class="nx-kp-stars">★★★★<i>★</i></div><div class="nx-kp-btn">Send</div></div>
-  <div class="nx-kp-opts"><span>Card: Glass</span><span>Buttons: Pill</span><span>Corners: Round</span><span>Fonts: Playfair + Inter</span><span>Dark page</span></div>
+  <div class="nx-kurl"><span class="nx-kurlin">maisonstudio.com</span><span class="nx-kurlb">Build Brand Kit</span></div><div class="nx-kswat"><i style="background:#1B1B1F"></i><i style="background:#C8A27A"></i><i style="background:#F4EFE8"></i><i style="background:#3E5C4E"></i><span>Logo, 4 colours, 2 fonts and 5 social links found</span></div><div class="nx-kp-top"><span class="nx-kp-logo">Maison</span><span class="nx-kp-pill">Survey page · Phone</span></div>
+  <div class="nx-kp-card"><b>How was your consultation?</b><div class="nx-kp-stars">★★★★<i>★</i></div><div class="nx-kp-btn">Send</div><div class="nx-ksoc"><span title="LinkedIn">in</span><span title="Instagram">ig</span><span title="Facebook">f</span><span title="YouTube">▶</span><span title="X">x</span></div><small class="nx-ksocl">Follow us · Leave a review</small></div>
+  <div class="nx-kp-opts"><span>Card: Glass</span><span>Buttons: Pill</span><span>Corners: Round</span><span>Fonts: Playfair + Inter</span><span>Dark page</span><span>Social footer: On</span></div>
  </div>
  <div><div class="eyebrow">Brand Kit · Theme Studio</div><h2 class="h2">Type your website. Get your brand.</h2>
- <p class="sub">Enter your website and NPS Survey CX OS reads your logo, colours, fonts, pictures and social and review links into a Brand Kit. Every survey, email, reminder and thank-you page uses it from then on.</p>
- <ul class="nx-ticks"><li>Several brand kits, one per business unit or client</li><li>Fonts, title style, button shape, corners and spacing</li><li>Card styles: elevated, flat, outline or glass, on light or dark pages</li><li>Live preview of the email and survey page on desktop and phone</li><li>A built-in check warns you when a colour is hard to read</li><li>97 ready-made emails, all wearing your kit</li></ul>
+ <p class="sub">Enter your website and AI reads your logo, colours, fonts, pictures and social and review links into a Brand Kit. Fine-tune it in Theme Studio. Every survey, email, reminder and thank-you page uses it from then on.</p>
+ <ul class="nx-ticks"><li>Several brand kits, one per business unit or client</li><li>Fonts, title style, button shape, corners and spacing</li><li>Card styles: elevated, flat, outline or glass, on light or dark pages</li><li>Live preview of the email and survey page on desktop and phone</li><li>A built-in check warns you when a colour is hard to read</li><li>Your social and review links in every email and every external form</li><li>97 ready-made emails, all wearing your kit</li></ul>
  <div class="nx-tcta">${trial("brand_kit","Build your Brand Kit free","nx-k")}</div></div>
 </div></section>
-<section class="band nx-ty"><div class="wrap">
+<section class="band tint nx-elib"><div class="wrap">
+ <div class="eyebrow">Email library</div><h2 class="h2">97 ready-made emails. Pick one, it is already on brand.</h2>
+ <p class="sub">Surveys, service, onboarding, recovery, advocacy and renewals, written to get answers and wearing your Brand Kit. Search by what you need, personalise with merge fields, and send from a journey, a follow-up or a worker.</p>
+ <div class="nx-elw"><div class="nx-els"><span>${ic("mail",18)}</span>Search 97 emails, for example: renewal, apology, thank you</div><div class="nx-elt"><span>Surveys</span><span>Service</span><span>Onboarding</span><span>Recovery</span><span>Advocacy</span><span>Renewals</span><span>Nurture</span><span>Events</span></div><div class="nx-elg"><div class="nx-elc"><span>NPS</span><b>Relationship NPS</b><small>Quick question from {{company}}</small></div><div class="nx-elc"><span>CSAT</span><b>Transactional CSAT</b><small>How did we do, {{first_name}}?</small></div><div class="nx-elc"><span>Onboarding</span><b>Welcome email</b><small>Welcome to {{company}}, {{first_name}}!</small></div><div class="nx-elc"><span>Support & cases</span><b>Case received</b><small>We've got your request [#{{case_number}}]</small></div><div class="nx-elc"><span>Close the loop</span><b>Detractor recovery</b><small>{{first_name}}, I'd like to make this right</small></div><div class="nx-elc"><span>Renewal & retention</span><b>Renewal, 90 days</b><small>Planning ahead for your renewal</small></div><div class="nx-elc"><span>Advocacy</span><b>Review request</b><small>Would you share your experience?</small></div><div class="nx-elc"><span>Nurture</span><b>Product tips</b><small>3 ways to get more from {{product}}</small></div></div></div>
+ <div class="nx-tcta">${trial("email_library","Browse all 97 emails free","nx-k")}</div>
+</div></section>
+<section class="band nx-team"><div class="wrap">
+ <div class="eyebrow">Team emails</div><h2 class="h2">Control every email your team gets.</h2>
+ <p class="sub">New follow-ups, escalations, callbacks booked, approval decisions, meeting changes, coaching moments and the weekly CX digest. Each alert wears your brand in a quieter look, puts the customer and the next step first, and can be switched on or off by type. Critical alerts stay always on.</p>
+ <div class="nx-tew">
+  <div class="nx-tel"><div class="nx-telh"><b>Team look</b><small>Logo, colours, fonts and footer from your Brand Kit</small></div><div class="nx-ter on"><div><b>New follow-up</b><small>The follow-up owner</small></div><em>Always on</em></div><div class="nx-ter"><div><b>Escalated follow-up</b><small>The owner's manager</small></div><em>Always on</em></div><div class="nx-ter"><div><b>Customer asked for help</b><small>Owner and account owner</small></div><em>Always on</em></div><div class="nx-ter"><div><b>Callback booked</b><small>The person the callback is booked with</small></div><span class="nx-sw"><i></i></span></div><div class="nx-ter"><div><b>Approval decision</b><small>The case owner</small></div><span class="nx-sw"><i></i></span></div><div class="nx-ter"><div><b>Meeting booked</b><small>The account owner</small></div><span class="nx-sw"><i></i></span></div><div class="nx-ter"><div><b>Meeting changed</b><small>The meeting owner</small></div><span class="nx-sw"><i></i></span></div><div class="nx-ter"><div><b>Coaching moment</b><small>The agent and their manager</small></div><span class="nx-sw"><i></i></span></div><div class="nx-ter"><div><b>Weekly CX digest</b><small>Leaders, every Monday</small></div><span class="nx-sw"><i></i></span></div></div>
+  <div class="nx-tep"><div class="nx-teph"><span>Preview</span><div><i class="on">Desktop</i><i>Phone</i></div></div>
+   <div class="nx-tem"><small class="nx-tesub">Subject: New follow-up for you: CL-0020 (High), call Jordan Lee</small>
+    <div class="nx-tebrand"><span></span>Contoso Homes</div>
+    <div class="nx-tetag">New follow-up · High priority</div><h4>Call Jordan Lee</h4>
+    <p>Hi Dana, an unhappy customer needs a call from you. A quick, personal call now is the best chance to win them back.</p>
+    <div class="nx-tesc"><b>4</b><div><strong>NPS 4 of 10</strong><small>Detractor</small></div></div>
+    <blockquote>“The installer arrived three hours late and nobody told us.”</blockquote>
+    <div class="nx-tekv"><span>Customer</span><b>Jordan Lee</b><span>Due</span><b>Today, 5:00 PM</b><span>Account</span><b>$48K · renews in 60 days</b></div>
+    <div class="nx-tebtn"><span>Open the follow-up</span><span class="o">Call now</span></div></div>
+   <div class="nx-tefoot"><span>Send me a test</span><span class="o">Save</span></div></div>
+ </div>
+ <div class="nx-tcta">${trial("team_emails","Set up team emails free","nx-k")}</div>
+</div></section>
+<section class="band tint nx-ty"><div class="wrap">
  <div class="eyebrow">Thank-you pages</div><h2 class="h2">The answer is not the end. It is the next step.</h2>
  <p class="sub">Out of the box, the page after the survey reacts to the score: happy customers are asked for a review, unhappy ones can book a call on the spot, and anyone can get an offer or go straight to your own page.</p>
  <div class="nx-phones">
@@ -1290,7 +1486,7 @@ ${editionBand("home")}
  </div>
  <div class="nx-tcta">${trial("thankyou","Try smart thank-you pages free","nx-k")}</div>
 </div></section>
-<section class="band tint nx-ml"><div class="wrap nx-split">
+<section class="band nx-ml"><div class="wrap nx-split">
  <div><div class="eyebrow">Translations · multi-brand</div><h2 class="h2">Every language. Every brand. One app.</h2>
  <p class="sub">Customers see the survey, emails and thank-you page in their own language, set from their record or detected from what they write. Run a separate look and feel for each brand, business unit or client from one Salesforce org.</p>
  <ul class="nx-ticks"><li>Survey, email and thank-you page translations</li><li>Language picked from the record or detected from the comment</li><li>A Brand Kit per brand, with its own logo, colours, fonts and sender</li><li>One brand set as the default, others picked per survey</li></ul>
@@ -1304,7 +1500,7 @@ ${editionBand("home")}
   <div class="nx-brands"><span style="background:#0B6E4F">Northwind Health</span><span style="background:#1A1712;color:#E9C46A">Maison</span><span style="background:#002FA7">Contoso Homes</span></div>
  </div>
 </div></section>
-<section class="band nx-prog"><div class="wrap nx-split">
+<section class="band tint nx-prog"><div class="wrap nx-split">
  <div><div class="eyebrow">Programs · new</div><h2 class="h2">From single surveys to company-wide programs.</h2>
  <p class="sub">A Program ties many surveys, over many months, to one goal: a better onboarding, a smoother install, more renewals. Results roll up together, so leaders track the goal, not a pile of separate surveys.</p>
  <ul class="nx-ticks"><li>One program, many surveys across the customer's journey</li><li>NPS, CSAT and CES for the whole program, side by side</li><li>Programs for customer, employee and partner experience</li></ul>
@@ -1341,6 +1537,21 @@ ${editionBand("home")}
  ].map(([i,t,d],n)=>`<a class="cap" href="${LIST}&utm_content=cap_${i}" target="_blank" rel="noopener"><div class="g">${({"bolt":`<div class="g-flow"><span class="g-pill">Case closed</span><b>→</b><span class="g-pill g-on">Survey sent</span></div><div class="g-flow"><span class="g-pill">Deal won</span><b>→</b><span class="g-pill g-on">Survey sent</span></div>`,"form":`<div class="g-form"><i></i><div class="g-sc"><span></span><span></span><span></span><span class="g-hit"></span><span></span><span></span><span></span><span></span></div><i class="g-s"></i></div>`,"mail":`<div class="g-ch"><span>${ic("mail",18)}Email</span><span>${ic("qr",18)}QR</span><span>${ic("portal",18)}Web</span></div>`,"grid":`<div class="g-rec"><div class="g-rh"><b>Acme Corp</b><span class="g-nps">NPS +18</span></div><div class="g-line"></div><div class="g-line g-short"></div></div>`,"route":`<div class="g-rt"><div><span class="g-d g-r"></span>0–6<em>P1 case</em></div><div><span class="g-d g-a"></span>7–8<em>Nurture</em></div><div><span class="g-d g-g"></span>9–10<em>Review ask</em></div></div>`,"chart":`<svg class="g-chart" viewBox="0 0 200 70" preserveAspectRatio="none" aria-hidden="true"><path d="M0 58 L30 50 L60 54 L90 38 L120 42 L150 26 L200 14" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><circle cx="200" cy="14" r="5" fill="currentColor"/></svg>`,"lock":`<div class="g-sec"><span class="g-shield">${ic("shield",22)}</span><div><b>Stays in Salesforce</b><small>Permission sets · audit log</small></div></div>`,"brief":`<div class="g-price"><b>1 price</b><span>per org, every user</span></div>`})[i]||""}</div><div class="ibox">${ic(i)}</div><h3>${t}</h3><p>${d}</p><span class="cap-go">See it on AppExchange ›</span></a>`).join("")}</div>
 </div></section>
 
+<section class="band tint nx-imp"><div class="wrap">
+ <div class="eyebrow">Import feedback</div><h2 class="h2">Bring your history with you. Switch in an afternoon.</h2>
+ <p class="sub">Moving from SurveyMonkey, GetFeedback, Qualtrics, Delighted, Typeform or a spreadsheet? A built-in wizard brings years of answers into Salesforce, matches them to your contacts and accounts, and lets AI read every old comment. Your trends start on day one, and you stop paying for a second survey tool.</p>
+ <div class="nx-imw">
+  <ol class="nx-imst"><li class="d"><i>1</i>Pick the source</li><li class="d"><i>2</i>Upload the export</li><li class="n"><i>3</i>Match the fields</li><li><i>4</i>Check and import</li></ol>
+  <div class="nx-imb">
+   <div class="nx-ims"><b>Where is your feedback today?</b><div class="nx-imt"><span class="">SurveyMonkey</span><span class="">GetFeedback</span><span class="on">Qualtrics</span><span class="">Delighted</span><span class="">Typeform</span><span class="">Spreadsheet (CSV or Excel)</span></div>
+    <div class="nx-imf"><span>${ic("doc",18)}</span><div><b>qualtrics-nps-export.csv</b><small>4,812 answers · 2023 to 2026</small></div><em>Uploaded</em></div></div>
+   <div class="nx-imm"><b>Match the fields</b><small>AI suggests every match. You confirm.</small><div class="nx-imr"><span>Respondent email</span><i>→</i><b>Contact · Email</b><em class="g">Matched</em></div><div class="nx-imr"><span>NPS score</span><i>→</i><b>Score (0 to 10)</b><em class="g">Matched</em></div><div class="nx-imr"><span>Comment</span><i>→</i><b>Comment · AI reads it</b><em class="g">Matched</em></div><div class="nx-imr"><span>Submitted at</span><i>→</i><b>Response date</b><em class="g">Matched</em></div><div class="nx-imr"><span>Account name</span><i>→</i><b>Account · matched by name</b><em class="a">Check</em></div>
+    <div class="nx-imok"><span>4,812 answers ready</span><span>4,690 matched to contacts</span><span>122 new contacts</span></div>
+    <div class="nx-imbtn"><span class="o">Back</span><span>Import 4,812 answers</span></div></div>
+  </div>
+ </div>
+ <div class="nx-tcta">${trial("import","Import your feedback free","nx-k")}</div>
+</div></section>
 <section class="band nx-teams"><div class="wrap">
  <div class="eyebrow">Every team, one loop</div><h2 class="h2">See the loop for your team</h2>
  <div class="nx-tabs" role="tablist" aria-label="Choose a team"><button type="button" role="tab" class="nx-tab" id="nxt-service" aria-controls="nxp-service" aria-selected="true" data-team="service">Service</button><button type="button" role="tab" class="nx-tab" id="nxt-sales" aria-controls="nxp-sales" aria-selected="false" data-team="sales">Sales</button><button type="button" role="tab" class="nx-tab" id="nxt-success" aria-controls="nxp-success" aria-selected="false" data-team="success">Customer Success</button><button type="button" role="tab" class="nx-tab" id="nxt-gov" aria-controls="nxp-gov" aria-selected="false" data-team="gov">Government</button></div>
