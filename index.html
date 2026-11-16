@@ -1434,7 +1434,7 @@ function wireLead(root){ root.querySelectorAll(".lform").forEach(f=>{ if(f._w) r
    const g=n=>(f.querySelector(`[name="${n}"]`)?.value||"").trim(), it=(f.querySelector('[name="interest"]:checked')||{}).value||"";
    const q=new URLSearchParams(location.search);
    f.querySelector('[name="description"]').value=[`Interest: ${it}`,`Current tool: ${g("tool")||"n/a"}`,`Message: ${g("msg")||"n/a"}`,`Form: ${f.closest(".leadbox").dataset.ctx} on ${location.pathname}${location.hash}`,`UTM: ${["utm_source","utm_medium","utm_campaign","utm_content"].map(k=>q.get(k)).filter(Boolean).join(" / ")||"none"}`,`Referrer: ${document.referrer||"direct"}`,`Submitted: ${new Date().toISOString()}`].join("\n");
-   try{gtag("event","generate_lead",{form:f.closest(".leadbox").dataset.ctx,interest:it})}catch(_){}
+   try{gtag("event","ads_conversion_Contact_Us_1");gtag("event","generate_lead",{form:f.closest(".leadbox").dataset.ctx,interest:it})}catch(_){}
    setTimeout(()=>{ f.closest(".leadbox").classList.add("sent"); f.closest(".leadbox").scrollIntoView({behavior:"smooth",block:"center"}); },400);
   });
   f.querySelectorAll("[required]").forEach(i=>i.addEventListener("input",()=>i.closest(".lf").classList.remove("bad")));
