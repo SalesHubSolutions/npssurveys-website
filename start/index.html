@@ -79,10 +79,23 @@ details p{color:var(--soft);margin:10px 0 0}
 .final .ctas{justify-content:center}
 footer{padding:28px 0;color:var(--soft);font-size:.86rem;text-align:center}
 footer a{color:var(--blue)}
-.mbar{display:none}
+.mbar{display:none}.swipe{display:none;color:var(--soft);font-size:.85rem;margin:8px 0 0;text-align:center}
 @media (max-width:860px){
  .hero .grid,.shots,.steps,.plans{grid-template-columns:minmax(0,1fr)}
  .hero{padding:36px 0 52px}.top .btn{display:none}
+ .pill{font-size:.78rem;padding:6px 12px}
+ h1{font-size:2rem;margin:14px 0 12px}.lead{font-size:1.05rem;margin-bottom:20px}
+ .ctas .btn{flex:1 1 100%}
+ .hero .grid{gap:28px}
+ section.band{padding:52px 0}
+ .shots{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:12px;margin:0 -20px;padding:4px 20px 14px;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+ .shots::-webkit-scrollbar{display:none}
+ .shots figure{flex:0 0 88%;scroll-snap-align:center}
+ .swipe{display:block!important}
+ .proof .wrap{gap:8px 18px;font-size:.88rem}
+ summary{padding:6px 0;min-height:44px;align-items:center}
+ footer a{display:inline-block;padding:10px 4px}
+ .fine a{display:inline-block;padding:6px 0}
  .mbar{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:30;padding:10px 16px calc(10px + env(safe-area-inset-bottom));background:#fff;border-top:1px solid var(--line)}
  .mbar .btn{flex:1}body{padding-bottom:74px}
 }
@@ -129,6 +142,7 @@ footer a{color:var(--blue)}
   <figure><img loading="lazy" src="/files/appx/nps-cx-os-04.jpg" alt="Customer Experience panel on a Salesforce Account with an AI summary and next best actions" width="1500" height="1000"></figure>
   <figure><img loading="lazy" src="/files/appx/nps-cx-os-05.jpg" alt="Executive NPS dashboard with response rate, delivery and key drivers" width="1500" height="1000"></figure>
  </div>
+ <p class="swipe">Swipe to see more →</p>
 </div></section>
 
 <section class="band tint"><div class="wrap">
@@ -145,9 +159,9 @@ footer a{color:var(--blue)}
  <h2>Simple, fixed pricing</h2>
  <p class="sub">One annual price per Salesforce org, not per user. Every plan starts with a 7-day free trial. Sign by December 31, 2026 and your first year is 20% off.</p>
  <div class="plans">
-  <div class="plan"><h3>CX Lite</h3><div class="price">$3,500</div><div class="per"><b style="color:#002FA7">$2,800 in year one</b> with the year-end offer</div><div class="per">per org, per year</div><ul><li>NPS and CSAT by email and link</li><li>Close the loop on every low score</li><li>Standard dashboards</li><li>3 active surveys</li></ul><a class="btn ghost dark" data-appx="price_lite" href="#">Start free trial</a></div>
-  <div class="plan"><h3>CX Pro</h3><div class="price">$8,500</div><div class="per"><b style="color:#002FA7">$6,800 in year one</b> with the year-end offer</div><div class="per">per org, per year</div><ul><li>Everything in Lite, plus CES, VoC and custom forms</li><li>Review requests and nurture</li><li>Translations, events and QR</li><li>AI comment summaries, 15 surveys</li></ul><a class="btn ghost dark" data-appx="price_pro" href="#">Start free trial</a></div>
-  <div class="plan rec"><span class="tag">Recommended</span><h3>CX OS Insights</h3><div class="price">$16,000</div><div class="per"><b style="color:#002FA7">$12,800 in year one</b> with the year-end offer</div><div class="per">per org, per year</div><ul><li>Everything in Pro, plus Revenue CX</li><li>Account CX panels and Command Center</li><li>AI digital workers and Programs</li><li>Unlimited surveys</li></ul><a class="btn blue" data-appx="price_insights" href="#">Start free trial</a></div>
+  <div class="plan"><h3>CX Lite</h3><div class="price">$3,500</div><div class="per" style="margin-bottom:4px">per org, per year</div><div class="per"><b style="color:#002FA7">$2,800 in year one</b> with the year-end offer</div><ul><li>NPS and CSAT by email and link</li><li>Close the loop on every low score</li><li>Standard dashboards</li><li>3 active surveys</li></ul><a class="btn ghost dark" data-appx="price_lite" href="#">Start free trial</a></div>
+  <div class="plan"><h3>CX Pro</h3><div class="price">$8,500</div><div class="per" style="margin-bottom:4px">per org, per year</div><div class="per"><b style="color:#002FA7">$6,800 in year one</b> with the year-end offer</div><ul><li>Everything in Lite, plus CES, VoC and custom forms</li><li>Review requests and nurture</li><li>Translations, events and QR</li><li>AI comment summaries, 15 surveys</li></ul><a class="btn ghost dark" data-appx="price_pro" href="#">Start free trial</a></div>
+  <div class="plan rec"><span class="tag">Recommended</span><h3>CX OS Insights</h3><div class="price">$16,000</div><div class="per" style="margin-bottom:4px">per org, per year</div><div class="per"><b style="color:#002FA7">$12,800 in year one</b> with the year-end offer</div><ul><li>Everything in Pro, plus Revenue CX</li><li>Account CX panels and Command Center</li><li>AI digital workers and Programs</li><li>Unlimited surveys</li></ul><a class="btn blue" data-appx="price_insights" href="#">Start free trial</a></div>
  </div>
 </div></section>
 
