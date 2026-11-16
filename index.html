@@ -687,6 +687,7 @@ a.cap{display:block;color:inherit;text-decoration:none}
 @keyframes nxin{from{opacity:0;transform:translateX(-14px)}to{opacity:1;transform:none}}
 @media (prefers-reduced-motion:reduce){.nx-out{animation:none}}
 @media (max-width:980px){.nx-fl{grid-template-columns:1fr;justify-items:center}.nx-fin,.nx-outs{width:100%}.nx-hub:before,.nx-hub:after{display:none}.nx-hub{width:160px;height:160px}}
+.eds{align-items:stretch}.ed ul{flex:1;align-content:start}.ed .fine{min-height:44px;margin:0}.ed .acts2{margin-top:6px;align-items:center}.ed .acts2 .btn{min-height:48px}
 /* 2026-11 homepage: Apple clarity + Salesforce team demo */
 .nx-hero{background:#002FA7;color:#fff;text-align:center;padding:88px 0 0;overflow:hidden}
 .nx-kick{margin:0;font-size:19px;font-weight:600;color:#C9D5F2}
@@ -848,7 +849,7 @@ const sfCard = (c, rec=false) => `<div class="ed sf${rec?" rec":""}">${rec?`<spa
  <h3><img src="brand/logo/nps-survey-cx-os-mark.svg" alt="">NPS Survey CX OS</h3>
  <p class="who">A managed package that runs <b>inside your Salesforce org</b>. Surveys send on Salesforce events and every answer lands on the record your team already works from.</p>
  <ul>${["100% Salesforce-native: data never leaves your org","NPS, CSAT and CES with 70+ templates and 10 industry blueprints","Low scores open P1 cases with an owner, inside Service Cloud","CX OS Insights dashboards for leadership","Passes security review as an AppExchange managed package"].map(tick).join("")}</ul>
- <div class="acts2">${trial(c+"_sf", "Free 7-day trial on AppExchange →", "primary")}<a class="btn line" href="#platform">Explore the platform</a></div>
+ <div class="acts2">${trial(c+"_sf", "Start 7-day free trial →", "primary")}<a class="btn line" href="#platform">Explore the platform</a></div>
  <p class="fine">CX Lite $3,500 · CX Pro $8,500 · CX OS Insights from $16,000 per org / year</p></div>`;
 const saCard = (c, rec=false) => `<div class="ed sa${rec?" rec":""}">${rec?`<span class="badge">Recommended for you</span>`:`<span class="badge">Any CRM, or none</span>`}
  <h3><img src="brand/logo/nps-survey-cx-os-mark.svg" alt="">CX360 Standalone</h3>
