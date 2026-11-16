@@ -1,0 +1,6 @@
+<!doctype html><meta charset="utf-8"><title>Sending images</title><body style="font:16px system-ui;padding:24px">Sending listing images to the AppExchange editor…<pre id="o"></pre>
+<script>
+(async()=>{const o=document.getElementById('o');if(!window.opener){o.textContent='No opener window.';return}
+for(let i=1;i<=12;i++){const n='nps-cx-os-'+String(i).padStart(2,'0')+'.jpg';const b=await (await fetch(n)).blob();window.opener.postMessage({appx:1,name:n,blob:b},'https://appexchange.salesforce.com');o.textContent+=n+' sent\n'}
+o.textContent+='Done. You can close this tab.'})();
+</script>
