@@ -1089,6 +1089,24 @@ a.nx-ste{display:block;text-decoration:none;color:inherit}a.nx-ste:focus-visible
 .nx-snav{margin-top:24px;display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px}
 .nx-snav a{display:flex;align-items:center;gap:12px;background:#fff;border:1px solid #E3E8F3;border-radius:16px;padding:16px;text-decoration:none;color:#0F1A3D;transition:border-color .2s,box-shadow .2s}.nx-snav a:hover{border-color:#002FA7;box-shadow:0 12px 28px rgba(0,47,167,.12)}
 .nx-snav span{width:38px;height:38px;border-radius:11px;background:#002FA7;color:#fff;display:grid;place-items:center;flex:none}.nx-snav b{font-size:15px}.nx-snav em{margin-left:auto;font-style:normal;color:#002FA7;font-weight:700}
+/* survey gallery: brand blues for the frame, traffic-light only on rating scales */
+.nx-sv2 .nx-svf{background:linear-gradient(160deg,#F3F6FF,#E6EDFF);color:#0F1A3D}
+.nx-sv2 .chips span{border-color:#B9C9F5;color:#002FA7}.nx-sv2 .chips span.on{background:#002FA7;border-color:#002FA7;color:#fff}
+.nx-sv3 .nx-svf{background:radial-gradient(120% 120% at 100% 0%,#1F4FCC,#002FA7 55%,#001A66)}
+.nx-sv3 .go{color:#002FA7}
+.nx-sv4 .nx-svf{background:#F3F6FF}
+.nx-sv4 .bub.a{border-color:#D6E0FF}.nx-sv4 .bub.u{background:#002FA7}
+.nx-sv4 .qr span{color:#002FA7;border-color:#B9C9F5}
+.nx-sv5 .nx-svf{background:#F3F6FF;color:#0F1A3D}
+.nx-sv5 .rk li{border-color:#D6E0FF}.nx-sv5 .rk li:first-child{border-color:#002FA7;box-shadow:0 10px 20px rgba(0,47,167,.15)}
+.nx-sv5 .rk i{background:#002FA7}.nx-sv5 .rk em{color:#9DB4F2}
+.nx-sv7 .nx-svf{background:linear-gradient(160deg,#002FA7,#001A66)}
+.nx-sv7 .qrc{color:#002FA7}
+/* studio preview: ratings use the usual red, amber, green */
+.pv-stars i.on{color:#F5B400}.pv-stars i{color:#E4E7EC}
+.pv-scale i:nth-child(-n+7){box-shadow:inset 0 -3px 0 #F04438}.pv-scale i:nth-child(n+8):nth-child(-n+9){box-shadow:inset 0 -3px 0 #F79009}.pv-scale i:nth-child(n+10){box-shadow:inset 0 -3px 0 #12B76A}
+.pv-scale i.on{background:#12B76A;border-color:#12B76A;color:#fff}
+.nx-achl{display:flex;align-items:center;gap:12px}.nx-achl>span{width:38px;height:38px;border-radius:11px;background:#002FA7;color:#fff;display:grid;place-items:center;flex:none;box-shadow:0 6px 14px rgba(0,47,167,.25)}.nx-achl b{display:block;font-size:16px}.nx-achl small{color:#5C6784;font-size:12.5px}
 /* 2026-11 homepage: Apple clarity + Salesforce team demo */
 .nx-hero{background:#002FA7;color:#fff;text-align:center;padding:88px 0 0;overflow:hidden}
 .nx-kick{margin:0;font-size:19px;font-weight:600;color:#C9D5F2}
@@ -1404,7 +1422,7 @@ V["journeys"] = () => `${hero("Customer Journey suite", "18 journeys that run th
  <div class="eyebrow">Automation Command Center</div><h2 class="h2">See every automation. Switch any of it off in one click.</h2>
  <p class="sub">The Automation Center maps each Salesforce event, like a case closing or a business review held, to the survey it sends, with reminder limits and status at a glance, and flags broken rules before they cost you answers. The Trigger Control Panel turns any automation on or off without a deployment.</p>
  <div class="nx-acw">
-  <div class="nx-acc"><div class="nx-ach"><b>Automation Center</b><div class="nx-ack"><span><b>7</b> rules</span><span class="g"><b>3</b> active</span><span class="r"><b>1</b> needs a fix</span></div></div>
+  <div class="nx-acc"><div class="nx-ach"><div class="nx-achl"><span>${ic("bolt",18)}</span><div><b>Automation Center</b><small>Event to survey rules</small></div></div><div class="nx-ack"><span><b>7</b> rules</span><span class="g"><b>3</b> active</span><span class="r"><b>1</b> needs a fix</span></div></div>
    <table class="nx-atbl"><thead><tr><th>When</th><th>Send</th><th>Reminders</th><th>Status</th></tr></thead><tbody>
     <tr><td><b>Case closed</b><small>Case</small></td><td>Support CSAT survey</td><td>3 days</td><td><em class="g">Active</em></td></tr>
     <tr><td><b>High-priority case resolved</b><small>Case</small></td><td>Support CSAT survey</td><td>2 days</td><td><em class="g">Active</em></td></tr>
@@ -1412,7 +1430,7 @@ V["journeys"] = () => `${hero("Customer Journey suite", "18 journeys that run th
     <tr><td><b>Onboarding kickoff done</b><small>Event</small></td><td>Onboarding check-in</td><td>7 days</td><td><em>Off</em></td></tr>
     <tr><td><b>Install complete</b><small>Work order</small></td><td class="r">No survey chosen</td><td>None</td><td><em class="r">Fix it</em></td></tr>
    </tbody></table></div>
-  <div class="nx-acc"><div class="nx-ach"><b>Trigger Control Panel</b><div class="nx-ack"><span><b>28</b> triggers</span><span class="g"><b>27</b> on</span><span><b>1</b> off</span></div></div>
+  <div class="nx-acc"><div class="nx-ach"><div class="nx-achl"><span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><rect x="2" y="7" width="20" height="10" rx="5"/><circle cx="16" cy="12" r="3" fill="currentColor"/></svg></span><div><b>Trigger Control Panel</b><small>On or off, no deployment</small></div></div><div class="nx-ack"><span><b>28</b> triggers</span><span class="g"><b>27</b> on</span><span><b>1</b> off</span></div></div>
    <div class="nx-tcp"><div class="nx-tcpb"><span>Turn all on</span><span>Turn all off</span></div>
     <div class="nx-tr"><div><b>Survey answers</b><small>Scores, follow-ups and alerts</small></div><span class="nx-sw"><i></i></span></div>
     <div class="nx-tr"><div><b>Close the loop</b><small>Owners, due times and steps</small></div><span class="nx-sw"><i></i></span></div>
