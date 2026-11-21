@@ -2430,6 +2430,7 @@ V.partners = () => `${hero("", "Partner with SalesHub. <em>Bring native CX</em> 
 // ---------- Lead capture (Salesforce Web-to-Lead) ----------
 const W2L = { oid: "00D6g000001VQio", action: "https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8" };
 const INTERESTS = ["Product demo","GetFeedback migration","Enterprise pricing","Government deployment","Partner program","CX360 Standalone (no Salesforce)"];
+const FREEMAIL=/^(gmail|googlemail|yahoo|ymail|rocketmail|hotmail|outlook|live|msn|aol|icloud|me|mac|proton|protonmail|pm|gmx|mail|yandex|zoho|zohomail|qq|163|126|rediffmail|hey|fastmail|tutanota|tuta|duck|inbox|comcast|att|sbcglobal|verizon|cox|charter|bellsouth|earthlink|optonline|juno|aim|web|libero|mailinator|guerrillamail|10minutemail|tempmail|yopmail|sharklasers)\.[a-z]{2,3}(\.[a-z]{2})?$/i;
 let leadN = 0;
 const leadForm = (ctx="general", preset="Product demo", title="Talk to our team", sub="Tell us a little about you. We reply within one business day.") => { const n=++leadN;
  return `<div class="leadbox" data-ctx="${ctx}"><form class="lform" action="${W2L.action}" method="POST" target="w2l_${n}" novalidate>
@@ -2439,7 +2440,7 @@ const leadForm = (ctx="general", preset="Product demo", title="Talk to our team"
    <div class="lf full"><label>What can we help with?</label><div class="pills">${INTERESTS.map((x,i)=>`<input type="radio" id="i${n}_${i}" name="interest" value="${x}"${x===preset?" checked":""}><label for="i${n}_${i}">${x}</label>`).join("")}</div></div>
    <div class="lf"><label for="fn${n}">First name</label><input id="fn${n}" name="first_name" autocomplete="given-name" required><div class="err">Please add your first name.</div></div>
    <div class="lf"><label for="ln${n}">Last name</label><input id="ln${n}" name="last_name" autocomplete="family-name" required><div class="err">Please add your last name.</div></div>
-   <div class="lf"><label for="em${n}">Work email</label><input id="em${n}" name="email" type="email" autocomplete="email" required><div class="err">Please use a valid work email.</div></div>
+   <div class="lf"><label for="em${n}">Work email</label><input id="em${n}" name="email" type="email" autocomplete="email" required><div class="err">Please use your work email (not Gmail, Yahoo, Outlook or similar).</div></div>
    <div class="lf"><label for="co${n}">Company or agency</label><input id="co${n}" name="company" autocomplete="organization" required><div class="err">Please add your company.</div></div>
    <div class="lf"><label for="ti${n}">Your role</label><select id="ti${n}" name="title"><option value="">Choose one</option><option>CX or Customer Success leader</option><option>Salesforce Admin or Architect</option><option>Service or Support leader</option><option>IT or Business leadership</option><option>Salesforce consulting partner</option><option>Government program or CX office</option><option>Other</option></select></div>
    <div class="lf"><label for="tool${n}">Current survey tool <span style="font-weight:500;color:var(--fg-mute)">(optional)</span></label><select id="tool${n}" name="tool"><option value="">Choose one</option><option>GetFeedback</option><option>Delighted</option><option>Salesforce Feedback Management</option><option>Qualtrics</option><option>Medallia</option><option>SurveyMonkey</option><option>Other</option><option>None yet</option></select></div>
@@ -2451,7 +2452,7 @@ const leadForm = (ctx="general", preset="Product demo", title="Talk to our team"
  <div class="done" role="status"><div class="ok">✓</div><h3>Thanks, we've got it.</h3><p class="lsub">We'll reply within one business day. Want to see it sooner?</p><div class="ctas" style="justify-content:center">${trial("lead_thanks")}<a class="btn line" href="${DEMO}" target="_blank" rel="noopener">Pick a time now</a></div></div></div>`; };
 function wireLead(root){ root.querySelectorAll(".lform").forEach(f=>{ if(f._w) return; f._w=1;
   f.addEventListener("submit",e=>{ let ok=true;
-   f.querySelectorAll("[required]").forEach(i=>{ const bad=!i.value.trim()||(i.type==="email"&&!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(i.value)); i.closest(".lf").classList.toggle("bad",bad); if(bad) ok=false; });
+   f.querySelectorAll("[required]").forEach(i=>{ const bad=!i.value.trim()||(i.type==="email"&&(!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(i.value.trim())||FREEMAIL.test(i.value.trim().split("@").pop()))); i.closest(".lf").classList.toggle("bad",bad); if(bad) ok=false; });
    if(!ok){ e.preventDefault(); f.querySelector(".bad input")?.focus(); return; }
    const g=n=>(f.querySelector(`[name="${n}"]`)?.value||"").trim(), it=(f.querySelector('[name="interest"]:checked')||{}).value||"";
    const q=new URLSearchParams(location.search);
