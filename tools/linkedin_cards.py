@@ -1,6 +1,7 @@
 """LinkedIn cards in the Klein Blue brand (flat #002FA7, Loop mark, white card), 1080x1350 rendered at 2x = 2160x2700.
 Examples: social/2026-11/li-*.png. Edit CARDS (kicker, headline, card HTML, card top, footer url, note) and run: python3 tools/linkedin_cards.py
-Output PNGs land in the current folder; move them to social/YYYY-MM/li-<name>.png."""
+Output PNGs land in the current folder; move them to social/YYYY-MM/li-<name>.png.
+Accent test: a CARDS key ending in -y renders the URL pill (the CTA) and one <em> headline word in Signal Yellow #FFD60A. Nothing else is ever yellow."""
 import asyncio, sys
 from playwright.async_api import async_playwright
 LOOP = '<svg viewBox="0 0 100 100" width="64" height="64"><path d="M31.07 77.03 A33 33 0 1 1 68.93 77.03" fill="none" stroke="#fff" stroke-width="14" stroke-linecap="round"/><circle cx="50" cy="83" r="7.5" fill="#fff"/></svg>'
@@ -13,7 +14,7 @@ body{width:1080px;height:1350px;background:#002FA7;color:#fff;font-family:Inter,
 h1{position:absolute;left:84px;right:84px;top:282px;font-size:72px;line-height:1.04;font-weight:700;letter-spacing:-.025em}
 .card{position:absolute;left:84px;right:84px;background:#fff;color:#0f1a3d;border-radius:28px;box-shadow:0 30px 80px rgba(0,10,50,.35);padding:40px 44px}
 .foot{position:absolute;left:84px;right:84px;bottom:76px;display:flex;align-items:center;justify-content:space-between;gap:24px}
-.pill{background:#fff;color:#002FA7;font-size:30px;font-weight:700;padding:20px 34px;border-radius:999px;letter-spacing:-.01em}
+.pill{background:#fff;color:#002FA7;}body.y .pill{background:#FFD60A;}body.y h1 em{color:#FFD60A;font-style:normal}.pill{font-size:30px;font-weight:700;padding:20px 34px;border-radius:999px;letter-spacing:-.01em}
 .note{font-size:21px;color:#c9d5f2;text-align:right;line-height:1.35;max-width:430px}
 .lab{font-size:19px;color:#5c6784;font-weight:600}
 .q{font-size:30px;font-weight:700;letter-spacing:-.01em;margin-top:8px;line-height:1.2}
@@ -95,7 +96,7 @@ async def main():
         b = await p.chromium.launch()
         pg = await b.new_page(viewport={"width":1080,"height":1350}, device_scale_factor=2)
         for k,h in CARDS.items():
-            await pg.set_content(h); await pg.wait_for_timeout(300)
+            await pg.set_content(h.replace("<body>",'<body class="y">',1) if k.endswith("-y") else h); await pg.wait_for_timeout(300)
             await pg.screenshot(path=f"{k}.png")
         await b.close()
 asyncio.run(main())

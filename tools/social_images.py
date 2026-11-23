@@ -6,6 +6,8 @@ Body snippet building blocks (see social/2026-10 for examples):
   <ol><li><div>Step<span>detail</span></div></li></ol> <div class="big">1</div>
   <div class="foot"><div class="url">npssurveys.com/xyz</div><div class="fine">fine print</div></div>
   {FLAG} inserts the U.S. flag.
+Accent test: add "accent": "y" to the spec (or a name ending in -y) to use Signal Yellow #FFD60A on the
+URL pill (the CTA) and on one <em> word in the headline. Nothing else is ever yellow.
 """
 import json, sys, os
 from playwright.sync_api import sync_playwright
@@ -17,21 +19,22 @@ base="""<html><head><link rel=stylesheet href="https://fonts.googleapis.com/css2
 background:#002FA7;padding:84px 80px;display:flex;flex-direction:column}
 .top{display:flex;align-items:center;gap:18px;font-weight:800;font-size:34px}.top svg{width:64px;height:64px}.top small{display:block;font-size:22px;font-weight:600;opacity:.85}
 .kick{margin-top:70px;display:inline-block;color:#C9D5F2;font-weight:600;font-size:28px;align-self:flex-start}
-h1{font-size:84px;line-height:1.04;font-weight:800;margin:34px 0 0;letter-spacing:-.01em}h1 em{font-style:normal;color:#fff}
+h1{font-size:84px;line-height:1.04;font-weight:800;margin:34px 0 0;letter-spacing:-.01em}h1 em{font-style:normal;color:#fff}body.y h1 em{color:#FFD60A}
 p.lead{font-size:34px;line-height:1.35;color:#D6E2FF;margin:30px 0 0}
 ol{margin:40px 0 0;padding:0;list-style:none;counter-reset:n}ol li{counter-increment:n;font-size:34px;line-height:1.3;font-weight:700;margin:0 0 22px;display:flex;gap:20px;align-items:flex-start}
 ol li:before{content:counter(n);flex:none;width:52px;height:52px;border-radius:50%;background:#fff;color:#002FA7;display:grid;place-items:center;font-weight:800;font-size:28px}
 ol li span{font-weight:500;color:#D6E2FF;display:block;font-size:27px}
 .foot{margin-top:auto;display:flex;justify-content:space-between;align-items:flex-end;gap:20px}
-.url{background:#fff;color:#002FA7;font-weight:800;font-size:32px;padding:20px 30px;border-radius:999px}
+.url{background:#fff;color:#002FA7;}body.y .url{background:#FFD60A;}.url{font-weight:800;font-size:32px;padding:20px 30px;border-radius:999px}
 .fine{font-size:19px;color:#B9C8F5;max-width:470px;line-height:1.35}
 .big{font-size:150px;font-weight:800;line-height:1;color:#fff}
-</style></head><body><div class="top">"""+MARK+"""<div>NPS Survey<small>CX OS by SalesHub</small></div></div>{BODY}</body></html>"""
+</style></head><body class="{ACC}"><div class="top">"""+MARK+"""<div>NPS Survey<small>CX OS by SalesHub</small></div></div>{BODY}</body></html>"""
 
 spec=json.load(open(sys.argv[1])); out=os.path.join(ROOT,spec["outdir"]); os.makedirs(out,exist_ok=True)
 with sync_playwright() as p:
     b=p.chromium.launch(); pg=b.new_page(viewport={"width":1080,"height":1350})
     for k,body in spec["images"].items():
-        pg.set_content(base.replace("{BODY}",body.replace("{FLAG}",'<div style="margin-top:56px">'+FLAG+'</div>'))); pg.wait_for_timeout(600)
+        acc="y" if (spec.get("accent")=="y" or k.endswith("-y")) else ""
+        pg.set_content(base.replace("{ACC}",acc).replace("{BODY}",body.replace("{FLAG}",'<div style="margin-top:56px">'+FLAG+'</div>'))); pg.wait_for_timeout(600)
         pg.screenshot(path=os.path.join(out,k+".png")); print(os.path.join(spec["outdir"],k+".png"))
     b.close()
