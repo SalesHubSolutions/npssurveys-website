@@ -1242,6 +1242,10 @@ a.nx-ste{display:block;text-decoration:none;color:inherit}a.nx-ste:focus-visible
 @media (max-width:700px){.nx-arr{transform:rotate(90deg)}.nx-stage{padding:32px 16px 40px}.nx-help{right:12px;bottom:12px}}
 @media (prefers-reduced-motion:reduce){.nx-n.nx-sel{transform:none}}
 
+
+/* Brand accent test (Nov 22, 2026): Signal Yellow #FFD60A on the main CTA only */
+html.cta-y a.btn[href*="appexchange.salesforce.com"]{background:#FFD60A!important;color:#002FA7!important;border-color:#FFD60A!important}
+html.cta-y a.btn[href*="appexchange.salesforce.com"]:hover{box-shadow:0 8px 20px rgba(255,214,10,.35)!important}
 /* Brand: flat colour only (Nov 22, 2026) */
 .nx-stage{background:rgba(255,255,255,.07)}
 .nx-agent,.nx-spk,.nx-rvh,.nx-dkh,.nx-wkbar{background:#002FA7}
@@ -1250,7 +1254,8 @@ a.nx-ste{display:block;text-decoration:none;color:inherit}a.nx-ste:focus-visible
 .hero,.final,.pagehero,.band.film{background:#002FA7}
 .ed.sa::before{background:#002FA7}
 </style>
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-BF2FDR6KMM"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date());gtag("config","G-BF2FDR6KMM",{linker:{domains:["saleshub.info","npssurveys.com"]}});</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-BF2FDR6KMM"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date());gtag("config","G-BF2FDR6KMM",{linker:{domains:["saleshub.info","npssurveys.com"]}});</script><script>(function(){var v;try{var m=location.search.match(/[?&]cta=(y|w)/);v=m?m[1]:localStorage.getItem("ctaV");if(v!=="y"&&v!=="w"){v=Math.random()<.5?"y":"w"}localStorage.setItem("ctaV",v)}catch(e){v=v||"w"}window.ctaV=v;document.documentElement.classList.add("cta-"+v);try{gtag("set","user_properties",{cta_variant:v})}catch(e){}document.addEventListener("click",function(e){var a=e.target.closest&&e.target.closest('a[href*="appexchange.salesforce.com"],a[href*="calendly.com"]');if(!a)return;try{gtag("event","cta_click",{cta_variant:v,cta_type:/calendly/.test(a.href)?"demo":"trial"})}catch(e){}},true)})();</script>
+
 </head>
 <body>
 <div class="fam" role="navigation" aria-label="NPS Surveys products"><div class="wrap"><span class="lbl">NPS Surveys products</span><a href="#home" aria-current="true"><span class="dot" aria-hidden="true"></span>For Salesforce <span class="tag">· native on AppExchange</span></a><a href="https://app.npssurveys.com/?utm_source=npssurveys.com&amp;utm_medium=website&amp;utm_campaign=family&amp;utm_content=family_bar">CX360 Standalone <span class="tag">· any CRM or none</span> ↗</a><a class="help" href="#choose">Which is right for me? →</a></div></div>
@@ -2464,7 +2469,7 @@ function wireLead(root){ root.querySelectorAll(".lform").forEach(f=>{ if(f._w) r
    if(!ok){ e.preventDefault(); f.querySelector(".bad input")?.focus(); return; }
    const g=n=>(f.querySelector(`[name="${n}"]`)?.value||"").trim(), it=(f.querySelector('[name="interest"]:checked')||{}).value||"";
    const q=new URLSearchParams(location.search);
-   f.querySelector('[name="description"]').value=[`Interest: ${it}`,`Current tool: ${g("tool")||"n/a"}`,`Message: ${g("msg")||"n/a"}`,`Form: ${f.closest(".leadbox").dataset.ctx} on ${location.pathname}${location.hash}`,`UTM: ${["utm_source","utm_medium","utm_campaign","utm_content"].map(k=>q.get(k)).filter(Boolean).join(" / ")||"none"}`,`Referrer: ${document.referrer||"direct"}`,`Submitted: ${new Date().toISOString()}`].join("\n");
+   f.querySelector('[name="description"]').value=[`Interest: ${it}`,`Current tool: ${g("tool")||"n/a"}`,`Message: ${g("msg")||"n/a"}`,`Form: ${f.closest(".leadbox").dataset.ctx} on ${location.pathname}${location.hash}`,`UTM: ${["utm_source","utm_medium","utm_campaign","utm_content"].map(k=>q.get(k)).filter(Boolean).join(" / ")||"none"}`,`CTA test: ${window.ctaV||"n/a"}`,`Referrer: ${document.referrer||"direct"}`,`Submitted: ${new Date().toISOString()}`].join("\n");
    try{gtag("event","ads_conversion_Contact_Us_1");gtag("event","generate_lead",{form:f.closest(".leadbox").dataset.ctx,interest:it})}catch(_){}
    setTimeout(()=>{ f.closest(".leadbox").classList.add("sent"); f.closest(".leadbox").scrollIntoView({behavior:"smooth",block:"center"}); },400);
   });
