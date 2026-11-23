@@ -1,0 +1,21 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//SalesHub//NPS Survey CX OS//EN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:live-demo-20261203@npssurveys.com
+DTSTAMP:20261123T160000Z
+DTSTART:20261203T170000Z
+DTEND:20261203T173000Z
+SUMMARY:Live demo: NPS Survey CX OS inside Salesforce
+DESCRIPTION:Watch one unhappy customer get won back\, live inside Salesforce. Join at https://www.npssurveys.com/webinar/
+LOCATION:https://www.npssurveys.com/webinar/
+URL:https://www.npssurveys.com/webinar/
+ORGANIZER;CN=SalesHub Support Team:mailto:support@saleshub.info
+BEGIN:VALARM
+TRIGGER:-PT15M
+ACTION:DISPLAY
+DESCRIPTION:Live demo starts in 15 minutes
+END:VALARM
+END:VEVENT
+END:VCALENDAR

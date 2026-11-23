@@ -1,4 +1,179 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><title>NPS Survey CX OS</title>
-<link rel="canonical" href="https://www.npssurveys.com/#demo"><meta name="robots" content="noindex">
-<meta http-equiv="refresh" content="0; url=/#demo"><script>location.replace("/#demo")</script></head>
-<body><a href="/#demo">Continue to NPS Survey CX OS</a></body></html>
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Watch the live demo: closing the loop inside Salesforce | NPS Survey CX OS</title>
+<meta name="description" content="A 3.5-minute recorded walkthrough of NPS Survey CX OS running live inside Salesforce: AI-drafted survey, a 3 out of 10 answer, AI triage, and a closed loop with an owner.">
+<link rel="canonical" href="https://www.npssurveys.com/demo/">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta name="theme-color" content="#002FA7">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Watch the live demo: closing the loop inside Salesforce">
+<meta property="og:description" content="A 3.5-minute recorded walkthrough of NPS Survey CX OS running live inside Salesforce: AI-drafted survey, a 3 out of 10 answer, AI triage, and a closed loop with an owner.">
+<meta property="og:url" content="https://www.npssurveys.com/demo/">
+<meta property="og:image" content="https://www.npssurveys.com/files/video/webinar-og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=IBM+Plex+Serif:wght@500;600&display=swap" rel="stylesheet">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-BF2FDR6KMM"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date());gtag("config","G-BF2FDR6KMM",{linker:{domains:["saleshub.info","npssurveys.com"]}});</script>
+<style>
+:root{--blue:#002FA7;--blue2:#1A43B5;--navy:#0F1A3D;--ink:#0F1A3D;--muted:#5A6787;--soft:#B9C8F0;--line:#D3DCF3;--tint:#EEF3FF;--yel:#FFD60A;--red:#C62828;
+--sans:"IBM Plex Sans",system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;--serif:"IBM Plex Serif",Georgia,"Times New Roman",serif}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;font-family:var(--sans);color:var(--ink);background:var(--tint);line-height:1.55;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}a{color:inherit}
+.wrap{max-width:1160px;margin:0 auto;padding:0 24px}
+h1,h2,h3.s{font-family:var(--serif);font-weight:600;letter-spacing:-.012em;margin:0}
+.kick{font-size:.78rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase}
+.top{background:var(--blue)}.top .wrap{display:flex;align-items:center;justify-content:space-between;height:68px}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none;color:#fff}.logo b{display:block;font-size:1.02rem;line-height:1.1}.logo small{display:block;font-size:.72rem;color:var(--soft)}
+.top nav a{color:#fff;text-decoration:none;font-weight:600;font-size:.92rem;margin-left:22px}
+.hero{background:var(--blue);color:#fff;padding:40px 0 80px}
+.grid{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);gap:56px;align-items:start}
+.hero .kick{color:var(--soft)}
+h1{font-size:clamp(2.3rem,4.6vw,3.6rem);line-height:1.05;margin:16px 0 18px}
+h1 em{font-style:normal;color:var(--yel)}
+.lead{font-size:1.12rem;color:#DCE5FF;max-width:34em;margin:0 0 28px}
+.inside{list-style:none;margin:0 0 28px;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:14px 22px}
+.inside li{display:flex;gap:12px;align-items:flex-start;font-size:.96rem;color:#fff}
+.inside svg{flex:none;width:34px;height:34px;padding:7px;border-radius:50%;background:#1A43B5;stroke:#fff}
+.inside b{display:block}.inside span{color:var(--soft);font-size:.86rem}
+.cover{display:flex;gap:18px;align-items:flex-end}
+.cover img.main{width:260px;border-radius:6px;box-shadow:0 30px 60px rgba(0,0,0,.35);transform:rotate(-2deg)}
+.thumbs{display:flex;gap:10px}.thumbs img{width:84px;border-radius:4px;box-shadow:0 10px 24px rgba(0,0,0,.3)}
+.card{background:#fff;color:var(--ink);border-radius:18px;padding:30px;box-shadow:0 30px 70px rgba(4,18,70,.35)}
+.card h2{font-size:1.65rem;line-height:1.15;margin-bottom:6px}.card .sub{color:var(--muted);font-size:.95rem;margin:0 0 18px}
+.lgrid{display:grid;grid-template-columns:1fr 1fr;gap:12px}.lf.full{grid-column:1/-1}
+.lf label{display:block;font-size:.82rem;font-weight:600;margin-bottom:5px}
+.lf input,.lf select{width:100%;font:inherit;font-size:.98rem;padding:12px 13px;border:1.5px solid var(--line);border-radius:10px;background:#fff;color:var(--ink)}
+.lf input:focus,.lf select:focus{outline:none;border-color:var(--blue);box-shadow:0 0 0 3px rgba(0,47,167,.15)}
+.lf .err{display:none;color:var(--red);font-size:.8rem;margin-top:4px}.lf.bad input{border-color:var(--red)}.lf.bad .err{display:block}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;font:inherit;font-weight:700;font-size:1rem;padding:15px 24px;border-radius:999px;text-decoration:none;border:0;cursor:pointer;transition:transform .15s}
+.btn:hover{transform:translateY(-1px)}.btn:focus-visible{outline:3px solid #8EA8FF;outline-offset:3px}
+.btn.yel{background:var(--yel);color:var(--blue)}.btn.blue{background:var(--blue);color:#fff}.btn.line{border:1.5px solid var(--line);color:var(--blue);background:#fff}
+.card .btn.yel{width:100%;margin-top:18px}
+.fine{font-size:.78rem;color:var(--muted);margin:12px 0 0}.fine a{color:var(--blue)}
+.done{display:none;text-align:left}.sent form{display:none}.sent .done{display:block}
+.done .ok{width:48px;height:48px;border-radius:50%;background:var(--tint);color:var(--blue);display:grid;place-items:center;font-size:1.4rem;font-weight:700;margin-bottom:12px}
+.done .row{display:grid;gap:10px;margin-top:18px}.done .btn{width:100%}
+.done .step{display:flex;gap:12px;align-items:flex-start;padding:14px 0;border-top:1px solid var(--line);font-size:.93rem}.done .step b{display:block}
+.done .n{flex:none;width:26px;height:26px;border-radius:50%;background:var(--blue);color:#fff;font-size:.8rem;font-weight:700;display:grid;place-items:center}
+section.band{padding:72px 0}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:28px}
+.stat{background:#fff;border:1px solid var(--line);border-radius:16px;padding:22px}.stat b{display:block;font-family:var(--serif);font-weight:600;font-size:2.4rem;color:var(--blue);line-height:1.1}.stat span{color:var(--muted);font-size:.9rem}
+.stat.hi{background:var(--blue);border-color:var(--blue)}.stat.hi b,.stat.hi span{color:#fff}
+h2.big{font-size:clamp(1.8rem,3.2vw,2.5rem);line-height:1.12;max-width:22ch}
+.muted{color:var(--muted);max-width:44em}
+.more{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:28px}
+.more a{display:block;background:#fff;border:1px solid var(--line);border-radius:16px;padding:22px;text-decoration:none}
+.more a:hover{border-color:var(--blue)}.more b{display:block;font-family:var(--serif);font-weight:600;font-size:1.2rem;margin:8px 0 4px}.more span{color:var(--muted);font-size:.92rem}
+.more .kick{color:var(--blue);font-size:.7rem}
+footer{background:var(--navy);color:var(--soft);padding:36px 0;font-size:.88rem}
+footer .wrap{display:flex;flex-wrap:wrap;gap:12px 28px;justify-content:space-between;align-items:center}footer a{color:#fff;text-decoration:none}
+@media(max-width:900px){.grid{grid-template-columns:1fr;gap:36px}.stats{grid-template-columns:1fr 1fr}.more{grid-template-columns:1fr}.inside{grid-template-columns:1fr}.top nav a.hide{display:none}.cover img.main{width:200px}}
+@media(max-width:520px){.lgrid{grid-template-columns:1fr}.card{padding:22px}}
+
+.when{display:flex;flex-wrap:wrap;gap:10px;margin:0 0 26px}.when span{background:#1A43B5;color:#fff;border-radius:999px;padding:8px 16px;font-weight:600;font-size:.92rem}
+.agenda{list-style:none;margin:0 0 8px;padding:0;display:grid;gap:12px}.agenda li{display:flex;gap:14px;align-items:flex-start;color:#fff}
+.agenda .t{flex:none;min-width:54px;font-weight:700;color:var(--yel);font-size:.9rem;padding-top:2px}.agenda b{display:block}.agenda span{color:var(--soft);font-size:.9rem}
+.vid{position:relative;border-radius:16px;overflow:hidden;background:#0F1A3D;box-shadow:0 30px 70px rgba(4,18,70,.35)}.vid video{width:100%;display:block}
+.vid .lock{position:absolute;inset:0;display:grid;place-items:center;background:rgba(15,26,61,.55);color:#fff;text-align:center;padding:20px}
+.vid .lock b{font-family:var(--serif);font-size:1.5rem;display:block;margin-bottom:6px}
+.chap{display:grid;grid-template-columns:repeat(2,1fr);gap:8px 22px;margin-top:22px;font-size:.92rem}.chap a{text-decoration:none;color:var(--ink)}.chap a span{color:var(--blue);font-weight:700;margin-right:8px}
+@media(max-width:700px){.chap{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<header class="top"><div class="wrap">
+ <a class="logo" href="/"><svg width="32" height="34" viewBox="0 0 100 100" aria-hidden="true"><path d="M31.07 77.03 A33 33 0 1 1 68.93 77.03" fill="none" stroke="#fff" stroke-width="13" stroke-linecap="round"/><circle cx="50" cy="83" r="7.5" fill="#fff"/></svg><span><b>NPS Survey</b><small>CX OS by SalesHub</small></span></a>
+ <nav><a class="hide" href="/#pricing">Pricing</a><a class="hide" href="/close-the-loop/">Free PDF</a><a href="#get">Watch now</a></nav>
+</div></header>
+
+<section class="hero"><div class="wrap grid">
+ <div>
+  <div class="kick">Recorded live in Salesforce · 3½ minutes</div>
+  <h1>Watch one unhappy customer get won <em>back</em></h1>
+  <p class="lead">No slides. NPS Survey CX OS running inside Salesforce, from a 3 out of 10 answer to a closed loop with an owner.</p>
+  <ul class="agenda">
+   <li><span class="t">0:00</span><div><b>AI drafts a survey from one sentence</b><span>"Find out why customers leave after onboarding."</span></div></li>
+   <li><span class="t">1:05</span><div><b>A customer scores you 3 out of 10</b><span>On their phone, with the reason why.</span></div></li>
+   <li><span class="t">1:27</span><div><b>AI triage in seconds</b><span>Churn risk, themes and a drafted reply in the Feedback Inbox.</span></div></li>
+   <li><span class="t">1:58</span><div><b>The loop gets an owner and gets closed</b><span>A $240K account: call logged, root cause, outcome saved.</span></div></li>
+  </ul>
+ </div>
+ <div class="card" id="get"><div class="leadbox">
+  <form class="lform" action="https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8" method="POST" target="w2l" novalidate>
+   <h2>Watch the demo now</h2><p class="sub">Tell us where to send a copy and the slides. Takes 20 seconds.</p>
+   <input type="hidden" name="oid" value="00D6g000001VQio"><input type="hidden" name="retURL" value="https://www.npssurveys.com/thanks.html"><input type="hidden" name="lead_source" value="Web"><input type="hidden" name="description" value="">
+   <div class="lgrid">
+    <div class="lf"><label for="fn">First name</label><input id="fn" name="first_name" autocomplete="given-name" required><div class="err">Please add your first name.</div></div>
+    <div class="lf"><label for="ln">Last name</label><input id="ln" name="last_name" autocomplete="family-name" required><div class="err">Please add your last name.</div></div>
+    <div class="lf full"><label for="em">Work email</label><input id="em" name="email" type="email" autocomplete="email" required><div class="err">Please use your work email (not Gmail, Yahoo, Outlook or similar).</div></div>
+    <div class="lf"><label for="co">Company</label><input id="co" name="company" autocomplete="organization" required><div class="err">Please add your company.</div></div>
+    <div class="lf"><label for="ti">Your role</label><select id="ti" name="title"><option value="">Choose one</option><option>CX or Customer Success leader</option><option>Service or Support leader</option><option>Sales or Revenue leader</option><option>Salesforce Admin or Architect</option><option>Operations leader</option><option>Marketing leader</option><option>CFO or Finance leader</option><option>Other</option></select></div>
+   </div>
+   <button class="btn yel" type="submit">Watch the demo →</button>
+   <p class="fine">We'll use this to send a copy of the demo, and occasional product news. See our <a href="https://saleshub.info/privacy-policy" target="_blank" rel="noopener">privacy policy</a>.</p>
+  </form><iframe name="w2l" title="" hidden></iframe>
+  <div class="done" role="status">
+   <div class="ok">✓</div><h2>Enjoy the demo.</h2><p class="sub">It's playing below. When you're ready to see it with your own customers:</p>
+   <div class="row"><a class="btn yel" id="cal" href="https://calendly.com/npssurvey/demo" target="_blank" rel="noopener">Book a 30-minute demo →</a><a class="btn line" href="/webinar/">Join the live demo on Dec 3</a></div>
+  </div>
+ </div></div>
+</div></section>
+
+<section class="band" id="watch"><div class="wrap">
+ <div class="kick" style="color:var(--blue)">The demo</div>
+ <h2 class="big" style="margin-top:12px">From a 3 out of 10 to a closed loop, without leaving Salesforce.</h2>
+ <p class="muted">Every screen was captured from a real run in a Salesforce org. Sample customer names.</p>
+ <div class="vid" style="margin-top:24px"><video id="v" controls playsinline preload="none" poster="/files/video/live-walkthrough-poster.jpg"><source src="/files/video/live-walkthrough.mp4" type="video/mp4"></video>
+  <div class="lock" id="lock"><div><b>Unlock the demo</b>Fill in the short form above. It takes 20 seconds.<div style="margin-top:16px"><a class="btn yel" href="#get">Watch now →</a></div></div></div></div>
+ <div class="chap">
+  <a href="#" data-t="0"><span>0:00</span>Introduction</a><a href="#" data-t="15"><span>0:15</span>My Day: what needs you today</a>
+  <a href="#" data-t="31"><span>0:31</span>AI drafts the survey</a><a href="#" data-t="49"><span>0:49</span>Send, without over-surveying</a>
+  <a href="#" data-t="65"><span>1:05</span>The customer scores a 3</a><a href="#" data-t="87"><span>1:27</span>Feedback Inbox, seconds later</a>
+  <a href="#" data-t="99"><span>1:39</span>AI triage and a drafted reply</a><a href="#" data-t="118"><span>1:58</span>The close-the-loop board</a>
+  <a href="#" data-t="150"><span>2:30</span>Call and log the outreach</a><a href="#" data-t="166"><span>2:46</span>Close the loop: root cause, outcome</a>
+ </div>
+</div></section>
+
+<section class="band" style="background:#fff"><div class="wrap">
+ <div class="kick" style="color:var(--blue)">Keep going</div>
+ <h2 class="big" style="margin-top:12px">More ways to see if it fits.</h2>
+ <div class="more">
+  <a href="/cx-health/"><span class="kick">2-minute check</span><b>How healthy is your feedback loop?</b><span>Eight questions, an instant score and your top three gaps.</span></a>
+  <a href="/close-the-loop/"><span class="kick">Free PDF</span><b>The CFO business case</b><span>The revenue model and a one-page business case for finance.</span></a>
+  <a href="/#pricing"><span class="kick">Pricing</span><b>One price per org</b><span>Unlimited users, billed yearly, on Salesforce AppExchange.</span></a>
+ </div>
+</div></section>
+
+<footer><div class="wrap"><span><b style="color:#fff">NPS Survey CX OS</b> by SalesHub, LLC · 1853 Piedmont Rd NE, Suite 301, Marietta, GA 30066</span><span><a href="/">npssurveys.com</a> · <a href="tel:+18337332468">1 (833) 733-2468</a> · <a href="mailto:support@saleshub.info">support@saleshub.info</a></span></div></footer>
+
+<script>
+(function(){
+ var FREEMAIL=/^(gmail|googlemail|yahoo|ymail|rocketmail|hotmail|outlook|live|msn|aol|icloud|me|mac|proton|protonmail|pm|gmx|mail|yandex|zoho|zohomail|qq|163|126|rediffmail|hey|fastmail|tutanota|tuta|duck|inbox|comcast|att|sbcglobal|verizon|cox|charter|bellsouth|earthlink|optonline|juno|aim|web|libero|mailinator|guerrillamail|10minutemail|tempmail|yopmail|sharklasers)\.[a-z]{2,3}(\.[a-z]{2})?$/i;
+ var q=new URLSearchParams(location.search), f=document.querySelector(".lform"), box=document.querySelector(".leadbox"), v=document.getElementById("v"), lock=document.getElementById("lock");
+ var KEY="nps_demo_unlocked"; function unlock(){try{localStorage.setItem(KEY,"1")}catch(_){} lock.style.display="none"}
+ try{if(localStorage.getItem(KEY)==="1")lock.style.display="none"}catch(_){}
+ var utm=["utm_source","utm_medium","utm_campaign","utm_content"].map(function(k){return q.get(k)}).filter(Boolean).join(" / ")||"none";
+ f.addEventListener("submit",function(e){
+  var ok=true;
+  f.querySelectorAll("[required]").forEach(function(i){var x=i.value.trim(),bad=!x||(i.type==="email"&&(!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(x)||FREEMAIL.test(x.split("@").pop())));i.closest(".lf").classList.toggle("bad",bad);if(bad)ok=false});
+  if(!ok){e.preventDefault();var b=f.querySelector(".bad input");b&&b.focus();return}
+  f.querySelector('[name="description"]').value=["Interest: Watched on-demand demo video (live walkthrough)","Next step: send demo invite","Form: "+location.pathname,"UTM: "+utm,"Referrer: "+(document.referrer||"direct"),"Submitted: "+new Date().toISOString()].join("\n");
+  var g=function(n){return (f.querySelector('[name="'+n+'"]').value||"").trim()};
+  document.getElementById("cal").href="https://calendly.com/npssurvey/demo?"+new URLSearchParams({name:g("first_name")+" "+g("last_name"),email:g("email"),utm_source:q.get("utm_source")||"npssurveys.com",utm_medium:"demo",utm_campaign:"live_demo_dec3"}).toString();
+  try{gtag("event","generate_lead",{form:"demo",interest:"demo"});gtag("event","ads_conversion_Contact_Us_1")}catch(_){}
+  setTimeout(function(){box.classList.add("sent");unlock();v.scrollIntoView({behavior:"smooth",block:"center"});v.play().catch(function(){});},400);
+ });
+ f.querySelectorAll("[required]").forEach(function(i){i.addEventListener("input",function(){i.closest(".lf").classList.remove("bad")})});
+ document.querySelectorAll(".chap a").forEach(function(a){a.addEventListener("click",function(e){e.preventDefault();if(lock.style.display!=="none"){document.getElementById("get").scrollIntoView({behavior:"smooth"});return}v.currentTime=+a.dataset.t;v.play();v.scrollIntoView({behavior:"smooth",block:"center"})})});
+ v.addEventListener("play",function(){try{gtag("event","video_start",{video_title:"live_walkthrough",page:"demo"})}catch(_){}},{once:true});
+ document.addEventListener("click",function(e){var a=e.target.closest&&e.target.closest("a");if(!a)return;try{if(/calendly/.test(a.href))gtag("event","cta_click",{cta_type:"demo",page:"demo"})}catch(_){}},true);
+})();
+</script>
+</body>
+</html>
