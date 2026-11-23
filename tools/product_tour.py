@@ -35,9 +35,9 @@ def check_copy():
 def copy_rows():
     rows = []
     for f in F:
-        primary = f"{f['hook']} {f['outcome']} NPS Survey CX OS runs 100% inside Salesforce. Try it free for 7 days."
+        primary = f"{f['hook']} {f['outcome']} NPS Survey CX OS runs 100% inside Salesforce. Try it free for 15 days."
         rows.append(dict(id=f["id"], feature=f["name"], group=GROUPS[f["group"]], hook=f["hook"],
-            meta_primary_text=primary, meta_headline=f["mh"], meta_description="Free 7-day trial on AppExchange",
+            meta_primary_text=primary, meta_headline=f["mh"], meta_description="Free 15-day trial on AppExchange",
             meta_url=land(f, "meta", "paid_social"),
             linkedin_intro=f"{f['hook']} {f['outcome']}", linkedin_headline=f["lh"], linkedin_url=land(f, "linkedin", "paid_social"),
             google_headline_1=f["gh"][0], google_headline_2=f["gh"][1], google_headline_3=f["gh"][2],
@@ -80,7 +80,7 @@ def page():
 <h3>The business problem</h3><p>{E(f['problem'])}</p>
 <h3>How it works</h3><ol>{''.join(f'<li>{E(s)}</li>' for s in f['how'])}</ol>
 <div class="out"><b>What changes:</b> {E(f['outcome'])}</div>
-<a class="b p" href="{trial}" target="_blank" rel="noopener">Try it free for 7 days &rarr;</a><a class="b d" href="{DEMO}" target="_blank" rel="noopener">See it in a demo</a></div>
+<a class="b p" href="{trial}" target="_blank" rel="noopener">Try it free for 15 days &rarr;</a><a class="b d" href="{DEMO}" target="_blank" rel="noopener">See it in a demo</a></div>
 <div class="vis">{visual(f)}</div></section>"""
     ld = {"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "NPS Survey CX OS", "applicationCategory": "BusinessApplication", "operatingSystem": "Salesforce",
           "offers": {"@type": "Offer", "price": "3500", "priceCurrency": "USD"}, "featureList": [f["name"] for f in F], "url": f"{SITE}/tour/"}
@@ -92,7 +92,7 @@ def page():
 <p>NPS Survey CX OS runs 100% inside Salesforce. Here is what each part does, who it is for, how it works and what changes for your team. Pick the problem you have today.</p>
 <div class="jump">{jump}</div></div></section>
 <main class="wrap">{body}
-<p class="note" style="margin:28px 0">Product screens are from the NPS Survey CX OS listing on Salesforce AppExchange; names and numbers in them are sample data. Pricing: one price per Salesforce org per year, from $3,500, with a 7-day free trial.</p>
+<p class="note" style="margin:28px 0">Product screens are from the NPS Survey CX OS listing on Salesforce AppExchange; names and numbers in them are sample data. Pricing: one price per Salesforce org per year, from $3,500, with a 15-day free trial.</p>
 {bi.cta_html("trial", "tour")}</main>""" + bi.FOOT
     os.makedirs(os.path.join(ROOT, "tour"), exist_ok=True)
     open(os.path.join(ROOT, "tour", "index.html"), "w").write(out)
@@ -141,7 +141,7 @@ def ad_html(f, size):
 <div class="top">{LOOP}<div><b>NPS Survey</b><small>CX OS by SalesHub</small></div></div>
 <div class="kick">{E(f['name'])}</div><h1>{E(f['hook'])}</h1>
 <div class="vis">{vis}</div>{outtxt}
-<div class="foot"><div class="pill">Try it free for 7 days</div><div class="fine">Native to Salesforce<br>npssurveys.com/tour</div></div></body></html>"""
+<div class="foot"><div class="pill">Try it free for 15 days</div><div class="fine">Native to Salesforce<br>npssurveys.com/tour</div></div></body></html>"""
 
 def render_ads(only=None):
     from playwright.sync_api import sync_playwright

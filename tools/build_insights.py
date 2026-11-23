@@ -56,7 +56,7 @@ FOOT = """<footer><div class="wrap">&copy; 2026 SalesHub, LLC &middot; 1853 Pied
 Salesforce and AppExchange are trademarks of Salesforce, Inc. Net Promoter&reg;, NPS&reg; and the NPS-related emoticons are registered trademarks of Bain &amp; Company, Inc., NICE Systems, Inc. and Fred Reichheld.</div></footer></body></html>"""
 
 CTAS = {
- "switch": ("Moving off GetFeedback or Delighted?", "Keep your surveys, follow-up and dashboards inside Salesforce. Start the 7-day free trial, or book a 30-minute switch call.", [("Start the free trial", "p", "trial"), ("See the switch plan", "d", "/#switch")]),
+ "switch": ("Moving off GetFeedback or Delighted?", "Keep your surveys, follow-up and dashboards inside Salesforce. Start the 15-day free trial, or book a 30-minute switch call.", [("Start the free trial", "p", "trial"), ("See the switch plan", "d", "/#switch")]),
  "roi": ("Build the business case in 60 seconds", "Put in your accounts, revenue and churn and get a one-page case you can send to finance.", [("Open the ROI calculator", "d", "/#roi"), ("Start the free trial", "p", "trial")]),
  "public": ("Measure service where it happens", "NPS Survey CX OS runs inside the Salesforce org your agency already uses. Buy through Carahsoft or start on AppExchange.", [("Public sector solutions", "d", "/#public-sector"), ("Start the free trial", "p", "trial")]),
  "partner": ("Deliver the migration, keep the services", "Implementation partners keep 100% of their services revenue and earn 25% of the first-year subscription plus 10% of every renewal.", [("See the partner program", "p", "/#partners"), ("See the switch plan", "d", "/#switch")]),

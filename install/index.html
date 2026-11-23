@@ -1,0 +1,114 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Install & setup guide | NPS Survey CX OS</title><meta name="description" content="Install NPS Survey CX OS for Salesforce in 10 minutes: turn on Case Feed Tracking, install in sandbox then production, start your 15-day free trial and choose a plan."><link rel="canonical" href="https://www.npssurveys.com/install/">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><meta name="theme-color" content="#002FA7">
+<meta property="og:type" content="article"><meta property="og:site_name" content="NPS Survey CX OS"><meta property="og:url" content="https://www.npssurveys.com/install/">
+<meta property="og:title" content="Install & setup guide | NPS Survey CX OS"><meta property="og:description" content="Install NPS Survey CX OS for Salesforce in 10 minutes: turn on Case Feed Tracking, install in sandbox then production, start your 15-day free trial and choose a plan.">
+<meta property="og:image" content="https://www.npssurveys.com/share.png"><meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=IBM+Plex+Serif:wght@500;600&display=swap">
+<style>:root{--blue:#002FA7;--blue-deep:#002FA7;--yellow:#FFFFFF;--navy:#0C184A;--bg:#fff;--bg-tint:#F4F7FF;--surface:#fff;--line:#DCE4F7;--fg:#0C184A;--fg-soft:#3B4877;--fg-mute:#5E6B98;--link:#002FA7;--font:"IBM Plex Sans",system-ui,-apple-system,Segoe UI,Roboto,sans-serif}
+@media (prefers-color-scheme:dark){:root:not([data-theme=light]){--bg:#0A1230;--bg-tint:#111C45;--surface:#111C45;--line:#24326A;--fg:#EEF2FF;--fg-soft:#C5D0F2;--fg-mute:#97A5D6;--link:#8FB0FF}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--font);font-size:17px;line-height:1.65}
+a{color:var(--link)}img{max-width:100%}
+.wrap{max-width:1120px;margin:0 auto;padding:0 20px}.narrow{max-width:760px;margin:0 auto;padding:0 20px}
+.annc{background:#EDF1FB;color:#002FA7;font-weight:600;font-size:.9rem;text-align:center;padding:9px 16px}.annc a{color:#002FA7}
+header{background:var(--blue-deep);color:#fff}header .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-block:14px}
+.logo{display:flex;align-items:center;gap:10px;color:#fff;text-decoration:none;font-weight:800}.logo img{width:36px;height:36px}.logo small{display:block;font-weight:600;font-size:.72rem;opacity:.8}
+nav a{color:#fff;text-decoration:none;font-weight:600;margin-left:18px;font-size:.95rem}nav a.btn{background:#fff;color:#002FA7;padding:9px 16px;border-radius:999px}
+@media (max-width:720px){nav a:not(.btn){display:none}}
+.hero{background:#002FA7;color:#fff;padding:52px 0 56px}
+.hero h1{font-size:clamp(1.9rem,4.2vw,2.9rem);line-height:1.1;margin:10px 0 12px;font-weight:800}.hero p{color:#D6E2FF;font-size:1.1rem;margin:0}
+.crumb{font-size:.88rem;color:#D6E2FF}.crumb a{color:#fff}.meta{margin-top:16px;font-size:.88rem;color:#D6E2FF}
+article{padding:44px 0 20px}article h2{font-size:1.6rem;line-height:1.2;margin:40px 0 10px}article h3{font-size:1.2rem;margin:28px 0 8px}
+article p,article li{color:var(--fg-soft)}article strong{color:var(--fg)}
+article table{width:100%;border-collapse:collapse;margin:18px 0;font-size:.95rem}article th,article td{border:1px solid var(--line);padding:10px 12px;text-align:left;vertical-align:top}article th{background:var(--bg-tint)}
+.tw{overflow-x:auto}
+.cta{background:var(--bg-tint);border:1px solid var(--line);border-radius:18px;padding:24px;margin:36px 0}.cta h3{margin:0 0 6px}
+.b{display:inline-flex;align-items:center;font-weight:700;border-radius:999px;padding:12px 20px;text-decoration:none;margin:10px 10px 0 0}.b.p{background:#002FA7;color:#fff}.b.d{background:#fff;color:#002FA7;border:2px solid #002FA7}
+figure.fig{margin:28px 0;}figure.fig svg{width:100%;height:auto;display:block;border-radius:18px;box-shadow:0 10px 30px rgba(12,24,74,.08)}@media (max-width:640px){figure.fig{overflow-x:auto}figure.fig svg{min-width:620px}}figure.fig figcaption{font-size:.85rem;color:var(--fg-mute);margin-top:8px;text-align:center}
+.src{font-size:.88rem;color:var(--fg-mute);border-top:1px solid var(--line);margin-top:36px;padding-top:16px}
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:18px;padding:40px 0 60px}
+.card{border:1px solid var(--line);border-radius:18px;padding:22px;text-decoration:none;color:var(--fg);background:var(--surface);display:flex;flex-direction:column;gap:8px}
+.card h2{font-size:1.2rem;margin:0;line-height:1.3}.card p{color:var(--fg-soft);margin:0;font-size:.95rem}.tag{font-size:.75rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--link)}
+.card .more{margin-top:auto;font-weight:700;color:var(--link);font-size:.9rem}
+footer{border-top:1px solid var(--line);padding:28px 0;font-size:.85rem;color:var(--fg-mute)}
+
+/* Brand type: IBM Plex Serif headlines, IBM Plex Sans text (Nov 2026) */
+h1,h2,.h2{font-family:"IBM Plex Serif",Georgia,"Times New Roman",serif!important;font-weight:600!important;letter-spacing:-.012em!important}
+</style><style>
+.thero{background:#002FA7;color:#fff;padding:56px 0 48px}.thero h1{font-size:clamp(2rem,4.6vw,3.2rem);line-height:1.08;margin:10px 0 14px;font-weight:800;max-width:900px}.thero p{color:#D6E2FF;font-size:1.12rem;max-width:760px;margin:0}
+.jump{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:12px;margin:28px 0 0}.jump a{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.22);border-radius:14px;padding:12px 14px;color:#fff;text-decoration:none;font-weight:700;font-size:.95rem}.jump a span{display:block;font-weight:500;font-size:.8rem;color:#C9D5F2;margin-top:2px}
+.note{font-size:.85rem;color:var(--fg-mute)}article h2{scroll-margin-top:20px}article ol li{margin:6px 0}
+</style></head><body>
+<div class="annc">GetFeedback retires December 31, 2026. <a href="/#switch">Move your surveys to native Salesforce &rarr;</a></div>
+<header><div class="wrap"><a class="logo" href="/"><img src="/brand/logo/nps-survey-cx-os-mark-white.svg" alt=""><span>NPS Survey<small>CX OS by SalesHub</small></span></a>
+<nav><a href="/#platform">Product</a><a href="/#industries">Solutions</a><a href="/insights/">Insights</a><a href="/#partners">Partners</a><a href="/#pricing">Pricing</a><a class="btn" href="https://appexchange.salesforce.com/appxListingDetail?listingId=a0N3A00000FtRTKUA3&tab=e&utm_source=npssurveys.com&utm_medium=blog&utm_campaign=cxos_insights&utm_content=blog_nav" target="_blank" rel="noopener">Free trial</a></nav></div></header>
+<section class="thero"><div class="wrap"><div class="crumb"><a href="/">Home</a> &middot; Install &amp; setup guide</div>
+<h1>Install NPS Survey CX OS in 10 minutes</h1>
+<p>Everything you need to go from AppExchange to your first survey: one setting to turn on before you install, the install itself, and how to keep going after your 15-day free trial.</p>
+<div class="jump">
+<a href="#before">1. Before you install<span>Turn on Case Feed Tracking</span></a>
+<a href="#install">2. Install<span>Sandbox first, then production</span></a>
+<a href="#after">3. After you install<span>Open the app, give access</span></a>
+<a href="#trial">4. Trial and buying<span>15 days free, then a plan</span></a>
+<a href="#help">5. Get help<span>Email, phone, chat, guided setup</span></a>
+</div></div></section>
+<main class="narrow"><article>
+
+<h2 id="before">1. Before you install: turn on Case Feed Tracking</h2>
+<p><strong>Do this first, or the install will fail.</strong> NPS Survey CX OS adds its survey activity to the Case feed, so Salesforce needs Feed Tracking switched on for Cases.</p>
+<ol>
+<li>In Salesforce, open <strong>Setup</strong>.</li>
+<li>In Quick Find, type <strong>Feed Tracking</strong> and open it.</li>
+<li>Select <strong>Case</strong> in the object list.</li>
+<li>Tick <strong>Enable Feed Tracking</strong> and click <strong>Save</strong>.</li>
+</ol>
+<div class="cta" style="margin:20px 0"><h3>Seeing this error?</h3><p><em>&ldquo;Layout(Case-Case Layout) feedLayout is not supported for this layout&rdquo;</em> means Feed Tracking for Cases is off. Turn it on as above, then install again. Nothing in your org was changed by the failed attempt.</p></div>
+<p><strong>You also need:</strong> Salesforce Lightning Experience on Essentials, Professional, Enterprise or Unlimited Edition, a System Administrator login, and a current version of Chrome, Edge, Firefox or Safari. People who answer your surveys don&rsquo;t need a Salesforce login.</p>
+
+<h2 id="install">2. Install: sandbox first, then production</h2>
+<p>We recommend installing in a sandbox first, trying it there, then installing in production. Use the link that matches the org you are signing in to.</p>
+<div class="tw"><table>
+<tr><th>Where</th><th>Install link</th></tr>
+<tr><td>Sandbox</td><td><a href="https://test.salesforce.com/packaging/installPackage.apexp?p0=04tQK000000mJ5CYAU" target="_blank" rel="noopener">Install in a sandbox &rarr;</a></td></tr>
+<tr><td>Production or Developer Edition</td><td><a href="https://login.salesforce.com/packaging/installPackage.apexp?p0=04tQK000000mJ5CYAU" target="_blank" rel="noopener">Install in production &rarr;</a></td></tr>
+<tr><td>From AppExchange</td><td><a href="https://appexchange.salesforce.com/appxListingDetail?listingId=a0N3A00000FtRTKUA3&amp;utm_source=npssurveys.com&amp;utm_medium=web&amp;utm_campaign=install_guide" target="_blank" rel="noopener">NPS Survey CX OS listing &rarr;</a></td></tr>
+</table></div>
+<ol>
+<li>Sign in with your System Administrator login.</li>
+<li>Choose who gets access. <strong>Install for Admins Only</strong> is the safe default; you can give others access afterwards.</li>
+<li>If Salesforce asks you to approve third-party access to <strong>saleshub.lightning.force.com</strong>, tick the box and click <strong>Continue</strong>. That is SalesHub&rsquo;s own Salesforce org, used for licensing and support.</li>
+<li>Click <strong>Install</strong>. Most installs finish in a few minutes. If Salesforce says it is taking a while, you will get an email when it is done.</li>
+</ol>
+<p class="note">Current release: 2.5.5. Installing over an earlier version upgrades it and keeps your surveys and responses.</p>
+
+<h2 id="after">3. After you install</h2>
+<ol>
+<li>Open the <strong>App Launcher</strong> and search for <strong>NPS Survey</strong> to open the app.</li>
+<li>If you installed for Admins Only, give your team access to the app next. We walk you through it on a guided setup call, or email us and we&rsquo;ll send the steps for your org.</li>
+<li>Create your first survey from a template, then send a test to yourself.</li>
+</ol>
+<div class="cta"><h3>Want us to set it up with you?</h3><p>A free 30-minute guided setup: we connect your survey site, build your first survey and switch on close-the-loop follow-up in your own org, live on a call.</p><a class="b p" href="https://calendly.com/npssurvey/demo" target="_blank" rel="noopener">Book a guided setup &rarr;</a></div>
+
+<h2 id="trial">4. Your free trial and buying a plan</h2>
+<p>Every install starts with a <strong>15-day free trial</strong> with every feature switched on. No credit card is needed. Before the trial ends, choose a plan. There is nothing to reinstall: your surveys and data stay exactly as they are.</p>
+<div class="tw"><table>
+<tr><th>Plan</th><th>Price</th><th>Pay by card</th></tr>
+<tr><td><strong>CX Lite</strong></td><td>$3,500 per company per year</td><td><a href="https://buy.stripe.com/eVq7sMgCCfuP6De8EF7ok01" target="_blank" rel="noopener">Buy CX Lite &rarr;</a></td></tr>
+<tr><td><strong>CX Pro</strong></td><td>$8,500 per company per year</td><td><a href="https://buy.stripe.com/bJe00keuu6Yj1iU4op7ok02" target="_blank" rel="noopener">Buy CX Pro &rarr;</a></td></tr>
+<tr><td><strong>CX OS Insights</strong> (recommended)</td><td>$16,000 per company per year</td><td><a href="https://buy.stripe.com/8x27sMaeegyT5zabQR7ok03" target="_blank" rel="noopener">Buy CX OS Insights &rarr;</a></td></tr>
+</table></div>
+<p>All plans include support and upgrades. Card payments are processed securely by Stripe, and we switch your license from trial to paid within one business day. Prefer an invoice and order form, or a nonprofit or multi-year price? Email <a href="mailto:support@saleshub.info">support@saleshub.info</a>.</p>
+
+<h2 id="help">5. Get help</h2>
+<div class="tw"><table>
+<tr><th>Channel</th><th>How</th></tr>
+<tr><td>Email</td><td><a href="mailto:support@saleshub.info">support@saleshub.info</a>, answered within one business day</td></tr>
+<tr><td>Phone</td><td><a href="tel:+18337332468">1 (833) 733-2468</a>, US business hours</td></tr>
+<tr><td>In-app chat</td><td>Inside NPS Survey CX OS in your Salesforce org</td></tr>
+<tr><td>Guided setup or demo</td><td><a href="https://calendly.com/npssurvey/demo" target="_blank" rel="noopener">Book 30 minutes</a></td></tr>
+</table></div>
+
+</article></main>
+<footer><div class="wrap">&copy; 2026 SalesHub, LLC &middot; 1853 Piedmont Rd, Suite 301, Marietta, GA 30066 &middot; <a href="mailto:support@saleshub.info">support@saleshub.info</a> &middot; 1 (833) 733-2468<br>
+Salesforce and AppExchange are trademarks of Salesforce, Inc. Net Promoter&reg;, NPS&reg; and the NPS-related emoticons are registered trademarks of Bain &amp; Company, Inc., NICE Systems, Inc. and Fred Reichheld.</div></footer></body></html>
