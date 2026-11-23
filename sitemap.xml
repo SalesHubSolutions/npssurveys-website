@@ -2,8 +2,10 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url><loc>https://www.npssurveys.com/</loc><lastmod>2026-10-19</lastmod><changefreq>weekly</changefreq><priority>1.0</priority></url>
 <url><loc>https://www.npssurveys.com/public-sector/</loc><lastmod>2026-11-16</lastmod><priority>0.8</priority></url>
-
-  <url><loc>https://www.npssurveys.com/insights/</loc><lastmod>2026-11-20</lastmod></url>
+  <url><loc>https://www.npssurveys.com/tour/</loc><lastmod>2026-11-21</lastmod></url>
+<url><loc>https://www.npssurveys.com/close-the-loop/</loc><lastmod>2026-11-23</lastmod></url><url><loc>https://www.npssurveys.com/cx-health/</loc><lastmod>2026-11-23</lastmod></url>
+  <url><loc>https://www.npssurveys.com/insights/</loc><lastmod>2026-11-23</lastmod></url>
+  <url><loc>https://www.npssurveys.com/insights/survey-reminders-salesforce/</loc><lastmod>2026-11-23</lastmod></url>
   <url><loc>https://www.npssurveys.com/insights/survey-migration-project-salesforce-partners/</loc><lastmod>2026-11-16</lastmod></url>
   <url><loc>https://www.npssurveys.com/insights/survey-translations-salesforce/</loc><lastmod>2026-11-15</lastmod></url>
   <url><loc>https://www.npssurveys.com/insights/renewals-at-risk-customer-feedback/</loc><lastmod>2026-11-15</lastmod></url>
@@ -14,5 +16,4 @@
   <url><loc>https://www.npssurveys.com/insights/replace-getfeedback-salesforce/</loc><lastmod>2026-10-19</lastmod></url>
   <url><loc>https://www.npssurveys.com/insights/close-the-loop-detractors-salesforce/</loc><lastmod>2026-10-19</lastmod></url>
   <url><loc>https://www.npssurveys.com/insights/america-by-design-service-feedback/</loc><lastmod>2026-10-19</lastmod></url>
-  <url><loc>https://www.npssurveys.com/tour/</loc><lastmod>2026-11-21</lastmod></url>
-<url><loc>https://www.npssurveys.com/close-the-loop/</loc><lastmod>2026-11-23</lastmod></url><url><loc>https://www.npssurveys.com/cx-health/</loc><lastmod>2026-11-23</lastmod></url></urlset>
+</urlset>

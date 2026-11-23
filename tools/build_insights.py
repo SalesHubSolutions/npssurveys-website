@@ -7,6 +7,7 @@ import json, re, glob, os, html, datetime
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 LIST = "https://appexchange.salesforce.com/appxListingDetail?listingId=a0N3A00000FtRTKUA3&tab=e&utm_source=npssurveys.com&utm_medium=blog&utm_campaign=cxos_insights"
 SITE = "https://www.npssurveys.com"
+CAL = "https://calendly.com/rashed-saleshub/30min?utm_source=npssurveys.com&utm_medium=blog&utm_campaign=cxos_insights"
 
 CSS = """:root{--blue:#002FA7;--blue-deep:#002FA7;--yellow:#FFFFFF;--navy:#0C184A;--bg:#fff;--bg-tint:#F4F7FF;--surface:#fff;--line:#DCE4F7;--fg:#0C184A;--fg-soft:#3B4877;--fg-mute:#5E6B98;--link:#002FA7;--font:"IBM Plex Sans",system-ui,-apple-system,Segoe UI,Roboto,sans-serif}
 h1,h2,.h2{font-family:"IBM Plex Serif",Georgia,"Times New Roman",serif!important;font-weight:600!important;letter-spacing:-.012em!important}
@@ -26,7 +27,7 @@ article{padding:44px 0 20px}article h2{font-size:1.6rem;line-height:1.2;margin:4
 article p,article li{color:var(--fg-soft)}article strong{color:var(--fg)}
 article table{width:100%;border-collapse:collapse;margin:18px 0;font-size:.95rem}article th,article td{border:1px solid var(--line);padding:10px 12px;text-align:left;vertical-align:top}article th{background:var(--bg-tint)}
 .tw{overflow-x:auto}
-.cta{background:var(--bg-tint);border:1px solid var(--line);border-radius:18px;padding:24px;margin:36px 0}.cta h3{margin:0 0 6px}
+.cta{background:var(--bg-tint);border:1px solid var(--line);border-radius:18px;padding:24px;margin:36px 0}.cta h3{margin:0 0 6px}.cta .call{margin:16px 0 0;font-size:.95rem;border-top:1px solid var(--line);padding-top:14px}.cta .call a{font-weight:700}
 .b{display:inline-flex;align-items:center;font-weight:700;border-radius:999px;padding:12px 20px;text-decoration:none;margin:10px 10px 0 0}.b.p{background:#002FA7;color:#fff}.b.d{background:#fff;color:#002FA7;border:2px solid #002FA7}
 figure.fig{margin:28px 0;}figure.fig svg{width:100%;height:auto;display:block;border-radius:18px;box-shadow:0 10px 30px rgba(12,24,74,.08)}@media (max-width:640px){figure.fig{overflow-x:auto}figure.fig svg{min-width:620px}}figure.fig figcaption{font-size:.85rem;color:var(--fg-mute);margin-top:8px;text-align:center}
 .src{font-size:.88rem;color:var(--fg-mute);border-top:1px solid var(--line);margin-top:36px;padding-top:16px}
@@ -65,7 +66,8 @@ CTAS = {
 def cta_html(kind, slug):
     t, p, bs = CTAS[kind]
     links = "".join(f'<a class="b {c}" href="{(LIST+"&utm_content=blog_"+slug) if h=="trial" else h}"{" target=_blank rel=noopener" if h=="trial" else ""}>{l} &rarr;</a>' for l, c, h in bs)
-    return f'<div class="cta"><h3>{t}</h3><p>{p}</p>{links}</div>'
+    call = f'<p class="call">Prefer to talk it through? <a href="{CAL}&utm_content=blog_call_{slug}" target="_blank" rel="noopener">Book a 30-minute call</a> with our team. We will look at your org and your surveys with you.</p>'
+    return f'<div class="cta"><h3>{t}</h3><p>{p}</p>{links}{call}</div>'
 
 def load():
     posts = []

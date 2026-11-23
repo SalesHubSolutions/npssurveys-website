@@ -1774,7 +1774,7 @@ V.home = () => `
    <div class="nx-out" style="--d:0s"><span class="nx-oi" style="background:#FEF3F2;color:#B42318">${ic("bolt",20)}</span><div><b>P1 priority case</b><small>Case 08812 · Priority P1 · assigned to Support queue lead</small></div><em>9:02</em></div>
    <div class="nx-out" style="--d:.25s"><span class="nx-oi" style="background:#EDF1FB;color:#002FA7">${ic("route",20)}</span><div><b>Close the Loop record</b><small>CL-0020 · owner: account manager · due in 12 hours</small></div><em>9:02</em></div>
    <div class="nx-out" style="--d:.5s"><span class="nx-oi" style="background:#F2F4F7;color:#344054">${ic("mail",20)}</span><div><b>Email to VP, Customer Service</b><small>"Detractor at Acme Corp: $480K, renews Mar 31"</small></div><em>9:02</em></div>
-   <div class="nx-out" style="--d:.75s"><span class="nx-oi nx-slk" style="background:#fff;color:#6941C6;border:1px solid #E3E8F3"><img src="brand/partners/slack.svg" alt="Slack" width="22" height="22" onerror="this.parentNode.classList.add('nofile');this.remove()"><i>${ic("chat",20)}</i></span><div><b>Slack message to the CSM</b><small>#acme-account · "Maya scored 3. Call her today."</small></div><em>9:02</em></div>
+   <div class="nx-out" style="--d:.75s"><span class="nx-oi nx-slk nofile" style="background:#fff;color:#6941C6;border:1px solid #E3E8F3"><i>${ic("chat",20)}</i></span><div><b>Slack message to the CSM</b><small>#acme-account · "Maya scored 3. Call her today."</small></div><em>9:02</em></div>
   </div>
  </div>
  <div class="nx-tcta">${trial("flow_60s","Set up your first loop free","nx-k")}<a class="nx-tl" href="${DEMO}" target="_blank" rel="noopener">See it in a demo ›</a></div>
@@ -2100,7 +2100,7 @@ V.demo = () => `${hero("", "Book a <em>30-minute</em> demo", "See your own indus
 
 V.learn = () => `${hero("", "Learning Center", "Role-based learning paths, setup guides, best practices and reference for running a world-class feedback program on Salesforce.", `<div class="ctas"><a class="btn primary" href="#learn" data-jump="start">Start the setup guide</a><a class="btn ghost" href="#learn" data-jump="paths">Choose a learning path</a></div>`)}
 <section class="band"><div class="wrap learn">
- <nav class="toc" aria-label="Learning Center sections">${[["paths","Learning paths"],["start","Getting started"],["howto","How-to guides"],["channels","Survey channels"],["design","Survey design"],["loop","Closing the loop"],["p1","Detractor case guide"],["migrate","Migration projects"],["admin","Admin guide"],["nps","NPS calculator"],["faq","FAQ"],["glossary","Glossary"]].map(([a,b])=>`<a href="#learn" data-jump="${a}">${b}</a>`).join("")}</nav>
+ <nav class="toc" aria-label="Learning Center sections">${[["paths","Learning paths"],["start","Getting started"],["howto","How-to guides"],["channels","Survey channels"],["reminders","Scheduler and reminders"],["design","Survey design"],["loop","Closing the loop"],["p1","Detractor case guide"],["migrate","Migration projects"],["admin","Admin guide"],["nps","NPS calculator"],["faq","FAQ"],["glossary","Glossary"]].map(([a,b])=>`<a href="#learn" data-jump="${a}">${b}</a>`).join("")}</nav>
  <article class="doc"><h2 id="paths">Learning paths</h2>
 <p>Pick the path for your role. Tick units as you finish them; your progress is saved in this browser.</p>
 <div class="grid2" style="margin-top:18px">
@@ -2150,6 +2150,7 @@ V.learn = () => `${hero("", "Learning Center", "Role-based learning paths, setup
 <h2 id="howto">How-to guides</h2>
 <p>Step-by-step guides for admins and CX teams. New guides are added every week.</p>
 <ul>
+<li><a href="/insights/survey-reminders-salesforce/"><b>Send survey reminders to non-responders</b></a>: the five-step automation wizard, the 24-hour rule, reminder limits, and Live vs. Snapshot mode.</li>
 <li><a href="/insights/311-request-feedback-salesforce/"><b>Survey residents when a 311 request closes</b></a>: the trigger, who gets it, two plain-language questions, and routing every unresolved request to its department.</li>
 <li><a href="/insights/nps-vs-csat-vs-ces-salesforce/"><b>Choose NPS, CSAT or CES for each moment</b></a>: what each measure asks, how it's scored, and which Salesforce event should send it.</li>
 <li><a href="/insights/csat-survey-on-case-close-salesforce/"><b>Send a CSAT survey when a case closes</b></a>: the trigger, who gets it, sending once, where the answer lands, and a go-live checklist.</li>
@@ -2166,6 +2167,21 @@ V.learn = () => `${hero("", "Learning Center", "Role-based learning paths, setup
 <tr><td><b>Experience Cloud site</b></td><td>Portal tasks, self-service requests, member and resident portals</td><td>On your own Experience Cloud site, right after the task</td><td>Ask about effort (CES) right after a form or request is submitted</td></tr>
 </table></div>
 <div class="callout"><b>Not sure which to use?</b> Start with email on one trigger, such as case close. Add QR codes for in-person moments once the follow-up routine works. See <a href="/insights/nps-vs-csat-vs-ces-salesforce/">NPS vs. CSAT vs. CES</a> to pick the measure for each moment.</div>
+
+<h2 id="reminders">Survey scheduler and reminders: quick reference</h2>
+<p>Surveys and reminders are set up together in one automation wizard. Reminders go only to people who haven't answered, at least 24 hours apart, up to the limit you set, and stop as soon as someone responds.</p>
+<figure style="margin:18px 0;max-width:100%"><img src="/content/figures/reminder-timeline.svg" alt="Reminder timeline with a limit of 2: initial survey on day 0, reminder 1 only if no answer after 24 hours, reminder 2 only if still no answer 24 hours later, then stop. Any answer stops reminders." style="width:100%;height:auto;border-radius:14px"></figure>
+<div class="tablewrap" style="margin-top:16px"><table>
+<tr><th>Step</th><th>What you set</th><th>Tip</th></tr>
+<tr><td><b>1. Basic info</b></td><td>Name, object, active, description</td><td>Name it for its purpose, such as "Event survey follow-up"</td></tr>
+<tr><td><b>2. Survey setup</b></td><td>Survey form, first email template, instant or scheduled send</td><td>Scheduled send checks for new matching records at each run and sends only to new recipients</td></tr>
+<tr><td><b>3. Reminders</b></td><td>Reminder limit, Live or Snapshot mode, reminder template, reminder schedule</td><td>Run reminders at least 15 minutes after the first-send time</td></tr>
+<tr><td><b>4. Conditions</b></td><td>Field, operator and value filters joined with AND or OR</td><td>Preview the matching records before you save</td></tr>
+<tr><td><b>5. Review</b></td><td>Check every section, then Save Configuration</td><td>Test in a sandbox with a contact you control</td></tr>
+</table></div>
+<h3>Live or Snapshot mode</h3>
+<p><b>Live</b> applies today's reminder limit to every pending non-responder, including older sends. <b>Snapshot</b> saves the limit on each record when its survey is first sent, so older records keep it. Choose before you change a limit that is already in use.</p>
+<div class="callout"><b>Full guide:</b> read <a href="/insights/survey-reminders-salesforce/">Survey reminders in Salesforce</a>, see it in the <a href="/tour/#automation">product tour</a>, or download the <a href="/files/docs/NPS-Survey-CX-OS-Survey-Scheduler-and-Reminders.pdf">Survey Scheduler and Reminders guide (PDF)</a>.</div>
 
 <h2 id="design">Survey design best practices</h2>
 <ul><li><b>One moment, one survey.</b> Ask right after the moment you want to measure, while it's fresh.</li><li><b>Pick the right measure.</b> NPS for loyalty to the relationship, CSAT for a single interaction, CES for how easy something was.</li><li><b>Keep it short.</b> One rating question and one "why" question get the most responses.</li><li><b>Avoid survey fatigue.</b> Set cadence rules so the same person isn't asked too often.</li><li><b>Ask in their language and channel.</b> Use email, SMS, QR codes or a portal, whichever the person already uses.</li><li><b>Design for everyone.</b> Plain language, readable contrast and keyboard-friendly surveys.</li></ul>
@@ -2243,6 +2259,9 @@ V.learn = () => `${hero("", "Learning Center", "Role-based learning paths, setup
  <dt>Cadence rule</dt><dd>A limit on how often the same person can be surveyed, such as once every 30 days.</dd>
  <dt>Response rate</dt><dd>The share of people who answered out of everyone who got the survey.</dd>
  <dt>P1 case</dt><dd>The priority case that opens for a detractor, with an owner and a due date.</dd>
+ <dt>Reminder limit</dt><dd>The most reminder emails one non-responder can get for a survey.</dd>
+ <dt>Live mode</dt><dd>Reminder setting where every pending record follows the current reminder limit.</dd>
+ <dt>Snapshot mode</dt><dd>Reminder setting where each record keeps the reminder limit it had when its survey was first sent.</dd>
  <dt>Follow-up rate</dt><dd>The share of low scores that got a response on time. Fully in your team's control.</dd>
 </dl>
 </article>

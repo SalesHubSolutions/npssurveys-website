@@ -203,6 +203,37 @@ def sow_scope():
             b+=t(x+62,y+20,it,15,NAVY,600)
     return svg(Wd,H,b,"Statement of work scope. In scope: survey inventory, rebuild of agreed surveys, triggers on agreed objects, field mapping and reports, low-score follow-up rules. Client provides: export from the old tool, a sandbox and admin access, an owner per survey, sign-off on each test, a security review contact. Out of scope: unused surveys, new surveys not on the list, custom code, ongoing admin after handover, changes after sign-off")
 
-FIGS={"migration-phases":migration_phases,"sow-scope":sow_scope,"resident-311-flow":resident_311_flow,"city-311-dashboard":city_311_dashboard,"metric-compare":metric_compare,"moment-map":moment_map,"detractor-case":detractor_case,"case-close-flow":case_close_flow,"case-close-checklist":case_close_checklist,"business-case-flow":business_case,"partner-tracks":partner_tracks,"switch-timeline":timeline,"native-vs-boltOn":architecture,"service-loop":loop,"score-routing":routing,"closed-loop-dashboard":dashboard}
+def reminder_wizard():
+    return flow("Set up a survey with reminders: the five-step wizard","Automation in NPS Survey CX OS, from the Survey Scheduler and Reminders guide",
+        [("Basic info","Name it, pick the|object and keep|it active",""),("Survey setup","Survey form, email|template, instant|or scheduled send",""),("Reminders","Limit, Live or|Snapshot mode,|template, schedule",""),("Conditions","Filters that pick|the records, then|preview matches",""),("Review","Check each|section, then|save","")],
+        "Five-step wizard: basic info, survey setup, reminders, conditions, review and save")
+
+def reminder_timeline():
+    Wd,H=1000,420; b=t(40,50,"How reminders go out: only to people who haven't answered",22,NAVY,800)+t(40,78,"Example with a reminder limit of 2. Each step waits 24 hours for an answer.",15,MUTE,500)
+    steps=[("Day 0","Initial survey","Sent when the record|qualifies, instantly|or on a schedule",None),("Day 1+","Reminder 1","Only if no answer|24 hours after|the survey",None),("Day 2+","Reminder 2","Only if still no|answer 24 hours|after Reminder 1",None),("Then","Stop","Limit reached:|no more emails|for this survey","last")]
+    n=4; gap=44; bw=(920-gap*(n-1))/n
+    for i,(d,h,c,last) in enumerate(steps):
+        x=40+i*(bw+gap)
+        b+=r(x,108,bw,176,16,"#EAF1FF" if last else W,BLUE if last else LINE,2.5 if last else 1.5)
+        b+=t(x+20,140,d.upper(),12,BLUE,800)+t(x+20,172,h,19,NAVY,800)
+        for j,l in enumerate(c.split("|")): b+=t(x+20,202+j*21,l,13.5,MUTE,500)
+        if i<n-1: b+=arrow(x+bw+6,196,x+bw+gap-4,196,small=True)
+    b+=r(40,312,920,72,16,W,GRN,2)+f'<circle cx="78" cy="348" r="16" fill="{GRN}"/>'+f'<path d="M70 348 l6 6 l11 -12" fill="none" stroke="{W}" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>'
+    b+=t(108,343,"Answered at any point? Reminders stop for that person and that survey.",16,NAVY,700)+t(108,366,"Reminder subjects are numbered automatically, for example \u201cReminder 1 - [your subject]\u201d.",13.5,MUTE,500)
+    return svg(Wd,H,b,"Reminder timeline with a limit of 2: initial survey on day 0, reminder 1 only if no answer after 24 hours, reminder 2 only if still no answer 24 hours later, then stop. Any answer stops reminders.")
+
+def reminder_modes():
+    Wd,H=1000,430; b=t(40,50,"Live or Snapshot mode: what happens when you change the limit",22,NAVY,800)+t(40,78,"Example: the reminder limit is raised from 1 to 3. Filled dots are the reminders each pending event can get in total.",15,MUTE,500)
+    rows=[("Event A","sent when the limit was 1",1),("Event B","sent when the limit was 2",2),("Event C","sent after it became 3",3)]
+    for k,(h,sub) in enumerate([("Live mode","Every pending event follows today's limit"),("Snapshot mode","Each event keeps the limit it started with")]):
+        x=40+k*470; b+=r(x,104,450,290,16,W,BLUE if k==0 else LINE,2 if k==0 else 1.5)+t(x+24,140,h,19,NAVY,800)+t(x+24,164,sub,14,MUTE,500)
+        for i,(e,s2,lim) in enumerate(rows):
+            y=206+i*62; b+=t(x+24,y,e,16,NAVY,700)+t(x+24,y+21,s2,13,MUTE,500)
+            allowed=3 if k==0 else lim
+            for d in range(3):
+                cx=x+316+d*38; b+=f'<circle cx="{cx}" cy="{y+4}" r="13" fill="{BLUE if d<allowed else W}" stroke="{BLUE}" stroke-width="2"/>'
+    return svg(Wd,H,b,"Live mode versus Snapshot mode after the limit is raised from 1 to 3. Live: events A, B and C can all get up to 3 reminders. Snapshot: event A keeps 1, event B keeps 2, event C gets 3.")
+
+FIGS={"migration-phases":migration_phases,"sow-scope":sow_scope,"resident-311-flow":resident_311_flow,"city-311-dashboard":city_311_dashboard,"metric-compare":metric_compare,"moment-map":moment_map,"detractor-case":detractor_case,"case-close-flow":case_close_flow,"case-close-checklist":case_close_checklist,"business-case-flow":business_case,"partner-tracks":partner_tracks,"switch-timeline":timeline,"native-vs-boltOn":architecture,"service-loop":loop,"score-routing":routing,"closed-loop-dashboard":dashboard,"reminder-wizard":reminder_wizard,"reminder-timeline":reminder_timeline,"reminder-modes":reminder_modes}
 if __name__=="__main__":
     for k,f in FIGS.items(): open(os.path.join(OUT,k+".svg"),"w").write(f()); print(k)

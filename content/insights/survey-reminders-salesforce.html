@@ -1,0 +1,86 @@
+<!--META
+{"slug":"survey-reminders-salesforce","title":"Survey reminders in Salesforce: how to follow up with non-responders without causing survey fatigue","description":"An admin's guide to survey reminders: send them only to people who haven't answered, wait 24 hours between emails, cap the number, and choose what happens when you change the limit later.","date":"2026-11-23","author":"SalesHub","tags":["Knowledge center","Admin how-to"],"read":"6 min","cta":"trial"}
+META-->
+<p><strong>Send a reminder only to people who haven't answered, wait at least a day between emails, stop at a fixed limit, and stop the moment someone responds.</strong> Those four rules get you more answers without annoying the customers who already replied. This guide shows how to set them up in Salesforce with NPS Survey CX OS, and the two decisions admins most often get wrong: when the reminder job runs and what happens when you change the limit later.</p>
+
+<h2>Why one survey email is not enough</h2>
+<p>People miss email. The survey lands during a busy week, gets buried, and the feedback you needed never arrives. A polite reminder brings some of those people back.</p>
+<p>The risk is the opposite problem. If reminders go to everyone, or keep coming after someone has answered, customers stop trusting your emails. That is survey fatigue, and it lowers your response rate on the next survey too. Good reminder rules fix the first problem without causing the second.</p>
+
+<h2>The four rules of a good reminder</h2>
+<div class="tw"><table>
+<tr><th>Rule</th><th>Why it matters</th><th>How NPS Survey CX OS handles it</th></tr>
+<tr><td>Only non-responders</td><td>Nobody gets nagged after they answered</td><td>Reminders go only to recipients with no response</td></tr>
+<tr><td>Wait between emails</td><td>Gives people time to answer first</td><td>A reminder is eligible 24 hours after the survey or the previous reminder</td></tr>
+<tr><td>Cap the number</td><td>Keeps follow-up polite</td><td>You set a reminder limit, such as 1 or 2</td></tr>
+<tr><td>Stop on response</td><td>Ends the sequence cleanly</td><td>Once someone responds, no more reminders go out for that survey</td></tr>
+</table></div>
+
+{{FIG:reminder-timeline|With a limit of 2, a non-responder gets the survey and at most two reminders, each at least 24 hours apart. Any answer stops the sequence.}}
+
+<h2>Set it up in five steps</h2>
+<p>In NPS Survey CX OS, survey sends and reminders are configured together in a five-step automation wizard. SalesHub's <a href="/files/docs/NPS-Survey-CX-OS-Survey-Scheduler-and-Reminders.pdf">Survey Scheduler and Reminders guide</a> walks through it using Salesforce Event records, such as a completed call or meeting.</p>
+
+{{FIG:reminder-wizard|The automation wizard: basic info, survey setup, reminders, conditions, then review and save.}}
+
+<h3>1. Basic info</h3>
+<p>Give the automation a name that explains its purpose, such as "Event survey follow-up." Pick the object it watches and keep it active. Add a short description so the next admin knows why it exists.</p>
+
+<h3>2. Survey setup</h3>
+<p>Choose the survey form and the email template for the first send. Then choose when the first survey goes out:</p>
+<ul>
+<li><b>Instant send</b> sends the survey as soon as a record qualifies. Use it when the moment is fresh and you want the answer now.</li>
+<li><b>Scheduled send</b> checks for new qualifying records at the time you choose, such as daily at a set hour, and sends only to new recipients. Use it when you want predictable batches.</li>
+</ul>
+<p>This screen controls the first email only. Reminders have their own settings in the next step.</p>
+
+<h3>3. Reminders</h3>
+<p>Set four things:</p>
+<ul>
+<li><b>Reminder limit:</b> the most reminders one non-responder can get for this survey. A limit of 1 means one reminder. A limit of 2 means two.</li>
+<li><b>Reminder mode:</b> Live or Snapshot. This decides what happens if you change the limit later. See the next section.</li>
+<li><b>Reminder email template:</b> the email for reminders. Subjects are numbered automatically, for example "Reminder 1 - [template subject]."</li>
+<li><b>Recurring reminder schedule:</b> when the reminder job runs. It is separate from the first-send schedule.</li>
+</ul>
+<div class="callout" style="background:#F4F7FF;border:1px solid #DCE4F7;border-radius:14px;padding:16px 18px;margin:18px 0"><b>Timing tip from the guide:</b> schedule the reminder run at least 15 minutes after the first-send time. A reminder only becomes eligible 24 hours after the survey, so a reminder run set too close to the send time can miss that day's new recipients.</div>
+
+<h3>4. Conditions</h3>
+<p>Build the filters that decide which records send a survey. Pick a field, an operator and a value, and join conditions with AND or OR. For example, <code>Subject = 'Call'</code> sends only for events whose subject is Call. You can review the generated filter logic and preview the matching records before you save. Do it. It is the fastest way to catch a filter that matches too much or nothing at all.</p>
+
+<h3>5. Review and save</h3>
+<p>Check each section: the name and object, the survey and send mode, the reminder settings, and the filter logic. Then save. From then on, the automation watches for matching records and follows your survey and reminder rules.</p>
+
+<h2>Live or Snapshot: decide before you change the limit</h2>
+<p>Sooner or later someone will ask for one more reminder. The reminder mode decides what that change does to surveys already in flight.</p>
+<ul>
+<li><b>Live mode</b> always uses the current limit. Raise it from 1 to 3, and every pending non-responder can now get up to 3 reminders in total, including people surveyed weeks ago.</li>
+<li><b>Snapshot mode</b> saves the limit on each record when its survey is first sent. Older records keep their original limit. Only new ones use the new limit.</li>
+</ul>
+
+{{FIG:reminder-modes|Raising the limit from 1 to 3. Live mode applies the new limit to every pending event. Snapshot mode keeps each event at the limit it started with.}}
+
+<p>Live mode also works the other way. If you lower the limit, pending records follow the lower number, and anyone who has already reached it gets no more reminders. Pick Snapshot when you have told customers how often you will follow up and want older sends to keep that promise. Pick Live when you want one rule for everyone, right now.</p>
+
+<h2>Test it before go-live</h2>
+<p>Run these checks in a sandbox with a test contact you control:</p>
+<ul>
+<li>Create a qualifying record. The first survey arrives with the right template and button.</li>
+<li>Don't answer. After 24 hours and the next reminder run, "Reminder 1" arrives.</li>
+<li>Answer the survey. No further reminders arrive.</li>
+<li>Create a record that should not qualify. Nothing is sent.</li>
+<li>Count the emails: never more than the survey plus your reminder limit.</li>
+</ul>
+
+<h2>What to watch in the first month</h2>
+<ul>
+<li><b>Response rate before and after the reminder.</b> If the reminder adds almost nothing, rewrite its subject line or send at a different time of day.</li>
+<li><b>Unsubscribes and complaints.</b> If they rise, lower the limit before anything else.</li>
+<li><b>How fast low scores get an owner.</b> More answers only help if someone follows up. Pair reminders with a <a href="/insights/close-the-loop-detractors-salesforce/">closed-loop routine</a>.</li>
+</ul>
+<p>Start with a limit of 1. Most teams never need more than 2.</p>
+
+<h2>Doing it with NPS Survey CX OS</h2>
+<p>NPS Survey CX OS by SalesHub runs 100% inside Salesforce. Its AppExchange listing describes 131 survey templates and 97 email templates, and responses stay in your org on the records they came from. The <a href="/tour/#automation">product tour</a> shows the automation and reminders feature step by step, and the <a href="/#learn">Learning Center</a> has a quick reference for the wizard, the getting started guide and a glossary.</p>
+
+<p class="src">Sources: <a href="/files/docs/NPS-Survey-CX-OS-Survey-Scheduler-and-Reminders.pdf">SalesHub, "Automation: Survey Scheduler and Reminders, Business User Guide"</a>; <a href="https://appexchange.salesforce.com/appxListingDetail?listingId=a0N3A00000FtRTKUA3&amp;tab=e&amp;utm_source=npssurveys.com&amp;utm_medium=website&amp;utm_campaign=cxos_blog&amp;utm_content=reminders_source" target="_blank" rel="noopener">NPS Survey by SalesHub on Salesforce AppExchange</a> (listing facts last verified November 20, 2026).</p>
+{{CTA}}
