@@ -51,6 +51,8 @@ h1 em{font-style:normal;color:var(--yel)}
 .lf input,.lf select{width:100%;font:inherit;font-size:.98rem;padding:12px 13px;border:1.5px solid var(--line);border-radius:10px;background:#fff;color:var(--ink)}
 .lf input:focus,.lf select:focus{outline:none;border-color:var(--blue);box-shadow:0 0 0 3px rgba(0,47,167,.15)}
 .lf .err{display:none;color:var(--red);font-size:.8rem;margin-top:4px}.lf.bad input{border-color:var(--red)}.lf.bad .err{display:block}
+.rc{margin-top:14px;min-height:78px}.rc .err{margin-top:6px}
+@media(max-width:400px){.rc{min-height:58px}.rc .g-recaptcha{width:225px;transform:scale(.74);transform-origin:0 0;margin-bottom:-20px}}
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;font:inherit;font-weight:700;font-size:1rem;padding:15px 24px;border-radius:999px;text-decoration:none;border:0;cursor:pointer;transition:transform .15s}
 .btn:hover{transform:translateY(-1px)}.btn:focus-visible{outline:3px solid #8EA8FF;outline-offset:3px}
 .btn.yel{background:var(--yel);color:var(--blue)}.btn.blue{background:var(--blue);color:#fff}.btn.line{border:1.5px solid var(--line);color:var(--blue);background:#fff}
@@ -110,6 +112,8 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:12px 28px;justify-content:space-bet
     <div class="lf"><label for="co">Company</label><input id="co" name="company" autocomplete="organization" required><div class="err">Please add your company.</div></div>
     <div class="lf"><label for="ti">Your role</label><select id="ti" name="title"><option value="">Choose one</option><option>CFO or Finance leader</option><option>CX or Customer Success leader</option><option>Service or Support leader</option><option>Sales or Revenue leader</option><option>Marketing leader</option><option>Operations leader</option><option>Salesforce Admin or Architect</option><option>Other</option></select></div>
    </div>
+   <input type="hidden" name="captcha_settings" value='{"keyname":"SalesHubForms","fallback":"true","orgId":"00D6g000001VQio","ts":""}'>
+   <div class="lf rc"><div class="g-recaptcha" data-sitekey="6Lefxi4uAAAAAN1mzyHKCywsa8C3fTPJFduxsB9z" data-callback="rcOk"></div><div class="err" role="alert">Please tick the 'I'm not a robot' box.</div></div>
    <button class="btn yel" type="submit">Download the PDF →</button>
    <p class="fine">We'll use this to send the PDF and future issues of Close the Loop. See our <a href="https://saleshub.info/privacy-policy" target="_blank" rel="noopener">privacy policy</a>.</p>
   </form><iframe name="w2l" title="" hidden></iframe>
@@ -152,6 +156,7 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:12px 28px;justify-content:space-bet
   var ok=true;
   f.querySelectorAll("[required]").forEach(function(i){var v=i.value.trim(),bad=!v||(i.type==="email"&&(!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(v)||FREEMAIL.test(v.split("@").pop())));i.closest(".lf").classList.toggle("bad",bad);if(bad)ok=false});
   if(!ok){e.preventDefault();var b=f.querySelector(".bad input");b&&b.focus();return}
+  var rr=f.querySelector('[name="g-recaptcha-response"]');if(!rr||!rr.value.trim()){e.preventDefault();f.querySelector(".rc").classList.add("bad");return}
   f.querySelector('[name="description"]').value=["Interest: Content download - Close the Loop Issue 01 (CFO business case)","Next step: send demo invite","Form: close-the-loop on "+location.pathname,"UTM: "+utm,"Referrer: "+(document.referrer||"direct"),"Submitted: "+new Date().toISOString()].join("\n");
   var g=function(n){return (f.querySelector('[name="'+n+'"]').value||"").trim()};
   var cal="https://calendly.com/npssurvey/demo?"+new URLSearchParams({name:g("first_name")+" "+g("last_name"),email:g("email"),utm_source:q.get("utm_source")||"npssurveys.com",utm_medium:"gated_pdf",utm_campaign:"close_the_loop_01"}).toString();
@@ -163,5 +168,8 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:12px 28px;justify-content:space-bet
  document.addEventListener("click",function(e){var a=e.target.closest&&e.target.closest("a");if(!a)return;try{if(a.id==="dl")gtag("event","file_download",{file_name:"close-the-loop-issue-01.pdf"});if(/calendly/.test(a.href))gtag("event","cta_click",{cta_type:"demo",page:"close-the-loop"})}catch(_){}},true);
 })();
 </script>
+<script>window.rcOk=function(){var r=document.querySelector(".rc");if(r)r.classList.remove("bad")};</script>
+<script>function timestamp() { var response = document.getElementById("g-recaptcha-response"); if (response == null || response.value.trim() == "") { var elems = JSON.parse(document.getElementsByName("captcha_settings")[0].value); elems["ts"] = JSON.stringify(new Date().getTime()); document.getElementsByName("captcha_settings")[0].value = JSON.stringify(elems); } } setInterval(timestamp, 500);</script>
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
 </body>
 </html>
