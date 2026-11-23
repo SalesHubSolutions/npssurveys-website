@@ -8,7 +8,8 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 LIST = "https://appexchange.salesforce.com/appxListingDetail?listingId=a0N3A00000FtRTKUA3&tab=e&utm_source=npssurveys.com&utm_medium=blog&utm_campaign=cxos_insights"
 SITE = "https://www.npssurveys.com"
 
-CSS = """:root{--blue:#002FA7;--blue-deep:#002FA7;--yellow:#FFFFFF;--navy:#0C184A;--bg:#fff;--bg-tint:#F4F7FF;--surface:#fff;--line:#DCE4F7;--fg:#0C184A;--fg-soft:#3B4877;--fg-mute:#5E6B98;--link:#002FA7;--font:Inter,system-ui,-apple-system,Segoe UI,Roboto,sans-serif}
+CSS = """:root{--blue:#002FA7;--blue-deep:#002FA7;--yellow:#FFFFFF;--navy:#0C184A;--bg:#fff;--bg-tint:#F4F7FF;--surface:#fff;--line:#DCE4F7;--fg:#0C184A;--fg-soft:#3B4877;--fg-mute:#5E6B98;--link:#002FA7;--font:"IBM Plex Sans",system-ui,-apple-system,Segoe UI,Roboto,sans-serif}
+h1,h2,.h2{font-family:"IBM Plex Serif",Georgia,"Times New Roman",serif!important;font-weight:600!important;letter-spacing:-.012em!important}
 @media (prefers-color-scheme:dark){:root:not([data-theme=light]){--bg:#0A1230;--bg-tint:#111C45;--surface:#111C45;--line:#24326A;--fg:#EEF2FF;--fg-soft:#C5D0F2;--fg-mute:#97A5D6;--link:#8FB0FF}}
 *{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--font);font-size:17px;line-height:1.65}
 a{color:var(--link)}img{max-width:100%}
@@ -44,7 +45,7 @@ def head(title, desc, url, extra=""):
 <meta property="og:title" content="{html.escape(title)}"><meta property="og:description" content="{html.escape(desc)}">
 <meta property="og:image" content="{SITE}/share.png"><meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=IBM+Plex+Serif:wght@500;600&display=swap">
 <style>{CSS}</style>{extra}</head><body>
 <div class="annc">GetFeedback retires December 31, 2026. <a href="/#switch">Move your surveys to native Salesforce &rarr;</a></div>
 <header><div class="wrap"><a class="logo" href="/"><img src="/brand/logo/nps-survey-cx-os-mark-white.svg" alt=""><span>NPS Survey<small>CX OS by SalesHub</small></span></a>

@@ -111,7 +111,7 @@ def kit(rows):
     open(os.path.join(ROOT, "tour", "kit", "index.html"), "w").write(out)
 
 LOOP = open(os.path.join(ROOT, "brand/logo/nps-survey-cx-os-mark-white.svg")).read()
-AD_CSS = """*{box-sizing:border-box;margin:0;padding:0}body{background:#002FA7;color:#fff;font-family:Inter,Arial,sans-serif;-webkit-font-smoothing:antialiased;display:flex;flex-direction:column;overflow:hidden}
+AD_CSS = """*{box-sizing:border-box;margin:0;padding:0}body{background:#002FA7;color:#fff;font-family:"IBM Plex Sans",Arial,sans-serif;-webkit-font-smoothing:antialiased;display:flex;flex-direction:column;overflow:hidden}
 .top{display:flex;align-items:center;gap:16px}.top svg{width:60px;height:60px}.top b{display:block;font-size:32px;font-weight:800}.top small{display:block;font-size:20px;font-weight:600;color:#C9D5F2}
 .kick{display:inline-block;align-self:flex-start;background:rgba(255,255,255,.14);border:2px solid rgba(255,255,255,.28);border-radius:999px;padding:9px 20px;font-size:24px;font-weight:700;color:#fff}
 h1{font-weight:800;letter-spacing:-.02em;line-height:1.06}

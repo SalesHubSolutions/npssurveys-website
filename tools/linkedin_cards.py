@@ -7,7 +7,7 @@ from playwright.async_api import async_playwright
 LOOP = '<svg viewBox="0 0 100 100" width="64" height="64"><path d="M31.07 77.03 A33 33 0 1 1 68.93 77.03" fill="none" stroke="#fff" stroke-width="14" stroke-linecap="round"/><circle cx="50" cy="83" r="7.5" fill="#fff"/></svg>'
 CSS = """
 *{box-sizing:border-box;margin:0;padding:0}
-body{width:1080px;height:1350px;background:#002FA7;color:#fff;font-family:Inter,sans-serif;-webkit-font-smoothing:antialiased;position:relative;overflow:hidden}
+body{width:1080px;height:1350px;background:#002FA7;color:#fff;font-family:"IBM Plex Sans",sans-serif;-webkit-font-smoothing:antialiased;position:relative;overflow:hidden}
 .top{position:absolute;left:84px;top:80px;display:flex;align-items:center;gap:18px}
 .brand b{display:block;font-size:34px;font-weight:700;letter-spacing:-.01em}.brand span{display:block;font-size:20px;opacity:.78;margin-top:2px;font-weight:500}
 .kick{position:absolute;left:84px;top:236px;font-size:26px;font-weight:600;color:#b9c8f2}

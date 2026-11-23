@@ -14,8 +14,8 @@ from playwright.sync_api import sync_playwright
 ROOT=os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 MARK=open(os.path.join(ROOT,"brand/logo/nps-survey-cx-os-mark-white.svg")).read()
 FLAG=open(os.path.join(ROOT,"brand/flag/us-flag.svg")).read().replace("<svg ",'<svg style="width:285px;height:auto;border-radius:6px;box-shadow:0 10px 30px rgba(0,0,0,.35)" ',1)
-base="""<html><head><link rel=stylesheet href="https://fonts.googleapis.com/css2?family=Inter:wght@500;700;800&display=swap"><style>
-*{box-sizing:border-box}body{margin:0;width:1080px;height:1350px;font-family:Inter,Arial,sans-serif;color:#fff;
+base="""<html><head><link rel=stylesheet href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=IBM+Plex+Serif:wght@500;600&display=swap"><style>
+*{box-sizing:border-box}body{margin:0;width:1080px;height:1350px;font-family:"IBM Plex Sans",Arial,sans-serif;color:#fff;
 background:#002FA7;padding:84px 80px;display:flex;flex-direction:column}
 .top{display:flex;align-items:center;gap:18px;font-weight:800;font-size:34px}.top svg{width:64px;height:64px}.top small{display:block;font-size:22px;font-weight:600;opacity:.85}
 .kick{margin-top:70px;display:inline-block;color:#C9D5F2;font-weight:600;font-size:28px;align-self:flex-start}

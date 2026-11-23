@@ -4,7 +4,7 @@ import os, math
 ROOT=os.path.dirname(os.path.dirname(os.path.abspath(__file__))); OUT=os.path.join(ROOT,"content/figures"); os.makedirs(OUT,exist_ok=True)
 NAVY="#0C184A"; BLUE="#002FA7"; DEEP="#002FA7"; SKY="#DCE7FF"; TINT="#F4F7FF"; LINE="#DCE4F7"; MUTE="#5E6B98"; SOFT="#3B4877"
 RED="#EB5757"; AMB="#E9A52B"; GRN="#23A96A"; YEL="#C9D5F2"; W="#FFFFFF"
-F='font-family="Inter, Arial, sans-serif"'
+F='font-family="IBM Plex Sans, Arial, sans-serif"'
 def t(x,y,s,size=16,fill=NAVY,w=600,a="start"): return f'<text x="{x}" y="{y}" font-size="{size}" font-weight="{w}" fill="{fill}" text-anchor="{a}" {F}>{s}</text>'
 def r(x,y,w,h,rx=12,fill=W,stroke=LINE,sw=1.5): return f'<rect x="{x}" y="{y}" width="{w}" height="{h}" rx="{rx}" fill="{fill}" stroke="{stroke}" stroke-width="{sw}"/>'
 def arrow(x1,y1,x2,y2,c=BLUE,dash=False,small=False):
