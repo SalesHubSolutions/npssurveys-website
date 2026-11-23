@@ -14,7 +14,7 @@ import build_insights as bi, figures as fg
 from tour_data import F, GROUPS
 ROOT = bi.ROOT; SITE = bi.SITE
 LISTB = "https://appexchange.salesforce.com/appxListingDetail?listingId=a0N3A00000FtRTKUA3&tab=e"
-DEMO = "https://calendly.com/rashed-saleshub/30min"
+DEMO = "https://calendly.com/npssurvey/demo"
 E = html.escape
 
 def land(f, src, med):  # landing URL for ads: UTMs before the hash

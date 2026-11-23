@@ -118,7 +118,7 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:12px 28px;justify-content:space-bet
    <div class="row"><a class="btn blue" id="dl" href="/files/newsletter/close-the-loop-issue-01.pdf" target="_blank" rel="noopener">Open the PDF</a></div>
    <div class="step"><span class="n">1</span><div><b>Run your own numbers</b><a href="/#roi" style="color:var(--blue)">ROI calculator</a>, then paste them into page 8.</div></div>
    <div class="step"><span class="n">2</span><div><b>See it on your data</b>A 30-minute walkthrough inside Salesforce, built around your team.</div></div>
-   <div class="row"><a class="btn yel" id="cal" href="https://calendly.com/rashed-saleshub/30min" target="_blank" rel="noopener">Book a 30-minute demo →</a></div>
+   <div class="row"><a class="btn yel" id="cal" href="https://calendly.com/npssurvey/demo" target="_blank" rel="noopener">Book a 30-minute demo →</a></div>
   </div>
  </div></div>
 </div></section>
@@ -154,7 +154,7 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:12px 28px;justify-content:space-bet
   if(!ok){e.preventDefault();var b=f.querySelector(".bad input");b&&b.focus();return}
   f.querySelector('[name="description"]').value=["Interest: Content download - Close the Loop Issue 01 (CFO business case)","Next step: send demo invite","Form: close-the-loop on "+location.pathname,"UTM: "+utm,"Referrer: "+(document.referrer||"direct"),"Submitted: "+new Date().toISOString()].join("\n");
   var g=function(n){return (f.querySelector('[name="'+n+'"]').value||"").trim()};
-  var cal="https://calendly.com/rashed-saleshub/30min?"+new URLSearchParams({name:g("first_name")+" "+g("last_name"),email:g("email"),utm_source:q.get("utm_source")||"npssurveys.com",utm_medium:"gated_pdf",utm_campaign:"close_the_loop_01"}).toString();
+  var cal="https://calendly.com/npssurvey/demo?"+new URLSearchParams({name:g("first_name")+" "+g("last_name"),email:g("email"),utm_source:q.get("utm_source")||"npssurveys.com",utm_medium:"gated_pdf",utm_campaign:"close_the_loop_01"}).toString();
   document.getElementById("cal").href=cal;
   try{gtag("event","generate_lead",{form:"close-the-loop",interest:"content_download"});gtag("event","ads_conversion_Contact_Us_1")}catch(_){}
   setTimeout(function(){box.classList.add("sent");box.scrollIntoView({behavior:"smooth",block:"center"})},400);

@@ -132,7 +132,7 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:12px 28px;justify-content:space-bet
     <p class="fine">We'll use this to send your results and future issues of Close the Loop. See our <a href="https://saleshub.info/privacy-policy" target="_blank" rel="noopener">privacy policy</a>.</p>
    </form><iframe name="w2l" title="" hidden></iframe>
    <div class="after"><h3>Your plan is unlocked.</h3><p class="muted" style="margin:0">Want help closing these gaps? In 30 minutes we'll map your first surveys, routing rules and dashboard inside your Salesforce org.</p>
-    <div class="row"><a class="btn yel" id="cal" href="https://calendly.com/rashed-saleshub/30min" target="_blank" rel="noopener">Book a 30-minute demo →</a><a class="btn line" id="dl" href="/files/newsletter/close-the-loop-issue-01.pdf" target="_blank" rel="noopener">Open the CFO business case PDF</a></div></div>
+    <div class="row"><a class="btn yel" id="cal" href="https://calendly.com/npssurvey/demo" target="_blank" rel="noopener">Book a 30-minute demo →</a><a class="btn line" id="dl" href="/files/newsletter/close-the-loop-issue-01.pdf" target="_blank" rel="noopener">Open the CFO business case PDF</a></div></div>
   </div>
   <button class="back" id="redo" type="button">↺ Retake the check</button>
  </div>
@@ -181,7 +181,7 @@ f.addEventListener("submit",function(e){var ok=true;
  var utm=["utm_source","utm_medium","utm_campaign","utm_content"].map(function(k){return qs.get(k)}).filter(Boolean).join(" / ")||"none";
  f.querySelector('[name="description"]').value=["Interest: CX health check (quiz) + Close the Loop Issue 01 PDF","CX health score: "+S+"/100 ("+BAND+")","Top gaps: "+gaps.map(function(x){return x.t}).join("; "),"Answers: "+Q.map(function(q,k){return (k+1)+". "+q[1][A[k]]}).join(" | "),"Next step: send demo invite","Form: cx-health on "+location.pathname,"UTM: "+utm,"Referrer: "+(document.referrer||"direct"),"Submitted: "+new Date().toISOString()].join("\n");
  var g=function(n){return (f.querySelector('[name="'+n+'"]').value||"").trim()};
- el("cal").href="https://calendly.com/rashed-saleshub/30min?"+new URLSearchParams({name:g("first_name")+" "+g("last_name"),email:g("email"),a1:"CX health score "+S+"/100. Top gap: "+gaps[0].t,utm_source:qs.get("utm_source")||"npssurveys.com",utm_medium:"cx_health_quiz",utm_campaign:"close_the_loop_01"}).toString();
+ el("cal").href="https://calendly.com/npssurvey/demo?"+new URLSearchParams({name:g("first_name")+" "+g("last_name"),email:g("email"),a1:"CX health score "+S+"/100. Top gap: "+gaps[0].t,utm_source:qs.get("utm_source")||"npssurveys.com",utm_medium:"cx_health_quiz",utm_campaign:"close_the_loop_01"}).toString();
  try{gtag("event","generate_lead",{form:"cx-health",interest:"quiz",score:S});gtag("event","ads_conversion_Contact_Us_1")}catch(_){}
  setTimeout(function(){document.querySelector(".qcard").classList.add("unlocked");document.querySelector(".gate").classList.add("unlocked")},400)});
 f.querySelectorAll("[required]").forEach(function(x){x.addEventListener("input",function(){x.closest(".lf").classList.remove("bad")})});

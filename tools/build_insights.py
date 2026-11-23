@@ -7,7 +7,7 @@ import json, re, glob, os, html, datetime
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 LIST = "https://appexchange.salesforce.com/appxListingDetail?listingId=a0N3A00000FtRTKUA3&tab=e&utm_source=npssurveys.com&utm_medium=blog&utm_campaign=cxos_insights"
 SITE = "https://www.npssurveys.com"
-CAL = "https://calendly.com/rashed-saleshub/30min?utm_source=npssurveys.com&utm_medium=blog&utm_campaign=cxos_insights"
+CAL = "https://calendly.com/npssurvey/demo?utm_source=npssurveys.com&utm_medium=blog&utm_campaign=cxos_insights"
 
 CSS = """:root{--blue:#002FA7;--blue-deep:#002FA7;--yellow:#FFFFFF;--navy:#0C184A;--bg:#fff;--bg-tint:#F4F7FF;--surface:#fff;--line:#DCE4F7;--fg:#0C184A;--fg-soft:#3B4877;--fg-mute:#5E6B98;--link:#002FA7;--font:"IBM Plex Sans",system-ui,-apple-system,Segoe UI,Roboto,sans-serif}
 h1,h2,.h2{font-family:"IBM Plex Serif",Georgia,"Times New Roman",serif!important;font-weight:600!important;letter-spacing:-.012em!important}
