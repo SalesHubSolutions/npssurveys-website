@@ -82,6 +82,13 @@ CARDS = {
 <div class="row" style="justify-content:space-between"><span class="lab">Migration project · fixed scope</span><span class="chip">5 phases</span></div>
 """+"".join(f'<div class="row" style="gap:18px;margin-top:20px"><div class="ic">{i+1}</div><div><div class="n" style="font-size:25px">{a}</div><div class="m">{b}</div></div></div>' for i,(a,b) in enumerate([("Discover","Inventory every survey, trigger and owner"),("Export","Definitions and response history"),("Rebuild in a sandbox","Same Salesforce events, same fields"),("Cut over","One survey live, then the rest"),("Hand over","Owners, follow-up rules, admin training")]))+"""
 <div class="hr"></div><div class="row" style="justify-content:space-between"><span class="n" style="font-size:23px">Keep 100% of services</span><span class="chip on">25% yr 1 + 10% renewals</span></div>""",470,"npssurveys.com/insights","Implementation partner terms. Full terms in the SalesHub partner agreement."),
+"reminders": page("Admin how-to","Remind only the people who haven't answered.","""
+<div class="row" style="justify-content:space-between"><span class="lab">Onboarding survey · reminder limit 2</span><span class="chip">24 hours apart</span></div>
+<div style="margin-top:8px">
+<div class="li"><div class="row" style="gap:20px"><div class="ic">0</div><div><div class="n" style="font-size:25px">Survey sent</div><div class="m">Day 0 · when the record qualifies</div></div></div><span class="chip">Sent</span></div>
+<div class="li"><div class="row" style="gap:20px"><div class="ic">1</div><div><div class="n" style="font-size:25px">Reminder 1</div><div class="m">Day 1 · only because there's no answer yet</div></div></div><span class="chip">Sent</span></div>
+<div class="li"><div class="row" style="gap:20px"><div class="ck">"""+CHECK+"""</div><div><div class="n" style="font-size:25px">Answered</div><div class="m">Day 1 · reminders stop for this survey</div></div></div><span class="chip grn">Done</span></div>
+</div><div class="hr"></div><div class="row" style="justify-content:space-between"><span class="n" style="font-size:23px">Reminder 2</span><span class="chip">Never sent</span></div>""",520,"npssurveys.com/insights","The 24-hour rule, reminder limits, and Live vs. Snapshot mode."),
 "csat-case-close": page("Admin how-to","Ask about the case while it's fresh. Once.","""
 <div class="row" style="justify-content:space-between"><span class="lab">Case 00012874 · Billing question</span><span class="chip grn">Closed</span></div>
 <div class="hr"></div><div class="lab">CSAT survey · sent once, to the case contact</div>
