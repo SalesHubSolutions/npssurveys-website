@@ -26,9 +26,11 @@
   /* Accent: main call to action only (A/B test against white until Dec 20, 2026) */
   --signal-yellow:#FFD60A;
 
-  /* Meaning only: scores and status */
-  --good:#23A96A;       /* promoters, happy, done */
-  --bad:#EB5757;        /* detractors, at risk */
+  /* Meaning only: scores and status. Taken from the product's score dial, so the site, decks and app match. */
+  --good:#267A72;       /* dial teal: promoters, happy, done */
+  --bad:#EB6665;        /* dial coral: detractors, at risk */
+  --dial-track:#E7E7E7; /* dial middle band */
+  --dial-needle:#687385;/* dial needle */
   --warn:#E9A52B;       /* middle of rating scales only */
   --neutral:#98A2B3;    /* passives */
 
