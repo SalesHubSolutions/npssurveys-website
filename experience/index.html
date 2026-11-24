@@ -64,10 +64,10 @@ h1{font:600 60px/1.05 var(--serif);letter-spacing:-.015em;text-wrap:balance}
 /* experience layer: pills on the inner orbit */
 .orbit{position:absolute;left:50%;top:50%;width:0;height:0}
 .spin{animation:spin 140s linear infinite}
-.spin.rev{animation-duration:200s;animation-direction:reverse}
+.spin.rev{animation-duration:140s}
 @keyframes spin{to{transform:rotate(360deg)}}
 .spin>*{animation:counter 140s linear infinite}
-.spin.rev>*{animation:counter 200s linear infinite reverse}
+.spin.rev>*{animation:counter 140s linear infinite}
 @keyframes counter{to{rotate:-360deg}}
 .pill{position:absolute;transform:translate(-50%,-50%);white-space:nowrap;border-radius:999px;font:500 14px/1 var(--sans);padding:10px 16px;
   background:rgba(255,255,255,.94);color:var(--navy);box-shadow:0 10px 30px rgba(4,11,38,.35)}
@@ -215,8 +215,7 @@ footer .wrap{display:flex;gap:18px;flex-wrap:wrap;justify-content:space-between}
     <div class="tile float d2" style="left:230px;top:70px"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="10" width="14" height="10" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg></div>
     <div class="tile float" style="left:270px;top:690px"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 21V10M7 10l4-7 2 1-1 5h6a2 2 0 0 1 2 2l-2 8a2 2 0 0 1-2 2H7"/></svg></div>
     <div class="tile float d3" style="right:250px;top:700px"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg></div>
-    <div class="mini float d3" style="right:230px;top:60px"><div class="nps"><div class="dial"><span>+42</span></div><small>NPS this quarter<br>up 6 points</small></div></div>
-    <div class="mini float" style="left:200px;top:470px"><b>AI summary</b><div class="bar"></div><div class="bar w2"></div></div>
+    <div class="mini float d3" style="right:230px;top:0"><div class="nps"><div class="dial"><span>+42</span></div><small>NPS this quarter<br>up 6 points</small></div></div>
   </div>
   <div class="mobile-layers">
     <span class="pill xp">Customer experience</span><span class="pill xp">Employee experience</span><span class="pill xp">Brand experience</span><span class="pill xp">Market research</span>
