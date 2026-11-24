@@ -7,6 +7,9 @@
   var K={
     nps:{min:-100,max:100,bands:[[-100,0,"bad"],[0,30,"track"],[30,100,"good"]],fmt:function(v){return (v>0?"+":"")+Math.round(v)},ends:["-100","100"],mid:"0",cap:"NPS"},
     csat:{min:0,max:100,bands:[[0,60,"bad"],[60,80,"track"],[80,100,"good"]],fmt:function(v){return Math.round(v)+"%"},ends:["0","100"],mid:"50",cap:"CSAT"},
+    rate:{min:0,max:100,bands:[[0,20,"bad"],[20,30,"track"],[30,100,"good"]],fmt:function(v){return Math.round(v)+"%"},ends:["0","100"],mid:"50",cap:"Response rate"},
+    health:{min:0,max:100,bands:[[0,40,"bad"],[40,70,"track"],[70,100,"good"]],fmt:function(v){return Math.round(v)+""},ends:["0","100"],mid:"50",cap:"Experience health"},
+    score:{min:0,max:10,bands:[[0,7,"bad"],[7,9,"track"],[9,10,"good"]],fmt:function(v){return Math.round(v)+""},ends:["0","10"],mid:"5",cap:"Latest NPS answer"},
     ces:{min:1,max:7,bands:[[1,4,"bad"],[4,5,"track"],[5,7,"good"]],fmt:function(v){return v.toFixed(1)},ends:["1","7"],mid:"4",cap:"CES, out of 7"}
   };
   var A0=225,SW=270; /* start angle (deg, clockwise from 3 o'clock is 0, we use math angles) */
@@ -26,7 +29,7 @@
     out.push('<text x="'+(e1[0]-4).toFixed(1)+'" y="'+(e1[1]+15).toFixed(1)+'" '+f+' font-size="8" fill="'+ti+'" text-anchor="middle">'+k.ends[0]+'</text>');
     out.push('<text x="'+(e2[0]+4).toFixed(1)+'" y="'+(e2[1]+15).toFixed(1)+'" '+f+' font-size="8" fill="'+ti+'" text-anchor="middle">'+k.ends[1]+'</text>');
     out.push('<text x="'+m[0].toFixed(1)+'" y="'+(m[1]+2).toFixed(1)+'" '+f+' font-size="8" fill="'+ti+'" text-anchor="middle">'+k.mid+'</text>');
-    var a=ang(k,v),tip=pt(cx,cy,r-14,a),b1=pt(cx,cy,5.5,a+90),b2=pt(cx,cy,5.5,a-90);
+    var a=ang(k,v),tip=pt(cx,cy,r-22,a),b1=pt(cx,cy,5.5,a+90),b2=pt(cx,cy,5.5,a-90);
     out.push('<g class="npsd-needle" style="transform-origin:100px 100px;--sw:'+(-(A0-a)).toFixed(1)+'deg"><path d="M'+b1[0].toFixed(2)+' '+b1[1].toFixed(2)+' L'+tip[0].toFixed(2)+' '+tip[1].toFixed(2)+' L'+b2[0].toFixed(2)+' '+b2[1].toFixed(2)+' Z" fill="'+(dark?"#C7D5FF":C.needle)+'"/><circle cx="100" cy="100" r="7" fill="'+(dark?"#C7D5FF":C.needle)+'"/></g>');
     out.push('<text x="100" y="150" '+f+' font-size="34" font-weight="600" fill="'+(dark?"#fff":C.ink)+'" text-anchor="middle" letter-spacing="-.5">'+k.fmt(v)+'</text>');
     if(o.label!==false)out.push('<text x="100" y="190" '+f+' font-size="11" fill="'+ti+'" text-anchor="middle">'+(o.caption||k.cap)+'</text>');
