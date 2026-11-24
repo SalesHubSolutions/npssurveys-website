@@ -280,6 +280,18 @@ h1,h2,.h2{font-family:"IBM Plex Serif",Georgia,"Times New Roman",serif!important
 @media (max-width:860px){.xd-row{grid-template-columns:1fr}}
 @media (prefers-reduced-motion:no-preference){.npsd .npsd-needle{animation:npsd-sweep 1.4s cubic-bezier(.2,.8,.2,1) .2s both}}
 @keyframes npsd-sweep{from{transform:rotate(var(--sw))}to{transform:rotate(0)}}
+/* Listen. Understand. Act. product cards and comparison */
+.xl-row{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:36px}
+.xl-c{display:flex;flex-direction:column;background:#fff;border:1px solid #DCE3F5;border-radius:20px;padding:26px 24px 0;overflow:hidden;color:#0F1A3D;text-decoration:none;box-shadow:0 8px 24px rgba(4,11,38,.08)}
+.xl-v{font-family:"IBM Plex Serif",Georgia,serif;font-weight:600;font-size:30px;color:#002FA7}
+.xl-c p{font-size:16px;color:#5A6787;line-height:1.5;margin:8px 0 20px}
+.xl-c img{display:block;width:calc(100% + 24px);height:auto;margin-top:auto;border-radius:12px 0 0 0;border:1px solid #DCE3F5;border-bottom:0;border-right:0;box-shadow:0 -6px 24px rgba(4,11,38,.08);transition:transform .5s cubic-bezier(.2,.7,.2,1)}
+@media (hover:hover){.xl-c:hover img{transform:translate(-6px,-6px)}}
+.xv{margin-top:30px;background:#fff;border:1px solid #DCE3F5;border-radius:18px;overflow:hidden}
+.xv>div{display:grid;grid-template-columns:1fr 1.3fr 1.7fr;border-top:1px solid #EEF2FB}.xv>div:first-child{border-top:0}
+.xv span{padding:14px 20px;font-size:16px;line-height:1.45}.xv span:first-child{font-weight:600}.xv span:nth-child(2){color:#5A6787}.xv span:nth-child(3){background:#F4F7FF;color:#0F1A3D}
+.xv .xv-h span{font-size:13px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:#5A6787}.xv .xv-h span:nth-child(3){color:#002FA7}
+@media (max-width:860px){.xl-row{grid-template-columns:1fr}.xv>div{grid-template-columns:1fr 1fr}.xv span:first-child{grid-column:1/-1;padding-bottom:0}.xv .xv-h span:first-child{display:none}}
 </style>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=IBM+Plex+Serif:wght@500;600&display=swap">
@@ -1875,6 +1887,22 @@ V["brand-kit"] = () => `${heroP("Brand Kit and Marketing suite", "Your brand on 
 ${suiteNav("brand_kit")}
 ${finalCTA("brand_kit_final")}
 `;
+const XLUA = () => `<section class="band xl"><div class="wrap"><h2 class="h2 xl-t">Listen. Understand. Act.</h2><p class="sub">One app inside Salesforce, from the first question to the customer you win back.</p>
+<div class="xl-row">
+<a class="xl-c" href="#survey-studio"><div class="xl-v">Listen</div><p>Send NPS, CSAT, effort and employee surveys from 131 templates, or let AI draft one.</p><img src="/assets/product/listen.webp" width="1200" height="690" loading="lazy" alt="Survey Studio with customer NPS, employee NPS and CSAT dials"></a>
+<a class="xl-c" href="#intelligence"><div class="xl-v">Understand</div><p>AI reads every comment for emotion, topics and the one fix that moves your score.</p><img src="/assets/product/understand.webp" width="1200" height="720" loading="lazy" alt="Insights with sentiment index, emotions and an AI summary"></a>
+<a class="xl-c" href="#service"><div class="xl-v">Act</div><p>Every unhappy answer becomes a follow-up with an owner, a due date and a playbook.</p><img src="/assets/product/act.webp" width="1200" height="720" loading="lazy" alt="Close the Loop follow-ups and account health dial"></a>
+</div></div></section>`;
+const XVS = () => `<section class="band tint"><div class="wrap"><h2 class="h2">Salesforce stores a score. We act on it.</h2>
+<div class="xv"><div class="xv-h"><span></span><span>Standard Salesforce</span><span>NPS Survey CX OS</span></div>
+<div><span>Scores</span><span>One survey score, in a field</span><span>NPS, CSAT and effort dials on every account, case and deal</span></div>
+<div><span>Unhappy customers</span><span>A report someone has to remember to run</span><span>An automatic follow-up with an owner and a due date</span></div>
+<div><span>Comments</span><span>Text you read one by one</span><span>AI emotions, topics and a summary of what to fix</span></div>
+<div><span>Your brand</span><span>Plain emails</span><span>Brand Kit built from your website in seconds</span></div>
+<div><span>Reviews</span><span>Nothing</span><span>Happy customers asked for a Google review</span></div>
+<div><span>Leaders</span><span>Build your own dashboards</span><span>Executive PDF reports, ready to send</span></div>
+<div><span>Setup</span><span>A developer and custom code</span><span>Guided setup, no code</span></div>
+</div></div></section>`;
 const XDIALS = (dark) => `<section class="band xd${dark?" xd-dark":""}"><div class="wrap"><div class="eyebrow">Our flagship: every customer score</div><h2 class="h2">NPS, CSAT and effort, live on every record.</h2><p class="sub">The same dials your teams see in Salesforce. Every answer moves the needle on the account, the case and the deal, and every red answer becomes a follow-up with an owner.</p>
 <div class="xd-row">
 <div class="xd-c"><div class="xd-h">Net Promoter Score</div><div data-dial="nps:42" data-size="260" data-caption="NPS · 1,284 answers"></div><div class="xd-b"><b style="flex:58;background:#267A72"></b><b style="flex:26;background:#E7E7E7"></b><b style="flex:16;background:#EB6665"></b></div><p>Loyalty by account, region and product. Detractors become cases on their own.</p></div>
@@ -1939,7 +1967,9 @@ V.home = () => `<div class="xh">
  <div class="xh-actions xh-left"><a class="btn xh-sec" href="#platform">See the whole platform</a></div>
 </div></section>
 </div>
+${XLUA()}
 ${XDIALS()}
+${XVS()}
 ${XLEADERS("home_leaders")}
 <section class="proof" aria-label="At a glance"><div class="wrap"><div><b>5.0</b> on AppExchange · 7 reviews</div><div><b>131</b> survey templates</div><div><b>67</b> question types</div><div><b>10</b> industry blueprints</div><div><b>0</b> integrations to maintain</div></div></section>
 <section class="band nx-suites"><div class="wrap">
@@ -1953,7 +1983,9 @@ ${XLEADERS("home_leaders")}
 ${finalCTA("home_final")}`;
 
 V.platform = () => `${hero("", "The AI <em>human experience</em> platform for Salesforce", "Six suites in one app: surveys, closed-loop follow-up, AI insights and leadership dashboards, built on the records your teams already use.", `<div class="ctas">${trial("platform_hero")}${demoBtn()}</div>${coreStrip}`)}
+${XLUA()}
 ${XDIALS()}
+${XVS()}
 <section class="proof" aria-label="At a glance"><div class="wrap"><div><b>5.0</b> on AppExchange · 7 reviews</div><div><b>131</b> survey templates</div><div><b>67</b> question types</div><div><b>10</b> industry blueprints</div><div><b>0</b> integrations to maintain</div></div></section>
 <section class="band tint" style="padding-block:6px"><div class="wrap">${trustBar()}</div></section>
 <section class="band nx-suites"><div class="wrap">
