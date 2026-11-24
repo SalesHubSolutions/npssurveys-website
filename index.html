@@ -281,12 +281,16 @@ h1,h2,.h2{font-family:"IBM Plex Serif",Georgia,"Times New Roman",serif!important
 @media (prefers-reduced-motion:no-preference){.npsd .npsd-needle{animation:npsd-sweep 1.4s cubic-bezier(.2,.8,.2,1) .2s both}}
 @keyframes npsd-sweep{from{transform:rotate(var(--sw))}to{transform:rotate(0)}}
 /* Listen. Understand. Act. product cards and comparison */
-.xl-row{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:36px}
-.xl-c{display:flex;flex-direction:column;background:#fff;border:1px solid #DCE3F5;border-radius:20px;padding:26px 24px 0;overflow:hidden;color:#0F1A3D;text-decoration:none;box-shadow:0 8px 24px rgba(4,11,38,.08)}
-.xl-v{font-family:"IBM Plex Serif",Georgia,serif;font-weight:600;font-size:30px;color:#002FA7}
-.xl-c p{font-size:16px;color:#5A6787;line-height:1.5;margin:8px 0 20px}
-.xl-c img{display:block;width:calc(100% + 24px);height:auto;margin-top:auto;border-radius:12px 0 0 0;border:1px solid #DCE3F5;border-bottom:0;border-right:0;box-shadow:0 -6px 24px rgba(4,11,38,.08);transition:transform .5s cubic-bezier(.2,.7,.2,1)}
-@media (hover:hover){.xl-c:hover img{transform:translate(-6px,-6px)}}
+.xl-tabs{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:32px}
+.xl-tabs button{all:unset;cursor:pointer;display:block;padding:18px 20px;border-radius:16px;border:1px solid #DCE3F5;background:#fff;transition:background .25s,border-color .25s,box-shadow .25s}
+.xl-tabs button b{display:block;font-family:"IBM Plex Serif",Georgia,serif;font-weight:600;font-size:26px;color:#002FA7}
+.xl-tabs button span{display:block;margin-top:6px;font-size:15px;line-height:1.45;color:#5A6787}
+.xl-tabs button[aria-selected=true]{background:#002FA7;border-color:#002FA7;box-shadow:0 12px 30px rgba(0,47,167,.25)}.xl-tabs button[aria-selected=true] b,.xl-tabs button[aria-selected=true] span{color:#fff}
+.xl-tabs button:focus-visible{outline:3px solid #8FB0FF;outline-offset:2px}
+.xl-stage{position:relative;margin-top:18px;border-radius:18px;overflow:hidden;border:1px solid #DCE3F5;box-shadow:0 24px 60px rgba(4,11,38,.14);background:#EEF2FB;aspect-ratio:1200/720}
+.xl-stage a{position:absolute;inset:0;opacity:0;visibility:hidden;transition:opacity .45s}.xl-stage a.on{opacity:1;visibility:visible}
+.xl-stage img{display:block;width:100%;height:100%;object-fit:cover;object-position:top left}
+@media (max-width:700px){.xl-tabs{grid-template-columns:repeat(3,1fr);gap:8px}.xl-tabs button{padding:12px 8px;text-align:center;border-radius:12px}.xl-tabs button b{font-size:18px}.xl-tabs button span{display:none}.xl-stage{aspect-ratio:auto}.xl-stage a{position:static;display:none}.xl-stage a.on{display:block}.xl-stage img{height:auto}}
 .xv{margin-top:30px;background:#fff;border:1px solid #DCE3F5;border-radius:18px;overflow:hidden}
 .xv>div{display:grid;grid-template-columns:1fr 1.3fr 1.7fr;border-top:1px solid #EEF2FB}.xv>div:first-child{border-top:0}
 .xv span{padding:14px 20px;font-size:16px;line-height:1.45}.xv span:first-child{font-weight:600}.xv span:nth-child(2){color:#5A6787}.xv span:nth-child(3){background:#F4F7FF;color:#0F1A3D}
@@ -1888,10 +1892,15 @@ ${suiteNav("brand_kit")}
 ${finalCTA("brand_kit_final")}
 `;
 const XLUA = () => `<section class="band xl"><div class="wrap"><h2 class="h2 xl-t">Listen. Understand. Act.</h2><p class="sub">One app inside Salesforce, from the first question to the customer you win back.</p>
-<div class="xl-row">
-<a class="xl-c" href="#survey-studio"><div class="xl-v">Listen</div><p>Send NPS, CSAT, effort and employee surveys from 131 templates, or let AI draft one.</p><img src="/assets/product/listen.webp" width="1200" height="690" loading="lazy" alt="Survey Studio with customer NPS, employee NPS and CSAT dials"></a>
-<a class="xl-c" href="#intelligence"><div class="xl-v">Understand</div><p>AI reads every comment for emotion, topics and the one fix that moves your score.</p><img src="/assets/product/understand.webp" width="1200" height="720" loading="lazy" alt="Insights with sentiment index, emotions and an AI summary"></a>
-<a class="xl-c" href="#service"><div class="xl-v">Act</div><p>Every unhappy answer becomes a follow-up with an owner, a due date and a playbook.</p><img src="/assets/product/act.webp" width="1200" height="720" loading="lazy" alt="Close the Loop follow-ups and account health dial"></a>
+<div class="xl-tabs" role="tablist">
+<button role="tab" aria-selected="true" data-xl="0"><b>Listen</b><span>NPS, CSAT, effort and employee surveys from 131 templates, or let AI draft one.</span></button>
+<button role="tab" aria-selected="false" data-xl="1"><b>Understand</b><span>AI reads every comment for emotion, topics and the one fix that moves your score.</span></button>
+<button role="tab" aria-selected="false" data-xl="2"><b>Act</b><span>Every unhappy answer becomes a follow-up with an owner, a due date and a playbook.</span></button>
+</div>
+<div class="xl-stage">
+<a href="/assets/product/listen.webp" target="_blank" rel="noopener" class="on"><picture><source media="(max-width:700px)" srcset="/assets/product/listen-focus.webp"><img src="/assets/product/listen.webp" width="1200" height="690" alt="Survey Studio with customer NPS, employee NPS and CSAT dials"></picture></a>
+<a href="/assets/product/understand.webp" target="_blank" rel="noopener"><picture><source media="(max-width:700px)" srcset="/assets/product/understand-focus.webp"><img src="/assets/product/understand.webp" width="1200" height="720" loading="lazy" alt="Insights with sentiment, emotions and an AI summary"></picture></a>
+<a href="/assets/product/act.webp" target="_blank" rel="noopener"><picture><source media="(max-width:700px)" srcset="/assets/product/act-focus.webp"><img src="/assets/product/act.webp" width="1200" height="720" loading="lazy" alt="Close the Loop follow-ups and the account health dial"></picture></a>
 </div></div></section>`;
 const XVS = () => `<section class="band tint"><div class="wrap"><h2 class="h2">Salesforce stores a score. We act on it.</h2>
 <div class="xv"><div class="xv-h"><span></span><span>Standard Salesforce</span><span>NPS Survey CX OS</span></div>
@@ -2744,6 +2753,7 @@ function route(){
   document.getElementById("drawer").hidden = true; document.getElementById("menuBtn").setAttribute("aria-expanded","false");
   window.scrollTo({top:0});
   wire(); if(window.NPSDial) NPSDial.hydrate(app);
+  app.querySelectorAll(".xl").forEach(x=>{const t=[...x.querySelectorAll("[data-xl]")],v=[...x.querySelectorAll(".xl-stage a")];t.forEach((b,i)=>b.onclick=()=>{t.forEach((o,j)=>o.setAttribute("aria-selected",i===j));v.forEach((o,j)=>o.classList.toggle("on",i===j))})});
   const TITLES={service:"Service suite | NPS Survey CX OS",journeys:"Customer Journey suite | NPS Survey CX OS",revenue:"Sales suite: Revenue CX | NPS Survey CX OS",intelligence:"CX Intelligence and AI workers | NPS Survey CX OS","survey-studio":"Survey Studio | NPS Survey CX OS","brand-kit":"Brand Kit and Marketing | NPS Survey CX OS",home:"NPS Survey CX OS | One AI human experience platform for Salesforce",platform:"Product: the AI human experience platform | NPS Survey CX OS",industries:"Solutions by industry and team | NPS Survey CX OS","public-sector":"Public sector | NPS Survey CX OS",learn:"Learning Center | NPS Survey CX OS",resources:"Resources | NPS Survey CX OS",reviews:"Reviews | NPS Survey CX OS",pricing:"Pricing | NPS Survey CX OS",demo:"Book a demo | NPS Survey CX OS",roi:"ROI calculator and business case | NPS Survey CX OS",compare:"Native vs. bolt-on survey tools | NPS Survey CX OS",switch:"Switching from GetFeedback or Delighted | NPS Survey CX OS",partners:"Partner program for Salesforce SIs | NPS Survey CX OS",choose:"Salesforce-native or standalone? Choose your NPS Survey product"};
   document.title = TITLES[key] || TITLES.home;
 }
