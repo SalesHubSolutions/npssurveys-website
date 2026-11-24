@@ -47,7 +47,7 @@ def head(title, desc, url, extra=""):
 <meta property="og:image" content="{SITE}/share.png"><meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=IBM+Plex+Serif:wght@500;600&display=swap">
-<style>{CSS}</style>{extra}</head><body>
+<style>{CSS}</style><link rel="stylesheet" href="/brand/scale.css">{extra}</head><body>
 <div class="annc">GetFeedback retires December 31, 2026. <a href="/#switch">Move your surveys to native Salesforce &rarr;</a></div>
 <header><div class="wrap"><a class="logo" href="/"><img src="/brand/logo/nps-survey-cx-os-mark-white.svg" alt=""><span>NPS Survey<small>CX OS by SalesHub</small></span></a>
 <nav><a href="/#platform">Product</a><a href="/#industries">Solutions</a><a href="/insights/">Insights</a><a href="/#partners">Partners</a><a href="/#pricing">Pricing</a><a class="btn" href="{LIST}&utm_content=blog_nav" target="_blank" rel="noopener">Free trial</a></nav></div></header>"""
@@ -93,7 +93,7 @@ def build():
         ld = {"@context": "https://schema.org", "@type": "BlogPosting", "headline": p["title"], "description": p["description"], "datePublished": p["date"],
               "author": {"@type": "Organization", "name": p.get("author", "SalesHub")}, "publisher": {"@type": "Organization", "name": "SalesHub, LLC"}, "mainEntityOfPage": url, "image": f"{SITE}/share.png"}
         body = figs(p["body"]).replace("{{CTA}}", cta_html(p.get("cta", "trial"), p["slug"])).replace("{{TRIAL}}", LIST + "&utm_content=blog_" + p["slug"])
-        page = head(p["title"] + " | NPS Survey CX OS", p["description"], url, f'<script type="application/ld+json">{json.dumps(ld)}</script>') + f"""
+        page = head(p["title"] + " | NPS Survey CX OS", p["description"], url, f'<link rel="stylesheet" href="/brand/scale-article.css"><script type="application/ld+json">{json.dumps(ld)}</script>') + f"""
 <section class="hero"><div class="narrow"><div class="crumb"><a href="/insights/">Insights</a> &middot; {html.escape(" · ".join(p.get("tags", [])))}</div>
 <h1>{html.escape(p["title"])}</h1><p>{html.escape(p["description"])}</p><div class="meta">{html.escape(p.get("author","SalesHub"))} &middot; {fmt(p["date"])} &middot; {p.get("read","")} read</div></div></section>
 <main class="narrow"><article>{body}{cta_html(p.get("cta","trial"), p["slug"]) if "{{CTA}}" not in p["body"] else ""}</article></main>""" + FOOT
