@@ -1371,6 +1371,17 @@ footer .legal{font-size:13px}
  .btn{transition:transform .2s,box-shadow .2s,background-color .2s,filter .2s}.btn:hover{transform:translateY(-1px)}
  .btn.primary:hover{box-shadow:0 12px 28px rgba(0,47,167,.28)}
 }
+
+/* Premium cover tiles for downloads: Klein depth, the Loop as the graphic, serif type (Nov 24, 2026) */
+.rcov{position:relative;width:88px;height:110px;border-radius:12px;overflow:hidden;color:#fff;display:flex;flex-direction:column;justify-content:flex-end;padding:10px;box-shadow:0 10px 24px rgba(4,11,38,.25),inset 0 1px 0 rgba(255,255,255,.18);background:radial-gradient(120% 80% at 85% 0%,rgba(61,107,240,.95) 0,transparent 60%),linear-gradient(160deg,#002FA7,#071338)}
+.rcov svg{position:absolute;right:-26px;top:-22px;width:92px;height:92px;color:rgba(143,176,255,.55)}
+.rcov b{position:relative;font:600 22px/1 "IBM Plex Serif",Georgia,serif;letter-spacing:-.01em}
+.rcov small{position:relative;margin-top:5px;font:600 8.5px/1.2 "IBM Plex Sans",sans-serif;letter-spacing:.08em;text-transform:uppercase;color:#C7D5FF}
+.rcov-p{background:radial-gradient(120% 80% at 85% 0%,rgba(143,176,255,.55) 0,transparent 60%),linear-gradient(160deg,#071338,#040B26)}
+.rcov-o{background:radial-gradient(120% 80% at 85% 0%,rgba(199,213,255,.9) 0,transparent 55%),linear-gradient(160deg,#3D6BF0,#002FA7)}
+.rcov-s{background:radial-gradient(120% 80% at 85% 0%,rgba(61,107,240,.7) 0,transparent 60%),linear-gradient(160deg,#00227A,#040B26)}
+.rcov-v{background:radial-gradient(120% 80% at 85% 0%,rgba(61,107,240,.6) 0,transparent 60%),linear-gradient(160deg,#0F1A3D,#040B26)}
+@media (hover:hover) and (prefers-reduced-motion:no-preference){.rcov{transition:transform .3s cubic-bezier(.2,.7,.2,1)}.res:hover .rcov{transform:rotate(-2deg) scale(1.04)}}
 </style>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-BF2FDR6KMM"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date());gtag("config","G-BF2FDR6KMM",{linker:{domains:["saleshub.info","npssurveys.com"]}});gtag("config","G-M9VNR10ZPP");</script><script>(function(){var v;try{var m=location.search.match(/[?&]cta=(y|w)/);v=m?m[1]:localStorage.getItem("ctaV");if(v!=="y"&&v!=="w"){v=Math.random()<.5?"y":"w"}localStorage.setItem("ctaV",v)}catch(e){v=v||"w"}window.ctaV=v;document.documentElement.classList.add("cta-"+v);try{gtag("set","user_properties",{cta_variant:v})}catch(e){}document.addEventListener("click",function(e){var a=e.target.closest&&e.target.closest('a[href*="appexchange.salesforce.com"],a[href*="calendly.com"]');if(!a)return;try{gtag("event","cta_click",{cta_variant:v,cta_type:/calendly/.test(a.href)?"demo":"trial"})}catch(e){}},true)})();</script>
 
@@ -1448,7 +1459,9 @@ const VIDS = [
  {id:"Pa5i-A2WnNQ", t:"Introducing NPS Survey 2.0", g:"Product updates", len:"Update"}
 ];
 const vcard = v => `<a class="vcard" href="https://www.youtube.com/watch?v=${v.id}" target="_blank" rel="noopener"><div class="thumb"><span class="len">${v.len}</span><span class="play"><svg width="16" height="16" viewBox="0 0 24 24" fill="#0F1A3D"><path d="M8 5v14l11-7z"/></svg></span><b>${v.t}</b></div><span class="v">${v.t}</span></a>`;
-const resRow = r => `<div class="res"><div class="ibox">${ic(r.ic)}</div><div><h4>${r.t}</h4><p>${r.d}</p></div><a class="btn dark" href="files/${r.f}" target="_blank" rel="noopener">${r.type==="Video"?"Watch":"Open"}</a></div>`;
+const RCOV = {"Guide":["Guide","g"],"Point of view":["POV","p"],"Offering":["Offer","o"],"Spreadsheet":["Data","s"],"Video":["Film","v"]};
+const rcov = r => { const [w,k] = RCOV[r.type]||["Read","g"]; return `<div class="rcov rcov-${k}" aria-hidden="true"><svg viewBox="0 0 100 100"><path d="M31.07 77.03 A33 33 0 1 1 68.93 77.03" fill="none" stroke="currentColor" stroke-width="11" stroke-linecap="round"/><circle cx="50" cy="83" r="6" fill="currentColor"/></svg><b>${w}</b><small>${r.ind||"NPS Survey"}</small></div>`; };
+const resRow = r => `<div class="res">${rcov(r)}<div><h4>${r.t}</h4><p>${r.d}</p></div><a class="btn dark" href="files/${r.f}" target="_blank" rel="noopener">${r.type==="Video"?"Watch":"Open"}</a></div>`;
 
 const V = {};
 // Real AppExchange review quotes go here ONLY after each reviewer's written OK, e.g.
