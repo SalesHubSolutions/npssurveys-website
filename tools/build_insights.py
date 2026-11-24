@@ -38,22 +38,34 @@ figure.fig{margin:28px 0;}figure.fig svg{width:100%;height:auto;display:block;bo
 footer{border-top:1px solid var(--line);padding:28px 0;font-size:.85rem;color:var(--fg-mute)}
 """
 
-def head(title, desc, url, extra=""):
+# Lead photos: front matter "photo" (Pexels URL without query) and "photo_alt". Real photos of people are approved; never add an "illustrative" caption.
+PHOTO_CSS = ".lead-ph{margin:-34px 0 0}.lead-ph img{display:block;width:100%;height:auto;aspect-ratio:16/9;object-fit:cover;border-radius:18px;box-shadow:0 18px 44px rgba(4,11,38,.18)}.card{overflow:hidden}.card .cimg{display:block;margin:-22px -22px 8px;width:calc(100% + 44px);max-width:none;aspect-ratio:16/9;object-fit:cover;transition:transform .5s cubic-bezier(.2,.7,.2,1)}.card:hover .cimg{transform:scale(1.04)}"
+def photo(p, w):
+    return f'{p["photo"]}?auto=compress&cs=tinysrgb&w={w}' if p.get("photo") else None
+def lead_photo(p):
+    if not p.get("photo"): return ""
+    alt = html.escape(html.unescape(p.get("photo_alt", "")))
+    return f'<figure class="lead-ph"><img src="{photo(p, 1400)}" alt="{alt}" width="1400" height="788" fetchpriority="high"></figure>'
+def card_photo(p):
+    return f'<img class="cimg" src="{photo(p, 700)}" alt="" loading="lazy">' if p.get("photo") else ""
+
+def head(title, desc, url, extra="", img=None):
     return f"""<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{html.escape(title)}</title><meta name="description" content="{html.escape(desc)}"><link rel="canonical" href="{url}">
 <link rel="icon" type="image/svg+xml" href="/favicon.svg"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><meta name="theme-color" content="#002FA7">
 <meta property="og:type" content="article"><meta property="og:site_name" content="NPS Survey CX OS"><meta property="og:url" content="{url}">
 <meta property="og:title" content="{html.escape(title)}"><meta property="og:description" content="{html.escape(desc)}">
-<meta property="og:image" content="{SITE}/share.png"><meta name="twitter:card" content="summary_large_image">
+<meta property="og:image" content="{img or SITE + '/share.png'}"><meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=IBM+Plex+Serif:wght@500;600&display=swap">
-<style>{CSS}</style><link rel="stylesheet" href="/brand/scale.css">{extra}</head><body>
+<style>{CSS}{PHOTO_CSS}</style><link rel="stylesheet" href="/brand/scale.css">{extra}</head><body>
 <div class="annc">GetFeedback retires December 31, 2026. <a href="/#switch">Move your surveys to native Salesforce &rarr;</a></div>
 <header><div class="wrap"><a class="logo" href="/"><img src="/brand/logo/nps-survey-cx-os-mark-white.svg" alt=""><span>NPS Survey<small>CX OS by SalesHub</small></span></a>
 <nav><a href="/#platform">Product</a><a href="/#industries">Solutions</a><a href="/insights/">Insights</a><a href="/#partners">Partners</a><a href="/#pricing">Pricing</a><a class="btn" href="{LIST}&utm_content=blog_nav" target="_blank" rel="noopener">Free trial</a></nav></div></header>"""
 
 FOOT = """<footer><div class="wrap">&copy; 2026 SalesHub, LLC &middot; 1853 Piedmont Rd, Suite 301, Marietta, GA 30066 &middot; <a href="mailto:support@saleshub.info">support@saleshub.info</a> &middot; 1 (833) 733-2468<br>
-Salesforce and AppExchange are trademarks of Salesforce, Inc. Net Promoter&reg;, NPS&reg; and the NPS-related emoticons are registered trademarks of Bain &amp; Company, Inc., NICE Systems, Inc. and Fred Reichheld.</div></footer></body></html>"""
+Salesforce and AppExchange are trademarks of Salesforce, Inc. Net Promoter&reg;, NPS&reg; and the NPS-related emoticons are registered trademarks of Bain &amp; Company, Inc., NICE Systems, Inc. and Fred Reichheld.</div></footer><script src="/assets/chat/chat.js" defer></script>
+</body></html>"""
 
 CTAS = {
  "switch": ("Moving off GetFeedback or Delighted?", "Keep your surveys, follow-up and dashboards inside Salesforce. Start the 15-day free trial, or book a 30-minute switch call.", [("Start the free trial", "p", "trial"), ("See the switch plan", "d", "/#switch")]),
@@ -91,15 +103,15 @@ def build():
     for p in posts:
         url = f"{SITE}/insights/{p['slug']}/"
         ld = {"@context": "https://schema.org", "@type": "BlogPosting", "headline": p["title"], "description": p["description"], "datePublished": p["date"],
-              "author": {"@type": "Organization", "name": p.get("author", "SalesHub")}, "publisher": {"@type": "Organization", "name": "SalesHub, LLC"}, "mainEntityOfPage": url, "image": f"{SITE}/share.png"}
+              "author": {"@type": "Organization", "name": p.get("author", "SalesHub")}, "publisher": {"@type": "Organization", "name": "SalesHub, LLC"}, "mainEntityOfPage": url, "image": photo(p, 1200) or f"{SITE}/share.png"}
         body = figs(p["body"]).replace("{{CTA}}", cta_html(p.get("cta", "trial"), p["slug"])).replace("{{TRIAL}}", LIST + "&utm_content=blog_" + p["slug"])
-        page = head(p["title"] + " | NPS Survey CX OS", p["description"], url, f'<link rel="stylesheet" href="/brand/scale-article.css"><script type="application/ld+json">{json.dumps(ld)}</script>') + f"""
+        page = head(p["title"] + " | NPS Survey CX OS", p["description"], url, f'<link rel="stylesheet" href="/brand/scale-article.css"><script type="application/ld+json">{json.dumps(ld)}</script>', img=photo(p, 1200)) + f"""
 <section class="hero"><div class="narrow"><div class="crumb"><a href="/insights/">Insights</a> &middot; {html.escape(" · ".join(p.get("tags", [])))}</div>
 <h1>{html.escape(p["title"])}</h1><p>{html.escape(p["description"])}</p><div class="meta">{html.escape(p.get("author","SalesHub"))} &middot; {fmt(p["date"])} &middot; {p.get("read","")} read</div></div></section>
-<main class="narrow"><article>{body}{cta_html(p.get("cta","trial"), p["slug"]) if "{{CTA}}" not in p["body"] else ""}</article></main>""" + FOOT
+<main class="narrow">{lead_photo(p)}<article>{body}{cta_html(p.get("cta","trial"), p["slug"]) if "{{CTA}}" not in p["body"] else ""}</article></main>""" + FOOT
         os.makedirs(os.path.join(ROOT, "insights", p["slug"]), exist_ok=True)
         open(os.path.join(ROOT, "insights", p["slug"], "index.html"), "w").write(page)
-    cards = "".join(f'<a class="card" href="/insights/{p["slug"]}/"><span class="tag">{html.escape((p.get("tags") or [""])[0])}</span><h2>{html.escape(p["title"])}</h2><p>{html.escape(p["description"])}</p><span class="more">{fmt(p["date"])} &middot; {p.get("read","")} read &rarr;</span></a>' for p in posts)
+    cards = "".join(f'<a class="card" href="/insights/{p["slug"]}/">{card_photo(p)}<span class="tag">{html.escape((p.get("tags") or [""])[0])}</span><h2>{html.escape(p["title"])}</h2><p>{html.escape(p["description"])}</p><span class="more">{fmt(p["date"])} &middot; {p.get("read","")} read &rarr;</span></a>' for p in posts)
     idx = head("Insights: customer experience inside Salesforce | NPS Survey CX OS", "Practical guides on NPS, CSAT and closed-loop feedback in Salesforce, for CX leaders, Salesforce admins and public sector teams.", f"{SITE}/insights/") + f"""
 <section class="hero"><div class="wrap"><div class="crumb"><a href="/">Home</a> &middot; Insights</div><h1>Insights</h1><p>Practical guides on running feedback programs inside Salesforce, for CX leaders, admins and public sector teams. New posts every week.</p></div></section>
 <main class="wrap"><div class="cards">{cards}</div></main>""" + FOOT
