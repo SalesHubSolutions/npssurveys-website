@@ -157,6 +157,8 @@
     ".npc-form button{border:0;background:var(--b);color:#fff;border-radius:999px;padding:9px 14px;font:inherit;font-weight:600;cursor:pointer}" +
     ".npc-cal{width:100%;height:520px;border:0;border-radius:10px;background:#fff}" +
     ".npc-b.wide{max-width:100%;width:100%;padding:6px}" +
+    ".nx-help{display:none!important}" +
+    "@media (max-width:720px){body:has(.mcta) .npc:not(.open){bottom:calc(84px + env(safe-area-inset-bottom))}}" +
     "@media (max-width:480px){.npc{right:12px;bottom:12px}.npc-p{position:fixed;inset:0;width:100%;max-width:none;height:100%;max-height:none;border-radius:0;border:0}.npc-tip{display:none}}";
 
   var LOOP = '<svg viewBox="0 0 100 100" aria-hidden="true"><path d="M31.07 77.03 A33 33 0 1 1 68.93 77.03" fill="none" stroke="currentColor" stroke-width="14" stroke-linecap="round"/><circle cx="50" cy="83" r="7.5" fill="currentColor"/></svg>';

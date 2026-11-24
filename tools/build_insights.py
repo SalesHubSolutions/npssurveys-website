@@ -9,7 +9,7 @@ LIST = "https://appexchange.salesforce.com/appxListingDetail?listingId=a0N3A0000
 SITE = "https://www.npssurveys.com"
 CAL = "https://calendly.com/npssurvey/demo?utm_source=npssurveys.com&utm_medium=blog&utm_campaign=cxos_insights"
 
-CSS = """:root{--blue:#002FA7;--blue-deep:#002FA7;--yellow:#FFFFFF;--navy:#0C184A;--bg:#fff;--bg-tint:#F4F7FF;--surface:#fff;--line:#DCE4F7;--fg:#0C184A;--fg-soft:#3B4877;--fg-mute:#5E6B98;--link:#002FA7;--font:"IBM Plex Sans",system-ui,-apple-system,Segoe UI,Roboto,sans-serif}
+CSS = """:root{--blue:#002FA7;--blue-deep:#002FA7;--yellow:#FFFFFF;--navy:#0F1A3D;--bg:#fff;--bg-tint:#F4F7FF;--surface:#fff;--line:#DCE4F7;--fg:#0F1A3D;--fg-soft:#3B4877;--fg-mute:#5E6B98;--link:#002FA7;--font:"IBM Plex Sans",system-ui,-apple-system,Segoe UI,Roboto,sans-serif}
 h1,h2,.h2{font-family:"IBM Plex Serif",Georgia,"Times New Roman",serif!important;font-weight:600!important;letter-spacing:-.012em!important}
 @media (prefers-color-scheme:dark){:root:not([data-theme=light]){--bg:#0A1230;--bg-tint:#111C45;--surface:#111C45;--line:#24326A;--fg:#EEF2FF;--fg-soft:#C5D0F2;--fg-mute:#97A5D6;--link:#8FB0FF}}
 *{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--font);font-size:17px;line-height:1.65}

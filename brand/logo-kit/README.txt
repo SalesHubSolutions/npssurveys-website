@@ -15,4 +15,4 @@ Rules
 - One flat colour. No gradients, shadows, outlines or effects on the logo.
 - Keep clear space around it equal to the dot's diameter x 2. Minimum size: mark 16 px, full logo 120 px wide.
 - Don't stretch, rotate, recolour or rearrange it. Don't change the name: "NPS Survey" with "CX OS by SalesHub" under it.
-- Fonts in our materials: Inter (Bold for headlines, Medium/Regular for text).
+- Fonts in our materials: IBM Plex Serif SemiBold for headlines and big numbers, IBM Plex Sans for text. Full colour scale and type sizes: https://www.npssurveys.com/brand/ (tokens in brand/tokens.css).

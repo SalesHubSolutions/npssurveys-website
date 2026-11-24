@@ -2,7 +2,7 @@
 Embed in a post with {{FIG:name|Caption text}}."""
 import os, math
 ROOT=os.path.dirname(os.path.dirname(os.path.abspath(__file__))); OUT=os.path.join(ROOT,"content/figures"); os.makedirs(OUT,exist_ok=True)
-NAVY="#0C184A"; BLUE="#002FA7"; DEEP="#002FA7"; SKY="#DCE7FF"; TINT="#F4F7FF"; LINE="#DCE4F7"; MUTE="#5E6B98"; SOFT="#3B4877"
+NAVY="#0F1A3D"; BLUE="#002FA7"; DEEP="#002FA7"; SKY="#DCE7FF"; TINT="#F4F7FF"; LINE="#DCE4F7"; MUTE="#5E6B98"; SOFT="#3B4877"
 RED="#EB5757"; AMB="#E9A52B"; GRN="#23A96A"; YEL="#C9D5F2"; W="#FFFFFF"
 F='font-family="IBM Plex Sans, Arial, sans-serif"'
 def t(x,y,s,size=16,fill=NAVY,w=600,a="start"): return f'<text x="{x}" y="{y}" font-size="{size}" font-weight="{w}" fill="{fill}" text-anchor="{a}" {F}>{s}</text>'

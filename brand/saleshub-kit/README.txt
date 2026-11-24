@@ -15,3 +15,5 @@ Rules
 - Clear space around it at least the height of the "a". Minimum width 90 px.
 - Don't stretch, rotate, recolour, or retype it. Always "SalesHub" with a capital S and H.
 - The old cloud logo is retired.
+
+Fonts in our materials: IBM Plex Serif SemiBold for headlines, IBM Plex Sans for text. The wordmark itself is fixed artwork (outlined), so it does not change. Full colour scale and type sizes: https://www.npssurveys.com/brand/
