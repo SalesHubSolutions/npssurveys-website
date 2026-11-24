@@ -291,7 +291,7 @@ h1,h2,.h2{font-family:"IBM Plex Serif",Georgia,"Times New Roman",serif!important
 .xl-tabs button:focus-visible{outline:3px solid #8FB0FF;outline-offset:2px}
 .xl-stage{position:relative;margin-top:18px;border-radius:18px;overflow:hidden;border:1px solid #DCE3F5;box-shadow:0 24px 60px rgba(4,11,38,.14);background:#EEF2FB;aspect-ratio:1200/720}
 .xl-stage a{position:absolute;inset:0;opacity:0;visibility:hidden;transition:opacity .45s}.xl-stage a.on{opacity:1;visibility:visible}
-.xl-stage img{display:block;width:100%;height:100%;object-fit:cover;object-position:top left}
+.xl-stage img{display:block;width:100%;height:100%;object-fit:contain;object-position:top center}
 @media (max-width:700px){.xl-tabs{grid-template-columns:repeat(3,1fr);gap:8px}.xl-tabs button{padding:12px 8px;text-align:center;border-radius:12px}.xl-tabs button b{font-size:18px}.xl-tabs button span{display:none}.xl-stage{aspect-ratio:auto}.xl-stage a{position:static;display:none}.xl-stage a.on{display:block}.xl-stage img{height:auto}}
 .xv{margin-top:30px;background:#fff;border:1px solid #DCE3F5;border-radius:18px;overflow:hidden}
 .xv>div{display:grid;grid-template-columns:1fr 1.3fr 1.7fr;border-top:1px solid #EEF2FB}.xv>div:first-child{border-top:0}
@@ -1928,7 +1928,7 @@ const XLUA = () => `<section class="band xl"><div class="wrap"><h2 class="h2 xl-
 <button role="tab" aria-selected="false" data-xl="2"><b>Act</b><span>Every unhappy answer becomes a follow-up with an owner, a due date and a playbook.</span></button>
 </div>
 <div class="xl-stage">
-<a href="/assets/product/listen.webp" target="_blank" rel="noopener" class="on"><picture><source media="(max-width:700px)" srcset="/assets/product/listen-focus.webp"><img src="/assets/product/listen.webp" width="1200" height="690" alt="Survey Studio with customer NPS, employee NPS and CSAT dials"></picture></a>
+<a href="/assets/product/listen.webp" target="_blank" rel="noopener" class="on"><picture><source media="(max-width:700px)" srcset="/assets/product/listen-focus.webp"><img src="/assets/product/listen.webp" width="1200" height="720" alt="Survey Studio with customer NPS, employee NPS and CSAT dials"></picture></a>
 <a href="/assets/product/understand.webp" target="_blank" rel="noopener"><picture><source media="(max-width:700px)" srcset="/assets/product/understand-focus.webp"><img src="/assets/product/understand.webp" width="1200" height="720" loading="lazy" alt="Insights with sentiment, emotions and an AI summary"></picture></a>
 <a href="/assets/product/act.webp" target="_blank" rel="noopener"><picture><source media="(max-width:700px)" srcset="/assets/product/act-focus.webp"><img src="/assets/product/act.webp" width="1200" height="720" loading="lazy" alt="Close the Loop follow-ups and the account health dial"></picture></a>
 </div></div></section>`;
