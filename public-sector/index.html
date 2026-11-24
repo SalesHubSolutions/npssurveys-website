@@ -2839,12 +2839,12 @@ function wireKit(root){ const k=root.querySelector("#bkRoot"); if(!k||k._w) retu
       try{gtag("event","brandkit_demo",{brand:d.url})}catch(_){} return; }
     const p=e.target.closest("[data-pic]"); if(p) pic(+p.dataset.pic); }); }
 
-function clips(root){const ok=matchMedia("(min-width:701px)").matches&&!matchMedia("(prefers-reduced-motion:reduce)").matches;if(!ok)return;
+function clips(root){const ok=()=>matchMedia("(min-width:701px)").matches&&!matchMedia("(prefers-reduced-motion:reduce)").matches;
   const vis=a=>{const f=a.closest("figure,.xl-stage a");return a.closest("figure")?a.closest("figure").classList.contains("on"):a.classList.contains("on")};
-  const run=()=>root.querySelectorAll("[data-clip]").forEach(a=>{let v=a.querySelector("video");const r=a.getBoundingClientRect();const show=vis(a)&&r.bottom>0&&r.top<innerHeight;
+  const run=()=>{if(!ok())return;root.querySelectorAll("[data-clip]").forEach(a=>{let v=a.querySelector("video");const r=a.getBoundingClientRect();const show=vis(a)&&r.bottom>0&&r.top<innerHeight;
     if(show){if(!v){v=document.createElement("video");v.className="clipv";v.muted=true;v.loop=true;v.playsInline=true;v.setAttribute("muted","");v.setAttribute("playsinline","");v.preload="auto";v.src=a.dataset.clip;v.addEventListener("playing",()=>v.classList.add("on"));a.appendChild(v);}if(v.paused)v.play().catch(()=>{});}
-    else if(v&&!v.paused){v.pause();}});
-  run();window.__clipRun=run;if(!window.__clipScroll){window.__clipScroll=1;addEventListener("scroll",()=>window.__clipRun&&requestAnimationFrame(window.__clipRun),{passive:true});}root.addEventListener("click",e=>{if(e.target.closest("[data-xl],[data-xg]"))setTimeout(()=>{root.querySelectorAll("[data-clip] video").forEach(v=>{v.currentTime=0});run()},30)});}
+    else if(v&&!v.paused){v.pause();}})};
+  run();window.__clipRun=run;if(!window.__clipScroll){window.__clipScroll=1;addEventListener("scroll",()=>window.__clipRun&&requestAnimationFrame(window.__clipRun),{passive:true});addEventListener("resize",()=>window.__clipRun&&window.__clipRun());}root.addEventListener("click",e=>{if(e.target.closest("[data-xl],[data-xg]"))setTimeout(()=>{root.querySelectorAll("[data-clip] video").forEach(v=>{v.currentTime=0});run()},30)});}
 
 function wire(){
   wireKit(app);
