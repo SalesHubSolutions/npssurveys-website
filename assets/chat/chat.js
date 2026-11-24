@@ -134,8 +134,14 @@
     ".npc-tip b{color:var(--b)}" +
     ".npc-p{position:absolute;right:0;bottom:76px;width:380px;max-width:calc(100vw - 32px);height:600px;max-height:calc(100vh - 110px);background:#fff;border-radius:16px;box-shadow:0 18px 50px rgba(15,26,61,.25);display:flex;flex-direction:column;overflow:hidden;border:1px solid var(--line)}" +
     ".npc-p[hidden],.npc-tip[hidden]{display:none}" +
-    ".npc-h{background:var(--b);color:#fff;padding:14px 14px 14px 16px;display:flex;align-items:center;gap:10px}" +
-    ".npc-h svg{width:28px;height:28px;flex:none}.npc-h .t{flex:1;min-width:0}.npc-h b{display:block;font-size:15px;font-weight:600}.npc-h span{font-size:12.5px;opacity:.85}" +
+    ".npc-h{background:#071338;color:#fff;padding:12px 14px 12px 18px;display:flex;align-items:center;gap:10px}" +
+    ".npc-hero{display:flex;align-items:center;gap:14px;padding:18px 18px 20px;color:#fff;background:radial-gradient(90% 120% at 15% 50%,rgba(61,107,240,.55),transparent 60%),linear-gradient(180deg,#071338,#0A1F66)}" +
+    ".npc-hero b{display:block;font:600 18px/1.2 'IBM Plex Serif',Georgia,serif}.npc-hero span{display:block;font-size:13px;line-height:1.45;color:rgba(255,255,255,.8);margin-top:4px}" +
+    ".npc-orb{position:relative;flex:none;width:62px;height:62px;border-radius:50%;display:grid;place-items:center;background:radial-gradient(circle at 35% 30%,#3D6BF0,#002FA7 60%,#00227A);box-shadow:0 0 0 6px rgba(61,107,240,.2),0 0 40px 8px rgba(61,107,240,.55)}" +
+    ".npc-orb svg{width:30px;height:30px}.npc-orb::after{content:'';position:absolute;inset:-12px;border-radius:50%;border:1px solid rgba(143,176,255,.45);animation:npcp 3.6s ease-out infinite}" +
+    "@keyframes npcp{0%{transform:scale(.85);opacity:.9}100%{transform:scale(1.3);opacity:0}}@media (prefers-reduced-motion:reduce){.npc-orb::after{animation:none}}" +
+    ".npc.talked .npc-hero{display:none}" +
+    ".npc-h svg{width:28px;height:28px;flex:none}.npc-h .npc-t{flex:1;min-width:0}.npc-h b{display:block;font-size:15px;font-weight:600}.npc-h span{font-size:12.5px;opacity:.85}" +
     ".npc-x{background:transparent;border:0;color:#fff;width:34px;height:34px;border-radius:8px;cursor:pointer;font-size:22px;line-height:1}.npc-x:hover{background:rgba(255,255,255,.15)}" +
     ".npc-m{flex:1;overflow-y:auto;padding:16px;background:var(--tint);display:flex;flex-direction:column;gap:10px}" +
     ".npc-b{max-width:88%;padding:10px 13px;border-radius:14px;background:#fff;border:1px solid var(--line);word-wrap:break-word}" +
@@ -169,12 +175,13 @@
     var st = document.createElement("style"); st.textContent = css; document.head.appendChild(st);
     root = document.createElement("div"); root.className = "npc";
     root.innerHTML =
-      '<div class="npc-tip" hidden role="button" tabindex="0">Questions? <b>Ask us</b>, or book a demo</div>' +
-      '<section class="npc-p" hidden role="dialog" aria-label="Chat with NPS Survey CX OS">' +
-      '<div class="npc-h">' + LOOP + '<div class="t"><b>NPS Survey CX OS</b><span>Answers in seconds. Demos with our team.</span></div><button class="npc-x" type="button" aria-label="Close chat">&times;</button></div>' +
+      '<div class="npc-tip" hidden role="button" tabindex="0">Questions? <b>Ask Iris</b>, our AI agent</div>' +
+      '<section class="npc-p" hidden role="dialog" aria-label="Chat with Iris, the NPS Survey CX OS AI agent">' +
+      '<div class="npc-h"><div class="npc-t"><b>Iris</b><span>AI CX Agent · NPS Survey CX OS</span></div><button class="npc-x" type="button" aria-label="Close chat">&times;</button></div>' +
+      '<div class="npc-hero" aria-hidden="true"><div class="npc-orb">' + LOOP + '</div><div><b>Hi, I\'m Iris.</b><span>The AI agent inside NPS Survey CX OS. Ask me anything, or let me book you time with our team.</span></div></div>' +
       '<div class="npc-m" aria-live="polite"></div>' +
-      '<form class="npc-f"><label for="npc-in" style="position:absolute;left:-9999px">Type your question</label><textarea id="npc-in" rows="1" placeholder="Ask about pricing, setup, features..." maxlength="600"></textarea><button type="submit">Send</button></form>' +
-      '<div class="npc-foot">SalesHub, LLC · ' + link("https://saleshub.info/privacy-policy", "Privacy") + '</div>' +
+      '<form class="npc-f"><label for="npc-in" style="position:absolute;left:-9999px">Type your question</label><textarea id="npc-in" rows="1" placeholder="Ask Iris a question" maxlength="600"></textarea><button type="submit">Send</button></form>' +
+      '<div class="npc-foot">Iris is an AI and can make mistakes. By continuing, you agree to our ' + link("https://saleshub.info/privacy-policy", "privacy policy") + '. Conversations may be saved to help us follow up.</div>' +
       '</section>' +
       '<button class="npc-l" type="button" aria-label="Open chat" aria-expanded="false">' + LOOP + '</button>';
     document.body.appendChild(root);
@@ -192,6 +199,7 @@
       var c = e.target.closest("button[data-chip]"); if (c) { send(c.getAttribute("data-chip")); }
     });
     state.msgs.forEach(function (m) { render(m, true); });
+    if (state.msgs.some(function (m) { return m.who === "u"; })) root.classList.add("talked");
     if (state.open) toggle(true, true);
     var seen = false; try { seen = sessionStorage.getItem(STORE + ".tip") === "1"; } catch (_) {}
     if (!seen && !state.open) setTimeout(function () { if (panel.hidden) { tip.hidden = false; try { sessionStorage.setItem(STORE + ".tip", "1"); } catch (_) {} } }, 9000);
@@ -207,7 +215,7 @@
     if (open) {
       if (!state.greeted) {
         state.greeted = true;
-        bot({ html: "Hi, I'm the NPS Survey CX OS assistant. I can answer questions about the product, pricing and setup, or book you a demo with our team. What would you like to know?", chips: ["Pricing", "How does it work?", "Free trial", "Book a demo", "Talk to a person"] });
+        bot({ html: "Hi, I'm Iris, the AI agent inside NPS Survey CX OS. I can answer questions about the platform, pricing and setup, or connect you with our team. What would you like to know?", chips: ["How does it work?", "Pricing", "Book a demo", "Talk to a person"] });
       }
       if (!quiet) { track("chat_open", { page: location.pathname }); setTimeout(function () { input.focus(); }, 50); }
       list.scrollTop = list.scrollHeight;
@@ -242,6 +250,7 @@
     text = String(text || "").trim(); if (!text || busy) return;
     input.value = ""; input.style.height = "auto";
     list.querySelectorAll(".npc-c").forEach(function (c) { c.remove(); });
+    root.classList.add("talked");
     push({ who: "u", text: text });
     var local = answer(text);
     if (local.action) return act(local.action);

@@ -84,6 +84,14 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:12px 28px;justify-content:space-bet
 .vid .lock b{font-family:var(--serif);font-size:1.5rem;display:block;margin-bottom:6px}
 .chap{display:grid;grid-template-columns:repeat(2,1fr);gap:8px 22px;margin-top:22px;font-size:.92rem}.chap a{text-decoration:none;color:var(--ink)}.chap a span{color:var(--blue);font-weight:700;margin-right:8px}
 @media(max-width:700px){.chap{grid-template-columns:1fr}}
+.cov{position:relative;overflow:hidden;border-radius:22px;aspect-ratio:16/9;margin:0 0 18px;padding:26px 28px;color:#fff;display:flex;flex-direction:column;justify-content:space-between;
+background:radial-gradient(70% 90% at 85% 15%,rgba(61,107,240,.9),transparent 60%),radial-gradient(60% 70% at 10% 100%,rgba(143,176,255,.25),transparent 60%),linear-gradient(150deg,#002FA7 0%,#071338 70%,#040B26 100%);box-shadow:0 24px 60px rgba(4,11,38,.35),inset 0 1px 0 rgba(255,255,255,.2)}
+.cov>svg{position:absolute;right:-60px;top:-50px;width:300px;height:300px;color:rgba(143,176,255,.35)}
+.cov .ck{position:relative;font:600 12px/1 "IBM Plex Sans",sans-serif;letter-spacing:.12em;text-transform:uppercase;color:#C7D5FF}
+.cov .cw{position:relative;font:600 64px/.95 "IBM Plex Serif",Georgia,serif;letter-spacing:-.02em}
+.cov .cw small{display:block;font:600 22px/1.2 "IBM Plex Serif",Georgia,serif;letter-spacing:0;margin-top:10px;color:#fff}
+.cov .cf{position:relative;display:flex;justify-content:space-between;font:500 13px/1 "IBM Plex Sans",sans-serif;color:#C7D5FF}
+@media (max-width:600px){.cov .cw{font-size:44px}.cov>svg{width:220px;height:220px}}
 </style>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Event","name":"Live demo: watch one unhappy customer get won back","startDate":"2026-12-03T12:00:00-05:00","endDate":"2026-12-03T12:30:00-05:00","eventAttendanceMode":"https://schema.org/OnlineEventAttendanceMode","eventStatus":"https://schema.org/EventScheduled","location":{"@type":"VirtualLocation","url":"https://www.npssurveys.com/webinar/"},"image":"https://www.npssurveys.com/files/video/webinar-og.png","description":"Free 30-minute online session on Thursday, December 3, 12:00 PM ET: a walkthrough recorded live inside Salesforce, from an AI-drafted survey and a 3 out of 10 answer to AI triage and a closed loop. Live Q&A in the chat.","organizer":{"@type":"Organization","name":"SalesHub, LLC","url":"https://www.npssurveys.com"},"offers":{"@type":"Offer","price":"0","priceCurrency":"USD","availability":"https://schema.org/InStock","url":"https://www.npssurveys.com/webinar/"}}</script>
 <link rel="stylesheet" href="/brand/scale.css"></head>
@@ -107,7 +115,7 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:12px 28px;justify-content:space-bet
   </ul>
   <p class="fine" style="color:var(--soft)">Then: your questions, answered live by the SalesHub team in the event chat. Can't make it? Register and we'll send the recording.</p>
  </div>
- <div class="card" id="get"><div class="leadbox">
+ <div><div class="cov" role="img" aria-label="Free online session: CX Live One unhappy customer, won back"><svg viewBox="0 0 100 100" aria-hidden="true"><path d="M31.07 77.03 A33 33 0 1 1 68.93 77.03" fill="none" stroke="currentColor" stroke-width="10" stroke-linecap="round"/><circle cx="50" cy="83" r="5.5" fill="currentColor"/></svg><div class="ck">Free online session</div><div class="cw">CX Live<small>One unhappy customer, won back</small></div><div class="cf"><span>Thu, Dec 3, 2026</span><span>12:00 PM ET · Online</span></div></div><div class="card" id="get"><div class="leadbox">
   <form class="lform" action="https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8" method="POST" target="w2l" novalidate>
    <h2>Save your seat</h2><p class="sub">Free. You'll get the join link, a calendar invite and the recording.</p>
    <input type="hidden" name="oid" value="00D6g000001VQio"><input type="hidden" name="retURL" value="https://www.npssurveys.com/thanks.html"><input type="hidden" name="lead_source" value="Web"><input type="hidden" name="description" value="">
@@ -128,7 +136,7 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:12px 28px;justify-content:space-bet
    <div class="step"><span class="n">2</span><div><b>Want it on your own data?</b>A private 30-minute walkthrough, built around your team.</div></div>
    <div class="row"><a class="btn yel" id="cal" href="https://calendly.com/npssurvey/demo" target="_blank" rel="noopener">Book a private demo →</a></div>
   </div>
- </div></div>
+ </div></div></div>
 </div></section>
 
 <section class="band" id="watch"><div class="wrap">
