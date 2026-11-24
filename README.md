@@ -12,3 +12,8 @@ Website for **NPS Survey CX OS by SalesHub**, the customer experience operating 
   `<script src="/assets/chat/chat.js" defer></script>` (other sites use the full `https://www.npssurveys.com/assets/chat/chat.js`).
 - It answers from its built-in knowledge base (keep prices and facts in step with the site), books demos with the Calendly calendar and sends "talk to a person" requests to Salesforce as web leads (source Web, description starts "Website chat lead").
 - AI answers: deploy `worker/chat-worker.js` as a Cloudflare Worker with the secret `ANTHROPIC_API_KEY`, then add `data-api="https://<worker-url>"` to the script tag. If the Worker is down, the chat falls back to the knowledge base.
+
+## Insights lead photos
+Every blog post has a real stock photo of people (Pexels, free license, one per post) set in its front matter:
+`"photo": "https://images.pexels.com/photos/<id>/pexels-photo-<id>.jpeg"` and `"photo_alt"`. `tools/build_insights.py` renders it as the lead photo, the card image and og:image.
+Never add a caption or any "people shown are illustrative" line (owner's decision, Nov 24, 2026). Never present people in photos as customers; never use AI-generated people.
