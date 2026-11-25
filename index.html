@@ -1419,6 +1419,13 @@ footer .legal{font-size:13px}
 .xh-layer:nth-child(3){background:linear-gradient(90deg,rgba(0,47,167,.15),transparent),var(--surface)}
 .xh-layer:nth-child(4){background:linear-gradient(90deg,#002FA7,#00227A);color:#fff;border-color:#002FA7}
 .xh-layer h3{font-size:22px;line-height:1.25;margin:0}
+.xh-layer.xh-ai{position:relative;border-color:rgba(0,47,167,.38);background:linear-gradient(90deg,rgba(0,47,167,.10),rgba(0,47,167,.02)),var(--surface);box-shadow:0 0 0 1px rgba(0,47,167,.10),0 12px 36px -14px rgba(0,47,167,.45);animation:xhAiGlow 3.6s ease-in-out infinite}
+@keyframes xhAiGlow{0%,100%{box-shadow:0 0 0 1px rgba(0,47,167,.10),0 12px 36px -14px rgba(0,47,167,.40)}50%{box-shadow:0 0 0 4px rgba(0,47,167,.10),0 16px 48px -10px rgba(0,47,167,.60)}}
+.xh-aib{display:inline-flex;align-items:center;gap:5px;margin:0 0 8px;padding:4px 10px 4px 8px;border-radius:999px;background:#002FA7;color:#fff;font:600 12px/1 "IBM Plex Sans",sans-serif;letter-spacing:.08em;vertical-align:middle}
+.xh-aib svg{width:14px;height:14px}
+.xh-layer.xh-ai h3 .xh-aib{display:flex;width:max-content}
+.xh-layer.xh-ai .xh-chips span{background:#EEF3FF;border-color:#C9D6FA;color:#002FA7}
+@media (prefers-reduced-motion:reduce){.xh-layer.xh-ai{animation:none}}
 .xh-layer h3 small{display:block;font:500 14px/1.4 "IBM Plex Sans",sans-serif;color:var(--fg-mute);margin-top:4px}
 .xh-layer:nth-child(4) h3 small{color:rgba(255,255,255,.75)}
 .xh-chips{display:flex;flex-wrap:wrap;gap:8px}
@@ -2079,7 +2086,7 @@ V.home = () => `<div class="xh">
  <p class="xh-lead">Every answer starts in one place and travels outward: from the experience it measures, to the outcome it moves, to the leader who acts on it.</p>
  <div class="xh-layers">
   <div class="xh-layer"><h3>Experiences<small>What you measure</small></h3><div class="xh-chips"><span>Customer experience</span><span>Employee experience</span><span>Brand experience</span><span>Market research</span></div></div>
-  <div class="xh-layer"><h3>AI understanding<small>What every answer means</small></h3><div class="xh-chips"><span>AI summary</span><span>Themes and sentiment</span><span>Churn risk</span><span>Root causes</span></div></div>
+  <div class="xh-layer xh-ai"><h3><span class="xh-aib" aria-label="AI"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5c.5 4.6 2.4 6.6 7 7.1v.8c-4.6.5-6.5 2.5-7 7.1h-.8c-.5-4.6-2.4-6.6-7-7.1v-.8c4.6-.5 6.5-2.5 7-7.1z" fill="currentColor"/><path d="M19 15.5c.2 1.8.9 2.5 2.7 2.7v.4c-1.8.2-2.5.9-2.7 2.7h-.4c-.2-1.8-.9-2.5-2.7-2.7v-.4c1.8-.2 2.5-.9 2.7-2.7z" fill="currentColor"/></svg>AI</span>AI understanding<small>What every answer means</small></h3><div class="xh-chips"><span>AI summary</span><span>Themes and sentiment</span><span>Churn risk</span><span>Root causes</span></div></div>
   <div class="xh-layer"><h3>Outcomes<small>What moves</small></h3><div class="xh-chips"><span>Building loyalty</span><span>Deepening trust</span><span>Decreasing risk</span><span>Driving sales</span><span>Reducing costs</span><span>Raising awareness</span></div></div>
   <div class="xh-layer"><h3>Action<small>Who acts, and how fast</small></h3><div class="xh-chips"><span>Every low score gets an owner</span><span>Follow-up with a due time</span><span>AI digital workers</span><span>Closed loop, on the record</span></div></div>
  </div>
