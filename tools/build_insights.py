@@ -58,13 +58,12 @@ def head(title, desc, url, extra="", img=None):
 <meta property="og:image" content="{img or SITE + '/share.png'}"><meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=IBM+Plex+Serif:wght@500;600&display=swap">
-<style>{CSS}{PHOTO_CSS}</style><link rel="stylesheet" href="/brand/scale.css">{extra}<link rel="stylesheet" href="/assets/depth.css?v=1"></head><body>
+<style>{CSS}{PHOTO_CSS}</style><link rel="stylesheet" href="/brand/scale.css">{extra}<link rel="stylesheet" href="/assets/depth.css?v=1"><link rel="stylesheet" href="/assets/footer.css?v=1"></head><body>
 <div class="annc">GetFeedback retires December 31, 2026. <a href="/#switch">Move your surveys to native Salesforce &rarr;</a></div>
 <header><div class="wrap"><a class="logo" href="/"><img src="/brand/logo/nps-survey-cx-os-mark-white.svg" alt=""><span>NPS Survey<small>CX OS by SalesHub</small></span></a>
 <nav><a href="/#platform">Product</a><a href="/#industries">Solutions</a><a href="/insights/">Insights</a><a href="/#partners">Partners</a><a href="/#pricing">Pricing</a><a class="btn" href="{LIST}&utm_content=blog_nav" target="_blank" rel="noopener">Free trial</a></nav></div></header>"""
 
-FOOT = """<footer><div class="wrap">&copy; 2026 SalesHub, LLC &middot; 1853 Piedmont Rd, Suite 301, Marietta, GA 30066 &middot; <a href="mailto:support@saleshub.info">support@saleshub.info</a> &middot; 1 (833) 733-2468<br>
-Salesforce and AppExchange are trademarks of Salesforce, Inc. Net Promoter&reg;, NPS&reg; and the NPS-related emoticons are registered trademarks of Bain &amp; Company, Inc., NICE Systems, Inc. and Fred Reichheld.</div></footer><script src="/assets/chat/chat.js" defer></script>
+FOOT = open(os.path.join(os.path.dirname(os.path.abspath(__file__)), "site_footer.html")).read() + """<script src="/assets/chat/chat.js" defer></script>
 </body></html>"""
 
 CTAS = {
