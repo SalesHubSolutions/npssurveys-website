@@ -296,7 +296,7 @@ h1,h2,.h2{font-family:"IBM Plex Serif",Georgia,"Times New Roman",serif!important
 .xv{margin-top:30px;background:#fff;border:1px solid #DCE3F5;border-radius:18px;overflow:hidden}
 .xv>div{display:grid;grid-template-columns:1fr 1.3fr 1.7fr;border-top:1px solid #EEF2FB}.xv>div:first-child{border-top:0}
 .xv span{padding:14px 20px;font-size:16px;line-height:1.45}.xv span:first-child{font-weight:600}.xv span:nth-child(2){color:#5A6787}.xv span:nth-child(3){background:#F4F7FF;color:#0F1A3D}
-.xv .xv-h span{font-size:13px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:#5A6787}.xv .xv-h span:nth-child(3){color:#002FA7}
+.xv .xv-h span{font-size:13px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:#5A6787}.xv .xv-h span:nth-child(3){background:#002FA7;color:#fff;display:flex;align-items:center;gap:8px;font-size:14px;letter-spacing:.06em}.xv-ai{font-style:normal;font-size:11px;letter-spacing:.06em;padding:3px 7px;border-radius:999px;background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.35)}.xv>div:not(.xv-h) span:nth-child(3){box-shadow:inset 3px 0 0 #002FA7}
 @media (max-width:860px){.xl-row{grid-template-columns:1fr}.xv>div{grid-template-columns:1fr 1fr}.xv span:first-child{grid-column:1/-1;padding-bottom:0}.xv .xv-h span:first-child{display:none}}
 .xg-tabs{display:flex;gap:8px;flex-wrap:wrap;margin-top:28px}
 .xg-tabs button{all:unset;cursor:pointer;font-size:15px;font-weight:500;padding:9px 16px;border-radius:999px;border:1px solid #C7D5FF;background:#fff;color:#0F1A3D;white-space:nowrap;transition:background .2s}
@@ -1986,7 +1986,7 @@ const XLUA = () => `<section class="band xl"><div class="wrap"><h2 class="h2 xl-
 <a data-clip="/assets/product/clips/act.mp4" href="/assets/product/act.webp" target="_blank" rel="noopener"><picture><source media="(max-width:700px)" srcset="/assets/product/act-focus.webp"><img src="/assets/product/act.webp" width="1200" height="720" loading="lazy" alt="Close the Loop follow-ups and the account health dial"></picture></a>
 </div></div></section>`;
 const XVS = () => `<section class="band tint"><div class="wrap"><div class="eyebrow">GetFeedback retires December 31, 2026</div><h2 class="h2">Salesforce collects the answer. CX OS makes sure someone acts on it.</h2>
-<div class="xv"><div class="xv-h"><span></span><span>GetFeedback or Salesforce Surveys</span><span>NPS Survey CX OS</span></div>
+<div class="xv"><div class="xv-h"><span></span><span>GetFeedback or Salesforce Surveys</span><span><svg width="16" height="16" viewBox="0 0 24 24" fill="#FFD60A" aria-hidden="true"><path d="M12 2l2.2 6.3L20.5 10l-6.3 2.2L12 18.5l-2.2-6.3L3.5 10l6.3-1.7z"/><circle cx="19" cy="4.5" r="1.6"/></svg>NPS Survey CX OS <em class="xv-ai">AI</em></span></div>
 <div><span>A low score</span><span>You build the alert or flow yourself</span><span>A follow-up opens automatically, with an owner and a due date</span></div>
 <div><span>Comments</span><span>Read one by one, or add another tool</span><span>AI reads every comment for emotions, topics and what to fix</span></div>
 <div><span>Where results show</span><span>Response records and reports</span><span>NPS, CSAT and effort dials on every account, case and deal</span></div>
