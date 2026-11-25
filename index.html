@@ -362,6 +362,7 @@ h1,h2,.h2{font-family:"IBM Plex Serif",Georgia,"Times New Roman",serif!important
 .xbd{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin:18px 0 0}.xbd-b{display:inline-flex;align-items:center;gap:10px;padding:8px 14px 8px 8px;border-radius:12px;background:rgba(255,255,255,.07);border:1px solid rgba(143,176,255,.35);color:#fff;text-decoration:none;text-align:left}
 .xbd-b small{display:block;font-size:11px;letter-spacing:.04em;color:#8FB0FF;line-height:1.2}.xbd-b b{display:block;font-size:14px;font-weight:600;line-height:1.25}.xbd-b em{font-style:normal;font-weight:600;font-size:13px;color:#fff;background:rgba(255,255,255,.12);border-radius:999px;padding:3px 8px;margin-left:4px}
 .xbd-i{flex:none;width:32px;height:32px;border-radius:9px;display:grid;place-items:center;background:#fff;color:#002FA7;font-size:17px;font-weight:700}.xbd-g{font-family:"IBM Plex Sans",sans-serif}
+.xbd-sf{background:#fff!important}.xbd-sf img{width:30px;height:auto;display:block}.xbd-stars{flex:none;color:#F5B400;font-size:17px;letter-spacing:1px;padding:0 4px 0 6px;line-height:1}.xtr .xbd-rv{border-color:#F3DFA2;background:#FFFBEF}
 a.xbd-b:hover{background:rgba(255,255,255,.14)}
 .xtr .xbd{justify-content:flex-start;margin:22px 0 6px}.xtr .xbd-b{background:#F4F7FF;border-color:#DCE3F5;color:#0F1A3D}.xtr .xbd-b small{color:#5A6787}.xtr .xbd-b em{background:#DCE6FF;color:#002FA7}.xtr .xbd-i{background:#002FA7;color:#fff}.xtr a.xbd-b:hover{background:#EEF2FB}
 @media (max-width:600px){.xbd{gap:8px}.xbd-b{width:100%}}
@@ -2006,7 +2007,7 @@ const XVS = () => `<section class="band tint"><div class="wrap"><h2 class="h2">S
 <div><span>Setup</span><span>A developer and custom code</span><span>Guided setup, no code</span></div>
 </div></div></section>`;
 const XBADGES = () => `<div class="xbd" aria-label="Trust">
-<a class="xbd-b" href="${LIST}&utm_content=badge" target="_blank" rel="noopener"><span class="xbd-i">&#9729;</span><span><small>Available on</small><b>Salesforce AppExchange</b></span><em>&#9733; 5.0</em></a>
+<a class="xbd-b" href="${LIST}&utm_content=badge" target="_blank" rel="noopener"><span class="xbd-i xbd-sf"><img src="/brand/partners/salesforce.svg" alt="Salesforce" width="30" height="21"></span><span><small>Available on</small><b>Salesforce AppExchange</b></span></a><a class="xbd-b xbd-rv" href="${LIST}&utm_content=badge_reviews#reviews" target="_blank" rel="noopener"><span class="xbd-stars" aria-label="5 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span><span><small>AppExchange reviews</small><b>Rated 5.0 out of 5</b></span></a>
 <span class="xbd-b"><span class="xbd-i">&#10003;</span><span><small>Passed the</small><b>Salesforce security review</b></span></span>
 <span class="xbd-b"><span class="xbd-i">&#9673;</span><span><small>100% native</small><b>Runs inside your Salesforce org</b></span></span>
 <span class="xbd-b"><span class="xbd-i xbd-g">G</span><span><small>Built in</small><b>Google review requests</b></span></span>
