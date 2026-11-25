@@ -58,7 +58,7 @@ def head(title, desc, url, extra="", img=None):
 <meta property="og:image" content="{img or SITE + '/share.png'}"><meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=IBM+Plex+Serif:wght@500;600&display=swap">
-<style>{CSS}{PHOTO_CSS}</style><link rel="stylesheet" href="/brand/scale.css">{extra}</head><body>
+<style>{CSS}{PHOTO_CSS}</style><link rel="stylesheet" href="/brand/scale.css">{extra}<link rel="stylesheet" href="/assets/depth.css?v=1"></head><body>
 <div class="annc">GetFeedback retires December 31, 2026. <a href="/#switch">Move your surveys to native Salesforce &rarr;</a></div>
 <header><div class="wrap"><a class="logo" href="/"><img src="/brand/logo/nps-survey-cx-os-mark-white.svg" alt=""><span>NPS Survey<small>CX OS by SalesHub</small></span></a>
 <nav><a href="/#platform">Product</a><a href="/#industries">Solutions</a><a href="/insights/">Insights</a><a href="/#partners">Partners</a><a href="/#pricing">Pricing</a><a class="btn" href="{LIST}&utm_content=blog_nav" target="_blank" rel="noopener">Free trial</a></nav></div></header>"""
