@@ -157,4 +157,74 @@ k = "g6"
 build(k, c, G, "Our last note for now.", "ONE LAST NOTE", "Should we", "close your file?", "Hi {!Lead.FirstName},",
   txt(["We have sent a few notes about resident feedback inside Salesforce and have not heard back, so this will be our last one for now.", "If improving resident or employee experience becomes a priority, reply to this email or book a time below, and we will tailor a short walkthrough to your agency's services."])
   + cta("Book a 20-minute walkthrough", u(CAL, c, k, "cta")), gov=True, light=True)
+
+
+# ---------- Trial drip (prospect installed a free trial from AppExchange) ----------
+def plans(rec="CX OS Insights"):
+    P=[("CX Lite","$3,500","per org, per year","NPS and CSAT by email and link, Close the Loop on every low score, 3 active surveys"),
+       ("CX Pro","$8,500","per org, per year","Everything in Lite, plus CES, branching, review requests, translations and AI comment summaries; 15 active surveys"),
+       ("CX OS Insights","from $16,000","per org, per year","Everything in Pro, plus renewals at risk, Account CX panels, AI digital workers and unlimited surveys")]
+    tds=""
+    for n,p,per,d in P:
+        hot=n==rec
+        bd="2px solid #002FA7" if hot else "1px solid #DCE3F5"
+        tag=f'<div style="{F}font-size:11px;letter-spacing:1px;font-weight:bold;color:#ffffff;background:#002FA7;border-radius:999px;padding:3px 8px;display:inline-block;margin-bottom:8px;">RECOMMENDED</div><br>' if hot else '<div style="height:26px;line-height:26px;">&nbsp;</div>'
+        tds+=f'<td width="33%" valign="top" style="padding:0 4px;"><table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="border:{bd};border-radius:12px;background:#F7F9FF;"><tr><td style="padding:14px 12px;{F}">{tag}<div style="font-size:15px;font-weight:bold;color:#0F1A3D;">{n}</div><div style="font-size:22px;font-weight:bold;color:#002FA7;padding-top:4px;">{p}</div><div style="font-size:11px;color:#5A6787;">{per}</div><div style="font-size:12px;line-height:17px;color:#3A4664;padding-top:8px;">{d}</div></td></tr></table></td>'
+    return W(f'<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr>{tds}</tr></table>', "6px 28px 4px 28px")
+
+def paths(items):
+    """items: (title, text, label, href, primary)"""
+    out=""
+    for t,d,l,h,pri in items:
+        btn = (f'<td style="background:#FFD60A;border-radius:10px;"><a href="{h}" style="display:inline-block;padding:12px 22px;{F}font-size:15px;font-weight:bold;color:#0F1A3D;text-decoration:none;">{l}</a></td>' if pri
+               else f'<td style="border:2px solid #002FA7;border-radius:10px;"><a href="{h}" style="display:inline-block;padding:10px 20px;{F}font-size:15px;font-weight:bold;color:#002FA7;text-decoration:none;">{l}</a></td>')
+        out+=f'<tr><td style="padding:0 0 14px 0;"><table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="border:1px solid #DCE3F5;border-radius:12px;background:#F7F9FF;"><tr><td style="padding:18px 20px;{F}"><div style="font-size:17px;font-weight:bold;color:#0F1A3D;">{t}</div><div style="font-size:15px;line-height:22px;color:#3A4664;padding:6px 0 12px 0;">{d}</div><table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr>{btn}</tr></table></td></tr></table></td></tr>'
+    return W(f'<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">{out}</table>', "4px 32px 0 32px")
+
+T = "YOUR FREE TRIAL"
+c = "trial"
+PRICE = f"{SITE}/#pricing"
+INSTALL = f"{SITE}/install/"
+OFFER = "Choose an annual plan by December 31, 2026 and your first year is 20% off."
+
+k = "t1"
+build(k, c, T, "Your 15-day trial has started. Here is how to get your first answer back today.", "DAY 1 OF YOUR TRIAL", "Your first survey answer,", "today.", "Hi {!Lead.FirstName},",
+  txt(["Thanks for starting a free 15-day trial of NPS Survey CX OS. Every feature is switched on, and everything stays inside your Salesforce org. Three steps get you to your first real answer:"])
+  + W(steps([("Turn on Feed Tracking for Cases", "One setting in Setup, before you install. The install guide shows where."), ("Install, sandbox first", "Choose Admins Only, then open the NPS Survey app from the App Launcher."), ("Send your first survey", "Pick one of the 131 templates, send it to yourself, and watch the answer land on the record.")]), "6px 32px 0 32px")
+  + cta("Open the install guide", u(INSTALL, c, k, "cta"), ("Prefer help? Book a free 30-minute guided setup", u(CAL, c, k, "setup"))))
+
+k = "t2"
+build(k, c, T, "Fifteen minutes to make it yours: brand, triggers and owners.", "DAY 3: CONFIGURE", "Make it yours", "in 15 minutes.", "Hi {!Lead.FirstName},",
+  txt(["You have the app installed. These three settings are what turn a survey tool into a system your team runs on:"])
+  + W(checks(["<b>Brand Kit:</b> type your website and AI fills in your logo, colours, fonts and footer for every survey and email", "<b>Send rules:</b> survey automatically when a case closes or a deal is won or lost", "<b>Close the Loop owners:</b> decide who gets the follow-up when someone scores 0 to 6, and by when"]), "0 32px")
+  + W(img(f"{E}/close-the-loop.jpg", u(SITE + "/close-the-loop/", c, k, "shot"), "Close the Loop in Salesforce", "Every unhappy answer gets an owner and a due date."), "6px 32px 0 32px")
+  + cta("Book a free setup call", u(CAL, c, k, "cta"), ("See every feature in the product tour", u(SITE + "/tour/", c, k, "tour"))))
+
+k = "t3"
+build(k, c, T, "Halfway through your trial: what to look at, and what it is worth.", "DAY 7: HALFWAY", "What your first week", "is telling you.", "Hi {!Lead.FirstName},",
+  txt(["You are halfway through your trial. This is a good week to look at what the answers are telling you, and to put a number on it for your leadership:"])
+  + W(checks(["<b>Dashboards:</b> NPS, CSAT and effort on every account, case and deal", "<b>AI summaries:</b> every comment read for sentiment, topics and what to fix", "<b>ROI calculator:</b> your accounts and churn in, a one-page business case out"]), "0 32px")
+  + W(img(f"{E}/account-cx.jpg", u(SITE + "/", c, k, "shot"), "Account CX inside Salesforce", "Scores, AI summary and next steps on the Account record."), "6px 32px 0 32px")
+  + cta("Build my business case", u(SITE + "/#roi", c, k, "cta"), ("Want us to review your setup? Book 30 minutes", u(CAL, c, k, "demo"))))
+
+k = "t4"
+build(k, c, T, "Three days left in your trial. Pick the plan that fits and keep every survey and answer.", "3 DAYS LEFT", "Keep everything you built.", "Pick your plan.", "Hi {!Lead.FirstName},",
+  txt(["Your free trial ends in 3 days. Your surveys, answers and settings stay in your Salesforce org, and choosing a plan keeps them working without a pause. One price per org, per year, with no per-user fees:"])
+  + plans()
+  + txt([f"<b>{OFFER}</b>"])
+  + cta("Choose my plan", u(PRICE, c, k, "cta"), ("Not sure which plan fits? Book 15 minutes with us", u(CAL, c, k, "help"))))
+
+k = "t5"
+build(k, c, T, "Your trial ends today. Choose a plan, get help deciding, or keep in touch.", "LAST DAY", "Your trial", "ends today.", "Hi {!Lead.FirstName},",
+  txt(["Today is the last day of your free trial of NPS Survey CX OS. Wherever you landed, here is the next step:"])
+  + paths([("I want to keep using NPS Survey CX OS", "Great call. Choose a plan and every survey, answer and follow-up keeps working, with nothing to reinstall. " + OFFER, "Choose a plan", u(PRICE, c, k, "plan"), True),
+           ("I'm not sure which plan is right", "Tell us how your team works and we'll recommend the plan that fits, in 15 minutes. Or compare the editions side by side.", "Help me decide", u(CAL, c, k, "help"), False),
+           ("I'm not ready right now", "No problem, we'll be here. Your data stays in your org. Meanwhile, see how teams turn feedback into saved accounts.", "Read the Insights blog", u(SITE + "/insights/", c, k, "blog"), False)])
+  , light=True)
+
+k = "t6"
+build(k, c, T, "Your trial has ended. Your surveys and answers are still in your org.", "TRIAL ENDED", "Your answers are safe.", "Pick up where you left off.", "Hi {!Lead.FirstName},",
+  txt(["Your free trial of NPS Survey CX OS has ended. Nothing was deleted: your surveys, answers and settings are still in your Salesforce org, ready the moment you choose a plan.", "Every week without follow-up is a week of unhappy customers nobody calls back. Teams that act on low scores keep accounts they would otherwise lose."])
+  + cta("Choose a plan and pick up where you left off", u(PRICE, c, k, "cta"), ("Questions? Reply to this email or book 15 minutes", u(CAL, c, k, "help"))), light=True)
+
 print("generated")
