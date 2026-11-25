@@ -446,7 +446,7 @@ p{margin:0}
 .sample{color:#C9D6FF;font-size:.72rem;text-align:right;margin-top:8px}
 
 /* proof strip */
-.proof{background:var(--navy);color:#fff}
+.proof{background:var(--navy);color:#fff}.st5{display:inline-flex;align-items:center;font-style:normal;background:#002FA7;color:#FFD60A;letter-spacing:1px;font-size:12px;line-height:1;padding:5px 9px;border-radius:999px}.proof .st5{box-shadow:0 0 0 1px rgba(255,255,255,.25)}
 :root[data-theme="dark"] .proof{background:#0A1238}
 @media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .proof{background:#0A1238}}
 .proof .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:16px 28px;padding-block:20px}
@@ -2115,7 +2115,7 @@ ${XREP()}
 ${XVS()}
 ${XTRUST()}
 ${XLEADERS("home_leaders")}
-<section class="proof" aria-label="At a glance"><div class="wrap"><div><b>5.0</b> on AppExchange · 7 reviews</div><div><b>131</b> survey templates</div><div><b>67</b> question types</div><div><b>10</b> industry blueprints</div><div><b>0</b> integrations to maintain</div></div></section>
+<section class="proof" aria-label="At a glance"><div class="wrap"><div><b>5.0</b> on AppExchange <em class="st5" aria-label="5 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</em></div><div><b>131</b> survey templates</div><div><b>67</b> question types</div><div><b>10</b> industry blueprints</div><div><b>0</b> integrations to maintain</div></div></section>
 <section class="band nx-suites"><div class="wrap">
  <div class="eyebrow">One platform</div><h2 class="h2">Six suites. One platform. One price per org, per year.</h2>
  <p class="sub">Brand Kit, Marketing, Service, Sales, Customer Journey and CX Intelligence, all native to Salesforce and all included. No add-ons, no per-seat surprises.</p>
@@ -2136,7 +2136,7 @@ ${XREP()}
 ${XVS()}
 ${XTRUST()}
 ${XFAQ()}
-<section class="proof" aria-label="At a glance"><div class="wrap"><div><b>5.0</b> on AppExchange · 7 reviews</div><div><b>131</b> survey templates</div><div><b>67</b> question types</div><div><b>10</b> industry blueprints</div><div><b>0</b> integrations to maintain</div></div></section>
+<section class="proof" aria-label="At a glance"><div class="wrap"><div><b>5.0</b> on AppExchange <em class="st5" aria-label="5 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</em></div><div><b>131</b> survey templates</div><div><b>67</b> question types</div><div><b>10</b> industry blueprints</div><div><b>0</b> integrations to maintain</div></div></section>
 <section class="band tint" style="padding-block:6px"><div class="wrap">${trustBar()}</div></section>
 <section class="band nx-suites"><div class="wrap">
  <div class="eyebrow">One platform</div><h2 class="h2">Six suites. One platform. One price per org, per year.</h2>
@@ -2292,7 +2292,7 @@ ${editionBand("platform")}
 <section class="band"><div class="wrap">
  <div class="eyebrow">What customers say</div><h2 class="h2">Rated 5.0 on Salesforce AppExchange</h2>
  ${TESTIMONIALS.length ? `<div class="quotes">${TESTIMONIALS.map(q=>`<figure class="quote"><div class="stars">${star(18).repeat(5)}</div><blockquote>“${q.text}”</blockquote><figcaption><b>${q.name}</b>${q.role?` · ${q.role}`:""}<br><a href="${LISTR}&utm_content=review_link" target="_blank" rel="noopener">Verified review on AppExchange</a></figcaption></figure>`).join("")}</div>` : ""}
- <div class="rating" style="margin-top:22px"><span class="big">5.0</span><div><div class="stars">${star(26).repeat(5)}</div><p class="sub" style="margin-top:6px">Average of 7 reviews from Salesforce customers on AppExchange. Listed since 2019.</p></div>
+ <div class="rating" style="margin-top:22px"><span class="big">5.0</span><div><div class="stars">${star(26).repeat(5)}</div><p class="sub" style="margin-top:6px">Average rating from Salesforce customers on AppExchange. Listed since 2019.</p></div>
   <div class="ctas" style="margin-left:auto"><a class="btn dark" href="${LISTR}&utm_content=home_reviews" target="_blank" rel="noopener">Read the reviews</a></div></div>
 </div></section>
 
@@ -2449,7 +2449,7 @@ V.resources = () => `${hero("", "Resources, videos and <em>downloads</em>", "Gui
 
 V.reviews = () => `${hero("", "Rated <em>5.0</em> on Salesforce AppExchange", "Seven reviews from Salesforce customers, published on the AppExchange listing.", `<div class="ctas"><a class="btn primary" href="${LISTR}&utm_content=reviews" target="_blank" rel="noopener">Read the reviews on AppExchange</a>${demoBtn()}</div>`)}
 <section class="band"><div class="wrap">
- <div class="rating"><span class="big">5.0</span><div><div class="stars">${star(26).repeat(5)}</div><p class="sub" style="margin-top:6px">Average of 7 reviews on Salesforce AppExchange</p></div></div>
+ <div class="rating"><span class="big">5.0</span><div><div class="stars">${star(26).repeat(5)}</div><p class="sub" style="margin-top:6px">Average rating on Salesforce AppExchange</p></div></div>
  <div class="grid2" style="margin-top:36px">
   <div class="card"><h3>Using NPS Survey CX OS?</h3><p>A review on AppExchange helps other Salesforce teams decide. It takes about two minutes.</p><a class="btn dark" style="align-self:flex-start;margin-top:8px" href="${LISTR}&utm_content=leave_review" target="_blank" rel="noopener">Write a review</a></div>
   <div class="card"><h3>Customer stories</h3><p>We publish stories only with each customer's written approval. Want to be featured, named or anonymized? Tell us at support@saleshub.info.</p></div>
@@ -2805,7 +2805,7 @@ return `${hero("", "GetFeedback retires on <em>December 31, 2026.</em> Keep your
 const trustBar = () => `<div class="tbar" aria-label="Platform and purchasing partners">
  <a class="tchip" href="${LIST}&utm_content=trustbar" target="_blank" rel="noopener"><img src="brand/partners/salesforce.svg" alt="Salesforce" width="52" height="36"><span>Built 100% on Salesforce · <b>Available on AppExchange</b></span></a>
  <a class="tchip" href="https://www.carahsoft.com/saleshub/solutions" target="_blank" rel="noopener"><img class="cs" src="brand/partners/carahsoft.svg" alt="Carahsoft" width="123" height="24"><span>Public sector purchasing <b>through Carahsoft</b></span></a>
- <a class="tchip" href="${LISTR}&utm_content=trustbar_reviews" target="_blank" rel="noopener"><span style="color:#E9A52B;display:inline-flex">${star(18)}</span><span><b>5.0 on AppExchange</b> · 7 reviews</span></a>
+ <a class="tchip" href="${LISTR}&utm_content=trustbar_reviews" target="_blank" rel="noopener"><em class="st5" aria-label="5 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</em><span><b>5.0 on AppExchange</b></span></a>
 </div>`;
 
 // ---------- Partner program ----------
