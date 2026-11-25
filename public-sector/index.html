@@ -333,6 +333,12 @@ h1,h2,.h2{font-family:"IBM Plex Serif",Georgia,"Times New Roman",serif!important
 .xm-g{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:28px}.xm-c{background:#fff;border:1px solid #DCE3F5;border-radius:16px;padding:20px;box-shadow:0 6px 18px rgba(4,11,38,.05)}.xm-c b{font-size:17px;color:#0F1A3D}.xm-c p{margin:8px 0 0;color:#5A6787;font-size:15px;line-height:1.5}
 .xe-ob{padding:28px 0 0!important}.xe-out{justify-content:flex-start;margin:0}.xe-out li{color:#0F1A3D;border-color:#C7D5FF;background:#F4F7FF}
 @media (max-width:1000px){.xm-g{grid-template-columns:1fr 1fr}}@media (max-width:560px){.xm-g{grid-template-columns:1fr}}
+.xbd{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin:18px 0 0}.xbd-b{display:inline-flex;align-items:center;gap:10px;padding:8px 14px 8px 8px;border-radius:12px;background:rgba(255,255,255,.07);border:1px solid rgba(143,176,255,.35);color:#fff;text-decoration:none;text-align:left}
+.xbd-b small{display:block;font-size:11px;letter-spacing:.04em;color:#8FB0FF;line-height:1.2}.xbd-b b{display:block;font-size:14px;font-weight:600;line-height:1.25}.xbd-b em{font-style:normal;font-weight:600;font-size:13px;color:#fff;background:rgba(255,255,255,.12);border-radius:999px;padding:3px 8px;margin-left:4px}
+.xbd-i{flex:none;width:32px;height:32px;border-radius:9px;display:grid;place-items:center;background:#fff;color:#002FA7;font-size:17px;font-weight:700}.xbd-g{font-family:"IBM Plex Sans",sans-serif}
+a.xbd-b:hover{background:rgba(255,255,255,.14)}
+.xtr .xbd{justify-content:flex-start;margin:22px 0 6px}.xtr .xbd-b{background:#F4F7FF;border-color:#DCE3F5;color:#0F1A3D}.xtr .xbd-b small{color:#5A6787}.xtr .xbd-b em{background:#DCE6FF;color:#002FA7}.xtr .xbd-i{background:#002FA7;color:#fff}.xtr a.xbd-b:hover{background:#EEF2FB}
+@media (max-width:600px){.xbd{gap:8px}.xbd-b{width:100%}}
 </style>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=IBM+Plex+Serif:wght@500;600&display=swap">
@@ -1963,6 +1969,12 @@ const XVS = () => `<section class="band tint"><div class="wrap"><h2 class="h2">S
 <div><span>Leaders</span><span>Build your own dashboards</span><span>Executive PDF reports, ready to send</span></div>
 <div><span>Setup</span><span>A developer and custom code</span><span>Guided setup, no code</span></div>
 </div></div></section>`;
+const XBADGES = () => `<div class="xbd" aria-label="Trust">
+<a class="xbd-b" href="${LIST}&utm_content=badge" target="_blank" rel="noopener"><span class="xbd-i">&#9729;</span><span><small>Available on</small><b>Salesforce AppExchange</b></span><em>&#9733; 5.0</em></a>
+<span class="xbd-b"><span class="xbd-i">&#10003;</span><span><small>Passed the</small><b>Salesforce security review</b></span></span>
+<span class="xbd-b"><span class="xbd-i">&#9673;</span><span><small>100% native</small><b>Runs inside your Salesforce org</b></span></span>
+<span class="xbd-b"><span class="xbd-i xbd-g">G</span><span><small>Built in</small><b>Google review requests</b></span></span>
+</div>`;
 const XGAP = () => `<section class="band xgap"><div class="wrap xgap-w"><div><div class="eyebrow">The follow-up gap</div><h2 class="h2">The most expensive answer is the one nobody follows up.</h2><p class="sub">Most teams collect scores. Few call back the customer who scored a 3. That silence is where renewals, reviews and referrals are lost.</p><p class="sub">NPS Survey CX OS closes the gap inside Salesforce: every answer from 0 to 6 becomes a follow-up with an owner, a due date and an AI-drafted reply, on the account, case and deal your team already works.</p><div class="xh-actions xh-left">${trial("gap","Close the gap free for 15 days")}</div></div>
 <div class="xgap-v" aria-hidden="true"><div class="xgap-r"><span class="xgap-s bad">3</span><div><b>"Billed twice and had to chase it."</b><small>Without a follow-up: no owner, no reply, lost at renewal</small></div></div><div class="xgap-arrow">With NPS Survey CX OS</div><div class="xgap-r ok"><span class="xgap-s bad">3</span><div><b>Follow-up opened in seconds</b><small>Owner Priya Shah · due today · AI reply drafted</small></div></div><div class="xgap-r ok"><span class="xgap-s good">9</span><div><b>Won back</b><small>Follow-up survey a week later</small></div></div></div></div></section>`;
 const XAI = () => `<section class="band tint xai"><div class="wrap"><div class="eyebrow">AI on every step</div><h2 class="h2">Listen, understand, act. With AI that predicts, recommends and does the work.</h2>
@@ -1971,6 +1983,7 @@ const XAI = () => `<section class="band tint xai"><div class="wrap"><div class="
 <div class="xai-l ai">AI layer</div><div class="xai-c ai"><b>Draft</b>AI writes the survey from your goal and picks the right moment to ask</div><div class="xai-c ai"><b>Predict</b>Churn and renewal risk, experience health, emotions and topics</div><div class="xai-c ai"><b>Recommend and act</b>Next best actions, AI-drafted replies and digital workers that do the routine work</div></div>
 <p class="xai-n">You stay in control: every AI action is logged, reversible and runs inside your own Salesforce org.</p></div></section>`;
 const XTRUST = () => `<section class="band xtr"><div class="wrap"><div class="eyebrow">Trust</div><h2 class="h2">Built where your customer data already lives.</h2>
+${XBADGES()}
 <div class="xtr-g"><div><b>Inside your Salesforce org</b><p>Answers, follow-ups and reports are stored as records in your own org, under your sharing rules and backups.</p></div>
 <div><b>Security reviewed by Salesforce</b><p>NPS Survey CX OS passed the AppExchange security review before it was listed.</p></div>
 <div><b>Access by role</b><p>Admins assign a role; each person sees only their own screens and records. App admins see everything.</p></div>
@@ -2026,7 +2039,7 @@ V.home = () => `${XWEB()}<div class="xh">
   <p>Customer, employee and brand experience, plus market research, layer by layer inside Salesforce. Move from insight to action on every answer.</p>
   <div class="xh-actions">${trial("hero","Start your 15-day free trial")}<a class="btn xh-ghost" href="${DEMO}" target="_blank" rel="noopener">Book a demo</a></div>
   <ul class="xh-out" aria-label="Outcomes"><li>Fewer lost customers</li><li>Renewals saved</li><li>More 5-star reviews</li><li>Hours of follow-up saved</li></ul>
-  <div class="xh-proof">Rated 5.0 on Salesforce AppExchange · Security reviewed · Data stays in your org</div>
+  ${XBADGES()}
  </div>
  <div class="xh-stage" role="img" aria-label="NPS Survey CX OS at the centre, connected to customer, employee and brand experience, plus market research, which drive loyalty, trust, lower risk, sales, lower costs and awareness for insights, marketing, digital, experience, people and operations leaders.">
   <div class="xh-ring xh-r1"></div><div class="xh-ring xh-r2"></div><div class="xh-ring xh-r3"></div>
