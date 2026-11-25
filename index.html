@@ -426,6 +426,7 @@ p{margin:0}
 
 /* nav */
 .nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:var(--blue-deep);color:#fff}
+/* seam fix: overlap bands by a pixel so no white hairline shows at any zoom */.nav{margin-top:-1px}#app{position:relative;z-index:1;margin-top:-2px}
 .nav .wrap{display:flex;align-items:center;gap:22px;padding-block:12px}
 .logo{display:flex;align-items:center;gap:10px;color:#fff;text-decoration:none;font-weight:800;font-size:1.05rem}
 .logo img{width:34px;height:34px;border-radius:9px}
@@ -1433,7 +1434,7 @@ footer .legal{font-size:13px}
 .xh-orbit{position:absolute;left:50%;top:50%;width:0;height:0;z-index:5}
 .xh-rev,.xh-rev>*{animation-direction:reverse!important;animation-duration:200s!important}.xh-orbit.xh-rev{z-index:4}
 /* scroll zoom: stage eases in as it enters, cards sit a layer closer */
-@media (prefers-reduced-motion:no-preference){.xh-stage{scale:var(--xz,1);transition:scale .25s linear}.xh-stage .xh-card{scale:var(--xc,1);transition:scale .25s linear,transform .7s cubic-bezier(.2,.7,.2,1)}}
+@media (prefers-reduced-motion:no-preference){.xh-stage{scale:var(--xz,.96);transform-origin:50% 0;transition:scale .25s linear}.xh-stage .xh-card{scale:var(--xc,1);transition:scale .25s linear,transform .7s cubic-bezier(.2,.7,.2,1)}}
 .xh-spin{animation:xhspin 140s linear infinite}.xh-spin>*{animation:xhcounter 140s linear infinite}
 @keyframes xhspin{to{transform:rotate(360deg)}}@keyframes xhcounter{to{rotate:-360deg}}
 .xh-pill{position:absolute;translate:-50% -50%;white-space:nowrap;border-radius:999px;font:500 14px/1 "IBM Plex Sans",sans-serif;padding:10px 16px;background:rgba(255,255,255,.94);color:#0F1A3D;box-shadow:0 10px 30px rgba(4,11,38,.35)}
@@ -2120,7 +2121,7 @@ V.home = () => `<div class="xh">
   <div class="xh-tile xh-float xh-d2" style="left:200px;top:40px"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="10" width="14" height="10" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg></div>
   <div class="xh-tile xh-float" style="left:250px;top:765px"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 21V10M7 10l4-7 2 1-1 5h6a2 2 0 0 1 2 2l-2 8a2 2 0 0 1-2 2H7"/></svg></div>
   <div class="xh-tile xh-float xh-d3" style="right:250px;top:765px"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg></div>
-  <div class="xh-mini xh-float xh-d3" style="right:216px;top:-10px"><div class="xh-dial"><span>+42</span></div><small>NPS this quarter<br>up 6 points</small></div>
+  <div class="xh-mini xh-float xh-d3" style="right:216px;top:14px"><div class="xh-dial"><span>+42</span></div><small>NPS this quarter<br>up 6 points</small></div>
  </div>
  <div class="xh-mobile">
   <div class="xh-mhub"><svg viewBox="0 0 100 100" aria-hidden="true"><path d="M31.07 77.03 A33 33 0 1 1 68.93 77.03" fill="none" stroke="#fff" stroke-width="12" stroke-linecap="round"/><circle cx="50" cy="83" r="6.5" fill="#fff"/></svg><b>CX OS</b></div>
@@ -3035,5 +3036,5 @@ function tick(){raf=0;var e=ev;if(!e)return;var h=document.querySelector(".xh-he
 var dx=e.clientX/innerWidth-.5,dy=e.clientY/innerHeight-.5;h.querySelectorAll(".xh-card,.xh-tile,.xh-mini").forEach(function(c,i){var d=8+(i%3)*7;c.style.transform="translate("+(-dx*d).toFixed(1)+"px,"+(-dy*d).toFixed(1)+"px)"})}})();</script>
 <script src="/assets/dial/dial.js"></script>
 <script src="/assets/chat/chat.js" defer></script>
-<script>(function(){if(matchMedia("(prefers-reduced-motion: reduce)").matches)return;var t=0;function f(){t=0;document.querySelectorAll(".xh-stage").forEach(function(s){var r=s.getBoundingClientRect(),h=innerHeight;if(r.bottom<0||r.top>h)return;var p=Math.min(1,Math.max(0,(h-r.top)/(h+r.height)));var z=.9+.18*Math.sin(p*Math.PI);s.style.setProperty("--xz",z.toFixed(3));s.style.setProperty("--xc",(1+.08*(p-.5)).toFixed(3))})}addEventListener("scroll",function(){if(!t)t=requestAnimationFrame(f)},{passive:true});new MutationObserver(function(){if(!t)t=requestAnimationFrame(f)}).observe(document.getElementById("app"),{childList:true});f()})();</script>
+<script>(function(){if(matchMedia("(prefers-reduced-motion: reduce)").matches)return;var t=0;function f(){t=0;document.querySelectorAll(".xh-stage").forEach(function(s){var r=s.getBoundingClientRect(),h=innerHeight;if(r.bottom<0||r.top>h)return;var p=Math.min(1,Math.max(0,(h-r.top)/(h+r.height)));var z=.92+.08*Math.sin(p*Math.PI);s.style.setProperty("--xz",z.toFixed(3));s.style.setProperty("--xc",(1+.08*(p-.5)).toFixed(3))})}addEventListener("scroll",function(){if(!t)t=requestAnimationFrame(f)},{passive:true});new MutationObserver(function(){if(!t)t=requestAnimationFrame(f)}).observe(document.getElementById("app"),{childList:true});f()})();</script>
 </body></html>

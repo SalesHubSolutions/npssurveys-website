@@ -99,12 +99,28 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:12px 28px;justify-content:space-bet
 </style>
 <link rel="stylesheet" href="/brand/scale.css"><link rel="stylesheet" href="/assets/depth.css?v=1">
 <link rel="stylesheet" href="/assets/footer.css?v=1">
+<link rel="stylesheet" href="/assets/header.css?v=1">
 </head>
 <body>
-<header class="top"><div class="wrap">
- <a class="logo" href="/"><svg width="32" height="34" viewBox="0 0 100 100" aria-hidden="true"><path d="M31.07 77.03 A33 33 0 1 1 68.93 77.03" fill="none" stroke="#fff" stroke-width="13" stroke-linecap="round"/><circle cx="50" cy="83" r="7.5" fill="#fff"/></svg><span><b>NPS Survey</b><small>CX OS by SalesHub</small></span></a>
- <nav><a class="hide" href="/#roi">ROI calculator</a><a class="hide" href="/close-the-loop/">Free PDF</a><a href="#quiz">Start the check</a></nav>
-</div></header>
+<div class="sh"><div class="fam" role="navigation" aria-label="NPS Survey products"><div class="wrap"><span class="lbl">NPS Survey products</span><a href="/" aria-current="true"><span class="dot" aria-hidden="true"></span>For Salesforce <span class="tag">· native on AppExchange</span></a><a href="https://app.npssurveys.com/?utm_source=npssurveys.com&amp;utm_medium=website&amp;utm_campaign=family&amp;utm_content=family_bar">CX360 Standalone <span class="tag">· any CRM or none</span> ↗</a><a class="help" href="/#switch">GetFeedback retires Dec 31 →</a></div></div>
+
+<div class="nav" role="banner"><div class="wrap">
+  <a class="logo" href="/"><img src="/brand/logo/nps-survey-cx-os-mark-white.svg" alt=""><span>NPS Survey<small>CX OS by SalesHub</small></span></a>
+  <ul id="navlinks">
+    <li class="dd"><button type="button" class="ddb" aria-expanded="false">Product</button><div class="ddm wide"><div><h6>Suites</h6><a href="/#survey-studio">Survey Studio</a><a href="/#service">Service</a><a href="/#journeys">Customer Journey</a><a href="/#revenue">Sales: Revenue CX</a><a href="/#intelligence">CX Intelligence & AI workers</a><a href="/#brand-kit">Brand Kit & Marketing</a><a class="all" href="/#platform">Platform overview →</a></div><div><h6>Choose and compare</h6><a href="/tour/"><b>Product tour</b><span>Every feature and the problem it solves</span></a><a href="/#compare"><b>Compare</b><span>Native vs. bolt-on survey tools</span></a><a href="/#reviews"><b>Reviews</b><span>Rated 5.0 on Salesforce AppExchange</span></a><a href="/#switch"><b>Switch from GetFeedback</b><span>Move before December 31, 2026</span></a><a href="/#choose"><b>Which edition is right for me?</b><span>Salesforce-native or standalone, compared</span></a><a href="https://app.npssurveys.com/?utm_source=npssurveys.com&amp;utm_medium=website&amp;utm_campaign=family&amp;utm_content=nav_dd"><b>CX360 Standalone ↗</b><span>Not on Salesforce? AI surveys, service desk and AI agent for any CRM</span></a></div></div></li>
+    <li class="dd"><button type="button" class="ddb" aria-expanded="false">Solutions</button><div class="ddm wide"><div><h6>Experiences</h6><a href="/#customer-experience">Customer experience</a><a href="/#employee-experience">Employee experience</a><a href="/#brand-experience">Brand experience</a><a href="/#market-research">Market research</a></div><div><h6>Industries</h6><a href="/#ind-commercial">B2B, SaaS & Technology</a><a href="/#ind-financial">Financial Services & Insurance</a><a href="/#ind-healthcare">Healthcare & Health-tech</a><a href="/#ind-manufacturing">Manufacturing & Distribution</a><a href="/#ind-consulting">Consulting & Professional Services</a><a href="/#ind-nonprofit">Nonprofit</a><a href="/#ind-education">Education</a><a class="all" href="/#industries">All industry blueprints →</a></div><div><h6>Public sector</h6><a href="/#public-sector">Public sector overview</a><a href="/#ind-sled">State & Local Government</a><a href="/#ind-federal">Federal Civilian Agencies</a><a href="/#ind-defense">Defense</a></div></div></li>
+    <li class="dd"><button type="button" class="ddb" aria-expanded="false">Resources</button><div class="ddm"><a href="/insights/"><b>Insights blog</b><span>Guides and playbooks, new every week</span></a><a href="/#learn"><b>Learning Center</b><span>Setup and how-to guides, glossary, NPS calculator</span></a><a href="/#resources"><b>Downloads & videos</b><span>Offering sheets, blueprints, films</span></a><a href="/#roi"><b>ROI calculator</b><span>Build your business case in 60 seconds</span></a><a href="/cx-health/"><b>CX health check</b><span>Score your feedback loop in 2 minutes</span></a><a href="/close-the-loop/"><b>Free PDF: the CFO business case</b><span>Close the Loop, Issue 01</span></a></div></li>
+    <li><a href="/#partners">Partners</a></li><li><a href="/#pricing">Pricing</a></li>
+  </ul>
+  <div class="acts"><a class="btn ghost" href="/#demo">Book a demo</a><a class="btn primary" href="https://appexchange.salesforce.com/appxListingDetail?listingId=a0N3A00000FtRTKUA3&tab=e&utm_source=npssurveys.com&utm_medium=website&utm_campaign=cxos_site&utm_content=nav" target="_blank" rel="noopener">Free trial</a></div>
+  <button class="menu-btn" id="shMenu" aria-expanded="false" aria-controls="shDrawer">Menu</button>
+</div>
+<div class="drawer" id="shDrawer" hidden><div class="wrap">
+  <div><h6>Product</h6><a href="/#platform">Platform</a><a href="/#compare">Compare</a><a href="/#reviews">Reviews</a><a href="/#switch">Switch from GetFeedback</a><a href="/#choose">Which edition is right?</a><a href="https://app.npssurveys.com/?utm_source=npssurveys.com&amp;utm_medium=website&amp;utm_campaign=family&amp;utm_content=drawer">CX360 Standalone ↗</a></div>
+  <div><h6>Solutions</h6><a href="/#customer-experience">Customer experience</a><a href="/#employee-experience">Employee experience</a><a href="/#brand-experience">Brand experience</a><a href="/#market-research">Market research</a><a href="/#industries">All industries</a><a href="/#public-sector">Public sector</a><a href="/#ind-defense">Defense</a><a href="/#ind-healthcare">Healthcare</a></div>
+  <div><h6>Resources</h6><a href="/insights/">Insights blog</a><a href="/#learn">Learning Center</a><a href="/#resources">Downloads &amp; videos</a><a href="/#roi">ROI calculator</a><a href="/cx-health/">CX health check</a><a href="/close-the-loop/">CFO business case PDF</a></div>
+  <div><h6>Company</h6><a href="/#partners">Partners</a><a href="/#pricing">Pricing</a><a href="/#demo">Book a demo</a></div>
+</div></div></div></div>
 
 
 <section class="hero" style="padding-bottom:110px"><div class="wrap" style="text-align:center;max-width:860px">
@@ -202,5 +218,6 @@ show();
 })();
 </script>
 <script src="/assets/chat/chat.js" defer></script>
+<script src="/assets/header.js?v=1" defer></script>
 </body>
 </html>

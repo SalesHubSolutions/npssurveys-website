@@ -1,0 +1,84 @@
+/* Shared site header for standalone pages: generated from the main site header (tools: /tmp/hx/extract.py) */
+.sh{--blue:#002FA7;--blue-deep:#002FA7;--yellow:#FFD60A;--navy:#0F1A3D;--bg:#FFFFFF;--bg-tint:#F4F7FF;--surface:#FFFFFF;--line:#DCE4F7;--fg:#0F1A3D;--fg-soft:#3B4877;--fg-mute:#5E6B98;--link:#002FA7;--shadow:0 18px 40px rgba(5,20,90,.16);--font:"IBM Plex Sans",system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;font-family:var(--font);font-size:18px;line-height:1.55;color:#0F1A3D;position:relative;z-index:50}
+.sh *,.sh *:before,.sh *:after{box-sizing:border-box}
+.sh h6{margin:0}
+.sh ul{margin:0;padding:0;list-style:none}
+.sh a{text-decoration:none}
+.sh img{max-width:100%}
+.sh img{max-width: 100%;}
+@media (max-width: 720px){.sh .nav .acts{display: none;}}
+.sh .nav ul{align-items: center;}
+.sh .nav .dd{position: relative;}
+.sh .ddb{background: none; border: 0px; color: rgb(220, 229, 255); font-style: inherit; font-variant: inherit; font-stretch: inherit; line-height: inherit; font-family: inherit; font-optical-sizing: inherit; font-size-adjust: inherit; font-kerning: inherit; font-feature-settings: inherit; font-variation-settings: inherit; font-language-override: inherit; font-weight: 500; font-size: 0.93rem; cursor: pointer; padding: 6px 0px; display: inline-flex; align-items: center; gap: 6px;}
+.sh .ddb::after{content: ""; width: 7px; height: 7px; border-right: 2px solid; border-bottom: 2px solid; transform: rotate(45deg) translateY(-2px); opacity: 0.8;}
+.sh .ddb:hover{color: rgb(255, 255, 255);}
+.sh .ddm{display: none; position: absolute; top: calc(100% + 12px); left: -18px; min-width: 330px; background: var(--surface); color: var(--fg); border: 1px solid var(--line); border-radius: 16px; box-shadow: rgba(5, 20, 80, 0.25) 0px 18px 50px; padding: 10px; z-index: 40;}
+.sh .ddm::before{content: ""; position: absolute; left: 0px; right: 0px; top: -14px; height: 14px;}
+.sh .dd:hover .ddm,.sh .dd:focus-within .ddm{display: block;}
+.sh .ddm.wide{min-width: 560px; grid-template-columns: 1fr 1fr; gap: 8px;}
+.sh .dd:hover .ddm.wide,.sh .dd:focus-within .ddm.wide{display: grid;}
+.sh .ddm a{display: block; text-decoration: none; padding: 9px 12px; border-radius: 10px; font-weight: 600; font-size: 0.92rem; color: var(--fg) !important;}
+.sh .ddm a:hover,.sh .ddm a:focus-visible{background: var(--bg-tint);}
+.sh .ddm a b{display: block; font-weight: 700;}
+.sh .ddm a span{display: block; font-weight: 500; font-size: 0.82rem; color: var(--fg-mute); margin-top: 2px;}
+.sh .ddm h6{margin: 6px 12px 4px; font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--link);}
+.sh .ddm a.all{color: var(--link) !important; font-size: 0.85rem;}
+.sh .drawer .wrap{grid-template-columns: repeat(2, 1fr); gap: 8px 16px;}
+.sh .drawer h6{margin: 8px 8px 2px; font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--yellow);}
+.sh .drawer .wrap > div{display: flex; flex-direction: column;}
+@media (max-width: 520px){.sh .drawer .wrap{grid-template-columns: 1fr;}}
+@media print{.sh .nav{display: none !important;}}
+.sh .fam{background: rgb(3, 26, 107); color: rgb(201, 214, 255); font-size: 0.82rem; position: relative; z-index: 21;}
+.sh .fam .wrap{display: flex; align-items: center; gap: 4px; padding-block: 6px; flex-wrap: wrap;}
+.sh .fam .lbl{font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; font-size: 0.7rem; margin-right: 8px; color: rgb(143, 166, 232);}
+.sh .fam a{display: inline-flex; align-items: center; gap: 7px; padding: 4px 12px; border-radius: 999px; color: rgb(201, 214, 255); text-decoration: none; font-weight: 600; line-height: 1.4;}
+.sh .fam a:hover{background: rgba(255, 255, 255, 0.08); color: rgb(255, 255, 255);}
+.sh .fam a[aria-current="true"]{background: rgb(255, 255, 255); color: var(--blue-deep);}
+.sh .fam a .tag{font-weight: 500; opacity: 0.72;}
+.sh .fam a[aria-current="true"] .tag{opacity: 0.7;}
+.sh .fam .dot{width: 7px; height: 7px; border-radius: 50%; background: rgb(38, 122, 114); box-shadow: rgba(35, 169, 106, 0.25) 0px 0px 0px 3px;}
+.sh .fam .help{margin-left: auto;}
+@media (max-width: 700px){.sh .fam .lbl,.sh .fam a .tag,.sh .fam .help{display: none;}.sh .fam .wrap{justify-content: center;}}
+.sh *{box-sizing: border-box;}
+@media (prefers-reduced-motion: reduce){.sh *{animation: auto ease 0s 1 normal none running none !important; transition: none !important;}}
+.sh a{color: var(--link);}
+.sh img{max-width: 100%;}
+.sh .wrap{max-width: 1160px; margin: 0px auto; padding-left: max(20px,env(safe-area-inset-left,0px)); padding-right: max(20px,env(safe-area-inset-right,0px));}
+.sh .btn{display: inline-flex; align-items: center; gap: 8px; font-weight: 700; border-radius: 999px; padding: 13px 22px; text-decoration: none; font-size: 1rem; transition: transform 0.15s, box-shadow 0.15s; border: 2px solid transparent;}
+.sh .btn:focus-visible{outline: 3px solid var(--yellow); outline-offset: 3px;}
+.sh .btn.primary{background: var(--yellow); color: var(--navy);}
+.sh .btn.primary:hover{transform: translateY(-1px); box-shadow: rgba(255, 228, 67, 0.35) 0px 8px 20px;}
+.sh .btn.ghost{color: rgb(255, 255, 255); border-color: rgba(255, 255, 255, 0.55);}
+.sh .btn.ghost:hover{background: rgba(255, 255, 255, 0.1);}
+.sh .nav{position: sticky; top: env(safe-area-inset-top,0px); z-index: 20; background: var(--blue-deep); color: rgb(255, 255, 255);}
+.sh .nav .wrap{display: flex; align-items: center; gap: 22px; padding-block: 12px;}
+.sh .logo{display: flex; align-items: center; gap: 10px; color: rgb(255, 255, 255); text-decoration: none; font-weight: 800; font-size: 1.05rem;}
+.sh .logo img{width: 34px; height: 34px; border-radius: 9px;}
+.sh .logo small{display: block; font-weight: 500; font-size: 0.72rem; color: rgb(201, 214, 255); letter-spacing: 0.02em;}
+.sh .nav ul{display: flex; gap: 20px; list-style: none; margin: 0px 0px 0px auto; padding: 0px;}
+.sh .nav ul a{color: rgb(220, 229, 255); text-decoration: none; font-weight: 500; font-size: 0.93rem;}
+.sh .nav ul a:hover{color: rgb(255, 255, 255);}
+.sh .nav .btn{padding: 9px 16px; font-size: 0.9rem;}
+@media (max-width: 860px){.sh .nav ul{display: none;}.sh .nav .btn{margin-left: auto;}}
+.sh .nav .acts{display: flex; gap: 8px; margin-left: 12px;}
+.sh .nav .btn.ghost{padding: 8px 14px; font-size: 0.88rem;}
+.sh .menu-btn{display: none; margin-left: auto; background: transparent; border: 1px solid rgba(255, 255, 255, 0.4); color: rgb(255, 255, 255); border-radius: 10px; padding: 8px 10px; font-style: inherit; font-variant: inherit; font-stretch: inherit; font-size: inherit; line-height: inherit; font-family: inherit; font-optical-sizing: inherit; font-size-adjust: inherit; font-kerning: inherit; font-feature-settings: inherit; font-variation-settings: inherit; font-language-override: inherit; font-weight: 600; cursor: pointer;}
+@media (max-width: 1020px){.sh .nav ul{display: none;}.sh .nav .acts .ghost{display: none;}.sh .menu-btn{display: inline-flex;}.sh .nav .acts{margin-left: 8px;}}
+.sh .drawer{background: var(--blue-deep); border-top: 1px solid rgba(255, 255, 255, 0.12);}
+.sh .drawer .wrap{display: grid; grid-template-columns: repeat(2, 1fr); gap: 4px; padding-block: 12px;}
+.sh .drawer a{color: rgb(255, 255, 255); text-decoration: none; padding: 10px 8px; border-radius: 8px; font-weight: 600;}
+.sh .drawer a:hover{background: rgba(255, 255, 255, 0.08);}
+.sh .btn.primary{background: rgb(0, 47, 167); color: rgb(255, 255, 255);}
+.sh .btn.primary:hover{box-shadow: rgba(0, 47, 167, 0.25) 0px 8px 20px;}
+.sh .nav .btn.primary,.sh .nav a.btn,.sh .nav .btn{background: rgb(255, 255, 255); color: rgb(0, 47, 167);}
+.sh .btn:focus-visible{outline-color: rgb(0, 47, 167);}
+.sh .nav a:focus-visible{outline-color: rgb(255, 255, 255);}
+.sh .nav ul a,.sh .nav .ddb{font-size: 15px; font-weight: 500;}
+.sh .nav .btn,.sh .nav .btn.ghost{font-size: 15px;}
+.sh .btn{font-size: 15px; font-weight: 600;}
+@media (hover: hover) and (prefers-reduced-motion: no-preference){.sh .btn{transition: transform 0.2s, box-shadow 0.2s, background-color 0.2s, filter 0.2s;}.sh .btn:hover{transform: translateY(-1px);}.sh .btn.primary:hover{box-shadow: rgba(0, 47, 167, 0.28) 0px 12px 28px;}}
+.sh .fam .tag{background:none;border:0;padding:0;margin:0;text-transform:none;letter-spacing:normal;font-size:inherit;color:inherit;border-radius:0;display:inline}
+.sh .fam a[aria-current="true"] .tag{color:inherit}
+.sh .nav{margin-top:-1px}
+.sh+*{position:relative;margin-top:-2px}
+.sh{z-index:60}
