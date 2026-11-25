@@ -339,6 +339,9 @@ h1,h2,.h2{font-family:"IBM Plex Serif",Georgia,"Times New Roman",serif!important
 a.xbd-b:hover{background:rgba(255,255,255,.14)}
 .xtr .xbd{justify-content:flex-start;margin:22px 0 6px}.xtr .xbd-b{background:#F4F7FF;border-color:#DCE3F5;color:#0F1A3D}.xtr .xbd-b small{color:#5A6787}.xtr .xbd-b em{background:#DCE6FF;color:#002FA7}.xtr .xbd-i{background:#002FA7;color:#fff}.xtr a.xbd-b:hover{background:#EEF2FB}
 @media (max-width:600px){.xbd{gap:8px}.xbd-b{width:100%}}
+.xh-trust{display:flex;flex-wrap:nowrap;width:max-content;max-width:calc(100vw - 32px);margin-left:auto;margin-right:auto;justify-content:center;gap:6px 0;margin-top:22px;font-size:14px;color:#C7D5FF}.xh-trust>*{color:#C7D5FF;text-decoration:none;white-space:nowrap;padding:0 14px;border-left:1px solid rgba(143,176,255,.35)}.xh-trust>*:first-child{border-left:0}.xh-trust a{color:#fff;font-weight:500}.xh-trust a:hover{text-decoration:underline}
+@media (max-width:760px){.xh-trust{display:grid;grid-template-columns:1fr 1fr;gap:8px 0;width:auto;max-width:100%}.xh-trust>*{border-left:0;text-align:center;white-space:normal}}
+@media (max-width:600px){.xh-trust{font-size:13px}.xh-trust>*{padding:0 9px}}
 </style>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=IBM+Plex+Serif:wght@500;600&display=swap">
@@ -1463,8 +1466,8 @@ footer .legal{font-size:13px}
 <script type="application/ld+json" id="faq-ld">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is NPS Survey CX OS?", "acceptedAnswer": {"@type": "Answer", "text": "An AI customer, employee and brand experience platform that runs natively inside Salesforce. It sends NPS, CSAT, effort and employee surveys, shows the scores on every record, and turns unhappy answers into follow-ups automatically."}}, {"@type": "Question", "name": "How is it different from Qualtrics or Medallia?", "acceptedAnswer": {"@type": "Answer", "text": "It lives inside Salesforce instead of next to it, it is priced per org with no per-seat fees, and you can install it from AppExchange and start a 15-day free trial today, without a sales cycle."}}, {"@type": "Question", "name": "What happens when a customer gives a low score?", "acceptedAnswer": {"@type": "Answer", "text": "Every answer from 0 to 6 opens a Close the Loop follow-up with an owner, a due date and an AI-drafted reply, on the account and case your team already uses."}}, {"@type": "Question", "name": "Can it replace GetFeedback (Salesforce Feedback Management)?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. GetFeedback retires on December 31, 2026. NPS Survey CX OS covers NPS, CSAT and effort surveys, close-the-loop follow-up and dashboards in Salesforce, and we help move your surveys over."}}, {"@type": "Question", "name": "What does it cost?", "acceptedAnswer": {"@type": "Answer", "text": "One price per org, per year: $3,500, $8,500 or $16,000 depending on the plan, with every suite included. Start with a 15-day free trial from AppExchange."}}, {"@type": "Question", "name": "Does it cover employee experience and market research?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Employee NPS and pulse surveys, onboarding and exit surveys, brand and market research surveys all run on the same platform and dials."}}]}</script>
 </head>
 <body>
-<div class="fam" role="navigation" aria-label="NPS Survey products"><div class="wrap"><span class="lbl">NPS Survey products</span><a href="#home" aria-current="true"><span class="dot" aria-hidden="true"></span>For Salesforce <span class="tag">· native on AppExchange</span></a><a href="https://app.npssurveys.com/?utm_source=npssurveys.com&amp;utm_medium=website&amp;utm_campaign=family&amp;utm_content=family_bar">CX360 Standalone <span class="tag">· any CRM or none</span> ↗</a><a class="help" href="#choose">Which is right for me? →</a></div></div>
-<div class="annc">GetFeedback retires December 31, 2026. <a href="#switch">Move your surveys to native Salesforce →</a></div>
+<div class="fam" role="navigation" aria-label="NPS Survey products"><div class="wrap"><span class="lbl">NPS Survey products</span><a href="#home" aria-current="true"><span class="dot" aria-hidden="true"></span>For Salesforce <span class="tag">· native on AppExchange</span></a><a href="https://app.npssurveys.com/?utm_source=npssurveys.com&amp;utm_medium=website&amp;utm_campaign=family&amp;utm_content=family_bar">CX360 Standalone <span class="tag">· any CRM or none</span> ↗</a><a class="help" href="#switch">GetFeedback retires Dec 31 →</a></div></div>
+
 <header class="nav"><div class="wrap">
   <a class="logo" href="#home"><img src="brand/logo/nps-survey-cx-os-mark-white.svg" alt=""><span>NPS Survey<small>CX OS by SalesHub</small></span></a>
   <ul id="navlinks">
@@ -2031,15 +2034,14 @@ const XLEADERS = (k="leaders") => `<section class="xh xh-band xh-dark"><div clas
  </div>
  <div class="xh-actions xh-left">${trial(k,"Start your 15-day free trial")}<a class="btn xh-ghost" href="#industries">Find your industry</a></div>
 </div></section>`;
-V.home = () => `${XWEB()}<div class="xh">
+V.home = () => `<div class="xh">
 <section class="xh-hero" aria-labelledby="xh-title">
  <div class="xh-core">
   <div class="xh-kicker"><i></i>One AI human experience platform</div>
   <h1 id="xh-title">Every human experience, connected in one place</h1>
   <p>Customer, employee and brand experience, plus market research, layer by layer inside Salesforce. Move from insight to action on every answer.</p>
   <div class="xh-actions">${trial("hero","Start your 15-day free trial")}<a class="btn xh-ghost" href="${DEMO}" target="_blank" rel="noopener">Book a demo</a></div>
-  <ul class="xh-out" aria-label="Outcomes"><li>Fewer lost customers</li><li>Renewals saved</li><li>More 5-star reviews</li><li>Hours of follow-up saved</li></ul>
-  ${XBADGES()}
+  <div class="xh-trust"><a href="${LIST}&utm_content=hero_trust" target="_blank" rel="noopener">&#9733; 5.0 on AppExchange</a><span>Security reviewed by Salesforce</span><span>100% native</span><span>Google reviews built in</span></div>
  </div>
  <div class="xh-stage" role="img" aria-label="NPS Survey CX OS at the centre, connected to customer, employee and brand experience, plus market research, which drive loyalty, trust, lower risk, sales, lower costs and awareness for insights, marketing, digital, experience, people and operations leaders.">
   <div class="xh-ring xh-r1"></div><div class="xh-ring xh-r2"></div><div class="xh-ring xh-r3"></div>
