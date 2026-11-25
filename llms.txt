@@ -1,0 +1,25 @@
+# NPS Survey CX OS
+
+> NPS Survey CX OS by SalesHub is an AI customer, employee and brand experience platform that runs natively inside Salesforce. It sends NPS, CSAT, customer effort (CES), employee pulse and market research surveys, shows the scores as dials on every account, contact, case and opportunity, and turns every unhappy answer (0 to 6) into a Close the Loop follow-up with an owner, a due date and an AI-drafted reply.
+
+Install from Salesforce AppExchange with a 15-day free trial. One price per org, per year: $3,500, $8,500 or $16,000. No per-seat fees. Security reviewed by Salesforce. Data is stored in the customer's own Salesforce org.
+
+## Product
+- [Platform overview](https://www.npssurveys.com/#platform): Listen, Understand, Act; six suites (Brand Kit, Marketing, Service, Sales, Customer Journey, CX Intelligence)
+- [Brand Kit](https://www.npssurveys.com/#brand-kit): scans a company website and builds branded surveys and emails, including footer, social links and Google review link
+- [Pricing](https://www.npssurveys.com/#pricing)
+- [Switch from GetFeedback](https://www.npssurveys.com/#switch): Salesforce Feedback Management (GetFeedback) retires December 31, 2026
+- [AppExchange listing](https://appexchange.salesforce.com/appxListingDetail?listingId=fc816a9c-657f-40a0-b361-0f89039a9339)
+
+## Capabilities
+- NPS dashboard by region, account, product, team, agent, channel and survey
+- CSAT on case close, by team, agent and case type; response analytics by channel and reminder
+- Feedback Inbox with full response records as PDF and AI close-the-loop replies
+- Account, Contact, Opportunity (Revenue CX) and Case CX panels with experience health, AI summary and next best actions
+- Service Desk, Automation Center and AI digital workers (survey dispatch, follow-ups, reminders, leader digests)
+- Executive PDF reports: Customer Loyalty, Renewal Risk, Brand Ambassador, Employee Recognition, Service Champions
+- Google review requests for promoters
+
+## Company
+- Made by SalesHub, LLC, Marietta, Georgia, USA. Support: support@saleshub.info
+- [Insights blog](https://www.npssurveys.com/insights/)
