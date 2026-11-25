@@ -330,6 +330,11 @@ h1,h2,.h2{font-family:"IBM Plex Serif",Georgia,"Times New Roman",serif!important
 .xfaq-l{margin-top:24px;max-width:860px}.xfaq details{border-bottom:1px solid #DCE3F5;padding:16px 0}.xfaq summary{cursor:pointer;font-size:18px;font-weight:600;color:#0F1A3D;list-style:none;display:flex;justify-content:space-between;gap:16px}.xfaq summary::-webkit-details-marker{display:none}.xfaq summary:after{content:"+";color:#002FA7;font-size:22px;line-height:1}.xfaq details[open] summary:after{content:"\2212"}.xfaq details p{color:#3A4664;font-size:16px;line-height:1.55;margin:10px 0 0}
 @media (max-width:860px){.xgap-w{grid-template-columns:1fr;gap:28px}.xai-g{grid-template-columns:1fr}.xai-h:first-child,.xai-h{display:none}.xai-l{margin-top:10px}.xtr-g{grid-template-columns:1fr 1fr}}
 @media (max-width:560px){.xtr-g{grid-template-columns:1fr}}
+.xtr-c{margin-top:34px;padding:24px 26px;border-radius:16px;background:#F4F7FF;border:1px solid #DCE3F5;display:grid;grid-template-columns:1.1fr 1fr;gap:18px 32px;align-items:center}
+.xtr-ct b{font-size:18px;color:#0F1A3D}.xtr-ct p{color:#5A6787;font-size:15px;line-height:1.55;margin:8px 0 0}
+.xtr-cl{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:8px}.xtr-cl li{padding:8px 12px;border-radius:10px;background:#fff;border:1px solid #DCE3F5;color:#002FA7;font-weight:600;font-size:14px;line-height:1.2}.xtr-cl small{display:block;font-weight:400;font-size:11px;color:#5A6787}
+.xtr-cn{grid-column:1/-1;margin:0;font-size:13px;color:#5A6787}.xtr-cn a{color:#002FA7;font-weight:600;text-decoration:none}
+@media (max-width:760px){.xtr-c{grid-template-columns:1fr;padding:20px}}
 .xm-g{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:28px}.xm-c{background:#fff;border:1px solid #DCE3F5;border-radius:16px;padding:20px;box-shadow:0 6px 18px rgba(4,11,38,.05)}.xm-c b{font-size:17px;color:#0F1A3D}.xm-c p{margin:8px 0 0;color:#5A6787;font-size:15px;line-height:1.5}
 .xe-ob{padding:28px 0 0!important}.xe-out{justify-content:flex-start;margin:0}.xe-out li{color:#0F1A3D;border-color:#C7D5FF;background:#F4F7FF}
 @media (max-width:1000px){.xm-g{grid-template-columns:1fr 1fr}}@media (max-width:560px){.xm-g{grid-template-columns:1fr}}
@@ -1990,7 +1995,10 @@ ${XBADGES()}
 <div class="xtr-g"><div><b>Inside your Salesforce org</b><p>Answers, follow-ups and reports are stored as records in your own org, under your sharing rules and backups.</p></div>
 <div><b>Security reviewed by Salesforce</b><p>NPS Survey CX OS passed the AppExchange security review before it was listed.</p></div>
 <div><b>Access by role</b><p>Admins assign a role; each person sees only their own screens and records. App admins see everything.</p></div>
-<div><b>You approve the AI</b><p>Digital workers log every action, respect quiet hours and send limits, and can be paused at any time.</p></div></div></div></section>`;
+<div><b>You approve the AI</b><p>Digital workers log every action, respect quiet hours and send limits, and can be paused at any time.</p></div></div>
+<div class="xtr-c"><div class="xtr-ct"><b>Covered by Salesforce's own audits</b><p>Because NPS Survey CX OS runs 100% inside Salesforce, with no outside servers, your survey data sits under the same controls Salesforce is independently audited for. No new system for your security team to authorize.</p></div>
+<ul class="xtr-cl" aria-label="Salesforce platform certifications"><li>SOC 1, 2 and 3</li><li>ISO 27001</li><li>ISO 27017</li><li>ISO 27018</li><li>HITRUST</li><li>FedRAMP<small>on Government Cloud Plus</small></li></ul>
+<p class="xtr-cn">Certifications are held by Salesforce for its platform services, not by SalesHub. Coverage depends on your Salesforce products and infrastructure. <a href="https://compliance.salesforce.com/" target="_blank" rel="noopener">See Salesforce's compliance reports &rarr;</a></p></div></div></section>`;
 const FAQS=[["What is NPS Survey CX OS?","An AI customer, employee and brand experience platform that runs natively inside Salesforce. It sends NPS, CSAT, effort and employee surveys, shows the scores on every record, and turns unhappy answers into follow-ups automatically."],
 ["How is it different from Qualtrics or Medallia?","It lives inside Salesforce instead of next to it, it is priced per org with no per-seat fees, and you can install it from AppExchange and start a 15-day free trial today, without a sales cycle."],
 ["What happens when a customer gives a low score?","Every answer from 0 to 6 opens a Close the Loop follow-up with an owner, a due date and an AI-drafted reply, on the account and case your team already uses."],
