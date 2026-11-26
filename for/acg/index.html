@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="en" class="depth-all">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Voice of Customer for ACG | NPS Survey CX OS</title>
+<meta name="description" content="ACG Engineering's Voice of Customer survey (Product, I&amp;C, Service) rebuilt in NPS Survey CX OS, with AI summaries, sentiment and live VoC dashboards inside Salesforce.">
+<meta name="robots" content="noindex, nofollow">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<meta name="theme-color" content="#002FA7">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Serif:wght@600&display=swap" rel="stylesheet">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-BF2FDR6KMM"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date());gtag("config","G-BF2FDR6KMM",{linker:{domains:["saleshub.info","npssurveys.com"]}});gtag("config","G-M9VNR10ZPP");</script>
+<style>
+:root{--blue:#002FA7;--navy:#0F1A3D;--mute:#5A6787;--line:#E3E8F3;--tint:#F3F6FF;--yel:#FFD60A}
+*{box-sizing:border-box}body{margin:0;font-family:"IBM Plex Sans",system-ui,sans-serif;color:var(--navy);line-height:1.5;-webkit-font-smoothing:antialiased}
+a{color:inherit}.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+.top{background:var(--blue)}.top .wrap{display:flex;align-items:center;justify-content:space-between;height:64px}.top img{height:30px}
+.top a.b{color:#fff;text-decoration:none;font-weight:600;font-size:.92rem;border:1.5px solid rgba(255,255,255,.5);padding:8px 16px;border-radius:999px}
+.hero{background:linear-gradient(160deg,#002FA7 0%,#00227A 70%,#0F1A3D 100%);color:#fff;padding:52px 0 64px}
+.hero .g{display:grid;grid-template-columns:1.05fr .95fr;gap:44px;align-items:center}
+.kick{font-weight:600;font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;opacity:.85}
+h1{font-family:"IBM Plex Serif",serif;font-weight:600;font-size:2.7rem;line-height:1.1;letter-spacing:-.01em;margin:12px 0 16px}
+h2{font-family:"IBM Plex Serif",serif;font-weight:600;font-size:2rem;line-height:1.15;margin:0 0 10px;letter-spacing:-.01em}
+.lead{font-size:1.12rem;opacity:.92;max-width:34em}
+.btn{display:inline-flex;align-items:center;gap:8px;font-weight:700;padding:14px 22px;border-radius:999px;text-decoration:none}
+.btn.y{background:var(--yel);color:var(--navy)}.btn.w{border:1.5px solid rgba(255,255,255,.55);color:#fff}.btn.b{background:var(--blue);color:#fff}
+.ctas{display:flex;gap:12px;flex-wrap:wrap;margin-top:24px}
+/* phone survey */
+.phone{background:#fff;color:var(--navy);border-radius:28px;padding:16px;box-shadow:0 30px 70px rgba(0,0,0,.35);max-width:360px;margin-left:auto}
+.sv-h{background:var(--tint);border-radius:16px;padding:14px 16px;display:flex;align-items:center;gap:12px}
+.sv-logo{width:42px;height:42px;border-radius:10px;background:var(--blue);color:#fff;font-weight:700;display:grid;place-items:center;font-size:.85rem}
+.sv-h b{display:block;font-size:.98rem}.sv-h small{color:var(--mute)}
+.q{font-weight:600;margin:18px 4px 10px;font-size:1rem}
+.scale{display:grid;grid-template-columns:repeat(11,1fr);gap:3px}
+.scale span{border:1px solid var(--line);border-radius:6px;text-align:center;font-size:.78rem;padding:7px 0;font-weight:600}
+.scale span.on{background:var(--blue);color:#fff;border-color:var(--blue)}
+.ends{display:flex;justify-content:space-between;font-size:.72rem;color:var(--mute);margin:6px 2px 0}
+.box{border:1px solid var(--line);border-radius:10px;padding:10px 12px;color:var(--mute);font-size:.9rem;margin:0 4px;min-height:56px}
+.send{margin:14px 4px 4px;background:var(--blue);color:#fff;text-align:center;border-radius:999px;padding:11px;font-weight:700}
+.note{font-size:.78rem;color:var(--mute);text-align:center;margin-top:10px}
+section{padding:60px 0}.alt{background:var(--tint)}
+.sub{color:var(--mute);max-width:40em;margin:0 0 28px;font-size:1.05rem}
+.cards{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+.card{background:#fff;border:1px solid var(--line);border-radius:18px;padding:22px}
+.card .t{display:flex;justify-content:space-between;align-items:center;margin-bottom:6px}
+.card h3{margin:0;font-size:1.12rem}
+.tag{font-size:.72rem;font-weight:700;letter-spacing:.06em;color:var(--blue);background:var(--tint);border-radius:999px;padding:4px 10px}
+.when{color:var(--mute);font-size:.9rem;margin:0 0 12px}
+.card ol{margin:0;padding-left:20px}.card li{margin:4px 0}
+.then{margin-top:12px;padding-top:12px;border-top:1px solid var(--line);font-size:.92rem}
+.then b{color:var(--blue)}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.steps div{background:#fff;border:1px solid var(--line);border-radius:18px;padding:20px}
+.steps i{font-style:normal;display:inline-grid;place-items:center;width:30px;height:30px;border-radius:50%;background:var(--blue);color:#fff;font-weight:700;margin-bottom:8px}
+.offer{background:var(--blue);color:#fff;border-radius:24px;padding:36px;display:grid;grid-template-columns:1.3fr .7fr;gap:24px;align-items:center}
+.offer p{opacity:.92;margin:0}
+foot{display:block;padding:28px 0;color:var(--mute);font-size:.85rem;text-align:center}
+@media(max-width:820px){.hero .g,.cards,.steps,.offer{grid-template-columns:1fr}h1{font-size:2.1rem}.phone{margin:0 auto}}
+.mx{width:100%;border-collapse:collapse;font-size:.82rem;margin:0 2px}.mx td{padding:5px 2px;border-bottom:1px solid var(--line)}.mx td:first-child{width:52%}.mx td span{display:inline-grid;place-items:center;width:22px;height:22px;border-radius:50%;border:1px solid var(--line);font-size:.7rem;font-weight:600}.mx td span.on{background:var(--blue);color:#fff;border-color:var(--blue)}
+.map{width:100%;border-collapse:collapse;background:#fff;border:1px solid var(--line);border-radius:18px;overflow:hidden}.map th,.map td{text-align:left;padding:12px 14px;border-bottom:1px solid var(--line);vertical-align:top;font-size:.94rem}.map th{background:var(--tint);font-size:.78rem;letter-spacing:.06em;text-transform:uppercase;color:var(--mute)}.map td b{color:var(--blue)}
+.dash{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}.kpi{background:#fff;border:1px solid var(--line);border-radius:16px;padding:16px}.kpi small{color:var(--mute);font-weight:600;font-size:.78rem;text-transform:uppercase;letter-spacing:.05em}.kpi b{display:block;font-size:1.9rem;font-family:"IBM Plex Serif",serif}.kpi em{font-style:normal;font-size:.82rem;color:var(--mute)}
+.heat{width:100%;border-collapse:separate;border-spacing:4px;font-size:.86rem;margin-top:14px}.heat th{font-weight:600;color:var(--mute);text-align:left;font-size:.78rem}.heat td{border-radius:8px;text-align:center;padding:9px 4px;font-weight:600}.heat td.l{text-align:left;background:none;font-weight:500;padding-left:0}
+.h5{background:#002FA7;color:#fff}.h4{background:#5C7FD6;color:#fff}.h3{background:#C9D5F5}.h2{background:#FFE58A}.h1{background:#FFB4A8}
+.ai{background:#fff;border:1px solid var(--line);border-radius:16px;padding:18px;margin-top:14px}.ai p{margin:6px 0}.pill{display:inline-block;font-size:.72rem;font-weight:700;border-radius:999px;padding:3px 9px;margin-right:6px}.neg{background:#FFE1DB;color:#9A2A14}.pos{background:#DDF5E6;color:#14653A}
+.sample{font-size:.8rem;color:var(--mute);margin-top:10px}
+@media(max-width:820px){.dash{grid-template-columns:1fr 1fr}.map th:nth-child(3),.map td:nth-child(3){display:none}.map th,.map td{padding:10px;font-size:.86rem}.heat{font-size:.74rem;min-width:520px}}
+</style>
+<link rel="stylesheet" href="/assets/depth.css?v=1">
+<link rel="stylesheet" href="/assets/footer.css?v=1">
+<link rel="stylesheet" href="/assets/header.css?v=1">
+</head>
+<body>
+<div class="sh"><div class="fam" role="navigation" aria-label="NPS Survey products"><div class="wrap"><span class="lbl">NPS Survey products</span><a href="/" aria-current="true"><span class="dot" aria-hidden="true"></span>For Salesforce <span class="tag">· native on AppExchange</span></a><a href="https://app.npssurveys.com/?utm_source=npssurveys.com&amp;utm_medium=website&amp;utm_campaign=family&amp;utm_content=family_bar">CX360 Standalone <span class="tag">· any CRM or none</span> ↗</a><a class="help" href="/#switch">GetFeedback retires Dec 31 →</a></div></div>
+
+<div class="nav" role="banner"><div class="wrap">
+  <a class="logo" href="/"><img src="/brand/logo/nps-survey-cx-os-mark-white.svg" alt=""><span>NPS Survey<small>CX OS by SalesHub</small></span></a>
+  <ul id="navlinks">
+    <li class="dd"><button type="button" class="ddb" aria-expanded="false">Product</button><div class="ddm wide"><div><h6>Suites</h6><a href="/#survey-studio">Survey Studio</a><a href="/#service">Service</a><a href="/#journeys">Customer Journey</a><a href="/#revenue">Sales: Revenue CX</a><a href="/#intelligence">CX Intelligence & AI workers</a><a href="/#brand-kit">Brand Kit & Marketing</a><a class="all" href="/#platform">Platform overview →</a></div><div><h6>Choose and compare</h6><a href="/tour/"><b>Product tour</b><span>Every feature and the problem it solves</span></a><a href="/#compare"><b>Compare</b><span>Native vs. bolt-on survey tools</span></a><a href="/#reviews"><b>Reviews</b><span>Rated 5.0 on Salesforce AppExchange</span></a><a href="/#switch"><b>Switch from GetFeedback</b><span>Move before December 31, 2026</span></a><a href="/#choose"><b>Which edition is right for me?</b><span>Salesforce-native or standalone, compared</span></a><a href="https://app.npssurveys.com/?utm_source=npssurveys.com&amp;utm_medium=website&amp;utm_campaign=family&amp;utm_content=nav_dd"><b>CX360 Standalone ↗</b><span>Not on Salesforce? AI surveys, service desk and AI agent for any CRM</span></a></div></div></li>
+    <li class="dd"><button type="button" class="ddb" aria-expanded="false">Solutions</button><div class="ddm wide"><div><h6>Experiences</h6><a href="/#customer-experience">Customer experience</a><a href="/#employee-experience">Employee experience</a><a href="/#brand-experience">Brand experience</a><a href="/#market-research">Market research</a></div><div><h6>Industries</h6><a href="/#ind-commercial">B2B, SaaS & Technology</a><a href="/#ind-financial">Financial Services & Insurance</a><a href="/#ind-healthcare">Healthcare & Health-tech</a><a href="/#ind-manufacturing">Manufacturing & Distribution</a><a href="/#ind-consulting">Consulting & Professional Services</a><a href="/#ind-nonprofit">Nonprofit</a><a href="/#ind-education">Education</a><a class="all" href="/#industries">All industry blueprints →</a></div><div><h6>Public sector</h6><a href="/#public-sector">Public sector overview</a><a href="/#ind-sled">State & Local Government</a><a href="/#ind-federal">Federal Civilian Agencies</a><a href="/#ind-defense">Defense</a></div></div></li>
+    <li class="dd"><button type="button" class="ddb" aria-expanded="false">Resources</button><div class="ddm"><a href="/insights/"><b>Insights blog</b><span>Guides and playbooks, new every week</span></a><a href="/#learn"><b>Learning Center</b><span>Setup and how-to guides, glossary, NPS calculator</span></a><a href="/#resources"><b>Downloads & videos</b><span>Offering sheets, blueprints, films</span></a><a href="/#roi"><b>ROI calculator</b><span>Build your business case in 60 seconds</span></a><a href="/cx-health/"><b>CX health check</b><span>Score your feedback loop in 2 minutes</span></a><a href="/close-the-loop/"><b>Free PDF: the CFO business case</b><span>Close the Loop, Issue 01</span></a></div></li>
+    <li><a href="/#partners">Partners</a></li><li><a href="/#pricing">Pricing</a></li>
+  </ul>
+  <div class="acts"><a class="btn ghost" href="/#demo">Book a demo</a><a class="btn primary" href="https://appexchange.salesforce.com/appxListingDetail?listingId=a0N3A00000FtRTKUA3&tab=e&utm_source=npssurveys.com&utm_medium=website&utm_campaign=cxos_site&utm_content=nav" target="_blank" rel="noopener">Free trial</a></div>
+  <button class="menu-btn" id="shMenu" aria-expanded="false" aria-controls="shDrawer">Menu</button>
+</div>
+<div class="drawer" id="shDrawer" hidden><div class="wrap">
+  <div><h6>Product</h6><a href="/#platform">Platform</a><a href="/#compare">Compare</a><a href="/#reviews">Reviews</a><a href="/#switch">Switch from GetFeedback</a><a href="/#choose">Which edition is right?</a><a href="https://app.npssurveys.com/?utm_source=npssurveys.com&amp;utm_medium=website&amp;utm_campaign=family&amp;utm_content=drawer">CX360 Standalone ↗</a></div>
+  <div><h6>Solutions</h6><a href="/#customer-experience">Customer experience</a><a href="/#employee-experience">Employee experience</a><a href="/#brand-experience">Brand experience</a><a href="/#market-research">Market research</a><a href="/#industries">All industries</a><a href="/#public-sector">Public sector</a><a href="/#ind-defense">Defense</a><a href="/#ind-healthcare">Healthcare</a></div>
+  <div><h6>Resources</h6><a href="/insights/">Insights blog</a><a href="/#learn">Learning Center</a><a href="/#resources">Downloads &amp; videos</a><a href="/#roi">ROI calculator</a><a href="/cx-health/">CX health check</a><a href="/close-the-loop/">CFO business case PDF</a></div>
+  <div><h6>Company</h6><a href="/#partners">Partners</a><a href="/#pricing">Pricing</a><a href="/#demo">Book a demo</a></div>
+</div></div></div></div>
+
+<div class="hero"><div class="wrap g">
+ <div>
+  <div class="kick">Prepared for ACG Group · Customer Experience</div>
+  <h1>Your Voice of Customer survey, now with AI and live dashboards.</h1>
+  <p class="lead">We rebuilt the ACG Engineering "Voice of Customer: Product, I&amp;C, Service" survey in NPS Survey CX OS. The same questions go out automatically after every machine delivery, and every answer lands in Salesforce with an AI summary, a sentiment score and a dashboard by business unit, machine model and country.</p>
+  <div class="ctas"><a class="btn y" href="https://calendly.com/npssurvey/demo" data-ev="demo">See it live: 30 minutes, India time →</a><a class="btn w" href="/go/?s=acg" data-ev="trial">Free 15-day trial</a></div>
+ </div>
+ <div class="phone" aria-label="Sample ACG survey as your customer would see it">
+  <div class="sv-h"><div class="sv-logo">ACG</div><div><b>ACG Engineering</b><small>SO 4500-1182 · capsule filling line · 2 minutes</small></div></div>
+  <div class="q">Please rate your satisfaction (5 = best)</div>
+  <table class="mx">
+   <tr><td>Product quality</td><td><span>3</span> <span>4</span> <span class="on">5</span></td></tr>
+   <tr><td>Ease of installation</td><td><span>3</span> <span class="on">4</span> <span>5</span></td></tr>
+   <tr><td>Engineer on site on time</td><td><span class="on">3</span> <span>4</span> <span>5</span></td></tr>
+   <tr><td>Time to restore / resolve</td><td><span>3</span> <span class="on">4</span> <span>5</span></td></tr>
+  </table>
+  <div class="q">Where could we improve? (scores under 4)</div>
+  <div class="box">The service engineer arrived two days after the agreed date.</div>
+  <div class="send">Submit</div>
+  <div class="note">Your logo, colours and languages. The order details are already filled in from Salesforce.</div>
+ </div>
+</div></div>
+
+<section><div class="wrap">
+ <div class="kick" style="color:var(--blue)">Your survey, question by question</div>
+ <h2>All 18 questions kept. Your customer answers only 10.</h2>
+ <p class="sub">The order and customer details are already in Salesforce, so they are filled in automatically. That makes the survey shorter for your customer and keeps the data clean for you.</p>
+ <table class="map">
+  <tr><th>Your current form</th><th>In NPS Survey CX OS</th><th>What you gain</th></tr>
+  <tr><td>Q1 to 9: SO number, business unit (PAMK, PAMT, APT, PAMS), customer, contact, designation, department, country, city</td><td><b>Pre-filled</b> from the Sales Order, Account and Contact</td><td>No typing errors. Every response is linked to the right order and account.</td></tr>
+  <tr><td>Q10 to 12: machine model, year of purchase, application area</td><td><b>Pre-filled</b> from the order or asset record. Your customer can correct them.</td><td>Compare satisfaction by machine model and application.</td></tr>
+  <tr><td>Q13: product ratings (quality, installation, performance, ease of use, safety)</td><td><b>Rating matrix</b>, 1 to 5</td><td>A product scorecard by BU, model and country.</td></tr>
+  <tr><td>Q14: service engineer ratings (on time, cooperation, behaviour, knowledge, time to resolve, training)</td><td><b>Rating matrix</b>, 1 to 5</td><td>Service scores by region and by engineer.</td></tr>
+  <tr><td>Q15 and 16: areas of improvement and what delighted you</td><td><b>Open text with AI</b>: summary, sentiment and themes</td><td>See why a customer said something, without reading every comment.</td></tr>
+  <tr><td>Q17 and 18: will you repurchase, and will you recommend? (Yes / No / Maybe)</td><td><b>Kept as is</b>, or upgraded to a 0 to 10 NPS question</td><td>An industry-standard NPS you can benchmark and track.</td></tr>
+ </table>
+</div></section>
+
+<section class="alt"><div class="wrap">
+ <div class="kick" style="color:var(--blue)">Your VoC dashboard</div>
+ <h2>Which products and services drive loyalty</h2>
+ <p class="sub">It updates the moment a response arrives, inside Salesforce. You asked to see the link between products and feedback, and this is that view.</p>
+ <div class="dash">
+  <div class="kpi"><small>NPS</small><b>+42</b><em>Last 90 days</em></div>
+  <div class="kpi"><small>Product CSAT</small><b>4.4 / 5</b><em>5 attributes</em></div>
+  <div class="kpi"><small>Service CSAT</small><b>3.8 / 5</b><em>6 attributes</em></div>
+  <div class="kpi"><small>Open follow-ups</small><b>7</b><em>Scores under 4, each with an owner</em></div>
+ </div>
+ <div style="overflow-x:auto"><table class="heat" aria-label="Average score by business unit and attribute">
+  <tr><th></th><th>Quality</th><th>Install</th><th>Performance</th><th>Engineer on time</th><th>Time to resolve</th><th>Training</th></tr>
+  <tr><td class="l">PAMK</td><td class="h5">4.7</td><td class="h4">4.3</td><td class="h5">4.6</td><td class="h3">3.6</td><td class="h4">4.0</td><td class="h4">4.2</td></tr>
+  <tr><td class="l">PAMT</td><td class="h4">4.4</td><td class="h4">4.1</td><td class="h4">4.3</td><td class="h2">3.1</td><td class="h3">3.5</td><td class="h4">4.0</td></tr>
+  <tr><td class="l">APT</td><td class="h5">4.6</td><td class="h3">3.7</td><td class="h4">4.4</td><td class="h3">3.8</td><td class="h4">4.1</td><td class="h3">3.6</td></tr>
+  <tr><td class="l">PAMS</td><td class="h4">4.2</td><td class="h4">4.0</td><td class="h4">4.1</td><td class="h1">2.8</td><td class="h2">3.2</td><td class="h4">4.1</td></tr>
+ </table></div>
+ <div class="ai">
+  <b>AI summary of the comments: "areas of improvement"</b>
+  <p><span class="pill neg">Negative · 31%</span>Most comments are about service engineers arriving later than agreed, mostly for PAMS and PAMT installs outside India.</p>
+  <p><span class="pill pos">Positive · 54%</span>Customers praise product quality and output stability on the filling lines.</p>
+  <p><b>Suggested action:</b> look at service engineer scheduling for export installs. Customers who score service under 4 are less likely to answer "Yes" to repurchase.</p>
+ </div>
+ <p class="sample">Illustrative sample data, not ACG results.</p>
+</div></section>
+
+<section><div class="wrap">
+ <h2>Every low score gets an owner</h2>
+ <div class="steps">
+  <div><i>1</i><h3 style="margin:4px 0">Sent automatically</h3><p style="margin:0">The survey goes out when the installation case is closed or the order is delivered. No one has to remember.</p></div>
+  <div><i>2</i><h3 style="margin:4px 0">Alert on a score under 4</h3><p style="margin:0">The BU service head is alerted the same day, and a follow-up task is created with a due date.</p></div>
+  <div><i>3</i><h3 style="margin:4px 0">Closed loop</h3><p style="margin:0">Leaders can see which unhappy customers were recovered, by BU, country and machine model.</p></div>
+ </div>
+</div></section>
+
+<section class="alt"><div class="wrap">
+ <div class="offer">
+  <div><h2 style="color:#fff">Year-end offer: 20% off year one</h2><p>Sign any annual plan by December 31, 2026: 20% off your first year and free setup of this VoC survey in your Salesforce. Native to Salesforce, at a fraction of the cost of tools like Qualtrics.</p></div>
+  <div class="ctas" style="margin:0;justify-content:flex-end"><a class="btn y" href="https://calendly.com/npssurvey/demo" data-ev="demo">Book 30 minutes →</a><a class="btn w" href="/go/?s=acg" data-ev="trial">Start free trial</a></div>
+ </div>
+</div></section>
+
+<foot>Sample Voice of Customer program prepared for ACG Group by the SalesHub Support Team · support@saleshub.info · 1 (833) 733-2468 · <a href="https://www.npssurveys.com">npssurveys.com</a></foot>
+<script>document.querySelectorAll("[data-ev]").forEach(a=>a.addEventListener("click",()=>{try{gtag("event",a.dataset.ev==="demo"?"demo_click":"appexchange_click",{page:"for_acg"})}catch(_){}}));</script>
+<footer class="sf"><div class="sfw">
+  <div class="ftop"><a href="/" class="fbrand" aria-label="NPS Survey CX OS home"><img src="/brand/logo/nps-survey-cx-os-logo-white.svg" alt="NPS Survey, CX OS by SalesHub" width="198" height="60"></a><p class="ftag">Every human experience, connected in one place. 100% native to Salesforce.</p></div>
+  <div class="fcols">
+  <div><h4>Product</h4><ul><li><a href="/#platform">Platform</a></li><li><a href="/#pricing">Pricing</a></li><li><a href="/#roi">ROI calculator</a></li><li><a href="/#compare">Compare</a></li><li><a href="/#choose">Which edition is right?</a></li><li><a href="/#reviews">Reviews</a></li><li><a href="https://appexchange.salesforce.com/appxListingDetail?listingId=a0N3A00000FtRTKUA3&tab=e&utm_source=npssurveys.com&utm_medium=website&utm_campaign=cxos_site&utm_content=footer" target="_blank" rel="noopener">AppExchange listing</a></li></ul><h4>Switching</h4><ul><li><a href="/#switch">Switch from GetFeedback</a></li></ul></div>
+  <div><h4>Solutions</h4><ul><li><a href="/#customer-experience">Customer experience</a></li><li><a href="/#employee-experience">Employee experience</a></li><li><a href="/#brand-experience">Brand experience</a></li><li><a href="/#market-research">Market research</a></li></ul><h4>Industries</h4><ul><li><a href="/#public-sector">Public sector</a></li><li><a href="/#ind-defense">Defense</a></li><li><a href="/#ind-healthcare">Healthcare</a></li><li><a href="/#industries">All industries</a></li></ul></div>
+  <div><h4>Learn</h4><ul><li><a href="/#learn">Learning Center</a></li><li><a href="/insights/">Insights blog</a></li><li><a href="/#resources">Downloads &amp; videos</a></li><li><a href="/install/">Install guide</a></li><li><a href="/tour/">Product tour</a></li><li><a href="/#demo">Book a demo</a></li></ul></div>
+  <div><h4>Company</h4><ul><li><a href="https://saleshub.info" target="_blank" rel="noopener">About SalesHub</a></li><li><a href="/#partners">Partner program</a></li><li><a href="https://app.npssurveys.com/?utm_source=npssurveys.com&amp;utm_medium=website&amp;utm_campaign=family&amp;utm_content=footer">CX360 Standalone (any CRM)</a></li><li><a href="mailto:support@saleshub.info">support@saleshub.info</a></li><li><a href="tel:+18337332468">1 (833) 733-2468</a></li></ul><p class="addr">SalesHub, LLC<br>1853 Piedmont Rd, Suite 301<br>Marietta, GA 30066</p></div>
+  </div>
+  <div class="fsoc"><div class="fsoci"><a href="https://www.linkedin.com/company/12673581" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9.5h4V21H3zM9.5 9.5h3.8v1.6h.1c.5-1 1.8-2 3.8-2 4 0 4.8 2.6 4.8 6V21h-4v-5.2c0-1.2 0-2.9-1.8-2.9s-2 1.4-2 2.8V21h-4z" fill="currentColor"/></svg></a><a href="https://www.youtube.com/@saleshubllc" target="_blank" rel="noopener" aria-label="YouTube"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M22.5 7.2a2.8 2.8 0 0 0-2-2C18.8 4.8 12 4.8 12 4.8s-6.8 0-8.5.4a2.8 2.8 0 0 0-2 2A29 29 0 0 0 1 12a29 29 0 0 0 .5 4.8 2.8 2.8 0 0 0 2 2c1.7.4 8.5.4 8.5.4s6.8 0 8.5-.4a2.8 2.8 0 0 0 2-2A29 29 0 0 0 23 12a29 29 0 0 0-.5-4.8zM9.8 15.1V8.9l5.7 3.1z" fill="currentColor"/></svg></a><a href="https://www.instagram.com/saleshub.info" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4.2" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="17.4" cy="6.6" r="1.3" fill="currentColor"/></svg></a></div><span>&copy; 2026 SalesHub, LLC. All rights reserved.</span></div>
+  <div class="flegal"><a href="https://saleshub.info/privacy-policy" target="_blank" rel="noopener">Privacy policy</a><a href="mailto:support@saleshub.info">Contact</a><span>UEI Y8JGEMLEF9L3 · CAGE 02S16 · Salesforce and AppExchange are trademarks of Salesforce, Inc. No government endorsement implied. Net Promoter&reg; and NPS&reg; are registered trademarks of Bain &amp; Company, Inc., NICE Systems, Inc. and Fred Reichheld.</span></div>
+</div></footer>
+<script src="/assets/header.js?v=1" defer></script>
+</body>
+</html>
