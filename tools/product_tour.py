@@ -110,19 +110,20 @@ def kit(rows):
     os.makedirs(os.path.join(ROOT, "tour", "kit"), exist_ok=True)
     open(os.path.join(ROOT, "tour", "kit", "index.html"), "w").write(out)
 
-LOOP = open(os.path.join(ROOT, "brand/logo/nps-survey-cx-os-mark-white.svg")).read()
-AD_CSS = """*{box-sizing:border-box;margin:0;padding:0}body{background:#002FA7;color:#fff;font-family:"IBM Plex Sans",Arial,sans-serif;-webkit-font-smoothing:antialiased;display:flex;flex-direction:column;overflow:hidden}
-.top{display:flex;align-items:center;gap:16px}.top svg{width:60px;height:60px}.top b{display:block;font-size:32px;font-weight:800}.top small{display:block;font-size:20px;font-weight:600;color:#C9D5F2}
-.kick{display:inline-block;align-self:flex-start;background:rgba(255,255,255,.14);border:2px solid rgba(255,255,255,.28);border-radius:999px;padding:9px 20px;font-size:24px;font-weight:700;color:#fff}
-h1{font-weight:800;letter-spacing:-.02em;line-height:1.06}
+LOCKUP = open(os.path.join(ROOT, "brand/logo-kit/svg/nps-survey-logo-white.svg")).read()
+import plexfont
+AD_CSS = plexfont.css() + """*{box-sizing:border-box;margin:0;padding:0}body{background:#002FA7;color:#fff;font-family:"IBM Plex Sans",Arial,sans-serif;-webkit-font-smoothing:antialiased;display:flex;flex-direction:column;overflow:hidden}
+.top{display:flex;align-items:center}.top svg{height:92px;width:auto;margin-left:-12px}
+.kick{display:inline-block;align-self:flex-start;background:rgba(255,255,255,.14);border:2px solid rgba(255,255,255,.28);border-radius:999px;padding:9px 20px;font-size:24px;font-weight:600;color:#fff}
+h1{font-family:"IBM Plex Serif",Georgia,serif;font-weight:600;letter-spacing:-.01em;line-height:1.08}
 .vis{flex:1;display:flex;align-items:center;justify-content:center;min-height:0}
 .shot{max-width:100%;max-height:100%;border-radius:22px;box-shadow:0 26px 70px rgba(0,8,50,.45);background:#fff;display:block}
 .steps{background:#fff;border-radius:26px;padding:22px;width:100%;box-shadow:0 26px 70px rgba(0,8,50,.45)}
 .st{display:flex;gap:20px;align-items:center;background:#F4F7FF;border:2px solid #DCE4F7;border-radius:18px;padding:16px 22px}.st+.st{margin-top:12px}
-.st i{flex:none;width:56px;height:56px;border-radius:50%;background:#0F1A3D;color:#fff;display:grid;place-items:center;font-style:normal;font-weight:800;font-size:27px}
-.st b{display:block;font-size:30px;font-weight:800;color:#0F1A3D}.st span{display:block;font-size:24px;font-weight:600;color:#5E6B98;margin-top:2px}
+.st i{flex:none;width:56px;height:56px;border-radius:50%;background:#0F1A3D;color:#fff;display:grid;place-items:center;font-style:normal;font-weight:700;font-size:27px}
+.st b{display:block;font-size:30px;font-weight:600;color:#0F1A3D}.st span{display:block;font-size:24px;font-weight:600;color:#5E6B98;margin-top:2px}
 .foot{display:flex;align-items:center;justify-content:space-between;gap:20px}
-.pill{background:#fff;color:#002FA7;font-weight:800;font-size:31px;padding:20px 32px;border-radius:999px;white-space:nowrap}
+.pill{background:#fff;color:#002FA7;font-weight:600;font-size:31px;padding:20px 32px;border-radius:999px;white-space:nowrap}
 .out{font-size:34px;line-height:1.35;color:#D6E2FF;font-weight:500}.out b{color:#fff}
 .fine{font-size:21px;color:#C9D5F2;line-height:1.35;text-align:right}"""
 
@@ -138,7 +139,7 @@ def ad_html(f, size):
     outtxt = f'<p class="out"><b>What changes:</b> {E(f["outcome"])}</p>' if size == "9x16" else ""
     top_safe = 120 if size == "9x16" else 0; bot_safe = 200 if size == "9x16" else 0
     return f"""<html><head><style>{AD_CSS} body{{width:{w}px;height:{h}px;padding:{pad+top_safe}px {pad}px {pad+bot_safe}px;gap:{gap}px}} h1{{font-size:{fs}px}}</style></head><body>
-<div class="top">{LOOP}<div><b>NPS Survey</b><small>CX OS by SalesHub</small></div></div>
+<div class="top">{LOCKUP}</div>
 <div class="kick">{E(f['name'])}</div><h1>{E(f['hook'])}</h1>
 <div class="vis">{vis}</div>{outtxt}
 <div class="foot"><div class="pill">Try it free for 15 days</div><div class="fine">Native to Salesforce<br>npssurveys.com/tour</div></div></body></html>"""
@@ -153,7 +154,7 @@ def render_ads(only=None):
             for f in F:
                 if only and f["id"] not in only: continue
                 tmp = os.path.join(out, "_tmp.html"); open(tmp, "w").write(ad_html(f, size))
-                pg.goto("file://" + tmp); pg.wait_for_timeout(150)
+                pg.goto("file://" + tmp); pg.evaluate("document.fonts.ready"); pg.wait_for_timeout(250)
                 pg.screenshot(path=os.path.join(out, f"{f['id']}-{size}.png"))
             pg.close()
         b.close()
