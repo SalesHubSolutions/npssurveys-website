@@ -39,7 +39,7 @@ def cta(label, href, second=None):
     return f'<tr><td align="center" style="background:#ffffff;padding:26px 32px 6px 32px;"><table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr><td style="background:#FFD60A;border-radius:10px;"><a href="{href}" style="display:inline-block;padding:16px 30px;{F}font-size:16px;font-weight:bold;color:#0F1A3D;text-decoration:none;">{label} &rarr;</a></td></tr></table>{s}</td></tr>\n'
 
 def trust(gov):
-    cells = ([("Carahsoft", "CoreTrust contract<br>24COR-018GR")] if gov else [("Security reviewed", "by Salesforce for<br>AppExchange")]) + [("100% Salesforce", "Data never leaves<br>your org"), ('<span style="color:#FFB800;">&#9733;&#9733;&#9733;&#9733;&#9733;</span>', "Rated 5.0 on<br>AppExchange")]
+    cells = ([("Carahsoft", "CoreTrust contract<br>24COR-018GR")] if gov else [("Security reviewed", "by Salesforce for<br>AppExchange")]) + [("100% Salesforce", "Data never leaves<br>your org"), ('<span style="color:#002FA7;">&#9733;&#9733;&#9733;&#9733;&#9733;</span>', "Rated 5.0 on<br>AppExchange")]
     tds = ""
     for i, (b, s) in enumerate(cells):
         mid = "border-left:1px solid #E3E8F4;border-right:1px solid #E3E8F4;" if i == 1 else ""
@@ -49,7 +49,7 @@ def trust(gov):
 def build(key, camp, label, preheader, kicker, head, hl, greet, body_html, hero=None, gov=False, light=False):
     home = f"{SITE}/public-sector/" if gov else f"{SITE}/"
     hero_row = f'<tr><td style="padding:0;background:#002FA7;line-height:0;font-size:0;"><a href="{u(home,camp,key,"hero")}"><img src="{hero[0]}" width="600" alt="{hero[1]}" style="display:block;width:100%;max-width:600px;height:auto;border:0;"></a></td></tr>\n' if hero else ""
-    hl_html = f' <span style="background:#FFD60A;padding:0 4px;">{hl}</span>' if hl else ""
+    hl_html = f' {hl}' if hl else ""
     foot_extra = f'<a href="{u(SITE+"/webinar/",camp,key,"footer")}" style="color:#ffffff;text-decoration:none;font-weight:bold;">Live demo Dec 3</a>'
     out = f'''<html><head><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="light"></head>
 <body style="margin:0;padding:0;background:#EEF2FB;">
