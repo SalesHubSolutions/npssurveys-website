@@ -51,7 +51,7 @@ P1 = f"""<div class="pg"><div class="hd">{LOCK}
 <p>NPS Survey CX OS is a managed package that runs natively in your org. Responses are Salesforce records, follow-ups are owned work with a due date, and leaders read one dashboard for NPS, CSAT and follow-up rate across every team.</p></div>
 <img class="shot" src="data:image/png;base64,{SHOT}">
 <div class="c3">
-<div class="bx"><b>Listen</b><p>Survey Studio with AI drafts, 70+ templates, 15+ question types, branching, translations and your brand. Send by email, SMS, link or QR when a Case closes, a deal is won or a renewal nears.</p></div>
+<div class="bx"><b>Listen</b><p>Survey Studio with AI drafts, 131 templates, 67 question types, branching, translations and your brand. Send by email, SMS, link or QR when a Case closes, a deal is won or a renewal nears.</p></div>
 <div class="bx"><b>Understand</b><p>NPS, CSAT and CES dashboards by region, team, product and agent. AI sorts every comment by sentiment, churn risk and topic, and summarizes what moved the score.</p></div>
 <div class="bx"><b>Act</b><p>Close the Loop gives every low score an owner, a due date and a playbook. Follow-ups, reminders, review requests and nurture run on their own, and every closed loop is tracked.</p></div>
 </div></div>
