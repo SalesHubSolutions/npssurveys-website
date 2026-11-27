@@ -3,12 +3,12 @@ Loop brand, Plex type, real photos (brand/photos), product screens with a soft b
 cover, and every page footer links to npssurveys.com and the AppExchange listing."""
 import os, sys, base64, io
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-import plexfont, segno
+import plexfont, segno, proof_strip
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 LOCK = open(os.path.join(ROOT, "brand/logo-kit/svg/nps-survey-logo-white.svg")).read()
 LOCKK = open(os.path.join(ROOT, "brand/logo-kit/svg/nps-survey-logo-klein.svg")).read()
-MARK = open(os.path.join(ROOT, "brand/logo-kit/svg/nps-survey-mark-klein.svg")).read()
+MARK = open(os.path.join(ROOT, "brand/logo-kit/svg/nps-survey-mark-klein.svg")).read().replace("<svg", "<svg style='width:100%;height:100%;display:block'", 1)
 MARKW = open(os.path.join(ROOT, "brand/logo-kit/svg/nps-survey-mark-white.svg")).read()
 LIST = "https://appexchange.salesforce.com/appxListingDetail?listingId=a0N3A00000FtRTKUA3&utm_source=journey_whitepaper"
 SITE = "https://www.npssurveys.com/?utm_source=journey_whitepaper"
@@ -78,6 +78,7 @@ h3{font-family:"IBM Plex Serif";font-weight:600;font-size:22px;line-height:1.25}
 .card{background:#fff;border-radius:16px;box-shadow:0 18px 40px rgba(0,26,102,.12)}
 .icb,.icl{display:grid;place-items:center;flex:none;width:44px;height:44px;border-radius:12px;background:#002FA7;color:#fff}
 .icl{background:rgba(255,255,255,.14)}
+""" + proof_strip.CSS.replace("font-size:15px","font-size:15px") + """
 .shot{position:absolute;border-radius:14px;box-shadow:0 30px 70px rgba(0,10,60,.45);border:1px solid rgba(255,255,255,.25)}"""
 
 def ft(n):
@@ -176,7 +177,7 @@ def p7():
 def p8():
     return f"""<div class="s blue dk"><div class="glow" style="width:7in;height:7in;left:-2in;top:-2.5in;background:#3D6BFF;opacity:.5"></div>
 <div class="hero" style="width:7.5in;height:7.5in;left:-2.6in;bottom:-3.2in">{MARKW}</div>
-<div class="pad" style="display:flex;flex-direction:column"><div class="lk">{LOCK}</div><div style="margin-top:auto;display:flex;gap:.6in;align-items:flex-end">
+<div class="pad" style="display:flex;flex-direction:column"><div style="display:flex;justify-content:space-between;align-items:flex-start"><div class="lk">{LOCK}</div><a href="{LIST}" style="width:600px;display:block">{proof_strip.html()}</a></div><div style="margin-top:auto;display:flex;gap:.6in;align-items:flex-end">
 <div style="flex:1"><h1 style="max-width:8.2in">Map the journey. Then close the loop on every answer.</h1>
 <p class="lead" style="margin-top:16px">NPS Survey CX OS runs inside Salesforce. One price per company, with a 15-day free trial.</p>
 <div style="margin-top:24px;display:flex;gap:12px"><a class="btn" href="{LIST}" style="background:#FFD60A;color:#0F1A3D;border-radius:99px;padding:14px 28px">Start your free trial on AppExchange</a>

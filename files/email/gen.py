@@ -6,6 +6,8 @@ F = "font-family:Arial,Helvetica,sans-serif;"
 CAL = "https://calendly.com/npssurvey/demo"
 APPX = "https://appexchange.salesforce.com/appxListingDetail?listingId=a0N3A00000FtRTKUA3"
 
+PROOF = '<tr><td style="background:#ffffff;padding:22px 32px 0 32px;" class="proof-strip"><a href="https://appexchange.salesforce.com/appxListingDetail?listingId=a0N3A00000FtRTKUA3&amp;utm_source=drip&amp;utm_medium=email&amp;utm_campaign=proof_strip"><img src="https://www.npssurveys.com/brand/proof/proof-strip-600.png" width="536" alt="Available on Salesforce AppExchange. Rated 5.0. Security reviewed, 100% native to Salesforce. 131 survey templates, 67 question types. Works with Slack, Teams and Google reviews." style="display:block;width:100%;max-width:536px;height:auto;border:0;"></a></td></tr>\n'
+
 def u(url, camp, key, part):
     sep = "&amp;" if "?" in url else "?"
     return f"{url}{sep}utm_source=drip&amp;utm_medium=email&amp;utm_campaign={camp}&amp;utm_content={key}_{part}"
@@ -63,7 +65,7 @@ def build(key, camp, label, preheader, kicker, head, hl, greet, body_html, hero=
 <div style="font-size:12px;letter-spacing:1.6px;font-weight:bold;color:#002FA7;">{kicker}</div>
 <h1 style="margin:10px 0 0 0;font-family:'IBM Plex Serif',Georgia,'Times New Roman',serif;font-size:{"28px;line-height:34px" if light else "32px;line-height:38px"};font-weight:600;color:#0F1A3D;">{head}{hl_html}</h1></td></tr>
 <tr><td style="background:#ffffff;padding:14px 32px 4px 32px;{F}font-size:16px;line-height:25px;color:#3A4664;"><p style="margin:0 0 12px 0;">{greet}</p></td></tr>
-{body_html}{"" if light else trust(gov)}<tr><td style="background:#ffffff;padding:24px 32px 30px 32px;{F}font-size:15px;line-height:23px;color:#3A4664;">Best regards,<br><b style="color:#0F1A3D;">SalesHub Support Team</b><br><a href="mailto:support@saleshub.info" style="color:#002FA7;text-decoration:none;">support@saleshub.info</a> &middot; 1 (833) 733-2468</td></tr>
+{body_html}{"" if light else trust(gov)}{PROOF}<tr><td style="background:#ffffff;padding:24px 32px 30px 32px;{F}font-size:15px;line-height:23px;color:#3A4664;">Best regards,<br><b style="color:#0F1A3D;">SalesHub Support Team</b><br><a href="mailto:support@saleshub.info" style="color:#002FA7;text-decoration:none;">support@saleshub.info</a> &middot; 1 (833) 733-2468</td></tr>
 <tr><td style="background:#071338;padding:28px 32px 10px 32px;{F}font-size:13px;line-height:20px;color:#C9D6FF;">
 <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr>
 <td valign="top" style="{F}font-size:13px;line-height:20px;color:#C9D6FF;"><a href="{u(home,camp,key,"footlogo")}"><img src="{SITE}/files/email/logo-white.png" width="132" height="40" alt="NPS Survey CX OS by SalesHub" style="display:block;border:0;margin:0 0 12px 0;"></a>
