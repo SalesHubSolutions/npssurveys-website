@@ -2,12 +2,15 @@
 Writes in place under files/docs/ (originals stay in git history and in files/_originals/docs/)."""
 import os, sys, shutil, io
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-import plexfont, fitz
+import plexfont, fitz, brandprint
 from fontTools.ttLib import TTFont
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DOCS = os.path.join(ROOT, "files/docs")
 LOCK = open(os.path.join(ROOT, "brand/logo-kit/svg/nps-survey-logo-white.svg")).read()
+MARKW = open(os.path.join(ROOT, "brand/logo-kit/svg/nps-survey-mark-white.svg")).read().replace("<svg", "<svg style='width:100%;height:100%;display:block'", 1)
+SITE = "https://www.npssurveys.com/?utm_source=guide_cover"
+LIST = "https://appexchange.salesforce.com/appxListingDetail?listingId=a0N3A00000FtRTKUA3&utm_source=guide_cover"
 
 # file: (kicker, title, subtitle, edition line, drop original first page?)
 JOBS = {
@@ -31,7 +34,7 @@ body{background:#002FA7;color:#fff;font-family:"IBM Plex Sans";-webkit-print-col
 h1{font-family:"IBM Plex Serif";font-weight:600;letter-spacing:-.01em;line-height:1.06}
 .s{color:#D6E2FF;line-height:1.45}
 .ft{display:flex;justify-content:space-between;align-items:flex-end;color:#C9D5F2}
-.ring{position:absolute;border-radius:50%;border:solid rgba(255,255,255,.07)}"""
+.hero{position:absolute;opacity:.10}"""
 
 def ttf(name):
     w = TTFont(os.path.join(ROOT, "tools/fonts", name)); w.flavor = None
@@ -42,12 +45,13 @@ def cover_pdf(pw, ph, kick, title, sub, ed):
     u = pw / 612  # scale from Letter width
     if pw > ph: u = ph / 612
     html = f"""<html><head><style>{CSS}
-.p{{width:{pw}pt;height:{ph}pt;padding:{56*u}pt {60*u}pt}} .p svg.lk{{height:{40*u}pt}} .k{{font-size:{9.5*u}pt}}
-h1{{font-size:{40*u}pt;margin-top:{10*u}pt;max-width:{440*u}pt}} .s{{font-size:{13.5*u}pt;margin-top:{16*u}pt;max-width:{420*u}pt}}
-.ft{{font-size:{9.5*u}pt}} .ring{{right:{-120*u}pt;bottom:{-120*u}pt;width:{420*u}pt;height:{420*u}pt;border-width:{48*u}pt}}</style></head>
-<body><div class="p">{LOCK.replace('<svg', '<svg class="lk"', 1)}
+.p{{width:{pw}pt;height:{ph}pt;padding:{56*u}pt {60*u}pt}} .p svg.lk{{height:{40*u}pt}} .k{{font-size:{7.5*u}pt}}
+h1{{font-size:{30*u}pt;margin-top:{10*u}pt;max-width:{440*u}pt}} .s{{font-size:{12*u}pt;margin-top:{14*u}pt;max-width:{420*u}pt}}
+.ft{{font-size:{8*u}pt;line-height:1.5}} .hero{{right:{-150*u}pt;top:{-110*u}pt;width:{430*u}pt;height:{430*u}pt}} .z{{zoom:{u}}}</style></head>
+<body><div class="p"><div class="hero">{MARKW}</div>{LOCK.replace('<svg', '<svg class="lk"', 1)}
 <div><div class="k">{kick}</div><h1>{title}</h1><p class="s">{sub}</p></div>
-<div class="ft"><span>{ed}</span><span>npssurveys.com &nbsp; support@saleshub.info</span></div></div></body></html>"""
+<div class="ft"><div style="flex:1"><div>{ed}<br>support@saleshub.info &nbsp; 1 (833) 733-2468</div><div class="z">{brandprint.signoff(SITE, LIST)}</div></div>
+<div class="z" style="width:1.05in;margin-left:24pt">{brandprint.qr_card(LIST, 70)}</div></div></div></body></html>"""
     with sync_playwright() as p:
         b = p.chromium.launch(); pg = b.new_page(); pg.set_content(html); pg.evaluate("document.fonts.ready"); pg.wait_for_timeout(200)
         data = pg.pdf(width=f"{round(pw*4/3,2)}px", height=f"{round(ph*4/3,2)}px", print_background=True, page_ranges="1"); b.close()

@@ -24,7 +24,7 @@
 .sh .ddm h6{margin: 6px 12px 4px; font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--link);}
 .sh .ddm a.all{color: var(--link) !important; font-size: 0.85rem;}
 .sh .drawer .wrap{grid-template-columns: repeat(2, 1fr); gap: 8px 16px;}
-.sh .drawer h6{margin: 8px 8px 2px; font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--yellow);}
+.sh .drawer h6{margin: 8px 8px 2px; font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; color: #9DB4F5;}
 .sh .drawer .wrap > div{display: flex; flex-direction: column;}
 @media (max-width: 520px){.sh .drawer .wrap{grid-template-columns: 1fr;}}
 @media print{.sh .nav{display: none !important;}}
