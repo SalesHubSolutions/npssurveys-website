@@ -9,24 +9,24 @@ _s = open(os.path.join(ROOT, "index.html")).read(); _i = _s.find("Slack</span>")
 SEC = _s[_s.rfind("<section", 0, _i):_s.find("</section>", _i)]
 PINTS = re.search(r'<span class="pints">.*?</span></span>', SEC, re.S).group(0)
 SF = "data:image/svg+xml;base64," + base64.b64encode(open(os.path.join(ROOT, "brand/partners/salesforce.svg"), "rb").read()).decode()
-CHECK = '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7"/></svg>'
+CHECK = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#002FA7" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7"/></svg>'
 
-CSS = """.pf{background:#0A1238;color:#fff;font-family:"IBM Plex Sans";border-radius:18px;padding:22px 26px;display:grid;gap:16px}
-.pf .r{display:flex;flex-wrap:wrap;align-items:center;gap:14px 26px}
-.pf .c{display:flex;align-items:center;gap:10px;font-weight:600;font-size:15px;line-height:1.2}
-.pf .c small{display:block;font-weight:400;font-size:13px;color:#9DB4F5}
-.pf b{font-family:"IBM Plex Serif";font-size:22px}
-.pf .sf{width:44px;height:31px;background:url(%s) center/contain no-repeat}
-.pf .ic{width:30px;height:30px;border-radius:8px;background:#002FA7;display:grid;place-items:center}
-.st5{display:inline-flex;align-items:center;background:#002FA7;color:#fff;letter-spacing:1px;font-size:12px;line-height:1;padding:5px 9px;border-radius:999px;box-shadow:0 0 0 1px rgba(255,255,255,.25)}
-.pints{display:inline-flex;gap:6px}.pint{display:inline-flex;align-items:center;gap:6px;background:#fff;color:#0F1A3D;border-radius:999px;padding:4px 10px 4px 6px;font-size:12.5px;font-weight:600;line-height:1}.pint svg{flex:none}""" % SF
+CSS = """.pf{background:#fff;color:#071338;font-family:"IBM Plex Sans";border:1px solid #E4EAF6;border-radius:14px;padding:12px 16px;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:10px 12px;box-shadow:0 1px 2px rgba(7,19,56,.04)}
+.pf .c{display:flex;align-items:center;gap:8px;font-weight:600;font-size:13px;line-height:1.25;color:#071338}
+.pf .c small{display:block;font-weight:400;font-size:11.5px;color:#687385}
+.pf b{font-family:"IBM Plex Serif";font-size:17px;color:#002FA7}
+.pf .sf{width:34px;height:24px;background:url(%s) center/contain no-repeat}
+.pf .ic{width:24px;height:24px;border-radius:50%%;background:#EAF0FF;display:grid;place-items:center}
+.pf .dv{width:1px;height:28px;background:#E4EAF6}
+.pf .st5{color:#002FA7;letter-spacing:0;font-size:12px;line-height:1}
+.pf .pints{display:inline-flex;gap:8px;align-items:center}.pf .pint{display:inline-flex;font-size:0;line-height:0}.pf .pint svg{flex:none}""" % SF
 
 def html():
-    return f"""<div class="pf"><div class="r">
-<div class="c"><span class="sf"></span><span><small>Available on</small>Salesforce AppExchange</span></div>
-<div class="c"><b>5.0</b> on AppExchange <span class="st5">&#9733;&#9733;&#9733;&#9733;&#9733;</span></div>
-<div class="c"><span class="ic">{CHECK}</span><span><small>Security reviewed</small>100% native to Salesforce</span></div></div>
-<div class="r"><div class="c"><b>131</b> survey templates</div><div class="c"><b>67</b> question types</div><div class="c">Works with {PINTS}</div></div></div>"""
+    return f"""<div class="pf">
+<div class="c"><span class="sf"></span><span><small>Available on</small>Salesforce AppExchange</span></div><span class="dv"></span>
+<div class="c"><b>5.0</b><span class="st5">&#9733;&#9733;&#9733;&#9733;&#9733;</span></div><span class="dv"></span>
+<div class="c"><span class="ic">{CHECK}</span><span><small>Security reviewed</small>100% native</span></div><span class="dv"></span>
+<div class="c">{PINTS}</div></div>"""
 
 if __name__ == "__main__":
     from playwright.sync_api import sync_playwright
