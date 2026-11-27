@@ -1564,6 +1564,18 @@ const hero = (crumb, h1, p, extra="") => `<section class="pagehero"><div class="
 const coreStrip = `<div class="corestrip">${[["Ask","A Salesforce event sends the right survey at the right moment."],["Record","The answer lands on the record it belongs to."],["Act","Detractors, passives and promoters each get an owned follow-up."],["See","Leaders see scores and follow-ups in real time."]].map(([k,v],i)=>`<div class="core"><b><span>${i+1}</span>${k}</b><p>${v}</p></div>`).join("")}</div>`;
 
 const RES = [
+ {t:"NPS Survey CX OS data sheet", d:"Two pages: the Salesforce challenge, how Listen, Understand and Act work, editions and pricing, and technical details for your admin.", f:"docs/NPS-Survey-CX-OS-Data-Sheet.pdf", type:"Data sheet", ind:"All industries", ic:"doc"},
+ {t:"Install and setup guide", d:"Install in about 10 minutes: Case Feed Tracking, sandbox then production, permissions and your 15-day free trial.", u:"/install/", type:"Guide", ind:"Salesforce admins", ic:"doc"},
+ {t:"Getting started guide", d:"A visual onboarding guide: navigation, Command Center, Survey Builder, automation and triggers, analytics and app access.", f:"docs/NPS-Survey-CX-OS-Getting-Started-Guide.pdf", type:"Guide", ind:"Salesforce admins", ic:"doc"},
+ {t:"Configuration resource pack", d:"The customization reference for admins and implementation teams: advanced configuration, administration, automation, reporting and go-live.", f:"docs/NPS-Survey-CX-OS-Configuration-Resource-Pack.pdf", type:"Guide", ind:"Salesforce admins", ic:"doc"},
+ {t:"Survey scheduler and reminders", d:"Send surveys from event records, then remind people who have not answered within 24 hours, on a schedule you set.", f:"docs/NPS-Survey-CX-OS-Survey-Scheduler-and-Reminders.pdf", type:"Guide", ind:"Salesforce admins", ic:"doc"},
+ {t:"Installation and configuration guide (PDF)", d:"The full 40-page admin guide with screenshots for every setup step, for teams that want it offline.", f:"docs/NPS-Survey-Installation-and-Configuration-Guide.pdf", type:"Guide", ind:"Salesforce admins", ic:"doc"},
+ {t:"Close the Loop, Issue 01: the CFO business case", d:"What an unanswered detractor costs, and the numbers finance needs to fund a closed-loop program.", u:"/close-the-loop/", type:"Whitepaper", ind:"CX and finance leaders", ic:"doc"},
+ {t:"Customer journey mapping for NPS and CX programs", d:"The moments from awareness to loyalty, and which survey to ask at each one inside Salesforce.", f:"docs/NPS-Survey-Customer-Journey-Mapping.pdf", type:"Whitepaper", ind:"CX leaders", ic:"doc"},
+ {t:"7 surveys every Salesforce org should automate", d:"Case closed, onboarding, renewal, won, lost and more: the triggers and questions that pay off first.", f:"docs/7-Surveys-Every-Salesforce-Org-Should-Automate.pdf", type:"Whitepaper", ind:"All industries", ic:"doc"},
+ {t:"Release notes, version 2.4", d:"What changed in the 2.4 release: new features, fixes and upgrade notes for admins.", f:"docs/NPS-Survey-CX-OS-Release-Notes-v2.4.pdf", type:"Data sheet", ind:"Salesforce admins", ic:"doc"},
+ {t:"Full demo: design, send, analyze and act", d:"A 2.5-minute walkthrough of the whole loop inside Salesforce.", u:"https://www.youtube.com/watch?v=IYMiJXBxkQU", type:"Video", ind:"All industries", ic:"play"},
+ {t:"NPS Survey CX OS in 75 seconds", d:"Every survey answer becomes action, inside Salesforce.", u:"https://www.youtube.com/watch?v=uXIZmwdQTdQ", type:"Video", ind:"All industries", ic:"play"},
  {t:"Capability statement", d:"One-page summary for government and enterprise buyers: capabilities, differentiators, company data.", f:"SalesHub-Capability-Statement.pdf", type:"Guide", ind:"Public sector", ic:"doc"},
  {t:"Public sector kit", d:"Capability statement, both POVs and both offering sheets in one 5-page PDF.", f:"SalesHub-NPS-CXOS-Public-Sector-Kit.pdf", type:"Guide", ind:"Public sector", ic:"doc"},
  {t:"POV: The service request isn't done until the resident says so", d:"For 311, CX, licensing and benefits leaders in state and local government.", f:"NPS-CXOS-POV-State-Local.pdf", type:"Point of view", ind:"Public sector", ic:"gov"},
@@ -1590,9 +1602,9 @@ const VIDS = [
  {id:"Pa5i-A2WnNQ", t:"Introducing NPS Survey 2.0", g:"Product updates", len:"Update"}
 ];
 const vcard = v => `<a class="vcard" href="https://www.youtube.com/watch?v=${v.id}" target="_blank" rel="noopener"><div class="thumb"><span class="len">${v.len}</span><span class="play"><svg width="16" height="16" viewBox="0 0 24 24" fill="#0F1A3D"><path d="M8 5v14l11-7z"/></svg></span><b>${v.t}</b></div><span class="v">${v.t}</span></a>`;
-const RCOV = {"Guide":["Guide","g"],"Point of view":["POV","p"],"Offering":["Offer","o"],"Spreadsheet":["Data","s"],"Video":["Film","v"]};
+const RCOV = {"Data sheet":["Sheet","o"],"Whitepaper":["Paper","p"],"Guide":["Guide","g"],"Point of view":["POV","p"],"Offering":["Offer","o"],"Spreadsheet":["Data","s"],"Video":["Film","v"]};
 const rcov = r => { const [w,k] = RCOV[r.type]||["Read","g"]; return `<div class="rcov rcov-${k}" aria-hidden="true"><svg viewBox="0 0 100 100"><path d="M31.07 77.03 A33 33 0 1 1 68.93 77.03" fill="none" stroke="currentColor" stroke-width="11" stroke-linecap="round"/><circle cx="50" cy="83" r="6" fill="currentColor"/></svg><b>${w}</b><small>${r.ind||"NPS Survey"}</small></div>`; };
-const resRow = r => `<div class="res">${rcov(r)}<div><h4>${r.t}</h4><p>${r.d}</p></div><a class="btn dark" href="files/${r.f}" target="_blank" rel="noopener">${r.type==="Video"?"Watch":"Open"}</a></div>`;
+const resRow = r => `<div class="res">${rcov(r)}<div><h4>${r.t}</h4><p>${r.d}</p></div><a class="btn dark" href="${r.u||"files/"+r.f}"${r.u&&r.u[0]==="/"?"":` target="_blank" rel="noopener"`}>${r.type==="Video"?"Watch":"Open"}</a></div>`;
 
 const V = {};
 // Real AppExchange review quotes go here ONLY after each reviewer's written OK, e.g.
@@ -2444,7 +2456,7 @@ ${finalCTA("ps_final")}`;
 
 V.resources = () => `${hero("", "Resources, videos and <em>downloads</em>", "Guides, points of view, offering sheets, the industry blueprints workbook and every video in one place.", "")}
 <section class="band"><div class="wrap">
- <div class="filters" role="group" aria-label="Filter resources" id="rf">${["All","Guide","Point of view","Offering","Spreadsheet","Video"].map((t,i)=>`<button class="fbtn" aria-pressed="${i===0}" data-f="${t}">${t}</button>`).join("")}</div>
+ <div class="filters" role="group" aria-label="Filter resources" id="rf">${["All","Data sheet","Guide","Whitepaper","Point of view","Offering","Spreadsheet","Video"].map((t,i)=>`<button class="fbtn" aria-pressed="${i===0}" data-f="${t}">${t}</button>`).join("")}</div>
  <div class="stack" id="rlist">${RES.map(resRow).join("")}</div>
  <div class="eyebrow" style="margin-top:56px">Video library</div><h2 class="h2">Watch on YouTube</h2>
  ${["Start here","Use cases","Product updates"].map(g=>`<div class="group-label">${g}</div><div class="vids">${VIDS.filter(v=>v.g===g).map(vcard).join("")}</div>`).join("")}
