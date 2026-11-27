@@ -12,14 +12,15 @@ URL pill (the CTA) and on one <em> word in the headline. Nothing else is ever ye
 import json, sys, os
 from playwright.sync_api import sync_playwright
 ROOT=os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-MARK=open(os.path.join(ROOT,"brand/logo/nps-survey-cx-os-mark-white.svg")).read()
+import plexfont
+LOCKUP=open(os.path.join(ROOT,"brand/logo-kit/svg/nps-survey-logo-white.svg")).read().replace("<svg ",'<svg style="height:100px;width:auto;margin-left:-12px" ',1)
 FLAG=open(os.path.join(ROOT,"brand/flag/us-flag.svg")).read().replace("<svg ",'<svg style="width:285px;height:auto;border-radius:6px;box-shadow:0 10px 30px rgba(0,0,0,.35)" ',1)
-base="""<html><head><link rel=stylesheet href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=IBM+Plex+Serif:wght@500;600&display=swap"><style>
+base="""<html><head><style>"""+plexfont.css()+"""
 *{box-sizing:border-box}body{margin:0;width:1080px;height:1350px;font-family:"IBM Plex Sans",Arial,sans-serif;color:#fff;
 background:#002FA7;padding:84px 80px;display:flex;flex-direction:column}
 .top{display:flex;align-items:center;gap:18px;font-weight:800;font-size:34px}.top svg{width:64px;height:64px}.top small{display:block;font-size:22px;font-weight:600;opacity:.85}
 .kick{margin-top:70px;display:inline-block;color:#C9D5F2;font-weight:600;font-size:28px;align-self:flex-start}
-h1{font-size:84px;line-height:1.04;font-weight:800;margin:34px 0 0;letter-spacing:-.01em}h1 em{font-style:normal;color:#fff}body.y h1 em{color:#FFD60A}
+h1{font-size:84px;line-height:1.06;font-family:"IBM Plex Serif",Georgia,serif;font-weight:600;margin:34px 0 0;letter-spacing:-.01em}h1 em{font-style:normal;color:#fff}body.y h1 em{color:#FFD60A}
 p.lead{font-size:34px;line-height:1.35;color:#D6E2FF;margin:30px 0 0}
 ol{margin:40px 0 0;padding:0;list-style:none;counter-reset:n}ol li{counter-increment:n;font-size:34px;line-height:1.3;font-weight:700;margin:0 0 22px;display:flex;gap:20px;align-items:flex-start}
 ol li:before{content:counter(n);flex:none;width:52px;height:52px;border-radius:50%;background:#fff;color:#002FA7;display:grid;place-items:center;font-weight:800;font-size:28px}
@@ -28,13 +29,13 @@ ol li span{font-weight:500;color:#D6E2FF;display:block;font-size:27px}
 .url{background:#fff;color:#002FA7;}body.y .url{background:#FFD60A;}.url{font-weight:800;font-size:32px;padding:20px 30px;border-radius:999px}
 .fine{font-size:19px;color:#B9C8F5;max-width:470px;line-height:1.35}
 .big{font-size:150px;font-weight:800;line-height:1;color:#fff}
-</style></head><body class="{ACC}"><div class="top">"""+MARK+"""<div>NPS Survey<small>CX OS by SalesHub</small></div></div>{BODY}</body></html>"""
+</style></head><body class="{ACC}"><div class="top">"""+LOCKUP+"""</div>{BODY}</body></html>"""
 
 spec=json.load(open(sys.argv[1])); out=os.path.join(ROOT,spec["outdir"]); os.makedirs(out,exist_ok=True)
 with sync_playwright() as p:
     b=p.chromium.launch(); pg=b.new_page(viewport={"width":1080,"height":1350})
     for k,body in spec["images"].items():
         acc="y" if (spec.get("accent")=="y" or k.endswith("-y")) else ""
-        pg.set_content(base.replace("{ACC}",acc).replace("{BODY}",body.replace("{FLAG}",'<div style="margin-top:56px">'+FLAG+'</div>'))); pg.wait_for_timeout(600)
+        pg.set_content(base.replace("{ACC}",acc).replace("{BODY}",body.replace("{FLAG}",'<div style="margin-top:56px">'+FLAG+'</div>'))); pg.evaluate("document.fonts.ready"); pg.wait_for_timeout(600)
         pg.screenshot(path=os.path.join(out,k+".png")); print(os.path.join(spec["outdir"],k+".png"))
     b.close()
