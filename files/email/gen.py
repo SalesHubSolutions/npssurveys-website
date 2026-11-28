@@ -40,6 +40,10 @@ def cta(label, href, second=None):
     s = f'<div style="{F}font-size:14px;padding-top:14px;"><a href="{second[1]}" style="color:#002FA7;font-weight:bold;text-decoration:none;">{second[0]}</a></div>' if second else ""
     return f'<tr><td align="center" style="background:#ffffff;padding:26px 32px 6px 32px;"><table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr><td style="background:#FFD60A;border-radius:10px;"><a href="{href}" style="display:inline-block;padding:16px 30px;{F}font-size:16px;font-weight:bold;color:#0F1A3D;text-decoration:none;">{label} &rarr;</a></td></tr></table>{s}</td></tr>\n'
 
+import sys as _s, os as _o
+_s.path.insert(0, _o.path.join(_o.path.dirname(_o.path.abspath(__file__)), "..", "..", "tools"))
+from email_trust import trust_row as TR
+
 def trust(gov):
     cells = ([("Carahsoft", "CoreTrust contract<br>24COR-018GR")] if gov else [("Security reviewed", "by Salesforce for<br>AppExchange")]) + [("100% Salesforce", "Data never leaves<br>your org"), ('<span style="color:#002FA7;">&#9733;&#9733;&#9733;&#9733;&#9733;</span>', "Rated 5.0 on<br>AppExchange")]
     tds = ""
@@ -65,7 +69,7 @@ def build(key, camp, label, preheader, kicker, head, hl, greet, body_html, hero=
 <div style="font-size:12px;letter-spacing:1.6px;font-weight:bold;color:#002FA7;">{kicker}</div>
 <h1 style="margin:10px 0 0 0;font-family:'IBM Plex Serif',Georgia,'Times New Roman',serif;font-size:{"28px;line-height:34px" if light else "32px;line-height:38px"};font-weight:600;color:#0F1A3D;">{head}{hl_html}</h1></td></tr>
 <tr><td style="background:#ffffff;padding:14px 32px 4px 32px;{F}font-size:16px;line-height:25px;color:#3A4664;"><p style="margin:0 0 12px 0;">{greet}</p></td></tr>
-{body_html}{"" if light else trust(gov)}{PROOF}<tr><td style="background:#ffffff;padding:24px 32px 30px 32px;{F}font-size:15px;line-height:23px;color:#3A4664;">Best regards,<br><b style="color:#0F1A3D;">SalesHub Support Team</b><br><a href="mailto:support@saleshub.info" style="color:#002FA7;text-decoration:none;">support@saleshub.info</a> &middot; 1 (833) 733-2468</td></tr>
+{body_html}{"" if light else TR(gov)}<tr><td style="background:#ffffff;padding:24px 32px 30px 32px;{F}font-size:15px;line-height:23px;color:#3A4664;">Best regards,<br><b style="color:#0F1A3D;">SalesHub Support Team</b><br><a href="mailto:support@saleshub.info" style="color:#002FA7;text-decoration:none;">support@saleshub.info</a> &middot; 1 (833) 733-2468</td></tr>
 <tr><td style="background:#071338;padding:28px 32px 10px 32px;{F}font-size:13px;line-height:20px;color:#C9D6FF;">
 <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr>
 <td valign="top" style="{F}font-size:13px;line-height:20px;color:#C9D6FF;"><a href="{u(home,camp,key,"footlogo")}"><img src="{SITE}/files/email/logo-white.png" width="132" height="40" alt="NPS Survey CX OS by SalesHub" style="display:block;border:0;margin:0 0 12px 0;"></a>
