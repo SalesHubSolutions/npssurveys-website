@@ -31,7 +31,7 @@ def cover(kicker, title, sub, shot=None, photo=None):
 JOBS = [
  ("issue-01-cfo", cover("Close the Loop, issue 01", "The CFO business case for closing the loop", "The revenue model, the platform choice and a one-page case you can copy.", shot="assets/product/inbox-focus.webp")),
  ("archive-hybrid-cloud", cover("Close the Loop, from the archive", "Embracing a hybrid cloud approach", "Keep customer data where your team already works, and still use the best of the cloud.", photo="brand/photos/team-meeting.jpg")),
- ("archive-building-on-salesforce", cover("Close the Loop, from the archive", "Building an app on Salesforce", "What it takes to build native: security review, AppExchange and keeping data in the org.", shot="assets/product/dash-focus.webp")),
+ ("archive-building-on-salesforce", cover("Close the Loop, from the archive", "The ROI of building an app on Salesforce", "What it costs, what it returns, and why native apps keep data in the org.", shot="assets/product/dash-focus.webp")),
 ]
 if __name__ == "__main__":
     from playwright.sync_api import sync_playwright
